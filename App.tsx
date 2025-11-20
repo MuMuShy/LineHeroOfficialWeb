@@ -5,7 +5,7 @@ import Features from './components/Features';
 import Characters from './components/Characters';
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
-import OracleChat from './components/OracleChat';
+// import OracleChat from './components/OracleChat';
 import { LegalPage } from './components/Legal';
 
 type Page = 'home' | 'privacy' | 'terms' | 'refund';
@@ -87,7 +87,7 @@ const App: React.FC = () => {
       </main>
 
       <Footer onNavigate={handleNavigate} />
-      <OracleChat />
+      {/* <OracleChat /> */}
     </div>
   );
 };
