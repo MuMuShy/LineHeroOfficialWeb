@@ -1,10 +1,15 @@
 import { GoogleGenAI, Chat, GenerateContentResponse } from "@google/genai";
 
-// Initialize the client
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Ū���s�������ҡ]Vite �`�J�^�����_�A�Φ^�h����A�������ܼ�
+const apiKey =
+  (typeof import.meta !== "undefined" && (import.meta as any).env?.VITE_API_KEY) ||
+  (typeof process !== "undefined" ? process.env.API_KEY : undefined);
+
+// �S�����_�ɥ����n�إ߫Ȥ�ݡA�קK�s���������߿�
+const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 // System instruction to give the AI a persona
-const SYSTEM_INSTRUCTION = `
+const SYSTEM_INSTRUCTION =  `
 你現在是「LineHero 無盡冒險」的遊戲嚮導 (Game Master)。
 LineHero 是一款直接在 LINE 聊天視窗遊玩的文字冒險 MMORPG (Text Adventure MMORPG)。
 特色：免安裝、LINE Flex 訊息互動、Web 網頁版支援、陣營戰、世界 Boss、戰力排行榜。
@@ -22,6 +27,9 @@ LineHero 是一款直接在 LINE 聊天視窗遊玩的文字冒險 MMORPG (Text 
 let chatSession: Chat | null = null;
 
 export const getChatSession = (): Chat => {
+  if (!ai) {
+    throw new Error("�ʤ� Gemini API ���_�A�г]�w VITE_API_KEY �������ܼ� API_KEY");
+  }
   if (!chatSession) {
     chatSession = ai.chats.create({
       model: 'gemini-2.5-flash',
@@ -35,13 +43,19 @@ export const getChatSession = (): Chat => {
 };
 
 export const sendMessageToOracle = async function* (message: string) {
+  // �S���_�ɦ^�Ǥ͵����ܨõ���
+  if (!apiKey || !ai) {
+    console.error("Gemini API Key �ʥ��AOracle Chat �w���ΡC�Цb�����ܼƥ[�J VITE_API_KEY�C");
+    yield "�䤣�� Gemini API ���_�A�еy��A�թΧi������C";
+    return;
+  }
+
   const chat = getChatSession();
   
   try {
     const streamResult = await chat.sendMessageStream({ message });
     
     for await (const chunk of streamResult) {
-      // Cast to the correct type to access text safely
       const c = chunk as GenerateContentResponse;
       if (c.text) {
         yield c.text;
@@ -49,6 +63,6 @@ export const sendMessageToOracle = async function* (message: string) {
     }
   } catch (error) {
     console.error("Oracle Connection Error:", error);
-    throw new Error("魔法連結似乎中斷了... 請稍後再試。");
+    throw new Error("�]�k�s�u���G���_�F.. �еy��A�աC");
   }
 };

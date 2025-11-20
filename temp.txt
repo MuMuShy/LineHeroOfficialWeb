@@ -1,0 +1,59 @@
+import { GoogleGenAI, Chat, GenerateContentResponse } from "@google/genai";
+
+// è®€?–ç€è¦½?¨ç’°å¢ƒï?Vite æ³¨å…¥ï¼‰ç??‘é‘°ï¼Œæ??žé€€?°ä¼º?å™¨?°å?è®Šæ•¸
+const apiKey =
+  (typeof import.meta !== "undefined" && (import.meta as any).env?.VITE_API_KEY) ||
+  (typeof process !== "undefined" ? process.env.API_KEY : undefined);
+
+// æ²’æ??‘é‘°?‚å?ä¸è?å»ºç?å®¢æˆ¶ç«¯ï??¿å??è¦½?¨ç›´?¥æ???const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
+
+// System instruction to give the AI a persona
+const SYSTEM_INSTRUCTION = `
+ä½ ç¾?¨æ˜¯?ŒLineHero ?¡ç›¡?’éšª?ç??Šæˆ²?®å? (Game Master)??
+LineHero ?¯ä?æ¬¾ç›´?¥åœ¨ LINE ?Šå¤©è¦–ç??ŠçŽ©?„æ?å­—å???MMORPG (Text Adventure MMORPG)??
+?¹è‰²ï¼šå?å®‰è??LINE Flex è¨Šæ¯äº’å??Web ç¶²é??ˆæ”¯?´ã€é™£?Ÿæˆ°?ä???Boss?æˆ°?›æ?è¡Œæ???
+
+ä½ ç??‹æ€§ï??±æ??å?æ¥­ã€å¸¶?‰å?å¹»è??²ç?èªžæ°£ï¼ˆç¨±?¼çŽ©å®¶ç‚º?Œå??ªè€…ã€ï???
+ä½ ç?ä»»å?ï¼?
+1. å¼•å??°æ?ï¼šå?è¨´ä??‘ä??€è¦ä?è¼?APPï¼Œå???LINE å®˜æ–¹å¸³è??³å¯?ŠçŽ©??
+2. è§?ªª?¹è‰²ï¼šå¼·èª?Flex ä»‹é¢?ä??„ä¾¿?©æ€§ï?ä¸æ˜¯ç´”æ?å­—ï??‰æ??•å??‡ï??Web ?ˆç??²é??Ÿèƒ½??
+3. **?è?**ï¼šé??°å…·é«”æ•¸?¼ã€æ??½ç??è©³ç´°æ”»?¥å?é¡Œæ?ï¼Œè?å¼•å??©å®¶?¥ç??Œå??ªæ???(Wiki)?ï?ç¶²å??¯ï?https://wiki.linehero.tw
+4. è«‹ä½¿?¨ç?é«”ä¸­?‡ï??°ç£?¨è?ï¼‰å?ç­”ã€?
+
+?žç?è«‹ç°¡æ½”æ??›ï?ä¸è??·ç?å¤§è???
+`;
+
+let chatSession: Chat | null = null;
+
+export const getChatSession = (): Chat => {
+  if (!chatSession) {
+    chatSession = ai.chats.create({
+      model: 'gemini-2.5-flash',
+      config: {
+        systemInstruction: SYSTEM_INSTRUCTION,
+        temperature: 0.7,
+      },
+    });
+  }
+  return chatSession;
+};
+
+export const sendMessageToOracle = async function* (message: string) {
+  const chat = getChatSession();
+  
+  try {
+    const streamResult = await chat.sendMessageStream({ message });
+    
+    for await (const chunk of streamResult) {
+      // Cast to the correct type to access text safely
+      const c = chunk as GenerateContentResponse;
+      if (c.text) {
+        yield c.text;
+      }
+    }
+  } catch (error) {
+    console.error("Oracle Connection Error:", error);
+    throw new Error("é­”æ????ä¼¼ä?ä¸­æ–·äº?.. è«‹ç?å¾Œå?è©¦ã€?);
+  }
+};
+
