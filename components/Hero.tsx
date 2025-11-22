@@ -80,9 +80,9 @@ const Hero: React.FC = () => {
         <div className="mt-8 md:mt-20 w-full px-2 md:px-0 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 border-t border-white/5 pt-6 md:pt-8 bg-black/30 md:bg-black/20 rounded-2xl p-4 md:p-6 backdrop-blur-sm">
             {[
-              { label: "累積冒險者", value: "2M+" },
+              { label: "累積冒險者", value: "3K+" },
               { label: "裝備總數", value: "50K+" },
-              { label: "公會數量", value: "1.2K+" },
+              { label: "戰鬥場次", value: "10M+" },
               { label: "支援平台", value: "LINE / Web" },
             ].map((stat) => (
               <div key={stat.label} className="text-center flex flex-col items-center justify-center p-2 rounded-lg bg-white/5 md:bg-transparent">
