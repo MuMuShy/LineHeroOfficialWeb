@@ -9,6 +9,8 @@ const Hero: React.FC = () => {
           src="https://mumu.tw/linehero/official_web/ogimage.png" 
           alt="Line Hero Fantasy World" 
           className="w-full h-full object-cover opacity-30 scale-110 animate-pulse-slow"
+          fetchPriority="high"
+          decoding="async"
         />
         {/* Darker gradient overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-hero-dark/90 via-hero-dark/60 to-hero-dark/90"></div>
