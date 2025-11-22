@@ -1,7 +1,8 @@
-import React from 'react';
+﻿import React from 'react';
+import { Page } from '../types';
 
 interface FooterProps {
-  onNavigate: (page: 'home' | 'privacy' | 'terms' | 'refund') => void;
+  onNavigate: (page: Page) => void;
 }
 
 const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
@@ -59,16 +60,25 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                <span className="text-xl font-bold text-hero-gold font-sans">無盡冒險</span>
             </div>
             <p className="text-gray-500 text-sm max-w-xs">
-              重新定義文字冒險遊戲。
+              重新定義線上冒險 RPG，
               <br/>
-              在 LINE 聊天室中體驗最純粹的 RPG 樂趣。
+              在 LINE 聊天室中體驗純粹的文字 RPG 樂趣。
             </p>
           </div>
           
           <div>
-            <h4 className="text-white font-bold mb-4 uppercase tracking-widest text-sm border-b border-hero-gold/30 inline-block pb-1">快速連結</h4>
+            <h4 className="text-white font-bold mb-4 uppercase tracking-widest text-sm border-b border-hero-gold/30 inline-block pb-1">快速導覽</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><a href="https://wiki.linehero.tw" target="_blank" rel="noreferrer" className="hover:text-hero-gold transition-colors">Wiki 攻略百科</a></li>
+              <li><button onClick={() => onNavigate('game-intro-line')} className="hover:text-hero-gold transition-colors text-left">LINE 玩法介紹</button></li>
+              <li><button onClick={() => onNavigate('game-intro-web')} className="hover:text-hero-gold transition-colors text-left">Web 玩法介紹</button></li>
+              <li><button onClick={() => onNavigate('shop')} className="hover:text-hero-gold transition-colors text-left">商城 / 儲值</button></li>
+              <li><button onClick={() => onNavigate('office-games')} className="hover:text-hero-gold transition-colors text-left">企業專案</button></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-bold mb-4 uppercase tracking-widest text-sm border-b border-hero-gold/30 inline-block pb-1">條款</h4>
+            <ul className="space-y-2 text-sm text-gray-400">
               <li><button onClick={() => onNavigate('privacy')} className="hover:text-hero-gold transition-colors text-left">隱私權政策</button></li>
               <li><button onClick={() => onNavigate('terms')} className="hover:text-hero-gold transition-colors text-left">服務條款</button></li>
               <li><button onClick={() => onNavigate('refund')} className="hover:text-hero-gold transition-colors text-left">退款政策</button></li>

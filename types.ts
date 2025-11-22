@@ -1,4 +1,4 @@
-export interface Feature {
+﻿export interface Feature {
   id: string;
   title: string;
   description: string;
@@ -26,3 +26,13 @@ export enum GamePlatform {
   ANDROID = 'Android',
   STEAM = 'Steam'
 }
+
+export type Page =
+  | 'home'
+  | 'privacy'
+  | 'terms'
+  | 'refund'
+  | 'game-intro-line'
+  | 'game-intro-web'
+  | 'shop'
+  | 'office-games';

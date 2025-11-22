@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://linehero.tw/</loc>
+    <lastmod>2025-02-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://linehero.tw/assets/images/ogimage.png</image:loc>
+      <image:title>LINE Hero無盡冒險 - 台灣最受歡迎LINE文字RPG遊戲</image:title>
+      <image:caption>在LINE聊天視窗中體驗完整MMORPG冒險</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://linehero.tw/assets/images/linehero.webp</image:loc>
+      <image:title>LINE Hero遊戲標誌</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://linehero.tw/game-intro/line</loc>
+    <lastmod>2025-02-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://linehero.tw/assets/images/chat.webp</image:loc>
+      <image:title>LINE Hero聊天介面展示</image:title>
+      <image:caption>在LINE中體驗文字RPG冒險</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://linehero.tw/assets/images/companions.webp</image:loc>
+      <image:title>夥伴系統展示</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://linehero.tw/assets/images/gacha.webp</image:loc>
+      <image:title>抽卡系統展示</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://linehero.tw/game-intro/web</loc>
+    <lastmod>2025-02-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://linehero.tw/assets/images/ranking.webp</image:loc>
+      <image:title>排行榜預覽</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://linehero.tw/assets/images/enhance.webp</image:loc>
+      <image:title>強化系統預覽</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://linehero.tw/assets/images/boss_girl2.webp</image:loc>
+      <image:title>世界Boss預覽</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://linehero.tw/assets/images/trade.webp</image:loc>
+      <image:title>自由市場預覽</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://linehero.tw/shop</loc>
+    <lastmod>2025-02-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://linehero.tw/office-games</loc>
+    <lastmod>2025-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://linehero.tw/assets/images/demo1.jpg</image:loc>
+      <image:title>LINE Hero遊戲畫面展示</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://linehero.tw/assets/images/demo_character.jpg</image:loc>
+      <image:title>LINE Hero角色展示</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://linehero.tw/terms</loc>
+    <lastmod>2025-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://linehero.tw/privacy</loc>
+    <lastmod>2025-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://linehero.tw/refund</loc>
+    <lastmod>2025-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

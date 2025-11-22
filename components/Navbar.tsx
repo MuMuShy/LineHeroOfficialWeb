@@ -1,8 +1,13 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useEffect, useState } from 'react';
+import { Page } from '../types';
 
 interface NavbarProps {
-  onNavigate: (page: 'home' | 'privacy' | 'terms' | 'refund') => void;
+  onNavigate: (page: Page) => void;
 }
+
+type NavLink =
+  | { label: string; type: 'section'; target: string }
+  | { label: string; type: 'page'; target: Page };
 
 const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,28 +21,36 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (id: string) => {
+  const handleSectionNav = (selector: string) => {
     setMobileMenuOpen(false);
     onNavigate('home');
-    // Give time for the home view to render if we were on a legal page
     setTimeout(() => {
-      const element = document.querySelector(id);
+      const element = document.querySelector(selector);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
-    }, 100);
+    }, 80);
   };
+
+  const handlePageNav = (page: Page) => {
+    setMobileMenuOpen(false);
+    onNavigate(page);
+  };
+
+  const navLinks: NavLink[] = [
+    { label: '遊戲特色', type: 'section', target: '#features' },
+    { label: '主打英雄', type: 'section', target: '#heroes' },
+    { label: '遊戲畫面', type: 'section', target: '#gallery' },
+    { label: 'LINE 玩法', type: 'page', target: 'game-intro-line' },
+    { label: 'Web 玩法', type: 'page', target: 'game-intro-web' },
+    { label: '商城 / 儲值', type: 'page', target: 'shop' },
+    { label: '辦公室玩家友善', type: 'page', target: 'office-games' },
+  ];
 
   const handleHomeClick = () => {
     onNavigate('home');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
-  const navLinks = [
-    { name: '遊戲特色', id: '#features' },
-    { name: '傳說英雄', id: '#heroes' },
-    { name: '遊戲畫面', id: '#gallery' },
-  ];
 
   return (
     <nav 
@@ -57,14 +70,14 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8 items-center">
+          <div className="hidden md:flex space-x-6 items-center">
             {navLinks.map((link) => (
               <button 
-                key={link.name} 
-                onClick={() => handleNavClick(link.id)}
+                key={link.label} 
+                onClick={() => link.type === 'section' ? handleSectionNav(link.target) : handlePageNav(link.target)}
                 className="text-gray-300 hover:text-hero-gold transition-colors text-sm font-bold tracking-wider"
               >
-                {link.name}
+                {link.label}
               </button>
             ))}
             <a 
@@ -84,7 +97,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
               rel="noreferrer"
               className="bg-[#06C755] hover:bg-[#05b64d] text-white px-6 py-2 rounded-md shadow-[0_0_15px_rgba(6,199,85,0.4)] transition-all font-bold text-sm transform hover:scale-105 flex items-center gap-2"
             >
-              <span>開始冒險</span>
+              <span>立即開玩</span>
             </a>
           </div>
 
@@ -112,11 +125,11 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
           <div className="px-4 pt-2 pb-4 space-y-2">
             {navLinks.map((link) => (
               <button
-                key={link.name}
-                onClick={() => handleNavClick(link.id)}
+                key={link.label}
+                onClick={() => link.type === 'section' ? handleSectionNav(link.target) : handlePageNav(link.target)}
                 className="block w-full text-left px-3 py-3 text-base font-bold text-gray-300 hover:text-hero-gold hover:bg-white/5 rounded-lg"
               >
-                {link.name}
+                {link.label}
               </button>
             ))}
             <a
