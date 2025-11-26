@@ -73,6 +73,19 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <li><button onClick={() => onNavigate('game-intro-web')} className="hover:text-hero-gold transition-colors text-left">Web 玩法介紹</button></li>
               <li><button onClick={() => onNavigate('shop')} className="hover:text-hero-gold transition-colors text-left">商城 / 儲值</button></li>
               <li><button onClick={() => onNavigate('office-games')} className="hover:text-hero-gold transition-colors text-left">企業專案</button></li>
+              <li>
+                <a 
+                  href="https://tarven.linehero.tw" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-hero-gold transition-colors text-left flex items-center gap-1"
+                >
+                  冒險者酒館
+                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </li>
             </ul>
           </div>
 

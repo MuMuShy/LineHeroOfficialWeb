@@ -140,6 +140,50 @@ const Features: React.FC = () => {
               </div>
             </div>
           </div>
+
+          {/* Feature 4: Adventurer's Tavern (Image Left) */}
+          <div className="flex flex-col lg:flex-row-reverse items-center gap-6 md:gap-12">
+            <div className="flex-1 space-y-3 md:space-y-6 order-1 lg:order-2">
+              <div className="flex items-center gap-3">
+                <div className="p-2 md:p-3 bg-amber-500/10 rounded-xl border border-amber-500/30">
+                  <span className="text-xl md:text-3xl">🍺</span>
+                </div>
+                <h3 className="text-xl md:text-4xl font-bold text-white">
+                  冒險者酒館
+                </h3>
+              </div>
+              <p className="text-amber-400 text-base md:text-2xl font-bold">公開社群平台</p>
+
+              <p className="text-gray-300 text-sm md:text-lg leading-relaxed">
+                專為冒險者打造的公開社群平台，無需登入即可瀏覽。
+                分享冒險心得、查看最新資訊、與其他玩家交流互動。
+              </p>
+              <a 
+                href="https://tarven.linehero.tw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-amber-600/20 hover:bg-amber-600/30 border border-amber-500/40 hover:border-amber-500/60 text-amber-300 hover:text-amber-200 font-bold rounded-xl transition-all transform hover:scale-105 mt-4"
+              >
+                <span>前往冒險者酒館</span>
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+            <div className="flex-1 relative group w-full max-w-sm mx-auto lg:max-w-none order-2 lg:order-1">
+              <div className="absolute inset-0 bg-amber-500/10 blur-2xl md:blur-3xl rounded-full group-hover:bg-amber-500/20 transition-all duration-500"></div>
+              <div className="relative z-10 bg-gradient-to-br from-amber-900/20 to-black/40 rounded-xl md:rounded-2xl p-6 md:p-8 border-2 border-amber-500/30 shadow-2xl">
+                <div className="text-center space-y-4">
+                  <div className="text-5xl md:text-7xl mb-4">🍺</div>
+                  <h4 className="text-xl md:text-2xl font-bold text-amber-300">冒險者酒館</h4>
+                  <p className="text-gray-300 text-sm md:text-base">公開社群 · 無需登入 · 隨時瀏覽</p>
+                  <div className="pt-4 border-t border-amber-500/20">
+                    <p className="text-xs md:text-sm text-gray-400">tarven.linehero.tw</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Security Promise Section */}
