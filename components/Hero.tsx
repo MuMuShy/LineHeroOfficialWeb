@@ -49,16 +49,16 @@ const Hero: React.FC = () => {
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center items-center w-full max-w-lg mx-auto mt-4 sm:mt-6 px-4 sm:px-0" id="play">
+        <div className="flex flex-wrap sm:flex-nowrap gap-3 justify-center items-center w-full max-w-4xl mx-auto mt-4 sm:mt-6 px-4 sm:px-0" id="play">
           <a 
             href="https://lin.ee/Isv2392o" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="w-full sm:w-auto flex-1 group relative px-6 py-3.5 md:px-8 md:py-4 bg-[#06C755] text-white font-bold text-base md:text-lg rounded-xl hover:bg-[#05b64d] transition-all transform hover:-translate-y-1 shadow-[0_4px_20px_rgba(6,199,85,0.3)] overflow-hidden flex items-center justify-center gap-3"
+            className="group relative px-6 py-3.5 md:px-8 md:py-4 bg-[#06C755] text-white font-bold text-base md:text-lg rounded-xl hover:bg-[#05b64d] transition-all transform hover:-translate-y-1 shadow-[0_4px_20px_rgba(6,199,85,0.3)] overflow-hidden flex items-center justify-center gap-2.5 whitespace-nowrap min-w-[160px] h-[52px] md:h-[56px]"
           >
             <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:animate-shine"></div>
             {/* Clean LINE Icon */}
-            <svg className="w-6 h-6 md:w-7 md:h-7 flex-shrink-0 fill-current" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0 fill-current" viewBox="0 0 24 24">
                 <path d="M20.4 10.5c0-4.6-4.2-8.4-9.4-8.4-5.2 0-9.4 3.8-9.4 8.4 0 4.1 3.3 7.6 7.9 8.3.3.1.7.3.8.7.1.2.1.5-.1.7l-.5.4-.1.1-.1.1-1.7.9c-.3.1-.5.4-.4.7.1.3.4.5.7.5h.1c4.1 0 8-2.8 9.6-6.5.4-1 .6-2.1.6-3.2z"/>
                 <path d="M16.3 11.8h-6c-.4 0-.7-.3-.7-.7V7.4c0-.4.3-.7.7-.7s.7.3.7.7v3h5.3c.4 0 .7.3.7.7s-.3.7-.7.7z" fill="white"/> 
             </svg>
@@ -69,7 +69,7 @@ const Hero: React.FC = () => {
             href="https://wiki.linehero.tw" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="w-full sm:w-auto flex-1 px-6 py-3.5 md:px-8 md:py-4 border border-white/10 bg-white/5 backdrop-blur-md text-gray-200 font-bold text-base md:text-lg rounded-xl hover:bg-white/10 hover:text-white hover:border-hero-gold/50 transition-all flex items-center justify-center gap-2 group"
+            className="px-6 py-3.5 md:px-8 md:py-4 border border-white/10 bg-white/5 backdrop-blur-md text-gray-200 font-bold text-base md:text-lg rounded-xl hover:bg-white/10 hover:text-white hover:border-hero-gold/50 transition-all flex items-center justify-center gap-2.5 whitespace-nowrap min-w-[160px] h-[52px] md:h-[56px] group"
           >
             <svg className="w-5 h-5 flex-shrink-0 group-hover:text-hero-gold transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -81,9 +81,9 @@ const Hero: React.FC = () => {
             href="https://tarven.linehero.tw" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="w-full sm:w-auto flex-1 px-6 py-3.5 md:px-8 md:py-4 border border-amber-500/40 bg-amber-600/10 backdrop-blur-md text-amber-300 font-bold text-base md:text-lg rounded-xl hover:bg-amber-600/20 hover:text-amber-200 hover:border-amber-500/60 transition-all flex items-center justify-center gap-2 group"
+            className="px-6 py-3.5 md:px-8 md:py-4 border border-amber-500/40 bg-amber-600/10 backdrop-blur-md text-amber-300 font-bold text-base md:text-lg rounded-xl hover:bg-amber-600/20 hover:text-amber-200 hover:border-amber-500/60 transition-all flex items-center justify-center gap-2.5 whitespace-nowrap min-w-[160px] h-[52px] md:h-[56px] group"
           >
-            <span className="text-xl">🍺</span>
+            <span className="text-lg md:text-xl">🍺</span>
             <span>冒險者酒館</span>
             <svg className="w-4 h-4 flex-shrink-0 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
