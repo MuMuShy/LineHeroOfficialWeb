@@ -76,19 +76,6 @@ const Hero: React.FC = () => {
             </svg>
             <span>攻略 Wiki</span>
           </a>
-          
-          <a 
-            href="https://tarven.linehero.tw" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="px-6 py-3.5 md:px-8 md:py-4 border border-amber-500/40 bg-amber-600/10 backdrop-blur-md text-amber-300 font-bold text-base md:text-lg rounded-xl hover:bg-amber-600/20 hover:text-amber-200 hover:border-amber-500/60 transition-all flex items-center justify-center gap-2.5 whitespace-nowrap min-w-[160px] h-[52px] md:h-[56px] group"
-          >
-            <span className="text-lg md:text-xl">🍺</span>
-            <span>冒險者酒館</span>
-            <svg className="w-4 h-4 flex-shrink-0 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-          </a>
         </div>
 
         {/* Floating stats */}

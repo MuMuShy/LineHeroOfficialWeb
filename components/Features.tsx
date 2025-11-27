@@ -24,7 +24,9 @@ const Features: React.FC = () => {
             <div className="flex-1 space-y-3 md:space-y-6 order-1 lg:order-1">
               <div className="flex items-center gap-3">
                 <div className="p-2 md:p-3 bg-hero-green/10 rounded-xl border border-hero-green/30">
-                  <span className="text-xl md:text-3xl">⚔️</span>
+                  <svg className="w-6 h-6 md:w-8 md:h-8 text-hero-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
                 </div>
                 <h3 className="text-xl md:text-4xl font-bold text-white">
                   LINE Flex 視覺戰鬥
@@ -64,7 +66,10 @@ const Features: React.FC = () => {
              <div className="flex-1 space-y-3 md:space-y-6 order-1 lg:order-2">
               <div className="flex items-center gap-3">
                 <div className="p-2 md:p-3 bg-hero-gold/10 rounded-xl border border-hero-gold/30">
-                  <span className="text-xl md:text-3xl">⚒️</span>
+                  <svg className="w-6 h-6 md:w-8 md:h-8 text-hero-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
                 </div>
                 <h3 className="text-xl md:text-4xl font-bold text-white">
                   裝備養成
@@ -109,7 +114,9 @@ const Features: React.FC = () => {
             <div className="flex-1 space-y-3 md:space-y-6 order-1 lg:order-1">
               <div className="flex items-center gap-3">
                 <div className="p-2 md:p-3 bg-blue-500/10 rounded-xl border border-blue-500/30">
-                  <span className="text-xl md:text-3xl">🖥️</span>
+                  <svg className="w-6 h-6 md:w-8 md:h-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
                 </div>
                 <h3 className="text-xl md:text-4xl font-bold text-white">
                   Web 網頁版支援
@@ -141,7 +148,59 @@ const Features: React.FC = () => {
             </div>
           </div>
 
-          {/* Feature 4: Adventurer's Tavern (Image Left) */}
+          {/* Feature 4: Exploration Mode (Image Right) */}
+          <div className="flex flex-col lg:flex-row items-center gap-6 md:gap-12">
+            <div className="flex-1 space-y-3 md:space-y-6 order-1 lg:order-1">
+              <div className="flex items-center gap-3">
+                <div className="p-2 md:p-3 bg-purple-500/10 rounded-xl border border-purple-500/30">
+                  <svg className="w-6 h-6 md:w-8 md:h-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl md:text-4xl font-bold text-white">
+                  探索模式
+                </h3>
+              </div>
+              <p className="text-purple-400 text-base md:text-2xl font-bold">Roguelike 探索 · 搶先體驗</p>
+
+              <p className="text-gray-300 text-sm md:text-lg leading-relaxed">
+                體驗 LineHero 未來的探索功能！每次挑戰都是全新的 Roguelike 冒險，隨機生成的地圖與事件讓每次探索都充滿未知。
+                <br className="hidden md:block"/>
+                搶先體驗 Web 版探索模式，未來將完整引入 LINE 平台，資料互通，隨時隨地都能繼續你的探索旅程。
+              </p>
+              <a 
+                href="https://explore.linehero.tw"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600/20 to-indigo-600/20 hover:from-purple-600/30 hover:to-indigo-600/30 border border-purple-500/40 hover:border-purple-500/60 text-purple-300 hover:text-purple-200 font-bold rounded-xl transition-all transform hover:scale-105 mt-4"
+              >
+                <span>立即開始探索</span>
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+            <div className="flex-1 relative group w-full max-w-sm mx-auto lg:max-w-none order-2 lg:order-2">
+              <div className="absolute inset-0 bg-purple-500/10 blur-2xl md:blur-3xl rounded-full group-hover:bg-purple-500/20 transition-all duration-500"></div>
+              <div className="relative z-10 rounded-xl md:rounded-2xl overflow-hidden border-2 border-purple-500/30 shadow-2xl">
+                <img 
+                  src="https://mumu.tw/linehero/images/tower/endless_tower_bg_landscape.png" 
+                  alt="無盡之塔背景" 
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 via-purple-900/40 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-center space-y-2">
+                  <h4 className="text-xl md:text-2xl font-bold text-purple-200">探索模式</h4>
+                  <p className="text-gray-300 text-sm md:text-base">Roguelike 探索 · 搶先體驗 · 未來引入</p>
+                  <div className="pt-2 border-t border-purple-500/30">
+                    <p className="text-xs md:text-sm text-gray-400">explore.linehero.tw</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Feature 5: Adventurer's Tavern (Image Left) */}
           <div className="flex flex-col lg:flex-row-reverse items-center gap-6 md:gap-12">
             <div className="flex-1 space-y-3 md:space-y-6 order-1 lg:order-2">
               <div className="flex items-center gap-3">
