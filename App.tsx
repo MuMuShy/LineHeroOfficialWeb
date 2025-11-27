@@ -7,7 +7,7 @@ import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 // import OracleChat from './components/OracleChat';
 import { LegalPage } from './components/Legal';
-import { GameIntroLinePage, GameIntroWebPage, ShopPage, OfficeGamesPage } from './components/StaticPages';
+import { GameIntroLinePage, GameIntroWebPage, ShopPage, OfficeGamesPage, AnnouncementsPage } from './components/StaticPages';
 import { Page } from './types';
 
 const pageToPath: Record<Page, string> = {
@@ -19,6 +19,7 @@ const pageToPath: Record<Page, string> = {
   'game-intro-web': '/game-intro/web',
   shop: '/shop',
   'office-games': '/office-games',
+  announcements: '/announcements',
 };
 
 const normalizePath = (value: string) => {
@@ -39,7 +40,8 @@ const pageTitles: Record<Page, string> = {
   'game-intro-line': 'LINE 玩法介紹 | LineHero 無盡冒險',
   'game-intro-web': 'Web 玩法介紹 | LineHero 無盡冒險',
   shop: '商城與儲值 | LineHero 無盡冒險',
-  'office-games': '企業專案 | LineHero 無盡冒險',
+  'office-games': '辦公室玩家友善 | LineHero 無盡冒險',
+  announcements: '遊戲公告 | LineHero 無盡冒險',
 };
 
 const App: React.FC = () => {
@@ -100,6 +102,8 @@ const App: React.FC = () => {
         return <ShopPage />;
       case 'office-games':
         return <OfficeGamesPage />;
+      case 'announcements':
+        return <AnnouncementsPage />;
       default:
         return (
           <>

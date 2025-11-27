@@ -35,4 +35,5 @@ export type Page =
   | 'game-intro-line'
   | 'game-intro-web'
   | 'shop'
-  | 'office-games';
+  | 'office-games'
+  | 'announcements';

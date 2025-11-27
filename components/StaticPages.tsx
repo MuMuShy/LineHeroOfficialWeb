@@ -130,3 +130,163 @@ export const OfficeGamesPage: React.FC = () => (
     <Card title="適合族群" body="辦公室玩家、學生、通勤族，想要低調又能穩定養角色的人。" />
   </PageLayout>
 );
+
+// 公告类型定义
+export type AnnouncementType = 'game' | 'maintenance' | 'update' | 'event';
+
+export interface Announcement {
+  id: string;
+  type: AnnouncementType;
+  title: string;
+  content: string;
+  date: string; // ISO 8601 格式，用于 SEO
+  dateDisplay: string; // 显示用的日期格式
+  isImportant?: boolean;
+}
+
+// 示例公告数据 - 实际使用时可以从 API 或 CMS 获取
+const announcements: Announcement[] = [
+  // {
+  //   id: '1',
+  //   type: 'game',
+  //   title: '新活動「春季冒險祭」即將開始！',
+  //   content: '春季冒險祭活動將於本週末開始，參與活動可獲得限定裝備與豐厚獎勵。活動期間完成指定任務即可領取特殊獎勵，敬請期待！',
+  //   date: '2025-01-15T10:00:00+08:00',
+  //   dateDisplay: '2025-01-15',
+  //   isImportant: true,
+  // },
+  // {
+  //   id: '2',
+  //   type: 'maintenance',
+  //   title: '系統維護通知 - 2025/01/20',
+  //   content: '為了提供更好的遊戲體驗，我們將於 2025/01/20 02:00 - 06:00 進行系統維護。維護期間將無法登入遊戲，造成不便敬請見諒。',
+  //   date: '2025-01-18T14:00:00+08:00',
+  //   dateDisplay: '2025-01-18',
+  //   isImportant: true,
+  // },
+  // {
+  //   id: '3',
+  //   type: 'update',
+  //   title: '版本更新 v2.1.0 - 新功能上線',
+  //   content: '本次更新新增了拍賣場功能，玩家可以更方便地交易裝備。同時優化了戰鬥系統的流暢度，修復了部分已知問題。',
+  //   date: '2025-01-10T09:00:00+08:00',
+  //   dateDisplay: '2025-01-10',
+  // },
+  // {
+  //   id: '4',
+  //   type: 'event',
+  //   title: '週末雙倍經驗活動',
+  //   content: '本週末（1/25-1/26）將舉辦雙倍經驗活動，所有探索與戰鬥獲得的經驗值將提升至兩倍，把握機會快速升級！',
+  //   date: '2025-01-22T12:00:00+08:00',
+  //   dateDisplay: '2025-01-22',
+  // },
+];
+
+const getTypeLabel = (type: AnnouncementType): string => {
+  const labels: Record<AnnouncementType, string> = {
+    game: '遊戲公告',
+    maintenance: '維護公告',
+    update: '版本更新',
+    event: '活動公告',
+  };
+  return labels[type];
+};
+
+const getTypeColor = (type: AnnouncementType): string => {
+  const colors: Record<AnnouncementType, string> = {
+    game: 'bg-blue-500/20 border-blue-500/40 text-blue-300',
+    maintenance: 'bg-red-500/20 border-red-500/40 text-red-300',
+    update: 'bg-green-500/20 border-green-500/40 text-green-300',
+    event: 'bg-amber-500/20 border-amber-500/40 text-amber-300',
+  };
+  return colors[type];
+};
+
+export const AnnouncementsPage: React.FC = () => {
+  // 按日期排序，最新的在前
+  const sortedAnnouncements = [...announcements].sort((a, b) => 
+    new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+
+  return (
+    <PageLayout
+      title="遊戲公告"
+      subtitle="最新遊戲公告、維護通知與版本更新資訊，隨時掌握 LineHero 最新動態。"
+      accent="Announcements"
+    >
+      {/* SEO 友好的结构化数据 */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: 'LineHero 遊戲公告',
+            description: 'LineHero 無盡冒險最新遊戲公告、維護通知與版本更新資訊',
+            url: 'https://linehero.tw/announcements',
+          }),
+        }}
+      />
+
+      <div className="space-y-6">
+        {sortedAnnouncements.map((announcement) => (
+          <article
+            key={announcement.id}
+            className={`bg-hero-panel/60 border rounded-2xl p-6 shadow-xl transition-all hover:border-hero-gold/40 ${
+              announcement.isImportant
+                ? 'border-hero-gold/50 bg-hero-gold/5'
+                : 'border-white/10'
+            }`}
+            itemScope
+            itemType="https://schema.org/Article"
+          >
+            <header className="mb-4">
+              <div className="flex flex-wrap items-center gap-3 mb-3">
+                <span
+                  className={`px-3 py-1 rounded-full text-xs font-bold border ${getTypeColor(
+                    announcement.type
+                  )}`}
+                >
+                  {getTypeLabel(announcement.type)}
+                </span>
+                {announcement.isImportant && (
+                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-red-500/20 border border-red-500/40 text-red-300">
+                    重要
+                  </span>
+                )}
+                <time
+                  dateTime={announcement.date}
+                  className="text-gray-400 text-sm"
+                  itemProp="datePublished"
+                >
+                  {announcement.dateDisplay}
+                </time>
+              </div>
+              <h2
+                className="text-xl md:text-2xl font-bold text-white mb-2"
+                itemProp="headline"
+              >
+                {announcement.title}
+              </h2>
+            </header>
+            <div
+              className="text-gray-300 leading-relaxed text-sm md:text-base whitespace-pre-line"
+              itemProp="articleBody"
+            >
+              {announcement.content}
+            </div>
+            <meta itemProp="author" content="LineHero Team" />
+            <meta itemProp="publisher" content="LineHero Games" />
+          </article>
+        ))}
+      </div>
+
+      {/* 空状态提示 - 当没有公告时显示 */}
+      {sortedAnnouncements.length === 0 && (
+        <div className="text-center py-12">
+          <p className="text-gray-400 text-lg">目前沒有公告</p>
+        </div>
+      )}
+    </PageLayout>
+  );
+};

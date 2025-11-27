@@ -41,10 +41,9 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
     { label: '遊戲特色', type: 'section', target: '#features' },
     { label: '主打英雄', type: 'section', target: '#heroes' },
     { label: '遊戲畫面', type: 'section', target: '#gallery' },
-    { label: 'LINE 玩法', type: 'page', target: 'game-intro-line' },
-    { label: 'Web 玩法', type: 'page', target: 'game-intro-web' },
+    { label: '玩法介紹', type: 'page', target: 'game-intro-line' },
+    { label: '遊戲公告', type: 'page', target: 'announcements' },
     { label: '商城 / 儲值', type: 'page', target: 'shop' },
-    { label: '辦公室玩家友善', type: 'page', target: 'office-games' },
   ];
 
   const handleHomeClick = () => {
