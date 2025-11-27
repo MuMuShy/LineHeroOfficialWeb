@@ -102,7 +102,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
               </svg>
             </a>
             <a 
-              href="https://line.me/"
+              href="https://lin.ee/WQwrOvC"
               target="_blank"
               rel="noreferrer"
               className="bg-[#06C755] hover:bg-[#05b64d] text-white px-6 py-2 rounded-md shadow-[0_0_15px_rgba(6,199,85,0.4)] transition-all font-bold text-sm transform hover:scale-105 flex items-center gap-2"
