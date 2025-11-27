@@ -36,4 +36,5 @@ export type Page =
   | 'game-intro-web'
   | 'shop'
   | 'office-games'
-  | 'announcements';
+  | 'announcements'
+  | 'faction-intro';
