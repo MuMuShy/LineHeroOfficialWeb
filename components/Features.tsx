@@ -114,6 +114,48 @@ const Features: React.FC = () => {
           </div>
 
           {/* Feature 3: Web Support (Image Right) */}
+<<<<<<< HEAD
+=======
+          <div className="flex flex-col lg:flex-row items-center gap-10 md:gap-20">
+            <div className="flex-1 space-y-6 md:space-y-8 order-1 lg:order-1">
+              <div className="flex items-center gap-4">
+                <div className="p-4 bg-blue-500/10 rounded-2xl border border-blue-500/30 shadow-[0_0_20px_rgba(59,130,246,0.2)]">
+                  <span className="text-3xl md:text-4xl">🖥️</span>
+                </div>
+                <h3 className="text-3xl md:text-5xl font-bold text-white font-display">
+                  Web 網頁版
+                </h3>
+              </div>
+              <p className="text-blue-400 text-lg md:text-2xl font-bold tracking-wide">大螢幕管理更輕鬆</p>
+
+              <p className="text-gray-300 text-base md:text-lg leading-relaxed">
+                手機玩累了？回到家開啟電腦瀏覽器，無縫接軌你的冒險進度。
+                網頁版提供更詳細的數據分析、更方便的管理介面。
+              </p>
+            </div>
+            <div className="flex-1 relative group w-full max-w-sm mx-auto lg:max-w-none order-2 lg:order-2">
+              <div className="absolute inset-0 bg-blue-500/20 blur-3xl rounded-full group-hover:bg-blue-500/30 transition-all duration-500"></div>
+              <div className="relative z-10 bg-[#1e1e1e] rounded-xl p-2 shadow-2xl border border-gray-700 w-full transform group-hover:scale-[1.02] transition-transform">
+                {/* Browser Mockup Header */}
+                <div className="flex items-center gap-2 mb-2 px-3 border-b border-gray-700 pb-2">
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></div>
+                  </div>
+                  <div className="flex-1 bg-black/50 rounded text-[10px] text-gray-500 px-3 py-1 text-center font-mono">linehero.tw/dashboard</div>
+                </div>
+                <img
+                  src="https://mumu.tw/linehero/official_web/web_view.jpg"
+                  alt="Web 儀表板示意"
+                  className="w-full rounded border border-gray-700 opacity-90 group-hover:opacity-100 transition-opacity"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Feature 4: Exploration Mode (Image Right) - from Main */}
+>>>>>>> 856f8d9 (官網更新)
           <div className="flex flex-col lg:flex-row items-center gap-10 md:gap-20">
             <div className="flex-1 space-y-6 md:space-y-8 order-1 lg:order-1">
               <div className="flex items-center gap-4">

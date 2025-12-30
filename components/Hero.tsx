@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
             <span className="relative inline-flex rounded-full h-3 w-3 bg-hero-green"></span>
           </span>
           <span className="text-hero-neon text-xs md:text-sm font-bold tracking-[0.2em] uppercase font-mono">
-            System Online • LINE 聊天室直連
+            System Online • LINE 聊天室直接遊玩
           </span>
         </div>
 

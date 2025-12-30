@@ -1,4 +1,5 @@
-﻿import React, { useEffect, useState } from 'react';
+﻿import React, { useState, useEffect } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
@@ -6,66 +7,20 @@ import Characters from './components/Characters';
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-// import OracleChat from './components/OracleChat';
-import { LegalPage } from './components/Legal';
-import { GameIntroLinePage, GameIntroWebPage, ShopPage, OfficeGamesPage, AnnouncementsPage, FactionIntroPage } from './components/StaticPages';
-import { Page } from './types';
-
-const pageToPath: Record<Page, string> = {
-  home: '/',
-  privacy: '/privacy',
-  terms: '/terms',
-  refund: '/refund',
-  'game-intro-line': '/game-intro/line',
-  'game-intro-web': '/game-intro/web',
-  shop: '/shop',
-  'office-games': '/office-games',
-  announcements: '/announcements',
-  'faction-intro': '/faction-intro',
-};
-
-const normalizePath = (value: string) => {
-  const trimmed = value.replace(/\/+$/, '');
-  return trimmed === '' ? '/' : trimmed;
-};
-
-const pathToPage: Record<string, Page> = Object.entries(pageToPath).reduce<Record<string, Page>>((acc, [page, path]) => {
-  acc[normalizePath(path)] = page as Page;
-  return acc;
-}, {});
-
-const pageTitles: Record<Page, string> = {
-  home: 'LineHero 無盡冒險 | 首款 LINE 聊天室文字冒險 MMORPG',
-  privacy: '隱私權政策 | LineHero 無盡冒險',
-  terms: '服務條款 | LineHero 無盡冒險',
-  refund: '退款政策 | LineHero 無盡冒險',
-  'game-intro-line': 'LINE 玩法介紹 | LineHero 無盡冒險',
-  'game-intro-web': 'Web 玩法介紹 | LineHero 無盡冒險',
-  shop: '商城與儲值 | LineHero 無盡冒險',
-  'office-games': '辦公室玩家友善 | LineHero 無盡冒險',
-  announcements: '遊戲公告 | LineHero 無盡冒險',
-  'faction-intro': '陣營介紹 | LineHero 無盡冒險',
-};
+import SEOHead from './components/SEOHead';
+import { GameIntroWebPage, GameIntroLinePage, ShopPage, OfficeGamesPage, FactionIntroPage, AnnouncementsPage } from './components/StaticPages';
 
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<Page>('home');
+  const [currentPage, setCurrentPage] = useState('home');
+  const [targetSection, setTargetSection] = useState<string | null>(null);
 
+  // Handle browser back/forward buttons
   useEffect(() => {
-    const initialPath = normalizePath(window.location.pathname);
-    const initialPage = pathToPage[initialPath] || 'home';
-    setCurrentPage(initialPage);
-    if (initialPage !== 'home') {
-      window.scrollTo(0, 0);
-    }
-  }, []);
-
-  useEffect(() => {
-    const handlePopState = () => {
-      const path = normalizePath(window.location.pathname);
-      const page = pathToPage[path] || 'home';
-      setCurrentPage(page);
-      if (page !== 'home') {
-        window.scrollTo(0, 0);
+    const handlePopState = (event: PopStateEvent) => {
+      if (event.state && event.state.page) {
+        setCurrentPage(event.state.page);
+      } else {
+        setCurrentPage('home');
       }
     };
 
@@ -73,50 +28,48 @@ const App: React.FC = () => {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  useEffect(() => {
-    document.title = pageTitles[currentPage] || pageTitles.home;
-  }, [currentPage]);
+  const handlePageNav = (pageId: string) => {
+    setCurrentPage(pageId);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.history.pushState({ page: pageId }, '', `/${pageId === 'home' ? '' : pageId}`);
+  };
 
-  const handleNavigate = (page: Page) => {
-    setCurrentPage(page);
-    const nextPath = pageToPath[page] || '/';
-    const currentPath = normalizePath(window.location.pathname);
-    if (normalizePath(nextPath) !== currentPath) {
-      window.history.pushState({ page }, '', nextPath);
-    }
-    if (page !== 'home') {
-      window.scrollTo({ top: 0, behavior: 'auto' });
+  const handleSectionNav = (sectionId: string) => {
+    if (currentPage !== 'home') {
+      setCurrentPage('home');
+      setTargetSection(sectionId);
+      window.history.pushState({ page: 'home' }, '', '/');
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
-  const renderPage = (() => {
+  // Handle scrolling to section after page change
+  useEffect(() => {
+    if (currentPage === 'home' && targetSection) {
+      setTimeout(() => {
+        const element = document.getElementById(targetSection);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+        setTargetSection(null);
+      }, 100); // Small delay to ensure render
+    }
+  }, [currentPage, targetSection]);
+
+  const renderContent = () => {
     switch (currentPage) {
-      case 'privacy':
-        return <LegalPage type="privacy" onBack={() => handleNavigate('home')} />;
-      case 'terms':
-        return <LegalPage type="terms" onBack={() => handleNavigate('home')} />;
-      case 'refund':
-        return <LegalPage type="refund" onBack={() => handleNavigate('home')} />;
-      case 'game-intro-line':
-        return <GameIntroLinePage />;
-      case 'game-intro-web':
-        return <GameIntroWebPage />;
-      case 'shop':
-        return <ShopPage />;
-      case 'office-games':
-        return <OfficeGamesPage />;
-      case 'announcements':
-        return <AnnouncementsPage />;
-      case 'faction-intro':
-        return <FactionIntroPage />;
-      default:
+      case 'home':
         return (
           <>
+            <SEOHead />
             <Hero />
             <Features />
             <Characters />
             <Gallery />
-
             {/* Call to Action Section - LINE Specific */}
             <section className="py-24 bg-gradient-to-t from-hero-dark to-gray-900 relative overflow-hidden border-t border-white/10">
               <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1605806616949-1e87b487bc2a?q=80&w=1974&auto=format&fit=crop')] opacity-10 bg-cover bg-center"></div>
@@ -178,17 +131,90 @@ const App: React.FC = () => {
             </section>
           </>
         );
+      case 'game-intro-web':
+        return (
+          <>
+            <SEOHead
+              title="Web版遊戲介紹"
+              description="了解 LINE Hero 網頁版的強大功能，使用大螢幕更輕鬆管理你的角色與背包。"
+            />
+            <GameIntroWebPage onBack={() => handlePageNav('home')} />
+          </>
+        );
+      case 'game-intro-line':
+        return (
+          <>
+            <SEOHead
+              title="LINE版玩法介紹"
+              description="LINE 聊天室就是你的遊戲視窗！指令操作、快速戰鬥，最適合上班族的偷閒神器。"
+            />
+            <GameIntroLinePage onBack={() => handlePageNav('home')} />
+          </>
+        );
+      case 'shop':
+        return (
+          <>
+            <SEOHead
+              title="遊戲商城"
+              description="查看 LINE Hero 最新熱賣商品、超值禮包與限定造型。"
+            />
+            <ShopPage onBack={() => handlePageNav('home')} />
+          </>
+        );
+      case 'office-games':
+        return (
+          <>
+            <SEOHead
+              title="辦公室小遊戲"
+              description="上班累了嗎？來點輕鬆的小遊戲，放鬆心情再出發。"
+            />
+            <OfficeGamesPage onBack={() => handlePageNav('home')} />
+          </>
+        );
+      case 'faction-intro':
+        return (
+          <>
+            <SEOHead
+              title="陣營介紹"
+              description="兩大陣營對立，你選擇加入哪一方？參與陣營戰，為榮耀而戰！"
+            />
+            <FactionIntroPage onBack={() => handlePageNav('home')} />
+          </>
+        );
+      case 'announcements':
+        return (
+          <>
+            <SEOHead
+              title="最新公告"
+              description="掌握 LINE Hero 第一手遊戲資訊、更新內容與活動預告。"
+            />
+            <AnnouncementsPage onBack={() => handlePageNav('home')} />
+          </>
+        );
+      default:
+        return (
+          <>
+            <SEOHead />
+            <Hero />
+            <Features />
+            <Characters />
+            <Gallery />
+          </>
+        );
     }
-  })();
+  };
 
   return (
-    <div className="bg-hero-dark min-h-screen text-white font-sans selection:bg-hero-gold selection:text-black">
-      <Navbar onNavigate={handleNavigate} />
-      <main>{renderPage}</main>
-      <Footer onNavigate={handleNavigate} />
-      <ScrollToTop />
-      {/* <OracleChat /> */}
-    </div>
+    <HelmetProvider>
+      <div className="bg-hero-dark min-h-screen text-white font-sans selection:bg-hero-neon selection:text-black">
+        <Navbar onNavigate={handlePageNav} onSectionNavigate={handleSectionNav} />
+        <main>
+          {renderContent()}
+        </main>
+        <Footer onNavigate={handlePageNav} />
+        <ScrollToTop />
+      </div>
+    </HelmetProvider>
   );
 };
 
