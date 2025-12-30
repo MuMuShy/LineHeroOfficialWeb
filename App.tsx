@@ -5,6 +5,7 @@ import Features from './components/Features';
 import Characters from './components/Characters';
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 // import OracleChat from './components/OracleChat';
 import { LegalPage } from './components/Legal';
 import { GameIntroLinePage, GameIntroWebPage, ShopPage, OfficeGamesPage, AnnouncementsPage, FactionIntroPage } from './components/StaticPages';
@@ -133,12 +134,12 @@ const App: React.FC = () => {
                 <div className="flex flex-col md:flex-row gap-8 justify-center items-center bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm">
                   {/* QR Code Block */}
                   <div className="bg-white p-4 rounded-xl shadow-xl">
-                     <img 
-                       src="https://qr-official.line.me/gs/M_765llgvq_GW.png?oat_content=qr" 
-                       alt="Line Hero QR Code" 
-                       className="w-40 h-40"
-                     />
-                     <p className="text-black text-xs font-bold mt-2 uppercase tracking-wider">Scan to Play</p>
+                    <img
+                      src="https://qr-official.line.me/gs/M_765llgvq_GW.png?oat_content=qr"
+                      alt="Line Hero QR Code"
+                      className="w-40 h-40"
+                    />
+                    <p className="text-black text-xs font-bold mt-2 uppercase tracking-wider">Scan to Play</p>
                   </div>
 
                   {/* Buttons Block */}
@@ -146,7 +147,7 @@ const App: React.FC = () => {
                     <a href="https://lin.ee/Isv2392o" target="_blank" rel="noreferrer" className="w-full md:w-auto bg-[#06C755] hover:bg-[#05b64d] text-white px-8 py-4 rounded-xl flex items-center justify-center gap-4 transition-all transform hover:scale-105 shadow-2xl font-bold text-xl min-w-[280px]">
                       <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M21.5 12a9.5 9.5 0 1 1-19 0 9.5 9.5 0 0 1 19 0zM12 17.5c4.5 0 8-3 8-6.5s-3.5-6.5-8-6.5-8 3-8 6.5 3.5 6.5 8 6.5z" />
-                        <path d="M10 15.5l6-3.5-6-3.5v7z" fill="white"/>
+                        <path d="M10 15.5l6-3.5-6-3.5v7z" fill="white" />
                       </svg>
                       <div>
                         <div className="text-xs font-medium opacity-80 text-left">立即加入好友</div>
@@ -185,6 +186,7 @@ const App: React.FC = () => {
       <Navbar onNavigate={handleNavigate} />
       <main>{renderPage}</main>
       <Footer onNavigate={handleNavigate} />
+      <ScrollToTop />
       {/* <OracleChat /> */}
     </div>
   );
