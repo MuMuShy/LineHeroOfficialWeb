@@ -2,97 +2,211 @@ import React from 'react';
 
 const Hero: React.FC = () => {
   return (
-    <div className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-hero-dark pb-12 md:pb-20">
-      {/* Background Image with Overlay */}
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-dark pt-20 pb-12 lg:pt-0">
+      {/* Dynamic Background */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://mumu.tw/linehero/official_web/ogimage.png" 
-          alt="Line Hero Fantasy World" 
-          className="w-full h-full object-cover opacity-30 scale-110 animate-pulse-slow"
-          fetchPriority="high"
-          decoding="async"
+        <img
+          src="https://mumu.tw/linehero/official_web/ogimage.png"
+          alt="Line Hero Fantasy World"
+          className="absolute inset-0 w-full h-full object-cover opacity-20 scale-105 animate-pulse-slow"
         />
-        {/* Darker gradient overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-hero-dark/90 via-hero-dark/60 to-hero-dark/90"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,215,0,0.03),transparent_70%)]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-hero-dark via-hero-dark/90 to-hero-dark"></div>
+
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(6,199,85,0.08),transparent_50%)] animate-pulse-slow"></div>
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-hero-secondary/10 rounded-full blur-[100px] animate-float"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-hero-gold/5 rounded-full blur-[80px] animate-float-fast"></div>
+
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]"></div>
+
+        {/* Watermark Text */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center overflow-hidden pointer-events-none z-0 select-none">
+          <span className="text-[15vw] font-black text-white/[0.02] font-en-display tracking-widest whitespace-nowrap">
+            LINEHERO
+          </span>
+        </div>
       </div>
 
-      {/* Bottom Gradient Transition to Next Section (Solves the split feeling) */}
-      <div className="absolute bottom-0 left-0 w-full h-32 md:h-48 bg-gradient-to-b from-transparent via-hero-panel/50 to-hero-panel z-20 pointer-events-none"></div>
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
-      {/* Content - Increased top margin for better spacing */}
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto mt-32 md:mt-40 flex flex-col items-center w-full">
-        
-        {/* Top Badge */}
-        <div className="inline-flex items-center gap-2 mb-6 md:mb-8 px-4 md:px-6 py-1.5 md:py-2 border border-hero-gold/40 rounded-full bg-black/60 backdrop-blur-md shadow-[0_0_20px_rgba(255,215,0,0.05)] animate-float relative z-30">
-          <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-hero-green animate-pulse"></span>
-          <span className="text-hero-gold text-xs md:text-sm font-bold tracking-widest uppercase">
-            LINE 聊天室窗直接遊玩 · 免安裝
-          </span>
-        </div>
-        
-        <h1 className="mb-4 text-white tracking-wide leading-tight drop-shadow-2xl flex flex-col items-center w-full">
-          {/* English Part */}
-          <span className="font-en-display text-5xl sm:text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-b from-hero-gold to-[#b8860b] filter drop-shadow-lg mb-1 md:mb-2">
-            LineHero
-          </span>
-          {/* Chinese Part */}
-          <span className="text-3xl sm:text-4xl md:text-7xl font-black text-white tracking-wider mt-1 md:mt-2 font-sans">
-            無盡冒險
-          </span>
-        </h1>
-
-        <p className="text-sm sm:text-base md:text-xl text-gray-300 my-4 md:my-8 max-w-xl mx-auto font-light leading-relaxed px-2">
-          <span className="block mb-1 md:inline md:mb-0">首款 <span className="text-hero-green font-bold">LINE</span> 文字冒險 MMORPG。</span>
-          <span className="hidden md:inline"> </span>
-          <span className="block">隨時隨地，開啟聊天室窗即可冒險。</span>
-        </p>
-
-        {/* Buttons */}
-        <div className="flex flex-wrap sm:flex-nowrap gap-3 justify-center items-center w-full max-w-4xl mx-auto mt-4 sm:mt-6 px-4 sm:px-0" id="play">
-          <a 
-            href="https://lin.ee/Isv2392o" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="group relative px-6 py-3.5 md:px-8 md:py-4 bg-[#06C755] text-white font-bold text-base md:text-lg rounded-xl hover:bg-[#05b64d] transition-all transform hover:-translate-y-1 shadow-[0_4px_20px_rgba(6,199,85,0.3)] overflow-hidden flex items-center justify-center gap-2.5 whitespace-nowrap min-w-[160px] h-[52px] md:h-[56px]"
-          >
-            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:animate-shine"></div>
-            {/* Clean LINE Icon */}
-            <svg className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0 fill-current" viewBox="0 0 24 24">
-                <path d="M20.4 10.5c0-4.6-4.2-8.4-9.4-8.4-5.2 0-9.4 3.8-9.4 8.4 0 4.1 3.3 7.6 7.9 8.3.3.1.7.3.8.7.1.2.1.5-.1.7l-.5.4-.1.1-.1.1-1.7.9c-.3.1-.5.4-.4.7.1.3.4.5.7.5h.1c4.1 0 8-2.8 9.6-6.5.4-1 .6-2.1.6-3.2z"/>
-                <path d="M16.3 11.8h-6c-.4 0-.7-.3-.7-.7V7.4c0-.4.3-.7.7-.7s.7.3.7.7v3h5.3c.4 0 .7.3.7.7s-.3.7-.7.7z" fill="white"/> 
-            </svg>
-            <span>立即加入冒險</span>
-          </a>
-          
-          <a 
-            href="https://wiki.linehero.tw" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="px-6 py-3.5 md:px-8 md:py-4 border border-white/10 bg-white/5 backdrop-blur-md text-gray-200 font-bold text-base md:text-lg rounded-xl hover:bg-white/10 hover:text-white hover:border-hero-gold/50 transition-all flex items-center justify-center gap-2.5 whitespace-nowrap min-w-[160px] h-[52px] md:h-[56px] group"
-          >
-            <svg className="w-5 h-5 flex-shrink-0 group-hover:text-hero-gold transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
-            <span>攻略 Wiki</span>
-          </a>
-        </div>
-
-        {/* Floating stats */}
-        <div className="mt-8 md:mt-20 w-full px-2 md:px-0 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 border-t border-white/5 pt-6 md:pt-8 bg-black/30 md:bg-black/20 rounded-2xl p-4 md:p-6 backdrop-blur-sm">
-            {[
-              { label: "累積冒險者", value: "3K+" },
-              { label: "裝備總數", value: "50K+" },
-              { label: "戰鬥場次", value: "10M+" },
-              { label: "支援平台", value: "LINE / Web" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center flex flex-col items-center justify-center p-2 rounded-lg bg-white/5 md:bg-transparent">
-                <div className="font-en-display text-xl md:text-3xl font-bold text-hero-gold mb-1 drop-shadow-md">{stat.value}</div>
-                <div className="text-[10px] md:text-xs text-gray-400 font-bold tracking-wider opacity-80">{stat.label}</div>
-              </div>
-            ))}
+        {/* Left Column: Text & CTA */}
+        <div className="flex-1 text-center lg:text-left pt-10 lg:pt-0">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-white/5 border border-hero-green/30 backdrop-blur-md animate-fade-in-up">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-hero-neon-green opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-hero-green"></span>
+            </span>
+            <span className="text-hero-neon-green text-xs md:text-sm font-bold tracking-wider uppercase">
+              LINE 聊天室直接玩 · 免下載
+            </span>
           </div>
+
+          {/* Main Title */}
+          <div className="relative mb-8">
+            <div className="flex items-center gap-4 mb-2 opacity-70">
+              <div className="h-[1px] w-12 bg-hero-gold"></div>
+              <span className="text-hero-gold font-mono text-xs tracking-[0.2em]">SYSTEM ONLINE</span>
+            </div>
+            <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black text-white leading-tight tracking-tight relative z-10">
+              <span className="block font-en-display text-transparent bg-clip-text bg-gradient-to-r from-white via-hero-gold-glow to-hero-gold animate-shine bg-[length:200%_auto] drop-shadow-[0_0_10px_rgba(255,215,0,0.3)]">
+                LineHero
+              </span>
+              <span className="block text-4xl sm:text-5xl lg:text-7xl mt-2 relative">
+                <span className="absolute inset-0 text-hero-neon-green blur-[2px] opacity-70 animate-glitch" aria-hidden="true">無盡冒險</span>
+                <span className="relative text-white text-glow">無盡冒險</span>
+              </span>
+            </h1>
+            <div className="absolute -bottom-4 right-0 hidden lg:block">
+              <span className="text-[10px] text-gray-600 font-mono tracking-widest">VER 1.0.4 // BETA</span>
+            </div>
+          </div>
+
+          <p className="text-gray-300 text-lg sm:text-xl lg:text-2xl mb-12 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+            打破文字遊戲限制，結合 <span className="text-hero-neon-green font-bold">LIFF 視覺技術</span>。
+            <br className="hidden sm:block" />
+            在 LINE 中體驗真正的 MMORPG，一指點擊華麗戰鬥。
+          </p>
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a
+              href="https://lin.ee/Isv2392o"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative px-8 py-4 bg-[#06C755] text-white font-bold text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(6,199,85,0.6)] clip-path-slant"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:animate-shine-fast"></div>
+              <div className="relative flex items-center justify-center gap-3">
+                <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                  <path d="M20.4 10.5c0-4.6-4.2-8.4-9.4-8.4-5.2 0-9.4 3.8-9.4 8.4 0 4.1 3.3 7.6 7.9 8.3.3.1.7.3.8.7.1.2.1.5-.1.7l-.5.4-.1.1-.1.1-1.7.9c-.3.1-.5.4-.4.7.1.3.4.5.7.5h.1c4.1 0 8-2.8 9.6-6.5.4-1 .6-2.1.6-3.2z" />
+                  <path d="M16.3 11.8h-6c-.4 0-.7-.3-.7-.7V7.4c0-.4.3-.7.7-.7s.7.3.7.7v3h5.3c.4 0 .7.3.7.7s-.3.7-.7.7z" fill="white" />
+                </svg>
+                <span className="tracking-wider">立即開始 (Free)</span>
+              </div>
+            </a>
+
+            <a
+              href="https://wiki.linehero.tw"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-white/5 border-l-2 border-hero-gold/50 text-white font-bold text-lg hover:bg-white/10 hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all flex items-center justify-center gap-2 clip-path-slant backdrop-blur-sm"
+            >
+              <svg className="w-5 h-5 text-hero-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+              <span className="tracking-wider">遊戲攻略</span>
+            </a>
+          </div>
+
+          {/* Stats */}
+          <div className="mt-12 flex items-center justify-center lg:justify-start gap-8 text-sm font-mono text-gray-500">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-green-500"></span>
+              線上玩家: 1,204
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-yellow-500"></span>
+              今日戰鬥: 45,201
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column: 3D Phone Mockup */}
+        <div className="flex-1 w-full max-w-md lg:max-w-none relative perspective-1000">
+          <div className="relative mx-auto w-[300px] h-[600px] bg-black rounded-[40px] border-[8px] border-gray-800 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] transform rotate-y-12 rotate-x-6 hover:rotate-y-0 hover:rotate-x-0 transition-transform duration-700 ease-out animate-float">
+            {/* Phone Notch */}
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-gray-800 rounded-b-xl z-20"></div>
+
+            {/* Screen */}
+            <div className="absolute inset-0 rounded-[32px] overflow-hidden bg-gray-900 flex flex-col">
+              {/* LIFF Header */}
+              <div className="h-12 bg-[#1a1b23] flex items-center px-4 justify-between border-b border-gray-800 z-10">
+                <span className="text-white font-bold text-xs">LineHero</span>
+                <div className="flex gap-1">
+                  <div className="w-1.5 h-1.5 rounded-full bg-gray-600"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-gray-600"></div>
+                </div>
+              </div>
+
+              {/* Game UI Content - Simulated Battle */}
+              <div className="flex-1 p-4 relative overflow-hidden flex flex-col">
+                {/* Background Image */}
+                <div className="absolute inset-0 opacity-50">
+                  <img src="https://mumu.tw/linehero/images/tower/endless_tower_bg_landscape.png" className="w-full h-full object-cover" alt="bg" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent"></div>
+                </div>
+
+                {/* Boss Monster */}
+                <div className="relative mt-8 mx-auto w-32 h-32 animate-pulse-slow">
+                  <div className="absolute inset-0 bg-red-500/20 blur-xl rounded-full"></div>
+                  <img src="https://mumu.tw/linehero/images/regions/boss/boss_girl2_small.png" alt="Boss" className="relative z-10 w-full h-full object-contain drop-shadow-lg filter brightness-110" />
+                  {/* Health Bar */}
+                  <div className="absolute -top-4 left-0 w-full h-2 bg-gray-700 rounded-full overflow-hidden border border-gray-600">
+                    <div className="w-[70%] h-full bg-gradient-to-r from-red-600 to-red-400"></div>
+                  </div>
+                  <div className="absolute -top-9 left-1/2 -translate-x-1/2 text-red-400 font-black text-sm whitespace-nowrap text-shadow-sm">LV.99 災厄女皇</div>
+                </div>
+
+                {/* Damage Numbers Effect */}
+                <div className="absolute top-1/3 left-1/2 text-2xl font-black text-yellow-400 animate-bounce font-mono drop-shadow-md">
+                  -9999!
+                </div>
+
+                {/* Player Status */}
+                <div className="mt-auto relative z-10">
+                  <div className="bg-gray-800/80 backdrop-blur border border-gray-700 rounded-lg p-3 mb-3 flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full border-2 border-white/20 overflow-hidden">
+                      <img src="https://mumu.tw/linehero/images/hero_avatar/character_warrior2.png" alt="Avatar" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex justify-between text-xs text-gray-300 mb-1">
+                        <span>狂戰士亞倫</span>
+                        <span className="text-yellow-400">HP 3200/5000</span>
+                      </div>
+                      <div className="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                        <div className="w-[64%] h-full bg-gradient-to-r from-green-500 to-emerald-400"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Skills Grid */}
+                  <div className="grid grid-cols-3 gap-2">
+                    <button className="bg-gray-800 border border-gray-600 rounded-lg p-2 flex flex-col items-center gap-1 active:scale-95 transition-transform">
+                      <div className="w-8 h-8 rounded overflow-hidden">
+                        <img src="https://mumu.tw/linehero/images/skills/RPG%20Swordsman%20skill%20icons/PNG/16.png" alt="Skill 1" className="w-full h-full object-cover" />
+                      </div>
+                      <span className="text-[10px] text-gray-300">強力斬擊</span>
+                    </button>
+                    <button className="bg-gray-800 border border-hero-gold/50 rounded-lg p-2 flex flex-col items-center gap-1 active:scale-95 transition-transform shadow-[0_0_10px_rgba(255,215,0,0.2)]">
+                      <div className="w-8 h-8 rounded overflow-hidden">
+                        <img src="https://mumu.tw/linehero/images/skills/RPG%20Berserker%20skill%20icons/PNG/33.png" alt="Skill 2" className="w-full h-full object-cover" />
+                      </div>
+                      <span className="text-[10px] text-hero-gold font-bold">致命一擊</span>
+                    </button>
+                    <button className="bg-gray-800 border border-gray-600 rounded-lg p-2 flex flex-col items-center gap-1 active:scale-95 transition-transform">
+                      <div className="w-8 h-8 rounded overflow-hidden">
+                        <img src="https://mumu.tw/linehero/images/skills/RPG%20Berserker%20skill%20icons/PNG/49.png" alt="Skill 3" className="w-full h-full object-cover" />
+                      </div>
+                      <span className="text-[10px] text-gray-300">鋼鐵意志</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Chat Input Area Mockup */}
+              <div className="h-12 bg-[#1a1b23] border-t border-gray-800 flex items-center px-3 gap-2">
+                <div className="w-6 h-6 text-gray-500">+</div>
+                <div className="flex-1 h-8 bg-gray-800 rounded px-2 flex items-center text-xs text-gray-500">輸入指令...</div>
+                <div className="w-6 h-6 text-blue-500">➤</div>
+              </div>
+            </div>
+
+            {/* Reflection/Shine on Glass */}
+            <div className="absolute inset-0 rounded-[40px] pointer-events-none bg-gradient-to-tr from-white/10 to-transparent opacity-50 z-30"></div>
+          </div>
+
+          {/* Floating Elements behind phone */}
+          <div className="absolute top-1/4 -right-12 w-20 h-20 bg-hero-neon-green/20 rounded-xl rotate-12 blur-md animate-float-fast z-0 hidden lg:block"></div>
+          <div className="absolute bottom-1/4 -left-12 w-16 h-16 bg-hero-gold/20 rounded-full blur-md animate-float z-0 hidden lg:block"></div>
         </div>
       </div>
     </div>

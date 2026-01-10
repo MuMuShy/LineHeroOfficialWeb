@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
@@ -121,13 +121,13 @@ const App: React.FC = () => {
               <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1605806616949-1e87b487bc2a?q=80&w=1974&auto=format&fit=crop')] opacity-10 bg-cover bg-center"></div>
               <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
                 <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
-                  準備好開始冒險了嗎？<br />
-                  <span className="text-hero-gold">先在 LINE 上集合</span>
+                  準備好體驗次世代 RPG 了嗎？<br />
+                  <span className="text-hero-gold text-shadow-gold">打開 LINE 直接開戰</span>
                 </h2>
                 <p className="text-gray-300 mb-10 text-lg max-w-2xl mx-auto font-medium">
-                  不用下載龐大安裝包，也不需註冊繁瑣帳號。
+                  免下載、免安裝、免註冊，只需 1 秒。
                   <br />
-                  加入官方帳號、掃描 QR Code，隨時隨地直接出戰。
+                  加入官方帳號、掃描 QR Code，您的傳奇冒險即刻開始。
                 </p>
 
                 <div className="flex flex-col md:flex-row gap-8 justify-center items-center bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm">
@@ -142,13 +142,14 @@ const App: React.FC = () => {
                   </div>
 
                   {/* Buttons Block */}
-                  <div className="flex flex-col gap-4 w-full md:w-auto">
-                    <a href="https://lin.ee/Isv2392o" target="_blank" rel="noreferrer" className="w-full md:w-auto bg-[#06C755] hover:bg-[#05b64d] text-white px-8 py-4 rounded-xl flex items-center justify-center gap-4 transition-all transform hover:scale-105 shadow-2xl font-bold text-xl min-w-[280px]">
-                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+          <div className="flex flex-col gap-4 w-full md:w-auto">
+                    <a href="https://lin.ee/Isv2392o" target="_blank" rel="noreferrer" className="w-full md:w-auto bg-[#06C755] hover:bg-[#05b64d] text-white px-8 py-4 rounded-xl flex items-center justify-center gap-4 transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(6,199,85,0.4)] font-bold text-xl min-w-[280px] group relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:animate-shine-fast"></div>
+                      <svg className="w-8 h-8 relative z-10" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M21.5 12a9.5 9.5 0 1 1-19 0 9.5 9.5 0 0 1 19 0zM12 17.5c4.5 0 8-3 8-6.5s-3.5-6.5-8-6.5-8 3-8 6.5 3.5 6.5 8 6.5z" />
                         <path d="M10 15.5l6-3.5-6-3.5v7z" fill="white"/>
                       </svg>
-                      <div>
+                      <div className="relative z-10">
                         <div className="text-xs font-medium opacity-80 text-left">立即加入好友</div>
                         <div className="text-lg">開啟 LINE 冒險</div>
                       </div>
