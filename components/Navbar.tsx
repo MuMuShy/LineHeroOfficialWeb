@@ -1,15 +1,16 @@
-﻿import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Page } from '../types';
 
 interface NavbarProps {
   onNavigate: (page: Page) => void;
+  onSectionNavigate?: (section: string) => void;
 }
 
 type NavLink =
   | { label: string; type: 'section'; target: string }
   | { label: string; type: 'page'; target: Page };
 
-const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
+const Navbar: React.FC<NavbarProps> = ({ onNavigate, onSectionNavigate }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -23,13 +24,18 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
 
   const handleSectionNav = (selector: string) => {
     setMobileMenuOpen(false);
-    onNavigate('home');
-    setTimeout(() => {
-      const element = document.querySelector(selector);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 80);
+    if (onSectionNavigate) {
+      // Remove # from selector
+      onSectionNavigate(selector.replace('#', ''));
+    } else {
+      onNavigate('home');
+      setTimeout(() => {
+        const element = document.querySelector(selector);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 80);
+    }
   };
 
   const handlePageNav = (page: Page) => {
@@ -52,11 +58,10 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
   };
 
   return (
-    <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled
-          ? 'bg-[#111216]/95 backdrop-blur-md border-b border-white/10 py-2 md:py-3 shadow-[0_4px_30px_rgba(0,0,0,0.5)]'
-          : 'bg-gradient-to-b from-black/80 to-transparent py-4 md:py-6'
-        }`}
+    <nav 
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-[#111216]/95 backdrop-blur-md border-b border-white/10 py-2 md:py-3 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' : 'bg-gradient-to-b from-black/80 to-transparent py-4 md:py-6'
+      }`}
     >
       {/* Top tech line decoration */}
       <div className={`absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent transition-opacity duration-300 ${isScrolled ? 'opacity-100' : 'opacity-0'}`}></div>
@@ -64,25 +69,25 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center cursor-pointer group gap-3" onClick={handleHomeClick}>
-            <img
-              src="https://mumu.tw/linehero/official_web/favi/web-app-manifest-512x512.png"
-              alt="LineHero Logo"
+             <img 
+              src="https://mumu.tw/linehero/official_web/favi/web-app-manifest-512x512.png" 
+              alt="LineHero Logo" 
               className="h-10 md:h-14 w-auto object-contain transition-transform hover:scale-105 drop-shadow-[0_0_5px_rgba(255,215,0,0.3)]"
-            />
+             />
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6 items-center">
             {navLinks.map((link) => (
-              <button
-                key={link.label}
+              <button 
+                key={link.label} 
                 onClick={() => link.type === 'section' ? handleSectionNav(link.target) : handlePageNav(link.target)}
                 className="text-gray-200 hover:text-hero-gold transition-colors text-sm font-bold tracking-wider"
               >
                 {link.label}
               </button>
             ))}
-            <a
+            <a 
               href="https://explore.linehero.tw"
               target="_blank"
               rel="noopener noreferrer"
@@ -93,7 +98,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </a>
-            <a
+            <a 
               href="https://tarven.linehero.tw"
               target="_blank"
               rel="noopener noreferrer"
@@ -104,10 +109,10 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </a>
-            <a
+            <a 
               href="https://wiki.linehero.tw"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="text-gray-200 hover:text-hero-gold transition-colors text-sm font-bold tracking-wider flex items-center gap-1"
             >
               Wiki 攻略
@@ -115,19 +120,31 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </a>
-            <a
+            <a 
               href="https://lin.ee/WQwrOvC"
               target="_blank"
               rel="noreferrer"
-              className="bg-[#06C755] hover:bg-[#05b64d] text-white px-6 py-2 rounded-md shadow-[0_0_15px_rgba(6,199,85,0.4)] transition-all font-bold text-sm transform hover:scale-105 flex items-center gap-2"
+              className="bg-hero-green hover:bg-[#05b64d] text-white px-6 py-2.5 rounded clip-path-polygon shadow-[0_0_15px_rgba(6,199,85,0.4)] transition-all font-bold text-sm transform hover:scale-105 flex items-center gap-2 group relative overflow-hidden"
             >
+              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></div>
               <span>立即開玩</span>
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+              </svg>
             </a>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
+          <div className="md:hidden flex items-center gap-4">
+             <a 
+              href="https://lin.ee/WQwrOvC"
+              target="_blank"
+              rel="noreferrer"
+              className="bg-hero-green text-white px-4 py-1.5 rounded text-xs font-bold shadow-[0_0_10px_rgba(6,199,85,0.3)]"
+            >
+              PLAY
+            </a>
+            <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-white hover:text-hero-gold focus:outline-none"
             >
@@ -157,29 +174,29 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
               </button>
             ))}
             <a
-              href="https://explore.linehero.tw"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full text-left px-3 py-3 text-base font-bold text-gray-200 hover:text-purple-400 hover:bg-white/5 rounded-lg"
-            >
-              探索模式
-            </a>
+                href="https://explore.linehero.tw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-left px-3 py-3 text-base font-bold text-gray-200 hover:text-purple-400 hover:bg-white/5 rounded-lg"
+              >
+                探索模式
+              </a>
             <a
-              href="https://tarven.linehero.tw"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full text-left px-3 py-3 text-base font-bold text-gray-200 hover:text-hero-gold hover:bg-white/5 rounded-lg"
-            >
-              冒險者酒館
-            </a>
+                href="https://tarven.linehero.tw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-left px-3 py-3 text-base font-bold text-gray-200 hover:text-hero-gold hover:bg-white/5 rounded-lg"
+              >
+                冒險者酒館
+              </a>
             <a
-              href="https://wiki.linehero.tw"
-              target="_blank"
-              rel="noreferrer"
-              className="block w-full text-left px-3 py-3 text-base font-bold text-gray-200 hover:text-hero-gold hover:bg-white/5 rounded-lg"
-            >
-              Wiki 攻略
-            </a>
+                href="https://wiki.linehero.tw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-left px-3 py-3 text-base font-bold text-gray-200 hover:text-hero-gold hover:bg-white/5 rounded-lg"
+              >
+                Wiki 攻略
+              </a>
           </div>
         </div>
       )}

@@ -1,24 +1,37 @@
 ﻿import React from 'react';
 
-const PageLayout: React.FC<{ title: string; subtitle: string; accent?: string }> = ({ title, subtitle, accent = 'LINE Hero', children }) => (
-  <div className="bg-hero-dark min-h-screen pt-28 pb-16 px-4 md:px-8 text-gray-100">
-    <div className="max-w-6xl mx-auto">
-      <header className="mb-10 text-center">
-        <p className="text-sm uppercase tracking-[0.2em] text-hero-gold/80 font-bold mb-2">{accent}</p>
-        <h1 className="text-3xl md:text-4xl font-black text-white mb-3">{title}</h1>
+const PageLayout: React.FC<{ title: string; subtitle: string; accent?: string; children: React.ReactNode }> = ({ title, subtitle, accent = 'LINE Hero', children }) => (
+  <div className="bg-hero-dark min-h-screen pt-28 pb-16 px-4 md:px-8 text-gray-100 relative overflow-hidden">
+    {/* Background Texture */}
+    <div className="absolute inset-0 bg-[url('https://mumu.tw/images/noise.png')] opacity-[0.03] pointer-events-none mix-blend-overlay"></div>
+    <div className="absolute top-0 left-0 w-full h-[50vh] bg-gradient-to-b from-hero-secondary/10 to-transparent pointer-events-none"></div>
+
+    <div className="max-w-6xl mx-auto relative z-10">
+      <header className="mb-12 text-center">
+        <div className="inline-block px-3 py-1 mb-4 border border-hero-gold/30 rounded-full bg-hero-gold/5 backdrop-blur-sm">
+          <p className="text-xs uppercase tracking-[0.2em] text-hero-gold font-bold">{accent}</p>
+        </div>
+        <h1 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight drop-shadow-lg">{title}</h1>
+        <div className="h-[1px] w-24 bg-gradient-to-r from-transparent via-white/20 to-transparent mx-auto mb-6"></div>
         <p className="text-gray-300 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">{subtitle}</p>
       </header>
 
-      <div className="space-y-8">{children}</div>
+      <div className="space-y-8 animate-fade-in-up">{children}</div>
     </div>
   </div>
 );
 
 const Card: React.FC<{ title: string; body: React.ReactNode; badge?: string }> = ({ title, body, badge }) => (
-  <div className="bg-hero-panel/60 border border-white/10 rounded-2xl p-6 shadow-xl hover:border-hero-gold/40 transition-colors">
-    {badge && <span className="text-xs font-bold text-hero-gold bg-hero-gold/10 px-3 py-1 rounded-full inline-block mb-3">{badge}</span>}
-    <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
-    <p className="text-gray-300 leading-relaxed text-sm md:text-base">{body}</p>
+  <div className="glass-panel p-6 md:p-8 rounded-2xl hover:border-hero-gold/30 transition-all duration-300 group hover:-translate-y-1 relative">
+    {badge && (
+      <span className="absolute top-4 right-4 text-[10px] font-bold text-hero-gold bg-hero-gold/10 border border-hero-gold/20 px-2 py-1 rounded-sm uppercase tracking-wider">
+        {badge}
+      </span>
+    )}
+    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-hero-gold transition-colors">{title}</h3>
+    <div className="text-gray-400 leading-relaxed text-sm md:text-base border-t border-white/5 pt-3">
+      {body}
+    </div>
   </div>
 );
 
@@ -348,14 +361,14 @@ export const FactionIntroPage: React.FC = () => {
             {/* 陣營圖片 */}
             {faction.imageUrl && (
               <div className="relative w-full h-64 mb-4 rounded-xl overflow-hidden group">
-                <img 
-                  src={faction.imageUrl} 
+                <img
+                  src={faction.imageUrl}
                   alt={faction.name}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
-                  
+
                   <div className="text-5xl mb-2">{faction.icon}</div>
                   <h3 className={`text-3xl font-bold ${faction.textColor}`}>
                     {faction.name}
@@ -363,7 +376,7 @@ export const FactionIntroPage: React.FC = () => {
                 </div>
               </div>
             )}
-            
+
             {/* 如果沒有圖片，顯示圖標和標題 */}
             {!faction.imageUrl && (
               <div className="text-center mb-4">
@@ -373,7 +386,7 @@ export const FactionIntroPage: React.FC = () => {
                 </h3>
               </div>
             )}
-            
+
             <p className="text-gray-300 text-base md:text-lg leading-relaxed text-center">
               {faction.description}
             </p>
@@ -386,13 +399,13 @@ export const FactionIntroPage: React.FC = () => {
         <div className="bg-gradient-to-br from-hero-gold/20 via-hero-gold/10 to-hero-gold/5 border-2 border-hero-gold/40 rounded-2xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
           {/* 背景裝飾 */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,215,0,0.1),transparent_70%)]"></div>
-          
+
           <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-8">
             {/* 代幣圖片 */}
             <div className="flex-shrink-0 w-full md:w-1/3 flex justify-center">
               <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden bg-gradient-to-br from-hero-gold/20 to-hero-gold/5 border-2 border-hero-gold/30 shadow-xl group">
-                <img 
-                  src="https://mumu.tw/linehero/images/factions/faction_token_rpg.png" 
+                <img
+                  src="https://mumu.tw/linehero/images/factions/faction_token_rpg.png"
                   alt="陣營代幣"
                   className="w-full h-full object-contain p-4 transition-transform duration-300 group-hover:scale-110"
                 />
@@ -409,7 +422,7 @@ export const FactionIntroPage: React.FC = () => {
                   陣營代幣
                 </h2>
               </div>
-              
+
               <p className="text-gray-300 text-base md:text-lg leading-relaxed">
                 陣營代幣是陣營系統的核心道具，透過參與各種陣營活動可以獲得。使用陣營代幣可在陣營商店兌換各種珍貴獎勵，包括裝備、素材與特殊道具。
               </p>
@@ -438,7 +451,7 @@ export const FactionIntroPage: React.FC = () => {
                     </li>
                   </ul>
                 </div>
-                
+
                 <div className="bg-black/30 rounded-lg p-4 border border-white/10">
                   <h4 className="text-hero-gold font-bold text-sm mb-2">主要用途</h4>
                   <ul className="space-y-1 text-gray-300 text-sm">
@@ -473,21 +486,20 @@ export const FactionIntroPage: React.FC = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center flex items-center justify-center gap-3">
           陣營功能總覽
         </h2>
-        
+
         <div className="space-y-8">
           {gameFeatures.map((feature, index) => (
             <div
               key={feature.id}
-              className={`bg-hero-panel/60 border border-white/10 rounded-2xl p-6 md:p-8 shadow-xl hover:border-hero-gold/40 transition-all ${
-                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-              } flex flex-col md:flex items-center gap-6 md:gap-8`}
+              className={`bg-hero-panel/60 border border-white/10 rounded-2xl p-6 md:p-8 shadow-xl hover:border-hero-gold/40 transition-all ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                } flex flex-col md:flex items-center gap-6 md:gap-8`}
             >
               {/* 功能圖片 */}
               <div className="flex-shrink-0 w-full md:w-1/2">
                 {feature.imageUrl ? (
                   <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden group">
-                    <img 
-                      src={feature.imageUrl} 
+                    <img
+                      src={feature.imageUrl}
                       alt={feature.title}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
@@ -510,7 +522,7 @@ export const FactionIntroPage: React.FC = () => {
                     {feature.title}
                   </h3>
                 </div>
-                
+
                 <p className="text-gray-300 text-base md:text-lg leading-relaxed">
                   {feature.description}
                 </p>
@@ -573,8 +585,8 @@ export const FactionIntroPage: React.FC = () => {
       </div>
 
       {/* 陣營選擇提示 */}
-      <Card 
-        title="如何選擇陣營" 
+      <Card
+        title="如何選擇陣營"
         body={
           <div className="space-y-3">
             <p className="text-gray-300">
@@ -593,7 +605,7 @@ export const FactionIntroPage: React.FC = () => {
 
 export const AnnouncementsPage: React.FC = () => {
   // 按日期排序，最新的在前
-  const sortedAnnouncements = [...announcements].sort((a, b) => 
+  const sortedAnnouncements = [...announcements].sort((a, b) =>
     new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
@@ -621,11 +633,10 @@ export const AnnouncementsPage: React.FC = () => {
         {sortedAnnouncements.map((announcement) => (
           <article
             key={announcement.id}
-            className={`bg-hero-panel/60 border rounded-2xl p-6 shadow-xl transition-all hover:border-hero-gold/40 ${
-              announcement.isImportant
+            className={`bg-hero-panel/60 border rounded-2xl p-6 shadow-xl transition-all hover:border-hero-gold/40 ${announcement.isImportant
                 ? 'border-hero-gold/50 bg-hero-gold/5'
                 : 'border-white/10'
-            }`}
+              }`}
             itemScope
             itemType="https://schema.org/Article"
           >
