@@ -11,8 +11,8 @@ interface SEOHeadProps {
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({
-    title = "LINE Hero 無盡冒險 | 首款 LINE 聊天室文字 MMORPG",
-    description = "【2025最新】免下載、免安裝！在 LINE 聊天室就能玩的 MMORPG。萬人線上共鬥、自由交易、合成神裝。現在加入即送新手大禮包！",
+    title = "LINE Hero 無盡冒險 | 免下載安裝 LINE 即玩 RPG | 聊天視窗直接開戰",
+    description = "【2026最新】打開 LINE 就能玩的 RPG！免下載、免安裝，在聊天視窗體驗完整 MMORPG。結合 LIFF 視覺技術打造精美介面，保留經典文字冒險的深度敘事。現在加入即送新手大禮包！",
     image = "https://mumu.tw/linehero/official_web/ogimage.png",
     url = "https://linehero.tw",
     type = "website",
@@ -59,9 +59,9 @@ const SEOHead: React.FC<SEOHeadProps> = ({
                     "@context": "https://schema.org",
                     "@type": "VideoGame",
                     "name": "LINE Hero 無盡冒險",
-                    "alternateName": ["LineHero", "LINE RPG", "LINE 文字遊戲"],
-                    "description": "台灣最受歡迎的 LINE 聊天室 MMORPG。結合文字冒險與現代 RPG 系統，免安裝開賴即玩。",
-                    "genre": ["MMORPG", "Text Adventure", "Role Playing Game"],
+                    "alternateName": ["LineHero", "免下載 LINE RPG", "聊天視窗 RPG", "LINE 即玩 RPG", "LINE 文字冒險遊戲"],
+                    "description": "免下載、免安裝的 LINE 即玩 RPG。打開 LINE 聊天視窗就能開始冒險，結合 LIFF 視覺技術打造精美介面，保留經典文字冒險的深度敘事體驗。",
+                    "genre": ["MMORPG", "Chat RPG", "Text Adventure", "Role Playing Game"],
                     "gamePlatform": ["LINE", "Web", "Mobile"],
                     "applicationCategory": "Game",
                     "operatingSystem": "Any",

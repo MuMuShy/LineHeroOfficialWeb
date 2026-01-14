@@ -8,7 +8,7 @@ const Features: React.FC = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-hero-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16 md:mb-28 relative">
+        <header className="text-center mb-16 md:mb-28 relative">
           <span className="text-hero-neon font-mono text-sm tracking-[0.3em] uppercase opacity-70 mb-2 block">System Features</span>
           <h2 className="font-display text-4xl md:text-6xl font-black text-white mb-6 tracking-wide drop-shadow-lg">
             遊戲<span className="text-transparent bg-clip-text bg-gradient-to-r from-hero-gold to-yellow-600">特色</span>
@@ -17,11 +17,11 @@ const Features: React.FC = () => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-hero-neon rotate-45 shadow-[0_0_10px_#00f3ff]"></div>
           </div>
           <p className="mt-8 text-gray-400 max-w-2xl mx-auto font-medium text-base md:text-xl px-2 leading-relaxed">
-            不只是文字遊戲，而是一個完整的世界。
+            免下載安裝，打開 LINE 就能玩的完整 RPG 世界。
             <br className="hidden md:block" />
-            <span className="text-white font-bold">LINE Flex</span> 視覺化互動，讓冒險觸手可及。
+            結合 <span className="text-white font-bold">LIFF 視覺技術</span>，既有經典文字冒險的深度敘事，更有精美介面觸手可及。
           </p>
-        </div>
+        </header>
 
         <div className="space-y-24 md:space-y-40">
           {/* Feature 1: Combat (Image Right) */}
@@ -35,13 +35,14 @@ const Features: React.FC = () => {
                   視覺戰鬥
                 </h3>
               </div>
-              <p className="text-hero-green text-lg md:text-2xl font-bold tracking-racking-wide">LINE Flex 技術 · 告別純文字</p>
+              <p className="text-hero-green text-lg md:text-2xl font-bold tracking-racking-wide">聊天視窗 RPG · 告別單調文字介面</p>
 
               <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-                利用 LINE Flex Message 技術，將傳統 MUD 昇華為視覺饗宴。
-                精美的技能圖示、直覺的按鈕操作。
+                利用 LINE Flex Message 技術，在免下載的聊天視窗裡就能體驗精美戰鬥畫面。
+                保留經典文字冒險的深度敘事，搭配直覺的按鈕操作。
                 <br className="hidden md:block" />
                 <span className="text-white font-bold border-b border-hero-green/50 pb-0.5">不需要打字</span>，點擊即可施放華麗技能。
+                <a href="/guide" className="text-hero-green hover:underline ml-1">了解更多玩法 →</a>
               </p>
               <ul className="space-y-3 md:space-y-4 text-gray-400 text-sm md:text-base">
                 <li className="flex items-center gap-3 group">

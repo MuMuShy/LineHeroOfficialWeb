@@ -76,13 +76,13 @@ const App: React.FC = () => {
               <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1605806616949-1e87b487bc2a?q=80&w=1974&auto=format&fit=crop')] opacity-10 bg-cover bg-center"></div>
               <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
                 <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
-                  準備好體驗次世代 RPG 了嗎？<br />
-                  <span className="text-hero-gold text-shadow-gold">打開 LINE 直接開戰</span>
+                  準備好體驗免下載的 LINE 即玩 RPG 嗎？<br />
+                  <span className="text-hero-gold text-shadow-gold">打開聊天視窗直接開戰</span>
                 </h2>
                 <p className="text-gray-300 mb-10 text-lg max-w-2xl mx-auto font-medium">
                   免下載、免安裝、免註冊，只需 1 秒。
                   <br />
-                  加入官方帳號、掃描 QR Code，您的傳奇冒險即刻開始。
+                  加入官方帳號、掃描 QR Code，您的<span className="text-white font-bold">聊天視窗 RPG</span> 冒險即刻開始。
                 </p>
 
                 <div className="flex flex-col md:flex-row gap-8 justify-center items-center bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm">
