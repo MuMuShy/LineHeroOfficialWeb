@@ -24,10 +24,10 @@ const getName = (entry: RankEntry, fallback: string) =>
 const getPower = (entry: RankEntry) =>
   Number(
     entry.power ||
-      entry.total_power ||
-      entry.score ||
-      entry.value ||
-      0
+    entry.total_power ||
+    entry.score ||
+    entry.value ||
+    0
   );
 
 const getAvatar = (entry: RankEntry) =>
@@ -35,6 +35,45 @@ const getAvatar = (entry: RankEntry) =>
     entry.avatar ||
     entry.icon ||
     DEFAULT_AVATAR) as string;
+
+const getEquipment = (entry: RankEntry) =>
+  (entry.equipment || {}) as Record<string, Record<string, unknown>>;
+
+const getEquipImage = (equip?: Record<string, unknown>) =>
+  (equip?.image_url ||
+    equip?.image ||
+    equip?.icon ||
+    'https://mumu.tw/linehero/images/items/default.png') as string;
+
+const getEnhanceLevel = (equip?: Record<string, unknown>) =>
+  Number(equip?.enhancement_level || equip?.enhance_level || 0);
+
+const renderEquipSlots = (entry?: RankEntry) => {
+  if (!entry) return null;
+  const equip = getEquipment(entry);
+  const slots = ['main_hand', 'off_hand', 'helmet', 'chest', 'pants', 'gloves', 'necklace'];
+  return (
+    <div className="grid grid-cols-7 gap-1.5">
+      {slots.map((slot) => {
+        const item = equip[slot];
+        return (
+          <div key={slot} className="relative bg-black/60 border border-white/10 rounded-lg p-1">
+            <img
+              src={getEquipImage(item)}
+              alt={String(item?.name || slot)}
+              className="w-full h-8 object-contain"
+            />
+            {getEnhanceLevel(item) > 0 && (
+              <span className="absolute -bottom-1 -right-1 text-[10px] px-1.5 py-0.5 rounded-full bg-hero-gold/30 border border-hero-gold/50 text-hero-gold font-bold">
+                +{getEnhanceLevel(item)}
+              </span>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
 const formatNumber = (value: number) =>
   new Intl.NumberFormat('en-US').format(value);
@@ -131,8 +170,8 @@ const RankingPowerPage: React.FC = () => {
                   idx === 0
                     ? 'bg-hero-gold/20 border-hero-gold/50 text-hero-gold'
                     : idx === 1
-                    ? 'bg-blue-500/20 border-blue-500/40 text-blue-300'
-                    : 'bg-amber-500/20 border-amber-500/40 text-amber-300';
+                      ? 'bg-blue-500/20 border-blue-500/40 text-blue-300'
+                      : 'bg-amber-500/20 border-amber-500/40 text-amber-300';
 
                 return (
                   <div
@@ -151,7 +190,8 @@ const RankingPowerPage: React.FC = () => {
                         <div className="text-xl font-black text-hero-gold">{power}</div>
                       </div>
                     </div>
-                    <div className="mt-4 text-xs text-gray-400">本週勝場 +{18 - idx * 3}</div>
+                    <div className="mt-4 text-xs text-gray-400">裝備預覽</div>
+                    {renderEquipSlots(entry)}
                   </div>
                 );
               })}
@@ -179,7 +219,7 @@ const RankingPowerPage: React.FC = () => {
                         <div className="text-sm font-bold text-white">{name}</div>
                         <div className="text-xs text-gray-400">戰力 {power}</div>
                       </div>
-                      <div className="text-xs text-hero-gold font-bold">+{12 - (idx % 5)}%</div>
+                      <div className="hidden md:block w-60">{renderEquipSlots(entry)}</div>
                     </div>
                   );
                 })}
