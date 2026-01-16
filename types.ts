@@ -37,4 +37,11 @@ export type Page =
   | 'shop'
   | 'office-games'
   | 'announcements'
-  | 'faction-intro';
+  | 'faction-intro'
+  | 'features'
+  | 'feature-raid-team'
+  | 'feature-region-boss'
+  | 'feature-blacksmith'
+  | 'feature-inventory'
+  | 'feature-social'
+  | 'ranking-power';

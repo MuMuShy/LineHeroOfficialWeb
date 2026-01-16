@@ -1,4 +1,5 @@
 ﻿import React from 'react';
+import { Page } from '../types';
 
 const PageLayout: React.FC<{ title: string; subtitle: string; accent?: string; children: React.ReactNode }> = ({ title, subtitle, accent = 'LINE Hero', children }) => (
   <div className="bg-hero-dark min-h-screen pt-28 pb-16 px-4 md:px-8 text-gray-100 relative overflow-hidden">
@@ -100,6 +101,28 @@ export const ShopPage: React.FC = () => (
       <Card title="安全支付" body="透過第三方交易平台完成，所有訂單可於客服查詢 並有發票。" />
     </div>
 
+    <div className="bg-hero-panel/60 border border-hero-gold/30 rounded-2xl p-6 md:p-8 shadow-2xl">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div>
+          <h2 className="text-2xl font-bold text-white mb-2">贊助支持</h2>
+          <p className="text-gray-300 text-sm md:text-base">
+            前往贊助頁面支持伺服器營運，並查看最新支持方案。
+          </p>
+        </div>
+        <a
+          href="https://sponsor.linehero.tw/tab/support"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center justify-center gap-2 bg-hero-gold/20 border border-hero-gold/50 text-hero-gold hover:text-white hover:bg-hero-gold/30 transition-colors px-5 py-3 rounded-xl font-bold text-sm"
+        >
+          前往贊助頁
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
     <div className="bg-hero-panel/60 border border-hero-gold/30 rounded-2xl p-6 md:p-8 shadow-2xl space-y-4">
       <h2 className="text-2xl font-bold text-white">禮包：傳奇冒險者</h2>
       <p className="text-gray-300 text-sm md:text-base">示意畫面 可於遊戲中的商城進行購買。</p>
@@ -159,15 +182,24 @@ export interface Announcement {
 
 // 範例公告資料 - 實際使用時可以從 API 或 CMS 獲取
 const announcements: Announcement[] = [
-  // {
-  //   id: '1',
-  //   type: 'game',
-  //   title: '新活動「春季冒險祭」即將開始！',
-  //   content: '春季冒險祭活動將於本週末開始，參與活動可獲得限定裝備與豐厚獎勵。活動期間完成指定任務即可領取特殊獎勵，敬請期待！',
-  //   date: '2025-01-15T10:00:00+08:00',
-  //   dateDisplay: '2025-01-15',
-  //   isImportant: true,
-  // },
+  {
+    id: '2026-01-14-update',
+    type: 'update',
+    title: '新功能預告 - 組隊副本 / 區域 Boss / 鐵匠鋪更新',
+    content: '本次更新推出組隊副本，支援玩家協力挑戰高難度關卡；新增區域 Boss，等你號召夥伴討伐強敵；鐵匠鋪功能同步升級，裝備強化與打造流程更順暢。',
+    date: '2026-01-14T10:00:00+08:00',
+    dateDisplay: '2026-01-14',
+    isImportant: true,
+  },
+  {
+    id: '1',
+    type: 'game',
+    title: '新活動「春季冒險祭」即將開始！',
+    content: '春季冒險祭活動將於本週末開始，參與活動可獲得限定裝備與豐厚獎勵。活動期間完成指定任務即可領取特殊獎勵，敬請期待！',
+    date: '2025-01-15T10:00:00+08:00',
+    dateDisplay: '2025-01-15',
+    isImportant: true,
+  },
   // {
   //   id: '2',
   //   type: 'maintenance',
@@ -215,393 +247,90 @@ const getTypeColor = (type: AnnouncementType): string => {
   return colors[type];
 };
 
-export const FactionIntroPage: React.FC = () => {
-  // 陣營資料
-  const factions = [
-    {
-      id: 'faction-1',
-      name: '聖光教堂',
-      icon: '',
-      description: '代表光明與秩序的陣營，致力於守護世界的和平與正義。',
-      imageUrl: 'https://mumu.tw/linehero/images/factions/faction_holy_church.png', // 陣營圖片 URL，可在此處填入圖片連結
-      color: 'from-blue-500/20 to-blue-600/10',
-      borderColor: 'border-blue-500/40',
-      textColor: 'text-blue-300',
-    },
-    {
-      id: 'faction-2',
-      name: '暗影議會',
-      icon: '',
-      description: '追求力量與自由的陣營，相信在黑暗中也能找到屬於自己的道路。',
-      imageUrl: 'https://mumu.tw/linehero/images/factions/faction_shadow_council.png', // 陣營圖片 URL，可在此處填入圖片連結
-      color: 'from-red-500/20 to-red-600/10',
-      borderColor: 'border-red-500/40',
-      textColor: 'text-red-300',
-    },
-  ];
-
-  // 遊戲功能介紹
-  const gameFeatures = [
-    {
-      id: 'donation-shop',
-      title: '常駐捐獻與商店',
-      icon: '',
-      imageUrl: 'https://mumu.tw/linehero/official_web/game_view/faction_shop.png', // 功能圖片 URL，可在此處填入圖片連結
-      description: '透過捐獻素材換取貢獻點數與陣營經驗值，並在陣營商店使用陣營代幣兌換各種獎勵。',
-      rewards: [
-        '貢獻點數',
-        '陣營經驗值',
-        '陣營代幣',
-        '商店限定獎勵',
-      ],
-    },
-    {
-      id: 'daily-tasks',
-      title: '每日任務',
-      icon: '',
-      imageUrl: 'https://mumu.tw/linehero/official_web/game_view/faction_task.png', // 功能圖片 URL，可在此處填入圖片連結
-      description: '完成每日捐獻任務與討伐任務，獲得陣營代幣、貢獻點數與陣營經驗值。',
-      rewards: [
-        '陣營代幣',
-        '貢獻點數',
-        '陣營經驗值',
-      ],
-      subFeatures: [
-        {
-          name: '每日捐獻任務',
-          desc: '捐獻指定素材完成任務，可刷新任務內容',
-        },
-        {
-          name: '每日討伐任務',
-          desc: '在探索區完成指定場次，回報後獲得獎勵',
-        },
-      ],
-    },
-    {
-      id: 'border-defense',
-      title: '邊境防守',
-      icon: '',
-      imageUrl: 'https://mumu.tw/linehero/official_web/game_view/faction_board.png', // 功能圖片 URL，可在此處填入圖片連結
-      description: '參與邊境據點的防守行動，透過不同職業的行動協助陣營控制據點，獲得陣營代幣與貢獻點數。',
-      rewards: [
-        '陣營代幣',
-        '貢獻點數',
-        '每日累積獎池分配',
-      ],
-      subFeatures: [
-        {
-          name: '防守行動',
-          desc: '戰士防守、盜賊突襲、法師強化、牧師聖療、偵查等行動',
-        },
-        {
-          name: '據點控制',
-          desc: '控制據點後每 5 分鐘產出代幣，每日結算分配給參與者',
-        },
-      ],
-    },
-    {
-      id: 'world-boss',
-      title: '世界共鬥',
-      icon: '',
-      imageUrl: 'https://mumu.tw/linehero/official_web/game_view/faction_boss.png', // 功能圖片 URL，可在此處填入圖片連結
-      description: '與全伺服器玩家共同挑戰世界 Boss，根據傷害排行與擊殺次數獲得豐厚獎勵。',
-      rewards: [
-        '固定獎勵',
-        '機率獎勵',
-        '死亡獎勵',
-        '週排行獎勵',
-      ],
-      subFeatures: [
-        {
-          name: '每日攻擊',
-          desc: '每日可攻擊多次，傳奇冒險者享有額外次數',
-        },
-        {
-          name: '階段系統',
-          desc: 'Boss 死亡後進入下一階段，難度與獎勵提升',
-        },
-      ],
-    },
-    {
-      id: 'sanctum',
-      title: '神聖殿堂',
-      icon: '',
-      imageUrl: 'https://mumu.tw/linehero/official_web/game_view/faction_lobby.png', // 功能圖片 URL，可在此處填入圖片連結
-      description: '跨陣營社交大廳，可與其他玩家即時互動、聊天，展示角色頭像與稱號。',
-      rewards: [
-        '社交互動',
-        '跨陣營交流',
-      ],
-      subFeatures: [
-        {
-          name: '即時聊天',
-          desc: '與在線玩家即時對話，顯示頭像與稱號',
-        },
-        {
-          name: '角色展示',
-          desc: '展示角色外觀與戰力，建立社交連結',
-        },
-      ],
-    },
-  ];
-
-  return (
-    <PageLayout
-      title="陣營介紹"
-      subtitle="選擇你的陣營，開始你的冒險之旅。"
-      accent="Factions"
-    >
-      {/* 陣營總覽 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-        {factions.map((faction) => (
-          <div
-            key={faction.id}
-            className={`bg-gradient-to-br ${faction.color} border-2 ${faction.borderColor} rounded-2xl p-6 shadow-xl hover:scale-105 transition-all duration-300 overflow-hidden`}
-          >
-            {/* 陣營圖片 */}
-            {faction.imageUrl && (
-              <div className="relative w-full h-64 mb-4 rounded-xl overflow-hidden group">
-                <img
-                  src={faction.imageUrl}
-                  alt={faction.name}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4">
-
-                  <div className="text-5xl mb-2">{faction.icon}</div>
-                  <h3 className={`text-3xl font-bold ${faction.textColor}`}>
-                    {faction.name}
-                  </h3>
-                </div>
-              </div>
-            )}
-
-            {/* 如果沒有圖片，顯示圖標和標題 */}
-            {!faction.imageUrl && (
-              <div className="text-center mb-4">
-                <div className="text-6xl mb-4">{faction.icon}</div>
-                <h3 className={`text-3xl font-bold ${faction.textColor} mb-3`}>
-                  {faction.name}
-                </h3>
-              </div>
-            )}
-
-            <p className="text-gray-300 text-base md:text-lg leading-relaxed text-center">
-              {faction.description}
-            </p>
-          </div>
-        ))}
+export const FeatureHubPage: React.FC<{ onNavigate?: (page: Page) => void }> = ({ onNavigate }) => (
+  <PageLayout
+    title="功能介紹"
+    subtitle="完整收錄 LineHero 各系統玩法與教學，依需求挑選最適合的成長路線。"
+    accent="Features"
+  >
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="glass-panel p-6 md:p-8 rounded-2xl border border-white/10">
+        <h3 className="text-xl font-bold text-white mb-3">組隊副本</h3>
+        <p className="text-gray-400 text-sm md:text-base mb-4">
+          5 人隊伍協作挑戰，取得副本代幣、稀有素材與強化資源。
+        </p>
+        <button
+          onClick={() => onNavigate?.('feature-raid-team')}
+          className="text-hero-gold font-bold text-sm hover:text-white transition-colors"
+        >
+          查看教學
+        </button>
       </div>
-
-      {/* 陣營代幣核心介紹 */}
-      <div className="mb-12">
-        <div className="bg-gradient-to-br from-hero-gold/20 via-hero-gold/10 to-hero-gold/5 border-2 border-hero-gold/40 rounded-2xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
-          {/* 背景裝飾 */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,215,0,0.1),transparent_70%)]"></div>
-
-          <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-8">
-            {/* 代幣圖片 */}
-            <div className="flex-shrink-0 w-full md:w-1/3 flex justify-center">
-              <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden bg-gradient-to-br from-hero-gold/20 to-hero-gold/5 border-2 border-hero-gold/30 shadow-xl group">
-                <img
-                  src="https://mumu.tw/linehero/images/factions/faction_token_rpg.png"
-                  alt="陣營代幣"
-                  className="w-full h-full object-contain p-4 transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
-            </div>
-
-            {/* 說明內容 */}
-            <div className="flex-1 space-y-4">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="px-3 py-1 bg-hero-gold/20 border border-hero-gold/40 text-hero-gold rounded-full text-sm font-bold">
-                  核心道具
-                </span>
-                <h2 className="text-2xl md:text-3xl font-bold text-white">
-                  陣營代幣
-                </h2>
-              </div>
-
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-                陣營代幣是陣營系統的核心道具，透過參與各種陣營活動可以獲得。使用陣營代幣可在陣營商店兌換各種珍貴獎勵，包括裝備、素材與特殊道具。
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6">
-                <div className="bg-black/30 rounded-lg p-4 border border-white/10">
-                  <h4 className="text-hero-gold font-bold text-sm mb-2">獲得方式</h4>
-                  <ul className="space-y-1 text-gray-300 text-sm">
-                    <li className="flex items-center gap-2">
-                      <svg className="w-4 h-4 text-hero-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      每日任務完成
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <svg className="w-4 h-4 text-hero-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      邊境防守參與
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <svg className="w-4 h-4 text-hero-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      世界共鬥獎勵
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="bg-black/30 rounded-lg p-4 border border-white/10">
-                  <h4 className="text-hero-gold font-bold text-sm mb-2">主要用途</h4>
-                  <ul className="space-y-1 text-gray-300 text-sm">
-                    <li className="flex items-center gap-2">
-                      <svg className="w-4 h-4 text-hero-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      陣營商店兌換
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <svg className="w-4 h-4 text-hero-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      限定裝備取得
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <svg className="w-4 h-4 text-hero-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      特殊道具購買
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="glass-panel p-6 md:p-8 rounded-2xl border border-white/10">
+        <h3 className="text-xl font-bold text-white mb-3">區域 Boss</h3>
+        <p className="text-gray-400 text-sm md:text-base mb-4">
+          區域混亂值達標後 Boss 現身，討伐掉落圖騰碎片與精煉魂魄。
+        </p>
+        <button
+          onClick={() => onNavigate?.('feature-region-boss')}
+          className="text-hero-gold font-bold text-sm hover:text-white transition-colors"
+        >
+          查看教學
+        </button>
       </div>
-
-      {/* 遊戲功能總覽 */}
-      <div className="mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center flex items-center justify-center gap-3">
-          陣營功能總覽
-        </h2>
-
-        <div className="space-y-8">
-          {gameFeatures.map((feature, index) => (
-            <div
-              key={feature.id}
-              className={`bg-hero-panel/60 border border-white/10 rounded-2xl p-6 md:p-8 shadow-xl hover:border-hero-gold/40 transition-all ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                } flex flex-col md:flex items-center gap-6 md:gap-8`}
-            >
-              {/* 功能圖片 */}
-              <div className="flex-shrink-0 w-full md:w-1/2">
-                {feature.imageUrl ? (
-                  <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden group">
-                    <img
-                      src={feature.imageUrl}
-                      alt={feature.title}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
-                ) : (
-                  <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden bg-gradient-to-br from-gray-800 to-black border-2 border-white/10 flex items-center justify-center">
-                    <div className="text-6xl md:text-8xl opacity-50">{feature.icon}</div>
-                    <div className="absolute bottom-4 left-4 right-4 text-center">
-                      <p className="text-gray-400 text-sm">圖片位置</p>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* 功能說明 */}
-              <div className="flex-1 w-full md:w-1/2 space-y-4">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="text-4xl">{feature.icon}</div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">
-                    {feature.title}
-                  </h3>
-                </div>
-
-                <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-                  {feature.description}
-                </p>
-
-                {/* 子功能說明 */}
-                {feature.subFeatures && feature.subFeatures.length > 0 && (
-                  <div className="space-y-2 mt-4">
-                    {feature.subFeatures.map((subFeature, idx) => (
-                      <div key={idx} className="bg-black/30 rounded-lg p-3 border border-white/5">
-                        <h4 className="text-hero-gold font-bold text-sm md:text-base mb-1">
-                          {subFeature.name}
-                        </h4>
-                        <p className="text-gray-400 text-xs md:text-sm">
-                          {subFeature.desc}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {/* 可獲得獎勵 */}
-                <div className="mt-6">
-                  <h4 className="text-hero-gold font-bold text-lg mb-3 flex items-center gap-2">
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    可獲得獎勵
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {feature.rewards.map((reward, idx) => (
-                      <span
-                        key={idx}
-                        className="px-3 py-1.5 bg-hero-gold/10 border border-hero-gold/30 text-hero-gold rounded-lg text-sm font-bold"
-                      >
-                        {reward}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+      <div className="glass-panel p-6 md:p-8 rounded-2xl border border-white/10">
+        <h3 className="text-xl font-bold text-white mb-3">鐵匠鋪</h3>
+        <p className="text-gray-400 text-sm md:text-base mb-4">
+          強化、精煉、進階、洗練、星力、潛能與精煉轉移的核心養成中心。
+        </p>
+        <button
+          onClick={() => onNavigate?.('feature-blacksmith')}
+          className="text-hero-gold font-bold text-sm hover:text-white transition-colors"
+        >
+          查看教學
+        </button>
       </div>
-
-      {/* 陣營系統說明 */}
-      <div className="bg-gradient-to-r from-hero-panel/70 to-black/40 border border-hero-gold/20 rounded-2xl p-6 md:p-8 shadow-2xl mb-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3">
-          <span className="text-3xl">🎯</span>
-          陣營系統
-        </h2>
-        <div className="space-y-4 text-gray-300 text-sm md:text-base leading-relaxed">
-          <p>
-            陣營系統是 LineHero 無盡冒險的核心玩法之一。玩家必須加入陣營才能使用所有陣營相關功能。
-          </p>
-          <p>
-            透過參與各種陣營活動，您可以獲得貢獻點數、陣營代幣等資源，並在陣營商店兌換豐厚獎勵。每週貢獻排行結算時，表現優異的玩家還能獲得額外獎勵。
-          </p>
-        </div>
+      <div className="glass-panel p-6 md:p-8 rounded-2xl border border-white/10">
+        <h3 className="text-xl font-bold text-white mb-3">背包與裝備</h3>
+        <p className="text-gray-400 text-sm md:text-base mb-4">
+          管理裝備、強化材料與外觀收藏，打造最適合自己的配裝。
+        </p>
+        <button
+          onClick={() => onNavigate?.('feature-inventory')}
+          className="text-hero-gold font-bold text-sm hover:text-white transition-colors"
+        >
+          查看教學
+        </button>
       </div>
+      <div className="glass-panel p-6 md:p-8 rounded-2xl border border-white/10">
+        <h3 className="text-xl font-bold text-white mb-3">陣營系統</h3>
+        <p className="text-gray-400 text-sm md:text-base mb-4">
+          選擇陣營、參與陣營戰與世界 Boss，累積陣營代幣換獎勵。
+        </p>
+        <button
+          onClick={() => onNavigate?.('faction-intro')}
+          className="text-hero-gold font-bold text-sm hover:text-white transition-colors"
+        >
+          查看教學
+        </button>
+      </div>
+      <div className="glass-panel p-6 md:p-8 rounded-2xl border border-white/10">
+        <h3 className="text-xl font-bold text-white mb-3">社交與酒館</h3>
+        <p className="text-gray-400 text-sm md:text-base mb-4">
+          社交看板、留言與酒館小遊戲，打造自己的冒險社群。
+        </p>
+        <button
+          onClick={() => onNavigate?.('feature-social')}
+          className="text-hero-gold font-bold text-sm hover:text-white transition-colors"
+        >
+          查看教學
+        </button>
+      </div>
+    </div>
+  </PageLayout>
+);
 
-      {/* 陣營選擇提示 */}
-      <Card
-        title="如何選擇陣營"
-        body={
-          <div className="space-y-3">
-            <p className="text-gray-300">
-              陣營系統開放後透過冒險者選單即可進行選擇加入任一陣營。
-            </p>
-            <p className="text-gray-400 text-sm">
-              提示：陣營選擇後無法更改，請謹慎選擇。
-            </p>
-          </div>
-        }
-        badge="重要"
-      />
-    </PageLayout>
-  );
-};
+
 
 export const AnnouncementsPage: React.FC = () => {
   // 按日期排序，最新的在前
@@ -634,8 +363,8 @@ export const AnnouncementsPage: React.FC = () => {
           <article
             key={announcement.id}
             className={`bg-hero-panel/60 border rounded-2xl p-6 shadow-xl transition-all hover:border-hero-gold/40 ${announcement.isImportant
-                ? 'border-hero-gold/50 bg-hero-gold/5'
-                : 'border-white/10'
+              ? 'border-hero-gold/50 bg-hero-gold/5'
+              : 'border-white/10'
               }`}
             itemScope
             itemType="https://schema.org/Article"

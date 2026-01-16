@@ -75,6 +75,8 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <li><a href="/faq" className="hover:text-hero-gold transition-colors text-left">常見問題</a></li>
               <li><button onClick={() => onNavigate('game-intro-line')} className="hover:text-hero-gold transition-colors text-left">LINE 玩法介紹</button></li>
               <li><button onClick={() => onNavigate('game-intro-web')} className="hover:text-hero-gold transition-colors text-left">Web 玩法介紹</button></li>
+              <li><button onClick={() => onNavigate('features')} className="hover:text-hero-gold transition-colors text-left">功能介紹</button></li>
+              <li><button onClick={() => onNavigate('ranking-power')} className="hover:text-hero-gold transition-colors text-left">戰力排行榜</button></li>
               <li><button onClick={() => onNavigate('announcements')} className="hover:text-hero-gold transition-colors text-left">遊戲公告</button></li>
               <li><button onClick={() => onNavigate('shop')} className="hover:text-hero-gold transition-colors text-left">商城 / 儲值</button></li>
               <li><button onClick={() => onNavigate('office-games')} className="hover:text-hero-gold transition-colors text-left">辦公室玩家友善</button></li>

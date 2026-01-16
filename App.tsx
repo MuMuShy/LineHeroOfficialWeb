@@ -8,7 +8,14 @@ import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import SEOHead from './components/SEOHead';
-import { GameIntroWebPage, GameIntroLinePage, ShopPage, OfficeGamesPage, FactionIntroPage, AnnouncementsPage } from './components/StaticPages';
+import { GameIntroWebPage, GameIntroLinePage, ShopPage, OfficeGamesPage, FeatureHubPage, AnnouncementsPage } from './components/StaticPages';
+import RaidTeamFeaturePage from './components/feature-pages/RaidTeamFeaturePage';
+import RegionBossFeaturePage from './components/feature-pages/RegionBossFeaturePage';
+import BlacksmithFeaturePage from './components/feature-pages/BlacksmithFeaturePage';
+import InventoryFeaturePage from './components/feature-pages/InventoryFeaturePage';
+import SocialFeaturePage from './components/feature-pages/SocialFeaturePage';
+import FactionFeaturePage from './components/feature-pages/FactionFeaturePage';
+import RankingPowerPage from './components/feature-pages/RankingPowerPage';
 import { Page } from './types';
 
 const App: React.FC = () => {
@@ -180,7 +187,7 @@ const App: React.FC = () => {
               title="陣營介紹"
               description="兩大陣營對立，你選擇加入哪一方？參與陣營戰，為榮耀而戰！"
             />
-            <FactionIntroPage onBack={() => handlePageNav('home')} />
+            <FactionFeaturePage />
           </>
         );
       case 'announcements':
@@ -191,6 +198,76 @@ const App: React.FC = () => {
               description="掌握 LINE Hero 第一手遊戲資訊、更新內容與活動預告。"
             />
             <AnnouncementsPage onBack={() => handlePageNav('home')} />
+          </>
+        );
+      case 'features':
+        return (
+          <>
+            <SEOHead
+              title="功能介紹"
+              description="LineHero 系統功能總覽，組隊副本、區域 Boss、鐵匠鋪與更多玩法教學入口。"
+            />
+            <FeatureHubPage onNavigate={handlePageNav} />
+          </>
+        );
+      case 'feature-raid-team':
+        return (
+          <>
+            <SEOHead
+              title="組隊副本教學"
+              description="組隊副本玩法、隊伍規則與副本商店說明，掌握 LineHero 協作挑戰流程。"
+            />
+            <RaidTeamFeaturePage />
+          </>
+        );
+      case 'feature-region-boss':
+        return (
+          <>
+            <SEOHead
+              title="區域 Boss 教學"
+              description="區域 Boss 出現條件、討伐收益與區域圖騰升級說明。"
+            />
+            <RegionBossFeaturePage />
+          </>
+        );
+      case 'feature-blacksmith':
+        return (
+          <>
+            <SEOHead
+              title="鐵匠鋪教學"
+              description="裝備強化、精煉、進階、洗練、星力與精煉轉移完整說明。"
+            />
+            <BlacksmithFeaturePage />
+          </>
+        );
+      case 'feature-inventory':
+        return (
+          <>
+            <SEOHead
+              title="背包與裝備教學"
+              description="裝備管理、材料整理與外觀收藏指南，提升配裝效率。"
+            />
+            <InventoryFeaturePage />
+          </>
+        );
+      case 'feature-social':
+        return (
+          <>
+            <SEOHead
+              title="社交與酒館教學"
+              description="社交看板與酒館小遊戲玩法介紹。"
+            />
+            <SocialFeaturePage />
+          </>
+        );
+      case 'ranking-power':
+        return (
+          <>
+            <SEOHead
+              title="戰力排行榜"
+              description="LineHero 官方戰力排行榜，掌握最新頂尖冒險者戰力排行。"
+            />
+            <RankingPowerPage />
           </>
         );
       default:
