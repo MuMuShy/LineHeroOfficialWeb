@@ -128,7 +128,7 @@ const RankingPowerPage: React.FC = () => {
           </div>
           <h1 className="text-4xl md:text-5xl font-black text-white">戰力排行榜</h1>
           <p className="text-gray-300 max-w-3xl mx-auto text-base md:text-lg">
-            每日追蹤最強冒險者排行。資料來源為官方 API，即時更新。
+            每日追蹤最強冒險者排行。
           </p>
         </header>
 
