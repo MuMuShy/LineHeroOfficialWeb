@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 interface SEOHeadProps {
     title?: string;
     description?: string;
+    keywords?: string;
     image?: string;
     url?: string;
     type?: string;
@@ -13,6 +14,7 @@ interface SEOHeadProps {
 const SEOHead: React.FC<SEOHeadProps> = ({
     title = "LINE Hero 無盡冒險 | 免下載安裝 LINE 即玩 RPG | 聊天視窗直接開戰",
     description = "【2026最新】打開 LINE 就能玩的 RPG！免下載、免安裝，在聊天視窗體驗完整 MMORPG。結合 LIFF 視覺技術打造精美介面，保留經典文字冒險的深度敘事。現在加入即送新手大禮包！",
+    keywords,
     image = "https://mumu.tw/linehero/official_web/ogimage.png",
     url = "https://linehero.tw",
     type = "website",
@@ -27,6 +29,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
             <title>{siteTitle}</title>
             <meta name="title" content={siteTitle} />
             <meta name="description" content={description} />
+            {keywords && <meta name="keywords" content={keywords} />}
             <link rel="canonical" href={url} />
 
             {/* Open Graph / Facebook */}

@@ -239,6 +239,9 @@ const App: React.FC = () => {
             <SEOHead
               title="LineHero v2.0 大型更新公告"
               description="區域 Boss、討伐小隊、副本挑戰、星力強化等 2.0 版本更新完整說明。"
+              keywords="LineHero v2.0,區域Boss,討伐小隊,副本系統,星力強化,詞綴系統,裝備製作,轉移系統,LINE RPG"
+              url="https://linehero.tw/v2.0"
+              type="article"
             />
             <V2UpdatePage />
           </>
