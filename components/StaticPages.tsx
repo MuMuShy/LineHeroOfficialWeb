@@ -293,15 +293,19 @@ export const ShopPage: React.FC = () => (
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-300">
         {[
-          { name: 'Lin', plan: '包月贊助', amount: 'NT$ 499' },
-          { name: 'Lin', plan: '一次性贊助', amount: 'NT$ 1,200' },
-          { name: 'Lin', plan: '包月贊助', amount: 'NT$ 999' },
-          { name: 'Lin', plan: '一次性贊助', amount: 'NT$ 800' },
-          { name: 'Lin', plan: '包月贊助', amount: 'NT$ 299' },
-          { name: 'Lin', plan: '一次性贊助', amount: 'NT$ 2,000' },
+          { title: '星河守護者', name: 'Lin', plan: '包月贊助', amount: 'NT$ 499' },
+          { title: '霜火旅人', name: 'Lin', plan: '一次性贊助', amount: 'NT$ 1,200' },
+          { title: '永夜行者', name: 'Lin', plan: '包月贊助', amount: 'NT$ 999' },
+          { title: '晨曦弓手', name: 'Lin', plan: '一次性贊助', amount: 'NT$ 800' },
+          { title: '深淵祭司', name: 'Lin', plan: '包月贊助', amount: 'NT$ 299' },
+          { title: '隕星守望', name: 'Lin', plan: '一次性贊助', amount: 'NT$ 2,000' },
         ].map((entry) => (
-          <div key={`${entry.name}-${entry.plan}-${entry.amount}`} className="bg-black/40 border border-white/10 rounded-xl p-4">
-            <div className="text-white font-bold">{entry.name}</div>
+          <div key={`${entry.title}-${entry.plan}-${entry.amount}`} className="bg-black/40 border border-white/10 rounded-xl p-4">
+            <div className="flex items-center justify-between">
+              <div className="text-white font-bold">{entry.title}</div>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-hero-gold">VIP</span>
+            </div>
+            <div className="text-xs text-gray-400 mt-1">玩家：{entry.name}</div>
             <div className="text-xs text-gray-400 mt-1">{entry.plan}</div>
             <div className="text-hero-gold font-bold mt-2">{entry.amount}</div>
           </div>
@@ -314,18 +318,18 @@ export const ShopPage: React.FC = () => (
         </div>
         <div className="space-y-3 text-sm text-gray-300">
           {[
-            { rank: '1', name: 'Lin', plan: '包月贊助', amount: 'NT$ 999' },
-            { rank: '2', name: 'Lin', plan: '一次性贊助', amount: 'NT$ 1,200' },
-            { rank: '3', name: 'Lin', plan: '包月贊助', amount: 'NT$ 499' },
+            { rank: '1', title: '永夜行者', name: 'Lin', plan: '包月贊助', amount: 'NT$ 999' },
+            { rank: '2', title: '霜火旅人', name: 'Lin', plan: '一次性贊助', amount: 'NT$ 1,200' },
+            { rank: '3', title: '星河守護者', name: 'Lin', plan: '包月贊助', amount: 'NT$ 499' },
           ].map((row) => (
-            <div key={`${row.rank}-${row.plan}`} className="flex items-center justify-between gap-4">
+            <div key={`${row.rank}-${row.plan}-${row.title}`} className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-3">
                 <span className="w-8 h-8 rounded-full bg-hero-gold/20 border border-hero-gold/40 text-hero-gold font-bold flex items-center justify-center">
                   {row.rank}
                 </span>
                 <div>
-                  <div className="text-white font-bold">{row.name}</div>
-                  <div className="text-xs text-gray-400">{row.plan}</div>
+                  <div className="text-white font-bold">{row.title}</div>
+                  <div className="text-xs text-gray-400">玩家：{row.name} · {row.plan}</div>
                 </div>
               </div>
               <div className="text-hero-gold font-bold">{row.amount}</div>

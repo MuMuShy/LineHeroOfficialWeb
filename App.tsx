@@ -21,6 +21,34 @@ import { Page } from './types';
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>('home');
   const [targetSection, setTargetSection] = useState<string | null>(null);
+  const allowedPages: Page[] = [
+    'home',
+    'privacy',
+    'terms',
+    'refund',
+    'game-intro-line',
+    'game-intro-web',
+    'shop',
+    'office-games',
+    'announcements',
+    'update-v2',
+    'faction-intro',
+    'features',
+    'feature-raid-team',
+    'feature-region-boss',
+    'feature-blacksmith',
+    'feature-inventory',
+    'feature-social',
+    'ranking-power',
+  ];
+
+  const getPageFromPath = (path: string): Page => {
+    const normalizedPath = path.replace(/\/+$/, '');
+    if (normalizedPath === '' || normalizedPath === '/') return 'home';
+    if (normalizedPath === '/v2.0') return 'update-v2';
+    const pageId = normalizedPath.replace('/', '');
+    return allowedPages.includes(pageId as Page) ? (pageId as Page) : 'home';
+  };
 
   // Handle browser back/forward buttons
   useEffect(() => {
@@ -28,12 +56,16 @@ const App: React.FC = () => {
       if (event.state && event.state.page) {
         setCurrentPage(event.state.page);
       } else {
-        setCurrentPage('home');
+        setCurrentPage(getPageFromPath(window.location.pathname));
       }
     };
 
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  useEffect(() => {
+    setCurrentPage(getPageFromPath(window.location.pathname));
   }, []);
 
   const handlePageNav = (pageId: Page) => {
