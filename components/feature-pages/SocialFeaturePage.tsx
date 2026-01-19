@@ -36,7 +36,7 @@ const SocialFeaturePage: React.FC = () => (
       <header className="text-center space-y-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 border border-hero-gold/30 rounded-full bg-hero-gold/5">
           <span className="text-xs uppercase tracking-[0.2em] text-hero-gold font-bold">Social Hub</span>
-          <span className="text-[10px] uppercase tracking-[0.2em] text-white/60">UI Mock</span>
+          <span className="text-[10px] uppercase tracking-[0.2em] text-white/60">預覽</span>
         </div>
         <h1 className="text-4xl md:text-5xl font-black text-white">社交酒館</h1>
         <p className="text-gray-300 max-w-3xl mx-auto text-base md:text-lg">

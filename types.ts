@@ -37,6 +37,7 @@ export type Page =
   | 'shop'
   | 'office-games'
   | 'announcements'
+  | 'update-v2'
   | 'faction-intro'
   | 'features'
   | 'feature-raid-team'

@@ -4,40 +4,40 @@ const TAB_ITEMS = ['強化', '精煉', '進階', '洗練', '星力', '潛能', '
 
 const EQUIPMENT_LIST = [
   {
-    name: '蒼焰長劍',
+    name: '盜賊下身',
     level: '+8',
-    type: '主手',
-    image: 'https://mumu.tw/linehero/images/items/default.png',
+    type: '下身',
+    image: 'https://mumu.tw/linehero/images/items/equipments/pants/20.png',
   },
   {
-    name: '夜幕護甲',
+    name: '牧師褲',
     level: '+6',
-    type: '盔甲',
-    image: 'https://mumu.tw/linehero/images/items/default.png',
+    type: '下身',
+    image: 'https://mumu.tw/linehero/images/items/equipments/pants/22.png',
   },
   {
-    name: '星紋護符',
+    name: '寶珠項鍊',
     level: '+5',
     type: '飾品',
-    image: 'https://mumu.tw/linehero/images/items/default.png',
+    image: 'https://mumu.tw/linehero/images/items/equipments/jewerly/29.png',
   },
 ];
 
 const MATERIALS = [
   {
-    name: '精煉魂魄',
+    name: '高階信仰結晶石',
     qty: '320',
-    image: 'https://mumu.tw/linehero/images/items/materials/soul_icon.png',
+    image: 'https://mumu.tw/linehero/images/items/materials/faith_max.png',
   },
   {
-    name: '星塵',
+    name: '高階智慧結晶石',
     qty: '48',
-    image: 'https://mumu.tw/linehero/images/items/region_boss/shadow_abyss_core.png',
+    image: 'https://mumu.tw/linehero/images/items/materials/int_max.png',
   },
   {
-    name: '洗練石',
+    name: '基礎力量結晶石',
     qty: '12',
-    image: 'https://mumu.tw/linehero/images/items/default.png',
+    image: 'https://mumu.tw/linehero/images/items/materials/runes/s1.jpg',
   },
 ];
 
@@ -50,7 +50,7 @@ const BlacksmithFeaturePage: React.FC = () => (
       <header className="text-center space-y-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 border border-hero-gold/30 rounded-full bg-hero-gold/5">
           <span className="text-xs uppercase tracking-[0.2em] text-hero-gold font-bold">Blacksmith</span>
-          <span className="text-[10px] uppercase tracking-[0.2em] text-white/60">UI Mock</span>
+          <span className="text-[10px] uppercase tracking-[0.2em] text-white/60">預覽</span>
         </div>
         <h1 className="text-4xl md:text-5xl font-black text-white">鐵匠鋪</h1>
         <p className="text-gray-300 max-w-3xl mx-auto text-base md:text-lg">
@@ -63,11 +63,10 @@ const BlacksmithFeaturePage: React.FC = () => (
           {TAB_ITEMS.map((tab, idx) => (
             <button
               key={tab}
-              className={`text-xs font-bold px-4 py-2 rounded-full border ${
-                idx === 0
+              className={`text-xs font-bold px-4 py-2 rounded-full border ${idx === 0
                   ? 'bg-hero-gold/20 border-hero-gold/50 text-hero-gold'
                   : 'bg-white/5 border-white/10 text-gray-400'
-              }`}
+                }`}
             >
               {tab}
             </button>

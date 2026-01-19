@@ -45,7 +45,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onSectionNavigate }) => {
 
   const navLinks: NavLink[] = [
     { label: '遊戲特色', type: 'section', target: '#features' },
-    { label: '遊戲畫面', type: 'section', target: '#gallery' },
+    // { label: '遊戲畫面', type: 'section', target: '#gallery' },
     { label: '玩法介紹', type: 'page', target: 'game-intro-line' },
     { label: '功能介紹', type: 'page', target: 'features' },
     { label: '排行榜', type: 'page', target: 'ranking-power' },

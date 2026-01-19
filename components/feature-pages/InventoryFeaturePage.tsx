@@ -4,40 +4,40 @@ const INVENTORY_TABS = ['裝備', '材料', '消耗品', '外觀'];
 
 const EQUIPMENT_ITEMS = [
   {
-    name: '蒼焰長劍',
-    tag: '傳說',
-    power: '+1,240',
-    image: 'https://mumu.tw/linehero/images/items/default.png',
-  },
-  {
-    name: '夜幕護甲',
+    name: '勇士鐵盔',
     tag: '史詩',
     power: '+980',
-    image: 'https://mumu.tw/linehero/images/items/default.png',
+    image: 'https://mumu.tw/linehero/images/items/equipments/helmets/41.png',
   },
   {
-    name: '星紋護符',
+    name: '寶珠項鍊',
     tag: '稀有',
     power: '+420',
-    image: 'https://mumu.tw/linehero/images/items/default.png',
+    image: 'https://mumu.tw/linehero/images/items/equipments/jewerly/29.png',
+  },
+  {
+    name: '力量戒指',
+    tag: '史詩',
+    power: '+860',
+    image: 'https://mumu.tw/linehero/images/items/equipments/jewerly/1.png',
   },
 ];
 
 const MATERIAL_ITEMS = [
   {
-    name: '精煉魂魄',
+    name: '高階力量結晶石',
     qty: 'x320',
-    image: 'https://mumu.tw/linehero/images/items/materials/soul_icon.png',
+    image: 'https://mumu.tw/linehero/images/items/materials/str_max.png',
   },
   {
-    name: '魂幣',
+    name: '高階幸運結晶石',
     qty: 'x8,400',
-    image: 'https://mumu.tw/linehero/images/items/soul_small.png',
+    image: 'https://mumu.tw/linehero/images/items/materials/luk_max.png',
   },
   {
-    name: '夥伴碎片',
+    name: '屬性重配卷',
     qty: 'x45',
-    image: 'https://mumu.tw/linehero/images/items/pet_soul.png',
+    image: 'https://mumu.tw/linehero/images/items/scrolls/3.png',
   },
 ];
 
@@ -50,7 +50,7 @@ const InventoryFeaturePage: React.FC = () => (
       <header className="text-center space-y-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 border border-hero-gold/30 rounded-full bg-hero-gold/5">
           <span className="text-xs uppercase tracking-[0.2em] text-hero-gold font-bold">Inventory</span>
-          <span className="text-[10px] uppercase tracking-[0.2em] text-white/60">UI Mock</span>
+          <span className="text-[10px] uppercase tracking-[0.2em] text-white/60">預覽</span>
         </div>
         <h1 className="text-4xl md:text-5xl font-black text-white">背包與裝備</h1>
         <p className="text-gray-300 max-w-3xl mx-auto text-base md:text-lg">
@@ -63,11 +63,10 @@ const InventoryFeaturePage: React.FC = () => (
           {INVENTORY_TABS.map((tab, idx) => (
             <button
               key={tab}
-              className={`text-xs font-bold px-4 py-2 rounded-full border ${
-                idx === 0
+              className={`text-xs font-bold px-4 py-2 rounded-full border ${idx === 0
                   ? 'bg-hero-gold/20 border-hero-gold/50 text-hero-gold'
                   : 'bg-white/5 border-white/10 text-gray-400'
-              }`}
+                }`}
             >
               {tab}
             </button>

@@ -58,12 +58,49 @@ const Features: React.FC = () => {
             <div className="flex-1 relative group w-full max-w-sm mx-auto lg:max-w-none order-2 lg:order-2 perspective-1000">
               <div className="absolute inset-0 bg-hero-green/20 blur-3xl rounded-full group-hover:bg-hero-green/30 transition-all duration-500 animate-pulse-slow"></div>
               <div className="relative transform transition-transform duration-500 group-hover:rotate-y-6 group-hover:scale-105">
-                <img
-                  src="https://mumu.tw/linehero/official_web/battle_flex.jpg"
-                  alt="LINE Flex 戰鬥介面"
-                  className="relative z-10 w-full rounded-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
-                />
-                {/* Holographic Overlay Effect */}
+                <div className="relative z-10 w-full rounded-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] bg-gradient-to-br from-[#101318] via-[#111a1f] to-[#0b0f12] overflow-hidden">
+                  <div className="px-4 py-3 border-b border-white/10 flex items-center justify-between text-xs text-gray-400">
+                    <span className="uppercase tracking-[0.3em]">Flex Battle</span>
+                    <span className="text-hero-green font-bold">LIVE</span>
+                  </div>
+                  <div className="p-4 space-y-4">
+                    <div className="flex items-center gap-4">
+                      <div className="w-16 h-16 rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center">
+                        <img
+                          src="https://mumu.tw/linehero/images/npc/boss/rodras/rodras.png"
+                          alt="Boss"
+                          className="w-12 h-12 object-contain"
+                        />
+                      </div>
+                      <div className="flex-1 space-y-2">
+                        <div className="text-white font-bold text-sm">冥幽境守護者</div>
+                        <div className="h-2 rounded-full bg-white/10 overflow-hidden">
+                          <div className="h-full w-3/5 bg-gradient-to-r from-red-500 to-orange-400"></div>
+                        </div>
+                        <div className="text-xs text-gray-400">HP 58% · 狂暴倒數 02:15</div>
+                      </div>
+                      <button className="text-xs font-bold px-3 py-2 rounded-lg bg-hero-green/20 border border-hero-green/40 text-hero-green">
+                        集火
+                      </button>
+                    </div>
+                    <div className="grid grid-cols-3 gap-2">
+                      {[
+                        'https://mumu.tw/linehero/images/skills/RPG%20Swordsman%20skill%20icons/PNG/16.png',
+                        'https://mumu.tw/linehero/images/skills/RPG%20Berserker%20skill%20icons/PNG/33.png',
+                        'https://mumu.tw/linehero/images/skills/RPG%20Berserker%20skill%20icons/PNG/49.png',
+                      ].map((icon, idx) => (
+                        <div key={icon} className="bg-black/50 border border-white/10 rounded-xl p-3 text-center">
+                          <img src={icon} alt={`Skill ${idx + 1}`} className="w-10 h-10 mx-auto" />
+                          <div className="text-[10px] text-gray-400 mt-2">技能 {idx + 1}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="bg-black/50 border border-white/10 rounded-xl p-3 text-xs text-gray-300 space-y-1">
+                      <div>夜行者 使用「裂地斬」造成 82,450 傷害</div>
+                      <div>掉落：星塵 x3、圖騰碎片 x1</div>
+                    </div>
+                  </div>
+                </div>
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
               </div>
             </div>

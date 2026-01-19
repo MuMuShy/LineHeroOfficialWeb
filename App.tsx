@@ -8,7 +8,7 @@ import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import SEOHead from './components/SEOHead';
-import { GameIntroWebPage, GameIntroLinePage, ShopPage, OfficeGamesPage, FeatureHubPage, AnnouncementsPage } from './components/StaticPages';
+import { GameIntroWebPage, GameIntroLinePage, ShopPage, OfficeGamesPage, FeatureHubPage, AnnouncementsPage, V2UpdatePage } from './components/StaticPages';
 import RaidTeamFeaturePage from './components/feature-pages/RaidTeamFeaturePage';
 import RegionBossFeaturePage from './components/feature-pages/RegionBossFeaturePage';
 import BlacksmithFeaturePage from './components/feature-pages/BlacksmithFeaturePage';
@@ -39,7 +39,8 @@ const App: React.FC = () => {
   const handlePageNav = (pageId: Page) => {
     setCurrentPage(pageId);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    window.history.pushState({ page: pageId }, '', `/${pageId === 'home' ? '' : pageId}`);
+    const path = pageId === 'home' ? '/' : pageId === 'update-v2' ? '/v2.0' : `/${pageId}`;
+    window.history.pushState({ page: pageId }, '', path);
   };
 
   const handleSectionNav = (sectionId: string) => {
@@ -197,7 +198,17 @@ const App: React.FC = () => {
               title="最新公告"
               description="掌握 LINE Hero 第一手遊戲資訊、更新內容與活動預告。"
             />
-            <AnnouncementsPage onBack={() => handlePageNav('home')} />
+            <AnnouncementsPage onNavigate={handlePageNav} />
+          </>
+        );
+      case 'update-v2':
+        return (
+          <>
+            <SEOHead
+              title="LineHero v2.0 大型更新公告"
+              description="區域 Boss、討伐小隊、副本挑戰、星力強化等 2.0 版本更新完整說明。"
+            />
+            <V2UpdatePage />
           </>
         );
       case 'features':
