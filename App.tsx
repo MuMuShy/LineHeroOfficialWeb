@@ -17,6 +17,7 @@ import SocialFeaturePage from './components/feature-pages/SocialFeaturePage';
 import FactionFeaturePage from './components/feature-pages/FactionFeaturePage';
 import RankingPowerPage from './components/feature-pages/RankingPowerPage';
 import { Page } from './types';
+import { trackCtaClick } from './services/analytics';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -138,7 +139,13 @@ const App: React.FC = () => {
 
                   {/* Buttons Block */}
                   <div className="flex flex-col gap-4 w-full md:w-auto">
-                    <a href="https://lin.ee/Isv2392o" target="_blank" rel="noreferrer" className="w-full md:w-auto bg-[#06C755] hover:bg-[#05b64d] text-white px-8 py-4 rounded-xl flex items-center justify-center gap-4 transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(6,199,85,0.4)] font-bold text-xl min-w-[280px] group relative overflow-hidden">
+                    <a
+                      href="https://lin.ee/Isv2392o"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-full md:w-auto bg-[#06C755] hover:bg-[#05b64d] text-white px-8 py-4 rounded-xl flex items-center justify-center gap-4 transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(6,199,85,0.4)] font-bold text-xl min-w-[280px] group relative overflow-hidden"
+                      onClick={() => trackCtaClick('開啟 LINE 冒險', 'home-qr-block', 'https://lin.ee/Isv2392o')}
+                    >
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:animate-shine-fast"></div>
                       <svg className="w-8 h-8 relative z-10" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M21.5 12a9.5 9.5 0 1 1-19 0 9.5 9.5 0 0 1 19 0zM12 17.5c4.5 0 8-3 8-6.5s-3.5-6.5-8-6.5-8 3-8 6.5 3.5 6.5 8 6.5z" />
@@ -149,7 +156,13 @@ const App: React.FC = () => {
                         <div className="text-lg">開啟 LINE 冒險</div>
                       </div>
                     </a>
-                    <a href="https://explore.linehero.tw" target="_blank" rel="noreferrer" className="w-full md:w-auto bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-4 rounded-xl flex items-center justify-center gap-4 transition-all transform hover:scale-105 shadow-2xl font-bold text-xl min-w-[280px]">
+                    <a
+                      href="https://explore.linehero.tw"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-full md:w-auto bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-4 rounded-xl flex items-center justify-center gap-4 transition-all transform hover:scale-105 shadow-2xl font-bold text-xl min-w-[280px]"
+                      onClick={() => trackCtaClick('探索模式', 'home-qr-block', 'https://explore.linehero.tw')}
+                    >
                       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                       </svg>
@@ -161,7 +174,13 @@ const App: React.FC = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
-                    <a href="https://wiki.linehero.tw" target="_blank" rel="noreferrer" className="w-full md:w-auto bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 rounded-xl flex items-center justify-center gap-3 transition-all border border-gray-600 hover:border-hero-gold font-bold text-xl min-w-[280px] group">
+                    <a
+                      href="https://wiki.linehero.tw"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-full md:w-auto bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 rounded-xl flex items-center justify-center gap-3 transition-all border border-gray-600 hover:border-hero-gold font-bold text-xl min-w-[280px] group"
+                      onClick={() => trackCtaClick('先看攻略 Wiki', 'home-qr-block', 'https://wiki.linehero.tw')}
+                    >
                       <svg className="w-6 h-6 group-hover:text-hero-gold transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                       </svg>

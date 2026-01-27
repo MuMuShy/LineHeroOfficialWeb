@@ -1,4 +1,5 @@
 import React from 'react';
+import { trackCtaClick } from '../services/analytics';
 
 const Gallery: React.FC = () => {
   // Replace these URLs with your actual screenshots
@@ -87,7 +88,13 @@ const Gallery: React.FC = () => {
         
         {/* Bottom Decoration */}
         <div className="mt-16 flex justify-center">
-           <a href="https://lin.ee/Isv2392o" target="_blank" rel="noreferrer" className="text-sm text-gray-500 hover:text-hero-gold flex items-center gap-2 transition-colors">
+           <a
+             href="https://lin.ee/Isv2392o"
+             target="_blank"
+             rel="noreferrer"
+             className="text-sm text-gray-500 hover:text-hero-gold flex items-center gap-2 transition-colors"
+             onClick={() => trackCtaClick('查看更多遊戲截圖', 'gallery', 'https://lin.ee/Isv2392o')}
+           >
              <span>查看更多遊戲截圖</span>
              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

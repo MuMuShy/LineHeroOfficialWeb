@@ -1,5 +1,6 @@
 ﻿import React from 'react';
 import { Page } from '../types';
+import { trackCtaClick } from '../services/analytics';
 
 const PageLayout: React.FC<{ title: string; subtitle: string; accent?: string; children: React.ReactNode }> = ({ title, subtitle, accent = 'LINE Hero', children }) => (
   <div className="bg-hero-dark min-h-screen pt-28 pb-16 px-4 md:px-8 text-gray-100 relative overflow-hidden">
@@ -116,7 +117,13 @@ export const GameIntroLinePage: React.FC = () => (
     <section className="bg-gradient-to-r from-hero-panel/70 to-black/40 border border-hero-gold/20 rounded-2xl p-6 md:p-8 shadow-2xl space-y-5">
       <div className="flex items-center justify-between flex-wrap gap-3">
         <h2 className="text-2xl font-bold text-white">快速上手步驟</h2>
-        <a className="text-hero-gold font-bold text-sm" href="https://lin.ee/Isv2392o" target="_blank" rel="noreferrer">
+        <a
+          className="text-hero-gold font-bold text-sm"
+          href="https://lin.ee/Isv2392o"
+          target="_blank"
+          rel="noreferrer"
+          onClick={() => trackCtaClick('快速上手連結', 'game-intro-line', 'https://lin.ee/Isv2392o')}
+        >
           https://lin.ee/Isv2392o
         </a>
       </div>
@@ -249,6 +256,7 @@ export const ShopPage: React.FC = () => (
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center justify-center gap-2 bg-hero-gold/20 border border-hero-gold/50 text-hero-gold hover:text-white hover:bg-hero-gold/30 transition-colors px-5 py-3 rounded-xl font-bold text-sm"
+          onClick={() => trackCtaClick('前往贊助頁', 'shop', 'https://sponsor.linehero.tw/tab/support')}
         >
           前往贊助頁
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -284,6 +292,7 @@ export const ShopPage: React.FC = () => (
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-2 bg-hero-gold/20 border border-hero-gold/40 text-hero-gold hover:text-white hover:bg-hero-gold/30 transition-colors px-5 py-3 rounded-xl font-bold text-sm"
+          onClick={() => trackCtaClick('聯絡客服', 'shop', 'https://lin.ee/XSHIaG2')}
         >
           聯絡客服
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1184,6 +1193,7 @@ export const AnnouncementsPage: React.FC<{ onNavigate?: (page: Page) => void }> 
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-8 py-3 bg-[#06C755] hover:bg-[#05b34c] text-white font-bold rounded-full transition-all hover:scale-105 shadow-lg shadow-green-900/20"
+          onClick={() => trackCtaClick('加入 Line 社群', 'announcements', 'https://line.me/ti/g2/DJg84HtyGvoYNMEZdQEgrosPZS8bgRonuW8aWQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default')}
         >
           <span>加入 Line 社群</span>
           <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

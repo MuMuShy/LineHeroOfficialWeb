@@ -1,4 +1,5 @@
 import React from 'react';
+import { trackCtaClick } from '../services/analytics';
 
 const Features: React.FC = () => {
   return (
@@ -215,6 +216,7 @@ const Features: React.FC = () => {
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600/20 to-indigo-600/20 hover:from-purple-600/30 hover:to-indigo-600/30 border border-purple-500/40 hover:border-purple-500/60 text-purple-300 hover:text-purple-200 font-bold rounded-xl transition-all transform hover:scale-105 mt-4"
+                onClick={() => trackCtaClick('立即開始探索', 'features-explore', 'https://explore.linehero.tw')}
               >
                 <span>立即開始探索</span>
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -264,6 +266,7 @@ const Features: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-amber-600/10 hover:bg-amber-600/20 border border-amber-500/50 hover:border-amber-500/80 text-amber-400 hover:text-amber-300 font-bold text-lg rounded-xl transition-all transform hover:scale-105 group mt-4"
+                onClick={() => trackCtaClick('前往酒館', 'features-tavern', 'https://tarven.linehero.tw')}
               >
                 <span>前往酒館</span>
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">

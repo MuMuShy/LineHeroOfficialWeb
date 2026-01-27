@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Page } from '../types';
+import { trackCtaClick } from '../services/analytics';
 
 interface NavbarProps {
   onNavigate: (page: Page) => void;
@@ -92,6 +93,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onSectionNavigate }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-200 hover:text-purple-400 transition-colors text-sm font-bold tracking-wider flex items-center gap-1"
+              onClick={() => trackCtaClick('探索模式', 'navbar', 'https://explore.linehero.tw')}
             >
               探索模式
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -103,6 +105,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onSectionNavigate }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-200 hover:text-hero-gold transition-colors text-sm font-bold tracking-wider flex items-center gap-1"
+              onClick={() => trackCtaClick('冒險者酒館', 'navbar', 'https://tarven.linehero.tw')}
             >
               冒險者酒館
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -114,6 +117,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onSectionNavigate }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-200 hover:text-hero-gold transition-colors text-sm font-bold tracking-wider flex items-center gap-1"
+              onClick={() => trackCtaClick('Wiki 攻略', 'navbar', 'https://wiki.linehero.tw')}
             >
               Wiki 攻略
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -125,6 +129,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onSectionNavigate }) => {
               target="_blank"
               rel="noreferrer"
               className="bg-hero-green hover:bg-[#05b64d] text-white px-6 py-2.5 rounded clip-path-polygon shadow-[0_0_15px_rgba(6,199,85,0.4)] transition-all font-bold text-sm transform hover:scale-105 flex items-center gap-2 group relative overflow-hidden"
+              onClick={() => trackCtaClick('立即開玩', 'navbar', 'https://lin.ee/WQwrOvC')}
             >
               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></div>
               <span>立即開玩</span>
@@ -141,6 +146,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onSectionNavigate }) => {
               target="_blank"
               rel="noreferrer"
               className="bg-hero-green text-white px-4 py-1.5 rounded text-xs font-bold shadow-[0_0_10px_rgba(6,199,85,0.3)]"
+              onClick={() => trackCtaClick('PLAY', 'navbar-mobile', 'https://lin.ee/WQwrOvC')}
             >
               PLAY
             </a>
@@ -178,6 +184,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onSectionNavigate }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full text-left px-3 py-3 text-base font-bold text-gray-200 hover:text-purple-400 hover:bg-white/5 rounded-lg"
+              onClick={() => trackCtaClick('探索模式', 'navbar-mobile', 'https://explore.linehero.tw')}
             >
               探索模式
             </a>
@@ -186,6 +193,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onSectionNavigate }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full text-left px-3 py-3 text-base font-bold text-gray-200 hover:text-hero-gold hover:bg-white/5 rounded-lg"
+              onClick={() => trackCtaClick('冒險者酒館', 'navbar-mobile', 'https://tarven.linehero.tw')}
             >
               冒險者酒館
             </a>
@@ -194,6 +202,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onSectionNavigate }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full text-left px-3 py-3 text-base font-bold text-gray-200 hover:text-hero-gold hover:bg-white/5 rounded-lg"
+              onClick={() => trackCtaClick('Wiki 攻略', 'navbar-mobile', 'https://wiki.linehero.tw')}
             >
               Wiki 攻略
             </a>

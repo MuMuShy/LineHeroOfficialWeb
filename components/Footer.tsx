@@ -1,5 +1,6 @@
 import React from 'react';
 import { Page } from '../types';
+import { trackCtaClick } from '../services/analytics';
 
 interface FooterProps {
   onNavigate: (page: Page) => void;
@@ -86,6 +87,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-hero-gold transition-colors text-left flex items-center gap-1"
+                  onClick={() => trackCtaClick('冒險者酒館', 'footer', 'https://tarven.linehero.tw')}
                 >
                   冒險者酒館
                   <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -117,6 +119,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-hero-gold hover:text-black transition-colors text-white"
+                  onClick={() => trackCtaClick(link.name, 'footer-social', link.url)}
                 >
                   {link.icon}
                 </a>
