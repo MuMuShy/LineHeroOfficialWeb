@@ -13,6 +13,9 @@ export default defineConfig(({ mode }) => {
       // 優先讀取系統變數 (Cloudflare)，其次讀取本地 .env
       'process.env.API_KEY': JSON.stringify(process.env.API_KEY || env.API_KEY),
     },
+    server: {
+      allowedHosts: ['wsl.linehero.dev', '.linehero.dev', 'localhost'],
+    },
     build: {
       outDir: 'dist',
       sourcemap: false,
