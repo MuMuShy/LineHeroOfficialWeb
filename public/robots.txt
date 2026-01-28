@@ -1,3 +1,19 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
+
+# Sitemap
 Sitemap: https://linehero.tw/sitemap.xml
+
+# 禁止爬取的路徑
+Disallow: /api/
+Disallow: /_astro/
+
+# Google 特定
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing 特定
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2

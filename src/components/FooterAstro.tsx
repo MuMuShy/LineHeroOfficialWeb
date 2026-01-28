@@ -44,13 +44,13 @@ const FooterAstro: React.FC = () => {
   ];
 
   const quickLinks = [
-    { label: 'LINE 玩法介紹', href: '/game-intro-line' },
-    { label: 'Web 玩法介紹', href: '/game-intro-web' },
+    { label: '新手攻略', href: '/beginner-guide' },
+    { label: '常見問題 FAQ', href: '/faq' },
+    { label: '玩法介紹', href: '/game-intro-line' },
     { label: '功能介紹', href: '/features' },
     { label: '戰力排行榜', href: '/ranking-power' },
     { label: '遊戲公告', href: '/announcements' },
     { label: '商城 / 儲值', href: '/shop' },
-    { label: '辦公室玩家友善', href: '/office-games' },
   ];
 
   const legalLinks = [

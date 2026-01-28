@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import BeginnerGuidePage, { getHowToSchema } from '../components/BeginnerGuidePage';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const howToSchema = getHowToSchema();
+
+const seoProps = {
+  title: "新手攻略指南 | LineHero 無盡冒險",
+  description: "LineHero 無盡冒險新手完整攻略！從加入遊戲、創建角色、探索升級到強化裝備，一步步帶你成為強大冒險者。免下載即玩 RPG 入門指南。",
+  keywords: "LineHero攻略, LineHero新手, 無盡冒險攻略, 免下載RPG攻略, 聊天遊戲教學, LineHero入門",
+  url: "https://linehero.tw/beginner-guide",
+  schema: howToSchema
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:load />
+  <main>
+    <BeginnerGuidePage client:load />
+  </main>
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>

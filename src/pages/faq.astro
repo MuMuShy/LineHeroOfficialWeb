@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import FAQPage, { getFAQSchema } from '../components/FAQPage';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const faqSchema = getFAQSchema();
+
+const seoProps = {
+  title: "常見問題 FAQ | LineHero 無盡冒險",
+  description: "LineHero 無盡冒險常見問題解答：如何開始遊戲、提升戰力、參加副本、儲值退款等完整 FAQ。找不到答案？加入官方社群詢問！",
+  url: "https://linehero.tw/faq",
+  schema: faqSchema
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:load />
+  <main>
+    <FAQPage client:load />
+  </main>
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>
