@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import { FeatureHubPageAstro } from '../components/FeatureHubPageAstro';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const seoProps = {
+  title: "功能介紹 | LINE Hero 無盡冒險",
+  description: "LineHero 系統功能總覽，組隊副本、區域 Boss、鐵匠鋪與更多玩法教學入口。",
+  url: "https://linehero.tw/features"
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:load />
+  <main>
+    <FeatureHubPageAstro client:load />
+  </main>
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>

@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import Hero from '../components/Hero';
+import Features from '../components/Features';
+import Characters from '../components/Characters';
+import Gallery from '../components/Gallery';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+---
+
+<BaseLayout>
+  <NavbarAstro client:load />
+  <main>
+    <Hero client:load />
+    <Features client:load />
+    <Characters client:load />
+    <Gallery client:load />
+
+    <!-- Call to Action Section -->
+    <section class="py-24 bg-gradient-to-t from-hero-dark to-gray-900 relative overflow-hidden border-t border-white/10 section-divider">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1605806616949-1e87b487bc2a?q=80&w=1974&auto=format&fit=crop')] opacity-10 bg-cover bg-center"></div>
+      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-hero-green/10 rounded-full blur-[140px]"></div>
+      <div class="absolute bottom-0 right-0 w-[420px] h-[420px] bg-hero-gold/10 rounded-full blur-[120px]"></div>
+      <div class="relative z-10 text-center max-w-5xl mx-auto px-4">
+        <h2 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+          準備好體驗免下載的 LINE 即玩 RPG 嗎？<br />
+          <span class="text-hero-gold text-shadow-gold">打開聊天視窗直接開戰</span>
+        </h2>
+        <p class="text-gray-300 mb-10 text-lg max-w-2xl mx-auto font-medium">
+          免下載、免安裝、免註冊，只需 1 秒。
+          <br />
+          加入官方帳號、掃描 QR Code，您的<span class="text-white font-bold">聊天視窗 RPG</span> 冒險即刻開始。
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-8 justify-center items-center bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm shadow-[0_30px_60px_rgba(0,0,0,0.35)]">
+          <!-- QR Code Block -->
+          <div class="bg-white p-4 rounded-xl shadow-xl ring-1 ring-white/40">
+            <img
+              src="https://qr-official.line.me/gs/M_765llgvq_GW.png?oat_content=qr"
+              alt="Line Hero QR Code"
+              class="w-40 h-40"
+            />
+            <p class="text-black text-xs font-bold mt-2 uppercase tracking-wider">Scan to Play</p>
+          </div>
+
+          <!-- Buttons Block -->
+          <div class="flex flex-col gap-4 w-full md:w-auto">
+            <a
+              href="https://lin.ee/Isv2392o"
+              target="_blank"
+              rel="noreferrer"
+              class="w-full md:w-auto bg-[#06C755] hover:bg-[#05b64d] text-white px-8 py-4 rounded-xl flex items-center justify-center gap-4 transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(6,199,85,0.4)] font-bold text-xl min-w-[280px] group relative overflow-hidden"
+            >
+              <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:animate-shine-fast"></div>
+              <svg class="w-8 h-8 relative z-10" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M21.5 12a9.5 9.5 0 1 1-19 0 9.5 9.5 0 0 1 19 0zM12 17.5c4.5 0 8-3 8-6.5s-3.5-6.5-8-6.5-8 3-8 6.5 3.5 6.5 8 6.5z" />
+                <path d="M10 15.5l6-3.5-6-3.5v7z" fill="white" />
+              </svg>
+              <div class="relative z-10">
+                <div class="text-xs font-medium opacity-80 text-left">立即加入好友</div>
+                <div class="text-lg">開啟 LINE 冒險</div>
+              </div>
+            </a>
+            <a
+              href="https://explore.linehero.tw"
+              target="_blank"
+              rel="noreferrer"
+              class="w-full md:w-auto bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-4 rounded-xl flex items-center justify-center gap-4 transition-all transform hover:scale-105 shadow-2xl font-bold text-xl min-w-[280px]"
+            >
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <div>
+                <div class="text-xs font-medium opacity-80 text-left">Roguelike 探索 · 搶先體驗</div>
+                <div class="text-lg">探索模式</div>
+              </div>
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+            <a
+              href="https://wiki.linehero.tw"
+              target="_blank"
+              rel="noreferrer"
+              class="w-full md:w-auto bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 rounded-xl flex items-center justify-center gap-3 transition-all border border-gray-600 hover:border-hero-gold font-bold text-xl min-w-[280px] group"
+            >
+              <svg class="w-6 h-6 group-hover:text-hero-gold transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+              先看攻略 Wiki
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>

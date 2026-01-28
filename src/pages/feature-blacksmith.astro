@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import BlacksmithFeaturePage from '../components/feature-pages/BlacksmithFeaturePage';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const seoProps = {
+  title: "鐵匠鋪教學 | LINE Hero 無盡冒險",
+  description: "裝備強化、精煉、進階、洗練、星力與精煉轉移完整說明。",
+  url: "https://linehero.tw/feature-blacksmith"
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:load />
+  <main>
+    <BlacksmithFeaturePage client:load />
+  </main>
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>

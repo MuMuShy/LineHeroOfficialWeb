@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import RegionBossFeaturePage from '../components/feature-pages/RegionBossFeaturePage';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const seoProps = {
+  title: "區域 Boss 教學 | LINE Hero 無盡冒險",
+  description: "區域 Boss 出現條件、討伐收益與區域圖騰升級說明。",
+  url: "https://linehero.tw/feature-region-boss"
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:load />
+  <main>
+    <RegionBossFeaturePage client:load />
+  </main>
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>

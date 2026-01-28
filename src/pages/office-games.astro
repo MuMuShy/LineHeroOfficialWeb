@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import { OfficeGamesPage } from '../components/StaticPages';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const seoProps = {
+  title: "辦公室小遊戲 | LINE Hero 無盡冒險",
+  description: "上班累了嗎？來點輕鬆的小遊戲，放鬆心情再出發。",
+  url: "https://linehero.tw/office-games"
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:load />
+  <main>
+    <OfficeGamesPage client:load />
+  </main>
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>

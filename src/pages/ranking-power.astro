@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import RankingPowerPage from '../components/feature-pages/RankingPowerPage';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const seoProps = {
+  title: "戰力排行榜 | LINE Hero 無盡冒險",
+  description: "LineHero 官方戰力排行榜，掌握最新頂尖冒險者戰力排行。",
+  url: "https://linehero.tw/ranking-power"
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:load />
+  <main>
+    <RankingPowerPage client:load />
+  </main>
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>

@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import { AnnouncementsPageAstro } from '../components/AnnouncementsPageAstro';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const seoProps = {
+  title: "最新公告 | LINE Hero 無盡冒險",
+  description: "掌握 LINE Hero 第一手遊戲資訊、更新內容與活動預告。",
+  url: "https://linehero.tw/announcements"
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:load />
+  <main>
+    <AnnouncementsPageAstro client:load />
+  </main>
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>

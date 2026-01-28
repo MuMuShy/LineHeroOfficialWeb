@@ -1,0 +1,228 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+  url?: string;
+  type?: string;
+  schema?: object;
+}
+
+const {
+  title = "LINE Hero 無盡冒險 | 免下載安裝 LINE 即玩 RPG | 聊天視窗直接開戰",
+  description = "【2026最新】打開 LINE 就能玩的 RPG！免下載、免安裝，在聊天視窗體驗完整 MMORPG。結合 LIFF 視覺技術打造精美介面，保留經典文字冒險的深度敘事。現在加入即送新手大禮包！",
+  keywords = "免下載RPG, LINE即玩RPG, 聊天視窗RPG, LINE Hero, LINE遊戲, LIFF遊戲, LINE RPG, 文字冒險, 線上文字RPG, MMORPG, 台灣手遊, 免下載遊戲, 角色扮演",
+  image = "https://mumu.tw/linehero/official_web/ogimage.png",
+  url = "https://linehero.tw",
+  type = "website",
+  schema
+} = Astro.props;
+
+const siteTitle = title.includes("LINE Hero") ? title : `${title} | LINE Hero 無盡冒險`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// FAQ Schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "LINE Hero 是什麼遊戲？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LINE Hero 無盡冒險是一款免下載、免安裝的 LINE 即玩 RPG，打開 LINE 聊天視窗就能直接開始冒險。結合 LIFF 視覺技術打造精美介面，同時保留經典文字冒險的深度敘事，讓你在 LINE 中體驗完整的 MMORPG 戰鬥、裝備、交易系統。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如何開始遊玩 LINE Hero？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "只需要加入 LINE Hero 官方帳號，完全免下載、免安裝！直接在 LINE 聊天視窗中點擊按鈕或輸入指令即可開始遊戲。完全免費且支援中文。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "LINE Hero 支援哪些平台？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LINE Hero 可在所有支援 LINE 的平台上遊玩，包括 Android、iOS 手機以及 Windows、Mac 電腦版 LINE。因為是聊天視窗 RPG，不需要額外下載任何 APP。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "LINE Hero 跟一般手遊有什麼不同？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LINE Hero 是聊天視窗 RPG，不需要下載安裝任何 APP，直接在 LINE 裡面就能玩。結合文字敘事與 LIFF 視覺介面，既有經典文字冒險的深度，又有現代 RPG 的精美畫面。"
+      }
+    }
+  ]
+};
+
+// VideoGame Schema
+const gameSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "LINE Hero 無盡冒險",
+  "alternateName": ["LineHero", "免下載 LINE RPG", "聊天視窗 RPG", "LINE 即玩 RPG", "LINE 文字冒險遊戲"],
+  "description": "免下載、免安裝的 LINE 即玩 RPG。打開 LINE 聊天視窗就能開始冒險，結合 LIFF 視覺技術打造精美介面，保留經典文字冒險的深度敘事體驗。",
+  "genre": ["MMORPG", "Chat RPG", "Text Adventure", "Role Playing Game"],
+  "gamePlatform": ["LINE", "Web", "Mobile"],
+  "applicationCategory": "Game",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "TWD",
+    "availability": "https://schema.org/InStock"
+  },
+  "image": image,
+  "url": "https://linehero.tw",
+  "author": {
+    "@type": "Organization",
+    "name": "LINE Hero Team",
+    "url": "https://linehero.tw"
+  }
+};
+
+// Organization Schema
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "LINE Hero 無盡冒險",
+  "url": "https://linehero.tw",
+  "logo": "https://mumu.tw/linehero/official_web/favi/apple-touch-icon.png",
+  "sameAs": [
+    "https://line.me/ti/p/@linehero",
+    "https://www.facebook.com/profile.php?id=61564219032805",
+    "https://discord.gg/76gSTeqtBw"
+  ]
+};
+---
+
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+    <!-- Primary Meta Tags -->
+    <title>{siteTitle}</title>
+    <meta name="title" content={siteTitle} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="LINE Hero團隊">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Theme & App -->
+    <meta name="theme-color" content="#00c300">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="LINE Hero">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://mumu.tw/linehero/official_web/favi/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="https://mumu.tw/linehero/official_web/favi/favicon-96x96.png" />
+    <link rel="icon" type="image/svg+xml" href="https://mumu.tw/linehero/official_web/favi/favicon.svg" />
+    <link rel="shortcut icon" href="https://mumu.tw/linehero/official_web/favi/favicon.ico" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="apple-mobile-web-app-title" content="LINE Hero" />
+
+    <!-- 地理位置 -->
+    <meta name="geo.region" content="TW">
+    <meta name="geo.placename" content="Taiwan">
+    <meta name="geo.position" content="23.8;121.0">
+    <meta name="ICBM" content="23.8, 121.0">
+
+    <!-- 語言相關 -->
+    <meta name="language" content="zh-TW">
+    <meta http-equiv="Content-Language" content="zh-TW">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type}>
+    <meta property="og:site_name" content="LINE Hero 無盡冒險">
+    <meta property="og:title" content={siteTitle}>
+    <meta property="og:description" content={description}>
+    <meta property="og:image" content={image}>
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="LINE Hero 無盡冒險 - LINE 文字 RPG 遊戲截圖">
+    <meta property="og:url" content={canonicalURL}>
+    <meta property="og:locale" content="zh_TW">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@linehero_tw">
+    <meta name="twitter:creator" content="@linehero_tw">
+    <meta name="twitter:title" content={siteTitle}>
+    <meta name="twitter:description" content={description}>
+    <meta name="twitter:image" content={image}>
+
+    <!-- Article Meta -->
+    <meta property="article:author" content="LINE Hero團隊">
+    <meta property="article:publisher" content="https://linehero.tw">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap"></noscript>
+    <link rel="preload" as="image" href="https://mumu.tw/linehero/official_web/ogimage.png" fetchpriority="high">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(gameSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+
+    <!-- LINE Tag Base Code -->
+    <script is:inline>
+    (function(g,d,o){
+      g._ltq=g._ltq||[];g._lt=g._lt||function(){g._ltq.push(arguments)};
+      var h=location.protocol==='https:'?'https://d.line-scdn.net':'http://d.line-cdn.net';
+      var s=d.createElement('script');s.async=1;
+      s.src=o||h+'/n/line_tag/public/release/v1/lt.js';
+      var t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);
+    })(window, document);
+    _lt('init', {
+      customerType: 'account',
+      tagId: '53146326-89d4-4c1d-aad3-b65d9f0238a4'
+    });
+    _lt('send', 'pv', ['53146326-89d4-4c1d-aad3-b65d9f0238a4']);
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZQ6C1CVR0"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6ZQ6C1CVR0');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script is:inline>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-596DT84D');
+    </script>
+  </head>
+  <body class="bg-hero-dark min-h-screen text-white font-sans selection:bg-hero-neon selection:text-black">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-596DT84D"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- LINE Tag (noscript) -->
+    <noscript>
+      <img height="1" width="1" style="display:none"
+          src="https://tr.line.me/tag.gif?c_t=lap&t_id=53146326-89d4-4c1d-aad3-b65d9f0238a4&e=pv&noscript=1" />
+    </noscript>
+
+    <slot />
+  </body>
+</html>

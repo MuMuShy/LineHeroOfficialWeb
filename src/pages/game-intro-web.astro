@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import { GameIntroWebPage } from '../components/StaticPages';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const seoProps = {
+  title: "Web版遊戲介紹 | LINE Hero 無盡冒險",
+  description: "了解 LINE Hero 網頁版的強大功能，使用大螢幕更輕鬆管理你的角色與背包。",
+  url: "https://linehero.tw/game-intro-web"
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:load />
+  <main>
+    <GameIntroWebPage client:load />
+  </main>
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>

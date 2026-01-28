@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import RaidTeamFeaturePage from '../components/feature-pages/RaidTeamFeaturePage';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const seoProps = {
+  title: "組隊副本教學 | LINE Hero 無盡冒險",
+  description: "組隊副本玩法、隊伍規則與副本商店說明，掌握 LineHero 協作挑戰流程。",
+  url: "https://linehero.tw/feature-raid-team"
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:load />
+  <main>
+    <RaidTeamFeaturePage client:load />
+  </main>
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>

@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import { TermsOfServicePage } from '../components/LegalPages';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const seoProps = {
+  title: "服務條款 | LINE Hero 無盡冒險",
+  description: "LINE Hero 無盡冒險服務條款，使用本服務前請詳細閱讀。",
+  url: "https://linehero.tw/terms"
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:load />
+  <main>
+    <TermsOfServicePage client:load />
+  </main>
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>

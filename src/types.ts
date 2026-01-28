@@ -1,0 +1,48 @@
+﻿export interface Feature {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export interface Character {
+  id: string;
+  name: string;
+  role: string;
+  description: string;
+  imageUrl: string;
+  affinity: 'Tech' | 'Magic' | 'Speed';
+}
+
+export interface ChatMessage {
+  id: string;
+  role: 'user' | 'model';
+  text: string;
+  isError?: boolean;
+}
+
+export enum GamePlatform {
+  IOS = 'iOS',
+  ANDROID = 'Android',
+  STEAM = 'Steam'
+}
+
+export type Page =
+  | 'home'
+  | 'privacy'
+  | 'terms'
+  | 'refund'
+  | 'game-intro-line'
+  | 'game-intro-web'
+  | 'shop'
+  | 'office-games'
+  | 'announcements'
+  | 'update-v2'
+  | 'faction-intro'
+  | 'features'
+  | 'feature-raid-team'
+  | 'feature-region-boss'
+  | 'feature-blacksmith'
+  | 'feature-inventory'
+  | 'feature-social'
+  | 'ranking-power';

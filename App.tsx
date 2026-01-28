@@ -113,8 +113,10 @@ const App: React.FC = () => {
             <Characters />
             <Gallery />
             {/* Call to Action Section - LINE Specific */}
-            <section className="py-24 bg-gradient-to-t from-hero-dark to-gray-900 relative overflow-hidden border-t border-white/10">
+            <section className="py-24 bg-gradient-to-t from-hero-dark to-gray-900 relative overflow-hidden border-t border-white/10 section-divider">
               <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1605806616949-1e87b487bc2a?q=80&w=1974&auto=format&fit=crop')] opacity-10 bg-cover bg-center"></div>
+              <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-hero-green/10 rounded-full blur-[140px]"></div>
+              <div className="absolute bottom-0 right-0 w-[420px] h-[420px] bg-hero-gold/10 rounded-full blur-[120px]"></div>
               <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
                 <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
                   準備好體驗免下載的 LINE 即玩 RPG 嗎？<br />
@@ -126,9 +128,9 @@ const App: React.FC = () => {
                   加入官方帳號、掃描 QR Code，您的<span className="text-white font-bold">聊天視窗 RPG</span> 冒險即刻開始。
                 </p>
 
-                <div className="flex flex-col md:flex-row gap-8 justify-center items-center bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm">
+                <div className="flex flex-col md:flex-row gap-8 justify-center items-center bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm shadow-[0_30px_60px_rgba(0,0,0,0.35)]">
                   {/* QR Code Block */}
-                  <div className="bg-white p-4 rounded-xl shadow-xl">
+                  <div className="bg-white p-4 rounded-xl shadow-xl ring-1 ring-white/40">
                     <img
                       src="https://qr-official.line.me/gs/M_765llgvq_GW.png?oat_content=qr"
                       alt="Line Hero QR Code"

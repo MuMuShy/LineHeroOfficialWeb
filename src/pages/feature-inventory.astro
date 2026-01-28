@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import InventoryFeaturePage from '../components/feature-pages/InventoryFeaturePage';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const seoProps = {
+  title: "背包與裝備教學 | LINE Hero 無盡冒險",
+  description: "裝備管理、材料整理與外觀收藏指南，提升配裝效率。",
+  url: "https://linehero.tw/feature-inventory"
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:load />
+  <main>
+    <InventoryFeaturePage client:load />
+  </main>
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>

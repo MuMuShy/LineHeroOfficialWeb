@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import FactionFeaturePage from '../components/feature-pages/FactionFeaturePage';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const seoProps = {
+  title: "陣營介紹 | LINE Hero 無盡冒險",
+  description: "兩大陣營對立，你選擇加入哪一方？參與陣營戰，為榮耀而戰！",
+  url: "https://linehero.tw/faction-intro"
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:load />
+  <main>
+    <FactionFeaturePage client:load />
+  </main>
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>

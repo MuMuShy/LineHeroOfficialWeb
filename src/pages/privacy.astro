@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import { PrivacyPolicyPage } from '../components/LegalPages';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const seoProps = {
+  title: "隱私權政策 | LINE Hero 無盡冒險",
+  description: "LINE Hero 無盡冒險隱私權政策，了解我們如何保護您的個人資料。",
+  url: "https://linehero.tw/privacy"
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:load />
+  <main>
+    <PrivacyPolicyPage client:load />
+  </main>
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>
