@@ -119,12 +119,12 @@ export const GameIntroLinePage: React.FC = () => (
         <h2 className="text-2xl font-bold text-white">快速上手步驟</h2>
         <a
           className="text-hero-gold font-bold text-sm"
-          href="https://lin.ee/Isv2392o"
+          href="https://lin.ee/3JlUhak"
           target="_blank"
           rel="noreferrer"
-          onClick={() => trackCtaClick('快速上手連結', 'game-intro-line', 'https://lin.ee/Isv2392o')}
+          onClick={() => trackCtaClick('快速上手連結', 'game-intro-line', 'https://lin.ee/3JlUhak')}
         >
-          https://lin.ee/Isv2392o
+          https://lin.ee/3JlUhak
         </a>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm text-gray-300">

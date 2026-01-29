@@ -61,11 +61,11 @@ const Hero: React.FC = () => {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
-              href="https://lin.ee/Isv2392o"
+              href="https://lin.ee/3JlUhak"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative px-8 py-4 bg-[#06C755] text-white font-bold text-lg rounded-xl overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(6,199,85,0.4)]"
-              onClick={() => trackCtaClick('立即開始', 'hero', 'https://lin.ee/Isv2392o')}
+              onClick={() => trackCtaClick('立即開始', 'hero', 'https://lin.ee/3JlUhak')}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:animate-shine-fast"></div>
               <div className="relative flex items-center justify-center gap-3">
