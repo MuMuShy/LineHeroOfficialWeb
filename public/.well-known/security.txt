@@ -1,0 +1,7 @@
+Contact: mailto:security@linehero.tw
+Expires: 2026-12-31T23:59:59Z
+Preferred-Languages: zh-TW, en
+Canonical: https://linehero.tw/.well-known/security.txt
+Policy: https://linehero.tw/security
+
+# 如果你更希望用表單/Discord/其他聯絡方式，我也可以替你調整。
