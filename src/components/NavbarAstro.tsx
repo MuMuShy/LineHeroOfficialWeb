@@ -35,7 +35,8 @@ const NavbarAstro: React.FC = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#111216]/95 backdrop-blur-md border-b border-white/10 py-2 md:py-3 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' : 'bg-gradient-to-b from-black/80 to-transparent py-4 md:py-6'
+      style={{ paddingTop: 'env(safe-area-inset-top)' }}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#111216]/95 backdrop-blur-md border-b border-white/10 py-2 md:py-3 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' : 'bg-gradient-to-b from-black/80 to-transparent py-4 md:py-6'
         }`}
     >
       <div className={`absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent transition-opacity duration-300 ${isScrolled ? 'opacity-100' : 'opacity-0'}`}></div>
