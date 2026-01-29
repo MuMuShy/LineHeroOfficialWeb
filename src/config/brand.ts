@@ -32,7 +32,7 @@ export const BRAND = {
 
   // 社群連結
   social: {
-    line: 'https://lin.ee/WQwrOvC',
+    line: 'https://lin.ee/3JlUhak',
     lineGroup: 'https://line.me/ti/g2/DJg84HtyGvoYNMEZdQEgrosPZS8bgRonuW8aWQ',
     facebook: 'https://www.facebook.com/profile.php?id=61564219032805',
     instagram: 'https://www.instagram.com/linehero_rpg/',

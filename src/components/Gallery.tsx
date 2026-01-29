@@ -93,11 +93,11 @@ const Gallery: React.FC = () => {
         {/* Bottom Decoration */}
         <div className="mt-16 flex justify-center">
           <a
-            href="https://lin.ee/Isv2392o"
+            href="https://lin.ee/3JlUhak"
             target="_blank"
             rel="noreferrer"
             className="text-sm text-gray-300 hover:text-hero-gold flex items-center gap-2 transition-colors px-6 py-3 rounded-full border border-white/10 bg-white/5 hover:border-hero-gold/60"
-            onClick={() => trackCtaClick('查看更多遊戲截圖', 'gallery', 'https://lin.ee/Isv2392o')}
+            onClick={() => trackCtaClick('查看更多遊戲截圖', 'gallery', 'https://lin.ee/3JlUhak')}
           >
             <span>查看更多遊戲截圖</span>
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

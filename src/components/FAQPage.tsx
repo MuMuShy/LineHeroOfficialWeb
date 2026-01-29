@@ -167,7 +167,7 @@ const FAQPage: React.FC = () => {
           <p className="text-gray-300 mb-6">加入官方社群，與其他冒險者交流！</p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="https://lin.ee/WQwrOvC"
+              href="https://lin.ee/3JlUhak"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#06C755] hover:bg-[#05b64d] text-white px-6 py-3 rounded-xl font-bold transition-all hover:scale-105"

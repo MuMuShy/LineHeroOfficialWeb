@@ -28,9 +28,8 @@ const NavbarAstro: React.FC = () => {
     { label: '商城 / 儲值', href: '/shop' },
   ];
 
+  // 目前探索/酒館仍在開發中，避免新訪客點到「未完成」頁面而跳出：先不在主導覽曝光
   const externalLinks: NavLink[] = [
-    { label: '探索模式', href: 'https://explore.linehero.tw', external: true },
-    { label: '冒險者酒館', href: 'https://tarven.linehero.tw', external: true },
     { label: 'Wiki 攻略', href: 'https://wiki.linehero.tw', external: true },
   ];
 
@@ -78,11 +77,11 @@ const NavbarAstro: React.FC = () => {
               </a>
             ))}
             <a
-              href="https://lin.ee/WQwrOvC"
+              href="https://lin.ee/3JlUhak"
               target="_blank"
               rel="noreferrer"
               className="bg-hero-green hover:bg-[#05b64d] text-white px-6 py-2.5 rounded clip-path-polygon shadow-[0_0_15px_rgba(6,199,85,0.4)] transition-all font-bold text-sm transform hover:scale-105 flex items-center gap-2 group relative overflow-hidden"
-              onClick={() => trackCtaClick('立即開玩', 'navbar', 'https://lin.ee/WQwrOvC')}
+              onClick={() => trackCtaClick('立即開玩', 'navbar', 'https://lin.ee/3JlUhak')}
             >
               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></div>
               <span>立即開玩</span>
@@ -95,11 +94,11 @@ const NavbarAstro: React.FC = () => {
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-4">
             <a
-              href="https://lin.ee/WQwrOvC"
+              href="https://lin.ee/3JlUhak"
               target="_blank"
               rel="noreferrer"
               className="bg-hero-green text-white px-4 py-1.5 rounded text-xs font-bold shadow-[0_0_10px_rgba(6,199,85,0.3)]"
-              onClick={() => trackCtaClick('PLAY', 'navbar-mobile', 'https://lin.ee/WQwrOvC')}
+              onClick={() => trackCtaClick('PLAY', 'navbar-mobile', 'https://lin.ee/3JlUhak')}
             >
               PLAY
             </a>
