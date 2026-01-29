@@ -1,0 +1,11 @@
+/*
+  # 基本安全 headers（不含 CSP；CSP 建議另開 PR 以免影響第三方腳本）
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=()
+  # HSTS：先不加 includeSubDomains/preload，避免影響尚未全面 HTTPS 的子網域
+  Strict-Transport-Security: max-age=31536000
+
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable

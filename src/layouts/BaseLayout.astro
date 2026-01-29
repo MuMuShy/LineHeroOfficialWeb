@@ -22,46 +22,6 @@ const {
 const siteTitle = title.includes("LINE Hero") ? title : `${title} | LINE Hero 無盡冒險`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-// FAQ Schema
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "LINE Hero 是什麼遊戲？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "LINE Hero 無盡冒險是一款免下載、免安裝的 LINE 即玩 RPG，打開 LINE 聊天視窗就能直接開始冒險。結合 LIFF 視覺技術打造精美介面，同時保留經典文字冒險的深度敘事，讓你在 LINE 中體驗完整的 MMORPG 戰鬥、裝備、交易系統。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "如何開始遊玩 LINE Hero？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "只需要加入 LINE Hero 官方帳號，完全免下載、免安裝！直接在 LINE 聊天視窗中點擊按鈕或輸入指令即可開始遊戲。完全免費且支援中文。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "LINE Hero 支援哪些平台？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "LINE Hero 可在所有支援 LINE 的平台上遊玩，包括 Android、iOS 手機以及 Windows、Mac 電腦版 LINE。因為是聊天視窗 RPG，不需要額外下載任何 APP。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "LINE Hero 跟一般手遊有什麼不同？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "LINE Hero 是聊天視窗 RPG，不需要下載安裝任何 APP，直接在 LINE 裡面就能玩。結合文字敘事與 LIFF 視覺介面，既有經典文字冒險的深度，又有現代 RPG 的精美畫面。"
-      }
-    }
-  ]
-};
-
 // VideoGame Schema
 const gameSchema = {
   "@context": "https://schema.org",
@@ -173,7 +133,6 @@ const orgSchema = {
     <link rel="preload" as="image" href="https://mumu.tw/linehero/official_web/ogimage.png" fetchpriority="high">
 
     <!-- Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(gameSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
     {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
