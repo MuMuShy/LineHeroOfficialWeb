@@ -52,11 +52,18 @@ const Hero: React.FC = () => {
             </span>
           </div>
 
-          <p className="text-gray-300 text-lg sm:text-xl lg:text-2xl mb-8 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+          <p className="text-gray-300 text-lg sm:text-xl lg:text-2xl mb-6 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
             <strong className="text-white">免下載、免安裝</strong>，打開 LINE 就能玩的 RPG！
             <br className="hidden sm:block" />
-            結合 <span className="text-hero-neon-green font-bold">LIFF 視覺技術</span>，在聊天視窗體驗精美介面與即時戰鬥。
+            同時支援 <span className="text-hero-gold font-bold">Web 模式</span>（世界 BOSS / 排行榜 / 管理功能），不需要額外安裝。
           </p>
+
+          {/* Quick Value Badges */}
+          <div className="flex flex-wrap gap-2 justify-center lg:justify-start mb-8">
+            <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold tracking-wider text-gray-200">免下載</span>
+            <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold tracking-wider text-gray-200">免安裝</span>
+            <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold tracking-wider text-gray-200">免註冊也能開始</span>
+          </div>
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -73,7 +80,7 @@ const Hero: React.FC = () => {
                   <path d="M20.4 10.5c0-4.6-4.2-8.4-9.4-8.4-5.2 0-9.4 3.8-9.4 8.4 0 4.1 3.3 7.6 7.9 8.3.3.1.7.3.8.7.1.2.1.5-.1.7l-.5.4-.1.1-.1.1-1.7.9c-.3.1-.5.4-.4.7.1.3.4.5.7.5h.1c4.1 0 8-2.8 9.6-6.5.4-1 .6-2.1.6-3.2z" />
                   <path d="M16.3 11.8h-6c-.4 0-.7-.3-.7-.7V7.4c0-.4.3-.7.7-.7s.7.3.7.7v3h5.3c.4 0 .7.3.7.7s-.3.7-.7.7z" fill="white" />
                 </svg>
-                <span>立即開始 (Free)</span>
+                <span>立即開玩（免費）</span>
               </div>
             </a>
 
@@ -82,7 +89,7 @@ const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-white/5 border border-white/10 text-white font-bold text-lg rounded-xl hover:bg-white/10 hover:border-hero-gold/50 transition-all flex items-center justify-center gap-2"
-              onClick={() => trackCtaClick('遊戲攻略', 'hero', 'https://wiki.linehero.tw')}
+              onClick={() => trackCtaClick('Wiki 攻略', 'hero', 'https://wiki.linehero.tw')}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
               <span>遊戲攻略</span>
