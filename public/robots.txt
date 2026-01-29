@@ -6,7 +6,8 @@ Sitemap: https://linehero.tw/sitemap.xml
 
 # 禁止爬取的路徑
 Disallow: /api/
-Disallow: /_astro/
+
+# NOTE: 不要阻擋 /_astro/（Astro 的 JS/CSS 靜態資源），避免搜尋引擎無法渲染頁面
 
 # Google 特定
 User-agent: Googlebot
