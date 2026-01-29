@@ -7,10 +7,17 @@ import Characters from '../components/Characters';
 import Gallery from '../components/Gallery';
 import FooterAstro from '../components/FooterAstro';
 import ScrollToTop from '../components/ScrollToTop';
+import FAQPage, { getFAQSchema } from '../components/FAQPage';
 import '../styles/global.css';
+
+const seoProps = {
+  // 首頁保留 FAQ 結構化資料（rich result 可能性）
+  schema: getFAQSchema(),
+  url: "https://linehero.tw/"
+};
 ---
 
-<BaseLayout>
+<BaseLayout {...seoProps}>
   <NavbarAstro client:load />
   <main>
     <Hero client:load />
