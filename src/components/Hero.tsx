@@ -6,14 +6,12 @@ const Hero: React.FC = () => {
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-dark pt-20 pb-12 lg:pt-0">
       {/* Dynamic Background */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="https://mumu.tw/linehero/official_web/ogimage.png"
-          alt="Line Hero Fantasy World"
-          className="absolute inset-0 w-full h-full object-cover opacity-20 scale-105 animate-pulse-slow"
-        />
+        {/* Background (no image): keep it clean/dark to avoid conflicting text in the artwork */}
         <div className="absolute inset-0 bg-gradient-to-b from-hero-dark via-hero-dark/90 to-hero-dark"></div>
 
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(6,199,85,0.08),transparent_50%)] animate-pulse-slow"></div>
+        {/* Subtle ambient lights */}
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,rgba(6,199,85,0.10),transparent_55%)]"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_70%_40%,rgba(255,215,0,0.08),transparent_55%)]"></div>
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-hero-secondary/10 rounded-full blur-[100px] animate-float"></div>
         <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-hero-gold/5 rounded-full blur-[80px] animate-float-fast"></div>
 
