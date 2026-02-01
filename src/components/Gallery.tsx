@@ -38,7 +38,7 @@ const Gallery: React.FC = () => {
   ];
 
   return (
-    <section id="gallery" className="py-16 md:py-24 relative bg-gradient-to-b from-hero-dark to-black -mt-1 section-divider">
+    <section id="gallery" className="py-16 md:py-24 relative bg-gradient-to-b from-hero-dark to-black -mt-1 section-divider overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-hero-gold/10 rounded-full blur-[140px]"></div>
         <div className="absolute bottom-0 right-0 w-[420px] h-[420px] bg-hero-secondary/15 rounded-full blur-[120px]"></div>
