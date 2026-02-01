@@ -78,7 +78,7 @@ const Characters: React.FC = () => {
             </div>
 
             {/* Selector - Optimized for mobile scrolling without clipping */}
-            <div className="flex gap-4 pt-2 overflow-x-auto pb-4 no-scrollbar mx-[-24px] px-6 md:mx-0 md:px-0">
+            <div className="flex flex-wrap justify-center gap-4 pt-2 pb-4 mx-0 px-0">
               {characters.map((char) => (
                 <button
                   key={char.id}
