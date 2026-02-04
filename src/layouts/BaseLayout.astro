@@ -19,7 +19,13 @@ const {
   schema
 } = Astro.props;
 
-const siteTitle = title.includes("LINE Hero") ? title : `${title} | LINE Hero 無盡冒險`;
+// Keep the brand phrase "無盡冒險" present in SERP titles.
+const brandSuffix = 'LINE Hero 無盡冒險';
+const siteTitle = title.includes('無盡冒險')
+  ? title
+  : title.includes('LINE Hero')
+    ? `${title}｜無盡冒險`
+    : `${title} | ${brandSuffix}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 // VideoGame Schema
