@@ -75,8 +75,16 @@ const orgSchema = {
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <meta name="author" content="LINE Hero團隊">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <!-- Robots (staging domains should not be indexed) -->
+    <meta name="robots" content={Astro.url.hostname === 'linehero.tw' || Astro.url.hostname === 'www.linehero.tw'
+      ? 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+      : 'noindex, nofollow, noarchive'}>
     <link rel="canonical" href={canonicalURL} />
+
+    <!-- hreflang (single-language for now; still helps consistency) -->
+    <link rel="alternate" href={canonicalURL} hreflang="zh-TW" />
+    <link rel="alternate" href={canonicalURL} hreflang="zh-Hant" />
+    <link rel="alternate" href={canonicalURL} hreflang="x-default" />
 
     <!-- Theme & App -->
     <meta name="theme-color" content="#00c300">
