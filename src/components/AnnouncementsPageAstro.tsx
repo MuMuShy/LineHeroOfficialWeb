@@ -33,6 +33,31 @@ export const AnnouncementsPageAstro: React.FC = () => (
           <span className="px-3 py-1 rounded-full text-xs font-bold border bg-green-500/20 border-green-500/40 text-green-300">
             版本更新
           </span>
+          <span className="px-3 py-1 rounded-full text-xs font-bold bg-hero-gold/10 border border-hero-gold/30 text-hero-gold">
+            更新彙整
+          </span>
+          <time className="text-gray-400 text-sm">2026-02-05</time>
+        </div>
+        <h2 className="text-xl font-bold text-white mb-3">近期版本更新彙整（掃蕩、世界 Boss、效能與體驗優化）</h2>
+        <p className="text-gray-300 text-sm leading-relaxed mb-4">
+          近 30 天更新整理：掃蕩功能與隊伍預設、世界 Boss 結算強化、區域 Boss/戰鬥效能與 UI 體驗優化、商城與裝備資訊改善等。
+        </p>
+        <a
+          href="/announcements-2026-02-roundup"
+          className="inline-flex items-center gap-2 text-hero-gold font-bold text-sm hover:text-white transition-colors"
+        >
+          查看全文
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </article>
+
+      <article className="bg-hero-panel/60 border border-hero-gold/40 rounded-2xl p-6 shadow-xl">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="px-3 py-1 rounded-full text-xs font-bold border bg-green-500/20 border-green-500/40 text-green-300">
+            版本更新
+          </span>
           <span className="px-3 py-1 rounded-full text-xs font-bold bg-red-500/20 border border-red-500/40 text-red-300">
             重要
           </span>
