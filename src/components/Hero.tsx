@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
         <div className="flex-1 text-center lg:text-left pt-10 lg:pt-0">
           {/* SEO: Primary H1 - 視覺隱藏但對 SEO 友善 */}
           <h1 className="sr-only">
-            LINE Hero 無盡冒險｜免下載安裝 LINE 即玩 RPG｜聊天視窗直接開戰的線上文字 RPG
+            免下載 RPG｜LINE Hero 無盡冒險（LINE RPG・網頁 RPG）｜大世界世界 Boss × 陣營對抗 × 自動戰鬥
           </h1>
 
           {/* Badge */}
@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
               <span className="relative inline-flex rounded-full h-3 w-3 bg-hero-green"></span>
             </span>
             <span className="text-hero-neon-green text-xs md:text-sm font-bold tracking-wider uppercase">
-              免下載安裝 · LINE 即玩 RPG
+              免下載 RPG · LINE 即玩 · Web 模式
             </span>
           </div>
 
