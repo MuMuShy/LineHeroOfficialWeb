@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const published = '2026-02-05';
+const title = '【更新彙整】近期版本更新：掃蕩功能上線、世界 Boss 結算強化、效能與體驗優化';
+const description = '近 30 天更新彙整：掃蕩功能與隊伍預設、世界 Boss 結算強化、區域 Boss/戰鬥效能與 UI 體驗優化、商城與裝備資訊改善等。';
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  datePublished: published,
+  dateModified: published,
+  author: {
+    '@type': 'Organization',
+    name: 'LINE Hero Team',
+    url: 'https://linehero.tw'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'LINE Hero 無盡冒險',
+    url: 'https://linehero.tw'
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://linehero.tw/announcements-2026-02-roundup'
+  }
+};
+
+const seoProps = {
+  title,
+  description,
+  type: 'article',
+  url: 'https://linehero.tw/announcements-2026-02-roundup',
+  schema: articleSchema
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:load />
+
+  <main class="bg-hero-dark min-h-screen pt-28 pb-16 px-4 md:px-8 text-gray-100">
+    <article class="max-w-3xl mx-auto">
+      <header class="mb-10">
+        <div class="flex flex-wrap items-center gap-3 mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-bold border bg-green-500/20 border-green-500/40 text-green-300">版本更新</span>
+          <span class="px-3 py-1 rounded-full text-xs font-bold border bg-hero-gold/10 border-hero-gold/30 text-hero-gold">更新彙整</span>
+          <time class="text-gray-400 text-sm">{published}</time>
+        </div>
+        <h1 class="text-3xl md:text-4xl font-black text-white leading-tight">{title}</h1>
+        <p class="mt-4 text-gray-300 leading-relaxed">{description}</p>
+      </header>
+
+      <section class="prose prose-invert prose-headings:text-white prose-a:text-hero-gold max-w-none">
+        <p>各位冒險者好！這段時間我們針對「減少重複操作」、「提升戰鬥/結算效率」、「讓資訊顯示更清楚」做了一波更新整理。以下是近期重點：</p>
+
+        <h2>1) 掃蕩功能與隊伍預設（AFK Pass）</h2>
+        <ul>
+          <li>週副本/區域 Boss 支援掃蕩流程（依功能開放範圍與條件）</li>
+          <li>新增掃蕩隊伍「預設配置」（多槽位），可快速切換隊伍</li>
+          <li>支援重複掃蕩 / MAX 選擇器（依介面顯示）</li>
+        </ul>
+        <p>目標：把重複刷關的操作縮短，讓你把時間花在配裝、策略與活動上。</p>
+
+        <h2>2) 掃蕩與副本 UI 優化（更清楚、更不容易卡）</h2>
+        <ul>
+          <li>用完次數會顯示「已耗盡」等狀態，避免誤以為被鎖住</li>
+          <li>LINE Flex 介面按鈕排版調整，避免小螢幕按鈕擠壓/溢出</li>
+          <li>結算呈現統一化（掉落顯示更一致）</li>
+        </ul>
+
+        <h2>3) 效能提升：區域 Boss / 戰鬥結算加速</h2>
+        <ul>
+          <li>區域 Boss 掃蕩的獎勵結算改成批次處理，減少卡頓</li>
+          <li>多處戰鬥流程與資料存取優化，提升整體操作順暢度</li>
+        </ul>
+
+        <h2>4) 世界 Boss：稱號/獎勵結算更完整</h2>
+        <ul>
+          <li>新增/補齊部分稱號的結算與發放條件</li>
+          <li>修正排名獎勵在特定狀況下發放不完整的問題</li>
+          <li>戰前補血/藥水相關流程更方便（快捷入口與提示調整）</li>
+        </ul>
+
+        <h2>5) 裝備/鐵匠鋪與資訊呈現：更容易做選擇</h2>
+        <ul>
+          <li>鐵匠鋪介面資訊補強（例如基礎數值、多職業標籤等）</li>
+          <li>強化/轉移相關提示與流程微調，降低誤操作</li>
+          <li>修正部分道具/裝備狀態顯示問題</li>
+        </ul>
+
+        <h2>6) 商城體驗：購買更省時間</h2>
+        <ul>
+          <li>新增最大購買（buy-max）等操作，減少重複點擊</li>
+          <li>修正特定情境下顯示不一致的問題</li>
+        </ul>
+
+        <h2>7) PVP：機制與平衡調整</h2>
+        <ul>
+          <li>PVP 系統調整與重構（包含反制/姿態等機制方向）</li>
+          <li>新增回合相關的傷害加成設計，讓戰鬥節奏更收斂</li>
+        </ul>
+
+        <h2>8) Discord 社群整合（綁定與擴充）</h2>
+        <ul>
+          <li>新增 Discord 綁定相關頁面與 API</li>
+          <li>社群功能擴充（活動、抽獎、身分組等方向）</li>
+        </ul>
+
+        <hr />
+        <p><strong>後續</strong>：我們會把更新節奏拆成「每週短公告」＋「月度彙整」，讓你更容易追更新。</p>
+        <ul>
+          <li><a href="/beginner-guide">新手入門</a></li>
+          <li><a href="/features">玩法總覽</a></li>
+          <li><a href="/faq">常見問題</a></li>
+        </ul>
+
+        <p class="text-sm text-gray-400">備註：此公告刻意省略內部維運/安全/部署細節，只保留玩家需要知道的內容。</p>
+      </section>
+
+      <nav class="mt-10 flex items-center justify-between text-sm">
+        <a class="text-hero-gold hover:text-white" href="/announcements">← 回到公告列表</a>
+        <a class="text-hero-gold hover:text-white" href="/features">去看玩法總覽 →</a>
+      </nav>
+    </article>
+  </main>
+
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>
