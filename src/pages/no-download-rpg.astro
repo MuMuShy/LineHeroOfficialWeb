@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const title = '免下載 RPG｜LINE Hero 無盡冒險（打開 LINE 直接玩）';
+const description = '免下載 RPG 推薦：不裝 App、不用註冊，打開 LINE 就能玩。支援 Web 模式（網頁 RPG）進行大螢幕背包/裝備管理、世界 Boss 與副本戰鬥資訊；一般探索主要在 LINE 上進行。';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '什麼是免下載 RPG？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '免下載 RPG 指的是不需要安裝額外 App，就能直接開始遊玩的 RPG。LINE Hero 無盡冒險屬於免下載 RPG：加入官方帳號後即可在聊天視窗遊玩，並支援 Web 模式延伸玩法。'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: '免下載 RPG 跟一般手遊差在哪？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '免下載 RPG 最大差異是進入門檻更低：不占手機容量、不用更新安裝包、開啟速度快。玩法上仍可包含戰鬥、養成、掉寶、交易與世界 Boss 等完整內容。'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'LINE Hero 無盡冒險要怎麼開始？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '點擊官網的「立即開玩」加入官方帳號，在聊天室點選開始/新手教學即可進入冒險。'
+      }
+    }
+  ]
+};
+
+const seoProps = {
+  title,
+  description,
+  keywords: '免下載RPG,免下載 RPG,免安裝RPG,LINE RPG,網頁RPG,網頁 RPG,自動戰鬥RPG,世界Boss遊戲,放置冒險遊戲',
+  url: 'https://linehero.tw/no-download-rpg',
+  type: 'article',
+  schema: faqSchema,
+  breadcrumbs: [
+    { name: '首頁', url: 'https://linehero.tw/' },
+    { name: '免下載 RPG', url: 'https://linehero.tw/no-download-rpg' }
+  ]
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:load />
+
+  <main class="bg-hero-dark min-h-screen pt-28 pb-16 px-4 md:px-8 text-gray-100">
+    <article class="max-w-4xl mx-auto">
+      <header class="mb-10">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
+          <span class="w-2 h-2 rounded-full bg-hero-green"></span>
+          <span class="text-xs font-bold tracking-[0.2em] text-gray-200 uppercase">No Download RPG</span>
+        </div>
+        <h1 class="mt-6 text-3xl md:text-5xl font-black text-white leading-tight">免下載 RPG：打開 LINE 直接玩《LINE Hero 無盡冒險》</h1>
+        <p class="mt-4 text-gray-300 leading-relaxed max-w-3xl">
+          你正在找「免下載 RPG」嗎？LINE Hero 無盡冒險不需要安裝 App、不需要註冊，加入官方帳號後就能在聊天視窗開戰；
+          同時提供 Web 模式（網頁 RPG）讓你用大螢幕管理背包/裝備、查看世界 Boss 與副本戰鬥資訊。
+        </p>
+
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="https://lin.ee/3JlUhak" target="_blank" rel="noopener noreferrer"
+             class="px-6 py-3 rounded-xl bg-[#06C755] hover:bg-[#05b34c] text-white font-black shadow-lg shadow-green-900/20">
+            立即開玩（免費）
+          </a>
+          <a href="/beginner-guide" class="px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold text-white font-bold">
+            新手入門 30 秒
+          </a>
+        </div>
+      </header>
+
+      <section class="space-y-10">
+        <section class="space-y-4">
+          <h2 class="text-2xl font-black text-white">為什麼「免下載 RPG」值得玩？</h2>
+          <ul class="list-disc pl-6 space-y-2 text-gray-200">
+            <li><strong class="text-white">門檻低</strong>：不用安裝、不占容量，想玩就玩。</li>
+            <li><strong class="text-white">進入快</strong>：打開 LINE 就能開始冒險，不用等更新。</li>
+            <li><strong class="text-white">玩法完整</strong>：戰鬥、養成、掉寶、交易、世界 Boss 都不缺。</li>
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-black text-white">LINE × Web：同一個角色，兩種玩法入口</h2>
+          <div class="grid gap-4 md:grid-cols-2">
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+              <h3 class="text-lg font-black text-white">LINE RPG（聊天視窗）</h3>
+              <p class="mt-2 text-gray-300">碎片時間快速戰鬥、掉寶通知、即開即玩。</p>
+              <a class="mt-4 inline-flex text-hero-gold font-bold" href="/line-rpg">了解 LINE RPG →</a>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+              <h3 class="text-lg font-black text-white">網頁 RPG（Web 模式）</h3>
+              <p class="mt-2 text-gray-300">大螢幕管理、排行、探索與更多資料分析。</p>
+              <a class="mt-4 inline-flex text-hero-gold font-bold" href="/web-rpg">了解網頁 RPG →</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-black text-white">你會喜歡的特色</h2>
+          <ul class="list-disc pl-6 space-y-2 text-gray-200">
+            <li>大世界世界 Boss：多人一起打、一起衝排名。</li>
+            <li>陣營對抗：選邊站、拚資源、拚榮耀。</li>
+            <li>自動戰鬥與養成：更專注在配裝與策略，而不是一直點。</li>
+          </ul>
+        </section>
+
+        <section class="border-t border-white/10 pt-8 space-y-4">
+          <h2 class="text-2xl font-black text-white">下一步：開始冒險</h2>
+          <div class="grid gap-2 sm:grid-cols-3">
+            <a class="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold rounded-xl px-4 py-3 font-bold text-sm text-white" href="/features">玩法總覽</a>
+            <a class="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold rounded-xl px-4 py-3 font-bold text-sm text-white" href="/faq">常見問題</a>
+            <a class="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold rounded-xl px-4 py-3 font-bold text-sm text-white" href="https://wiki.linehero.tw" target="_blank" rel="noopener noreferrer">攻略 Wiki</a>
+          </div>
+        </section>
+      </section>
+    </article>
+  </main>
+
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>

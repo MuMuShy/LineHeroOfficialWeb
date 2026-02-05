@@ -11,9 +11,9 @@ import { getFAQSchema } from '../components/FAQPage';
 import '../styles/global.css';
 
 const seoProps = {
-  title: "LINE Hero 無盡冒險｜免下載 LINE遊戲・網頁遊戲 即玩 RPG",
-  description: "免下載、免安裝、免註冊，打開 LINE 就能玩的 RPG（LINE遊戲）！同時支援瀏覽器 Web 模式，隨時用大螢幕管理與探索（網頁遊戲）。1 秒加入官方帳號立即開戰。",
-  keywords: "LINE遊戲, 網頁遊戲, 免下載RPG, LINE即玩RPG, 聊天視窗RPG, LINE Hero, LIFF遊戲, LINE RPG, 文字冒險, MMORPG",
+  title: "免下載 RPG｜LINE Hero 無盡冒險（LINE RPG・網頁 RPG・世界Boss）",
+  description: "免下載、免安裝，打開 LINE 就能玩的 RPG。支援 Web 模式（網頁 RPG）在大螢幕管理與探索；大世界世界 Boss、陣營對抗、自動戰鬥與裝備養成一次體驗。",
+  keywords: "免下載RPG, 免下載 RPG, LINE RPG, LINE遊戲, 網頁RPG, 網頁 RPG, 網頁遊戲, 自動戰鬥RPG, 世界Boss遊戲, 放置冒險遊戲",
   // 首頁保留 FAQ 結構化資料（rich result 可能性）
   schema: getFAQSchema(),
   url: "https://linehero.tw/"
@@ -33,7 +33,7 @@ const seoProps = {
       <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1605806616949-1e87b487bc2a?q=80&w=1974&auto=format&fit=crop')] opacity-10 bg-cover bg-center"></div>
       <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-hero-green/10 rounded-full blur-[140px]"></div>
       <div class="absolute bottom-0 right-0 w-[420px] h-[420px] bg-hero-gold/10 rounded-full blur-[120px]"></div>
-      <div class="relative z-10 text-center max-w-5xl mx-auto px-4">
+      <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
         <h2 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
           準備好體驗免下載的 LINE 即玩 RPG 嗎？<br />
           <span class="text-hero-gold text-shadow-gold">打開聊天視窗直接開戰</span>
@@ -44,19 +44,19 @@ const seoProps = {
           加入官方帳號、掃描 QR Code，您的<span class="text-white font-bold">聊天視窗 RPG</span> 冒險即刻開始。
         </p>
 
-        <div class="flex flex-col md:flex-row gap-8 justify-center items-center bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm shadow-[0_30px_60px_rgba(0,0,0,0.35)]">
+        <div class="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8 items-center bg-white/5 p-6 md:p-8 rounded-3xl border border-white/10 backdrop-blur-sm shadow-[0_30px_60px_rgba(0,0,0,0.35)]">
           <!-- QR Code Block -->
-          <div class="bg-white p-4 rounded-xl shadow-xl ring-1 ring-white/40">
+          <div class="bg-white p-4 rounded-2xl shadow-xl ring-1 ring-white/40 mx-auto w-fit">
             <img
               src="https://qr-official.line.me/gs/M_765llgvq_GW.png?oat_content=qr"
               alt="Line Hero QR Code"
-              class="w-40 h-40"
+              class="w-44 h-44 sm:w-48 sm:h-48 md:w-52 md:h-52"
             />
-            <p class="text-black text-xs font-bold mt-2 uppercase tracking-wider">Scan to Play</p>
+            <p class="text-black text-[11px] font-black mt-2 uppercase tracking-wider">Scan to Play</p>
           </div>
 
           <!-- Buttons Block -->
-          <div class="flex flex-col gap-4 w-full md:w-auto">
+          <div class="flex flex-col gap-4 w-full">
             <a
               href="https://lin.ee/3JlUhak"
               target="_blank"
@@ -82,7 +82,25 @@ const seoProps = {
                 <li><span class="text-hero-gold font-bold">3.</span> 立刻探索、戰鬥、領新手禮包</li>
               </ol>
 
-              <div class="mt-4 grid grid-cols-1 gap-2">
+              <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-2">
+                <a
+                  href="/no-download-rpg"
+                  class="w-full bg-white/5 hover:bg-white/10 text-white px-4 py-3 rounded-xl flex items-center justify-center gap-2 transition-all border border-white/10 hover:border-hero-gold font-bold text-sm"
+                >
+                  免下載 RPG 介紹
+                </a>
+                <a
+                  href="/line-rpg"
+                  class="w-full bg-white/5 hover:bg-white/10 text-white px-4 py-3 rounded-xl flex items-center justify-center gap-2 transition-all border border-white/10 hover:border-hero-gold font-bold text-sm"
+                >
+                  LINE RPG 玩法
+                </a>
+                <a
+                  href="/web-rpg"
+                  class="w-full bg-white/5 hover:bg-white/10 text-white px-4 py-3 rounded-xl flex items-center justify-center gap-2 transition-all border border-white/10 hover:border-hero-gold font-bold text-sm"
+                >
+                  網頁 RPG（Web 模式）
+                </a>
                 <a
                   href="https://wiki.linehero.tw"
                   target="_blank"
@@ -106,7 +124,7 @@ const seoProps = {
                   href="https://discord.gg/76gSTeqtBw"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="w-full bg-white/5 hover:bg-white/10 text-white px-4 py-3 rounded-xl flex items-center justify-center gap-2 transition-all border border-white/10 hover:border-[#5865F2] font-bold text-sm"
+                  class="w-full md:col-span-2 bg-white/5 hover:bg-white/10 text-white px-4 py-3 rounded-xl flex items-center justify-center gap-2 transition-all border border-white/10 hover:border-[#5865F2] font-bold text-sm"
                 >
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.772-.6083 1.1588a18.3494 18.3494 0 00-5.4882 0 12.64 12.64 0 00-.6173-1.1588.0775.0775 0 00-.0785-.0371 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561 19.9667 19.9667 0 005.9937 3.0333.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057 13.111 13.111 0 01-1.872-8.99.077.077 0 01-.0076-.1023c.372-.272.7462-.5658 1.1068-.8753a.077.077 0 01.0842-.008c3.6711 1.678 7.646 1.678 11.2856 0a.076.076 0 01.0847.008c.3643.3127.742.6083 1.118.8812a.077.077 0 01.0075.1017 13.063 13.063 0 01-1.885 8.978.0767.0767 0 00-.0406.1067c.3564.7025.771 1.3673 1.2342 2.0008a.0765.0765 0 00.0847.0272 19.8759 19.8759 0 006.0027-3.0273.077.077 0 00.0321-.0554c.532-5.4833-1.686-9.9863-3.838-13.6737a.0698.0698 0 00-.0306-.0286z"/>

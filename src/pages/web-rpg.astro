@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const title = '網頁 RPG｜LINE Hero 無盡冒險（Web 模式大螢幕管理）';
+const description = '網頁 RPG 推薦：LINE Hero 無盡冒險支援 Web 模式（瀏覽器即可開啟），讓你用大螢幕管理背包/裝備、查看排行、世界 Boss 與副本戰鬥資訊；一般探索主要在 LINE 上進行，資料同步不斷線。';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '什麼是網頁 RPG？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '網頁 RPG 指用瀏覽器即可遊玩的 RPG，不需要安裝。LINE Hero 無盡冒險提供 Web 模式，讓你在電腦上更有效率地管理角色與資料。'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: '網頁 RPG 跟 LINE 入口是同一個帳號嗎？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '是同一個角色資料。LINE 入口適合碎片時間快速戰鬥；Web 模式適合大螢幕管理、排行與探索。'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: '網頁 RPG 有哪些功能？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '包含背包/裝備管理、排行與資訊檢視、探索與部分管理功能（依版本開放）。'
+      }
+    }
+  ]
+};
+
+const seoProps = {
+  title,
+  description,
+  keywords: '網頁RPG,網頁 RPG,網頁遊戲RPG,Web RPG,瀏覽器RPG,免下載RPG,世界Boss遊戲',
+  url: 'https://linehero.tw/web-rpg',
+  type: 'article',
+  schema: faqSchema,
+  breadcrumbs: [
+    { name: '首頁', url: 'https://linehero.tw/' },
+    { name: '網頁 RPG', url: 'https://linehero.tw/web-rpg' }
+  ]
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:load />
+
+  <main class="bg-hero-dark min-h-screen pt-28 pb-16 px-4 md:px-8 text-gray-100">
+    <article class="max-w-4xl mx-auto">
+      <header class="mb-10">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
+          <span class="w-2 h-2 rounded-full bg-hero-secondary"></span>
+          <span class="text-xs font-bold tracking-[0.2em] text-gray-200 uppercase">Web RPG</span>
+        </div>
+        <h1 class="mt-6 text-3xl md:text-5xl font-black text-white leading-tight">網頁 RPG：用大螢幕玩更有效率（Web 模式）</h1>
+        <p class="mt-4 text-gray-300 leading-relaxed max-w-3xl">
+          LINE Hero 無盡冒險不只是一款 LINE RPG，也是一款可以用瀏覽器開啟的網頁 RPG。
+          Web 模式讓你在電腦上更有效率地管理背包/裝備、查看排行、世界 Boss 與副本戰鬥等資訊；一般探索主要在 LINE 上進行，資料與進度同步。
+        </p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/game-intro-web" class="px-6 py-3 rounded-xl bg-hero-gold/10 hover:bg-hero-gold/15 border border-hero-gold/30 text-white font-black">
+            查看 Web 版介紹
+          </a>
+          <a href="/line-rpg" class="px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold text-white font-bold">
+            了解 LINE RPG
+          </a>
+        </div>
+      </header>
+
+      <section class="space-y-10">
+        <section class="space-y-4">
+          <h2 class="text-2xl font-black text-white">為什麼要做 Web 模式？</h2>
+          <ul class="list-disc pl-6 space-y-2 text-gray-200">
+            <li>大螢幕更適合管理：背包、裝備、掉落與資訊一目了然。</li>
+            <li>更有效率地規劃養成：把時間花在配裝與策略。</li>
+            <li>與 LINE 入口互補：手機碎片時間打、回家用電腦整理。</li>
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-black text-white">你可以在網頁 RPG 做什麼？</h2>
+          <div class="grid gap-4 md:grid-cols-2">
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+              <h3 class="text-lg font-black text-white">管理與數據</h3>
+              <p class="mt-2 text-gray-300">背包/裝備管理、排行、資料檢視等功能更順手。</p>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+              <h3 class="text-lg font-black text-white">探索與活動</h3>
+              <p class="mt-2 text-gray-300">探索模式與活動資訊在大螢幕上更直覺。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="border-t border-white/10 pt-8 space-y-4">
+          <h2 class="text-2xl font-black text-white">下一步</h2>
+          <div class="grid gap-2 sm:grid-cols-3">
+            <a class="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold rounded-xl px-4 py-3 font-bold text-sm text-white" href="/no-download-rpg">免下載 RPG</a>
+            <a class="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold rounded-xl px-4 py-3 font-bold text-sm text-white" href="/features">玩法總覽</a>
+            <a class="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold rounded-xl px-4 py-3 font-bold text-sm text-white" href="/ranking-power">戰力排行</a>
+          </div>
+        </section>
+      </section>
+    </article>
+  </main>
+
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>

@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const title = 'LINE RPG｜LINE Hero 無盡冒險（聊天視窗 RPG）';
+const description = 'LINE RPG 推薦：在 LINE 聊天視窗就能玩的 RPG。免下載、免安裝，支援自動戰鬥、掉寶通知、世界 Boss 與陣營對抗；並可用 Web 模式延伸成網頁 RPG。';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '什麼是 LINE RPG？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'LINE RPG 是指以 LINE 作為遊玩入口的 RPG，不用另外下載 App。LINE Hero 無盡冒險讓你在聊天視窗就能戰鬥、掉寶與養成，並可搭配 Web 模式進行更完整的管理。'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'LINE RPG 會不會很「純文字」？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '不一定。LINE Hero 無盡冒險結合 LIFF 與 Flex Message 視覺介面，保有聊天視窗的快速便利，同時也有畫面化的戰鬥與管理功能。'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: '可以在電腦玩嗎？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '可以。除了 LINE 入口，也支援 Web 模式（網頁 RPG），在瀏覽器用大螢幕管理背包、排行與探索。'
+      }
+    }
+  ]
+};
+
+const seoProps = {
+  title,
+  description,
+  keywords: 'LINE RPG,LINE遊戲,聊天型遊戲,免下載RPG,自動戰鬥RPG,世界Boss遊戲,網頁RPG',
+  url: 'https://linehero.tw/line-rpg',
+  type: 'article',
+  schema: faqSchema,
+  breadcrumbs: [
+    { name: '首頁', url: 'https://linehero.tw/' },
+    { name: 'LINE RPG', url: 'https://linehero.tw/line-rpg' }
+  ]
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:load />
+
+  <main class="bg-hero-dark min-h-screen pt-28 pb-16 px-4 md:px-8 text-gray-100">
+    <article class="max-w-4xl mx-auto">
+      <header class="mb-10">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
+          <span class="w-2 h-2 rounded-full bg-hero-gold"></span>
+          <span class="text-xs font-bold tracking-[0.2em] text-gray-200 uppercase">LINE RPG</span>
+        </div>
+        <h1 class="mt-6 text-3xl md:text-5xl font-black text-white leading-tight">LINE RPG（聊天視窗 RPG）是什麼？</h1>
+        <p class="mt-4 text-gray-300 leading-relaxed max-w-3xl">
+          如果你想找一款「不用下載 App」就能玩的 LINE RPG，LINE Hero 無盡冒險就是為此而生：
+          在聊天視窗即開即玩，搭配自動戰鬥、掉寶通知與世界 Boss，並可用 Web 模式延伸為網頁 RPG。
+        </p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="https://lin.ee/3JlUhak" target="_blank" rel="noopener noreferrer"
+             class="px-6 py-3 rounded-xl bg-[#06C755] hover:bg-[#05b34c] text-white font-black shadow-lg shadow-green-900/20">
+            立即加入官方帳號
+          </a>
+          <a href="/no-download-rpg" class="px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold text-white font-bold">
+            免下載 RPG 介紹
+          </a>
+        </div>
+      </header>
+
+      <section class="space-y-10">
+        <section class="space-y-4">
+          <h2 class="text-2xl font-black text-white">LINE RPG 的核心價值：碎片時間也能推進</h2>
+          <ul class="list-disc pl-6 space-y-2 text-gray-200">
+            <li>聊天視窗就能操作：快速、直覺、不用切 App。</li>
+            <li>自動戰鬥與結算：更像「策略 + 養成」，不是一直點。</li>
+            <li>掉寶/事件通知：你不需要一直盯著畫面。</li>
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-black text-white">你不只是在玩文字：LINE × Web 的混合玩法</h2>
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+            <p class="text-gray-300 leading-relaxed">
+              LINE Hero 無盡冒險不是單純的文字 RPG。
+              我們把 LINE 的即時互動（聊天視窗）與 Web 的效率（大螢幕管理）結合起來，讓你可以在不同情境用最順的方式玩同一個角色。
+            </p>
+            <div class="mt-4">
+              <a class="inline-flex text-hero-gold font-bold" href="/web-rpg">了解網頁 RPG（Web 模式）→</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-black text-white">適合哪些人？</h2>
+          <ul class="list-disc pl-6 space-y-2 text-gray-200">
+            <li>想找免下載、免安裝、進入快的 RPG 玩家。</li>
+            <li>喜歡世界 Boss、多人排名與大世界氛圍的人。</li>
+            <li>偏好自動戰鬥、把時間花在配裝與策略的人。</li>
+          </ul>
+        </section>
+
+        <section class="border-t border-white/10 pt-8 space-y-4">
+          <h2 class="text-2xl font-black text-white">下一步</h2>
+          <div class="grid gap-2 sm:grid-cols-3">
+            <a class="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold rounded-xl px-4 py-3 font-bold text-sm text-white" href="/beginner-guide">新手攻略</a>
+            <a class="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold rounded-xl px-4 py-3 font-bold text-sm text-white" href="/features">玩法總覽</a>
+            <a class="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold rounded-xl px-4 py-3 font-bold text-sm text-white" href="/faq">常見問題</a>
+          </div>
+        </section>
+      </section>
+    </article>
+  </main>
+
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>
