@@ -106,8 +106,9 @@ const assets = {
             class="absolute inset-0 w-full h-full object-cover opacity-90"
             loading="eager"
           />
-          <div class="absolute inset-0 bg-gradient-to-r from-hero-dark/30 via-hero-dark/65 to-hero-dark/90"></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-hero-dark/85 via-transparent to-transparent"></div>
+          <!-- Stronger scrim for readability on bright cover -->
+          <div class="absolute inset-0 bg-gradient-to-r from-hero-dark/55 via-hero-dark/80 to-hero-dark/95"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-hero-dark/90 via-hero-dark/35 to-transparent"></div>
 
           <!-- Foreground content -->
           <div class="relative z-10 p-6 md:p-8">
@@ -120,9 +121,9 @@ const assets = {
 
             <div class="mt-6 grid gap-4 lg:grid-cols-3 items-start">
               <!-- Activity time -->
-              <div class="rounded-3xl border border-white/10 bg-black/35 backdrop-blur-sm p-5">
+              <div class="rounded-3xl border border-white/10 bg-black/55 backdrop-blur-md p-5 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
                 <div class="text-xs uppercase tracking-[0.25em] text-gray-200 font-black">活動時間</div>
-                <p class="mt-2 text-gray-200 leading-relaxed">
+                <p class="mt-2 text-gray-100 leading-relaxed drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)]">
                   後台會依設定自動更新開始/結束時間。
                   <br />當狀態顯示「進行中」時，表示活動正在開放。
                 </p>
@@ -130,7 +131,7 @@ const assets = {
               </div>
 
               <!-- Materials -->
-              <div class="rounded-3xl border border-white/10 bg-black/35 backdrop-blur-sm p-5">
+              <div class="rounded-3xl border border-white/10 bg-black/55 backdrop-blur-md p-5 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
                 <div class="text-xs uppercase tracking-[0.25em] text-gray-200 font-black">活動素材</div>
 
                 <div class="mt-4 flex items-center gap-3">
@@ -155,7 +156,7 @@ const assets = {
               </div>
 
               <!-- Quick start -->
-              <div class="rounded-3xl border border-white/10 bg-black/35 backdrop-blur-sm p-5">
+              <div class="rounded-3xl border border-white/10 bg-black/55 backdrop-blur-md p-5 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
                 <div class="text-xs uppercase tracking-[0.25em] text-gray-200 font-black">快速開始</div>
                 <div class="mt-4 grid gap-2">
                   <a
