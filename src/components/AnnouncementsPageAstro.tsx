@@ -33,12 +33,12 @@ export const AnnouncementsPageAstro: React.FC = () => (
           <span className="px-3 py-1 rounded-full text-xs font-bold border bg-hero-gold/10 border-hero-gold/30 text-hero-gold">
             活動公告
           </span>
-          <span className="px-3 py-1 rounded-full text-xs font-bold border bg-green-500/20 border-green-500/40 text-green-300">
-            進行中
+          <span className="px-3 py-1 rounded-full text-xs font-bold border bg-blue-500/20 border-blue-500/40 text-blue-200">
+            即將開始
           </span>
-          <time className="text-gray-400 text-sm">2026-02-06</time>
+          <time className="text-gray-400 text-sm">2026-02-09</time>
         </div>
-        <h2 className="text-xl font-bold text-white mb-3">春節慶典｜活動公告（草稿）</h2>
+        <h2 className="text-xl font-bold text-white mb-3">春節慶典｜活動公告</h2>
         <p className="text-gray-300 text-sm leading-relaxed mb-4">
           刷活動副本拿紅包/龍年晶石，兌換活動商店獎勵、開寶箱、升階限定裝備；每日參與祈福樹互動拿獎勵，里程碑還可領稀有造型。
         </p>
