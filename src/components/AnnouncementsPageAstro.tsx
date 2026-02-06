@@ -30,6 +30,28 @@ export const AnnouncementsPageAstro: React.FC = () => (
     <section className="space-y-6">
       <article className="bg-hero-panel/60 border border-hero-gold/40 rounded-2xl p-6 shadow-xl">
         <div className="flex items-center gap-3 mb-4">
+          <span className="px-3 py-1 rounded-full text-xs font-bold border bg-hero-gold/10 border-hero-gold/30 text-hero-gold">
+            活動公告
+          </span>
+          <time className="text-gray-400 text-sm">2026-02-09</time>
+        </div>
+        <h2 className="text-xl font-bold text-white mb-3">春節慶典｜活動公告</h2>
+        <p className="text-gray-300 text-sm leading-relaxed mb-4">
+          刷活動副本拿紅包/龍年晶石，兌換活動商店獎勵、開寶箱、升階限定裝備；每日參與祈福樹互動拿獎勵，里程碑還可領稀有造型。
+        </p>
+        <a
+          href="/spring-festival"
+          className="inline-flex items-center gap-2 text-hero-gold font-bold text-sm hover:text-white transition-colors"
+        >
+          查看活動詳情
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </article>
+
+      <article className="bg-hero-panel/60 border border-hero-gold/40 rounded-2xl p-6 shadow-xl">
+        <div className="flex items-center gap-3 mb-4">
           <span className="px-3 py-1 rounded-full text-xs font-bold border bg-green-500/20 border-green-500/40 text-green-300">
             版本更新
           </span>

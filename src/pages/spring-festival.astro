@@ -1,0 +1,475 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const published = '2026-02-09';
+const title = '春節慶典｜限時活動副本公告｜LINE Hero 無盡冒險';
+const description = 'LineHero 春節慶典限時活動副本公告：挑戰無盡冒險活動副本獲得紅包/龍年晶石，兌換活動商店獎勵、開寶箱、升階限定裝備；每日參與祈福樹互動拿獎勵，里程碑可領稀有造型。免下載RPG，打開 LINE 即可開始。';
+
+const cover = 'https://image.linehero.tw/images/event/spring/landing.webp';
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: '春節慶典｜活動公告（草稿）',
+  description,
+  image: [cover],
+  datePublished: published,
+  dateModified: published,
+  author: {
+    '@type': 'Organization',
+    name: 'LINE Hero Team',
+    url: 'https://linehero.tw'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'LINE Hero 無盡冒險',
+    url: 'https://linehero.tw'
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://linehero.tw/spring-festival'
+  }
+};
+
+const seoProps = {
+  title,
+  description,
+  keywords: 'linehero, LineHero, 無盡冒險, 無盡冒險活動副本, linehero 限時活動副本, 限時活動副本, 活動副本, 免下載RPG, 免下載 RPG, LINE RPG',
+  url: 'https://linehero.tw/spring-festival',
+  type: 'article',
+  image: cover,
+  schema: articleSchema,
+  breadcrumbs: [
+    { name: '首頁', url: 'https://linehero.tw/' },
+    { name: '活動公告', url: 'https://linehero.tw/spring-festival' }
+  ]
+};
+
+const assets = {
+  cover,
+  redEnvelope: 'https://image.linehero.tw/images/event/spring/red_envelope.webp',
+  crystal: 'https://image.linehero.tw/images/event/spring/spring_crystal.webp',
+  map1: 'https://image.linehero.tw/images/event/spring/region_1_spring.webp',
+  map2: 'https://image.linehero.tw/images/event/spring/region_2_spring.webp',
+  map3: 'https://image.linehero.tw/images/event/spring/region_3_spring.webp',
+  // Use the final stage image as the main tree visual (more impressive + consistent)
+  treeDefault: 'https://image.linehero.tw/images/event/spring/wishing_tree_day30.webp',
+  tree0: 'https://image.linehero.tw/images/event/spring/wishing_tree_day0.webp',
+  tree3: 'https://image.linehero.tw/images/event/spring/wishing_tree_day3.webp',
+  tree7: 'https://image.linehero.tw/images/event/spring/wishing_tree_day7.webp',
+  tree14: 'https://image.linehero.tw/images/event/spring/wishing_tree_day14.webp',
+  tree21: 'https://image.linehero.tw/images/event/spring/wishing_tree_day21.webp',
+  tree30: 'https://image.linehero.tw/images/event/spring/wishing_tree_day30.webp',
+  skinRareMale: 'https://image.linehero.tw/images/skin/rare_male_v2.webp',
+  skinRareFemale: 'https://image.linehero.tw/images/skin/rare_female_v2.webp',
+  skinLegendMale: 'https://image.linehero.tw/images/skin/legendary_male_v2.webp',
+  skinLegendFemale: 'https://image.linehero.tw/images/skin/legendary_female_v2.webp',
+  eqWeapon: 'https://image.linehero.tw/images/event/spring/spring_weapon.webp',
+  eqHelmet: 'https://image.linehero.tw/images/event/spring/spring_helmet.webp',
+  eqAccessory: 'https://image.linehero.tw/images/event/spring/spring_accessory.webp',
+  chest1: 'https://image.linehero.tw/images/event/spring/beginner_spring_chest.webp',
+  chest2: 'https://image.linehero.tw/images/event/spring/intermediate_spring_chest.webp',
+  chest3: 'https://image.linehero.tw/images/event/spring/advanced_spring_chest.webp',
+  chest4: 'https://image.linehero.tw/images/event/spring/spring_king_chest.webp'
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:load />
+
+  <main class="bg-hero-dark min-h-screen pt-28 pb-16 px-4 md:px-8 text-gray-100">
+    <article class="max-w-5xl mx-auto">
+      <!-- Header -->
+      <header class="mb-10">
+        <div class="flex flex-wrap items-center gap-3 mb-5">
+          <span class="px-3 py-1 rounded-full text-xs font-black border bg-hero-gold/10 border-hero-gold/30 text-hero-gold">活動公告</span>
+          <!-- 狀態文字不做時間判斷，避免過期；以活動開始日/遊戲內狀態為準 -->
+          <time class="text-gray-400 text-sm">{published}</time>
+        </div>
+
+        <h1 class="text-3xl md:text-5xl font-black text-white leading-tight">春節慶典｜活動公告</h1>
+        <p class="mt-4 text-gray-300 leading-relaxed max-w-3xl">
+          刷活動副本拿素材，兌換獎勵、開寶箱、升階限定裝備，並參與祈福樹里程碑活動。
+        </p>
+
+        <section class="mt-6 relative overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+          <!-- Background cover -->
+          <img
+            src={assets.cover}
+            alt="春節慶典 活動封面"
+            class="absolute inset-0 w-full h-full object-cover opacity-90"
+            loading="eager"
+          />
+          <!-- Stronger scrim for readability on bright cover -->
+          <div class="absolute inset-0 bg-gradient-to-r from-hero-dark/55 via-hero-dark/80 to-hero-dark/95"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-hero-dark/90 via-hero-dark/35 to-transparent"></div>
+
+          <!-- Foreground content -->
+          <div class="relative z-10 p-6 md:p-8">
+            <div class="flex items-end justify-between gap-4">
+              <div>
+                <div class="text-white font-black text-2xl">春節慶典</div>
+                <div class="text-gray-200/90 text-sm mt-1">限時活動副本・活動素材・祈福樹里程碑</div>
+              </div>
+            </div>
+
+            <div class="mt-6 grid gap-4 lg:grid-cols-3 items-start">
+              <!-- Activity time -->
+              <div class="rounded-3xl border border-white/10 bg-black/55 backdrop-blur-md p-5 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+                <div class="text-xs uppercase tracking-[0.25em] text-gray-200 font-black">活動時間</div>
+                <p class="mt-2 text-gray-100 leading-relaxed drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)]">
+                  活動開始時間：<span class="text-white font-black">2026/02/09</span>
+                  <br />活動結束時間：以遊戲內公告為準
+                </p>
+                <p class="mt-4 text-xs text-gray-300/90">詳細規則與數值以遊戲內公告為準。</p>
+              </div>
+
+              <!-- Materials -->
+              <div class="rounded-3xl border border-white/10 bg-black/55 backdrop-blur-md p-5 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+                <div class="text-xs uppercase tracking-[0.25em] text-gray-200 font-black">活動素材</div>
+
+                <div class="mt-4 flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                    <img src={assets.redEnvelope} alt="紅包" class="w-7 h-7 object-contain" loading="lazy" />
+                  </div>
+                  <div class="min-w-0">
+                    <div class="font-black text-white whitespace-nowrap">紅包</div>
+                    <div class="text-xs text-gray-200/80">主要兌換用</div>
+                  </div>
+                </div>
+
+                <div class="mt-3 flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                    <img src={assets.crystal} alt="龍年晶石" class="w-7 h-7 object-contain" loading="lazy" />
+                  </div>
+                  <div class="min-w-0">
+                    <div class="font-black text-white whitespace-nowrap">龍年晶石</div>
+                    <div class="text-xs text-gray-200/80">重點兌換 / 進階用</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick start -->
+              <div class="rounded-3xl border border-white/10 bg-black/55 backdrop-blur-md p-5 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+                <div class="text-xs uppercase tracking-[0.25em] text-gray-200 font-black">快速開始</div>
+                <div class="mt-4 grid gap-2">
+                  <a
+                    href="https://lin.ee/3JlUhak"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-full text-center px-4 py-3 rounded-xl bg-[#06C755] hover:bg-[#05b34c] text-white font-black"
+                  >
+                    立即遊玩
+                  </a>
+                  <a
+                    href="/announcements"
+                    class="w-full text-center px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold text-white font-bold"
+                  >
+                    回到公告列表
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </header>
+
+      <!-- How it works -->
+      <section class="space-y-10">
+        <!-- 活動玩法總覽已移至頁尾（避免在首段出現無圖資訊卡） -->
+
+        <!-- Blessing tree -->
+        <section class="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+            <div>
+              <h2 class="text-2xl font-black text-white">祈福樹</h2>
+              <p class="mt-2 text-gray-300">每天可澆灌 1 次。澆灌可獲得每日獎勵，累積天數可領階段獎勵與稀有造型。</p>
+            </div>
+            <!-- badges removed: moved into description to avoid layout issues -->
+          </div>
+
+          <div class="mt-6 grid gap-6 lg:grid-cols-2">
+            <div class="rounded-3xl border border-white/10 bg-black/20 overflow-hidden">
+              <img src={assets.treeDefault} alt="祈福樹" class="w-full h-72 object-cover" loading="lazy" />
+              <div class="p-5">
+                <div class="font-black text-white">澆灌會發生什麼？</div>
+                <ul class="mt-3 list-disc pl-6 space-y-2 text-gray-200">
+                  <li>消耗紅包（成本會隨成長階段提高）</li>
+                  <li>獲得：當日澆灌獎勵（每天都有）</li>
+                  <li>獲得：活動能量加成（依成長階段提高）</li>
+                  <li>額外活動能量 +200</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="rounded-3xl border border-white/10 bg-black/20 p-5">
+                <div class="font-black text-white">成長階段（天數門檻）</div>
+                <div class="mt-3 grid grid-cols-3 sm:grid-cols-6 gap-2">
+                  {['0','3','7','14','21','30'].map((d) => (
+                    <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-center">
+                      <div class="text-xs text-gray-300 font-bold">Day</div>
+                      <div class="text-white font-black">{d}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div class="rounded-3xl border border-white/10 bg-black/20 p-5">
+                <div class="font-black text-white">階段樹圖預覽</div>
+                <div class="mt-3 grid grid-cols-3 gap-2">
+                  <img class="rounded-2xl border border-white/10" src={assets.tree0} alt="祈福樹 Day0" loading="lazy" />
+                  <img class="rounded-2xl border border-white/10" src={assets.tree7} alt="祈福樹 Day7" loading="lazy" />
+                  <img class="rounded-2xl border border-white/10" src={assets.tree30} alt="祈福樹 Day30" loading="lazy" />
+                </div>
+                <!-- （完整階段圖）說明已移除，避免畫面干擾 -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Skins -->
+        <section class="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8">
+          <h2 class="text-2xl font-black text-white">活動限定造型（外觀 / Skin）</h2>
+          <p class="mt-2 text-gray-300">想要最吸睛？這兩類造型最值得先鎖定。</p>
+
+          <div class="mt-6 grid gap-6 lg:grid-cols-2">
+            <div class="rounded-3xl border border-white/10 bg-black/20 p-5">
+              <div class="flex items-center justify-between gap-3">
+                <div class="font-black text-white">稀有造型（活動獲得）</div>
+                <span class="px-3 py-1 rounded-full text-xs font-black bg-green-500/15 border border-green-500/30 text-green-300">第 7 天里程碑</span>
+              </div>
+              <div class="mt-4 grid grid-cols-2 gap-3">
+                <div class="rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+                  <img src={assets.skinRareMale} alt="龍威戰神（男）」 class="w-full h-36 object-cover" loading="lazy" />
+                  <div class="p-3">
+                    <div class="font-black text-white text-sm">龍威戰神（男）</div>
+                    <div class="text-xs text-gray-300">稀有</div>
+                  </div>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+                  <img src={assets.skinRareFemale} alt="鳳舞新春（女）" class="w-full h-36 object-cover" loading="lazy" />
+                  <div class="p-3">
+                    <div class="font-black text-white text-sm">鳳舞新春（女）</div>
+                    <div class="text-xs text-gray-300">稀有</div>
+                  </div>
+                </div>
+              </div>
+              <p class="mt-4 text-sm text-gray-300">取得方式：祈福樹里程碑（第 7 天）擇一領取。</p>
+            </div>
+
+            <div class="rounded-3xl border border-white/10 bg-black/20 p-5">
+              <div class="flex items-center justify-between gap-3">
+                <div class="font-black text-white">傳說造型（造型商店）</div>
+                <span class="px-3 py-1 rounded-full text-xs font-black bg-hero-gold/10 border border-hero-gold/30 text-hero-gold">外觀卷 x60</span>
+              </div>
+              <div class="mt-4 grid grid-cols-2 gap-3">
+                <div class="rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+                  <img src={assets.skinLegendFemale} alt="焰凰天后" class="w-full h-36 object-cover" loading="lazy" />
+                  <div class="p-3">
+                    <div class="font-black text-white text-sm">焰凰天后</div>
+                    <div class="text-xs text-gray-300">傳說 · ATK+10</div>
+                  </div>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+                  <img src={assets.skinLegendMale} alt="金輝帝君" class="w-full h-36 object-cover" loading="lazy" />
+                  <div class="p-3">
+                    <div class="font-black text-white text-sm">金輝帝君</div>
+                    <div class="text-xs text-gray-300">傳說 · ATK+10</div>
+                  </div>
+                </div>
+              </div>
+              <p class="mt-4 text-sm text-gray-300">備註：造型會在「擁有的造型 / 造型商店」顯示加成數值。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Event regions -->
+        <section class="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8">
+          <h2 class="text-2xl font-black text-white">活動副本（3 張地圖）</h2>
+          <p class="mt-2 text-gray-300">依難度/階段開放。想刷「龍王寶箱」建議挑戰高階地圖。</p>
+
+          <div class="mt-6 grid gap-4 md:grid-cols-3">
+            <div class="rounded-3xl border border-white/10 bg-black/20 overflow-hidden">
+              <img src={assets.map1} alt="煙火夜市" class="w-full h-36 object-cover" loading="lazy" />
+              <div class="p-4">
+                <div class="font-black text-white">煙火夜市</div>
+                <div class="text-sm text-gray-300">春節副本 · 初階</div>
+              </div>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-black/20 overflow-hidden">
+              <img src={assets.map2} alt="龍宮寶殿" class="w-full h-36 object-cover" loading="lazy" />
+              <div class="p-4">
+                <div class="font-black text-white">龍宮寶殿</div>
+                <div class="text-sm text-gray-300">春節副本 · 中階</div>
+              </div>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-black/20 overflow-hidden">
+              <img src={assets.map3} alt="天庭瑞雲" class="w-full h-36 object-cover" loading="lazy" />
+              <div class="p-4">
+                <div class="font-black text-white">天庭瑞雲</div>
+                <div class="text-sm text-gray-300">高階 · 稀有掉落加碼</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 rounded-3xl border border-white/10 bg-black/20 p-5">
+            <div class="font-black text-white">高階副本稀有掉落加碼（天庭瑞雲）</div>
+            <p class="mt-2 text-gray-300">
+              遇到 <span class="text-white font-black">至尊龍王</span> 時，有機率額外掉落 <span class="text-hero-gold font-black">龍王寶箱（50%）</span>。
+            </p>
+          </div>
+        </section>
+
+        <!-- Equipment & chests -->
+        <section class="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8">
+          <h2 class="text-2xl font-black text-white">活動限定裝備（可升階）</h2>
+          <p class="mt-2 text-gray-300">透過挑戰活動副本、兌換活動商店與開啟寶箱，逐步取得並升階活動限定裝備。</p>
+
+          <div class="mt-6 grid gap-4 md:grid-cols-3">
+            <div class="rounded-3xl border border-white/10 bg-black/20 overflow-hidden">
+              <img src={assets.eqWeapon} alt="龍炎神刃" class="w-full h-36 object-contain bg-gradient-to-b from-white/5 to-transparent" loading="lazy" />
+              <div class="p-4">
+                <div class="font-black text-white">龍炎神刃</div>
+                <div class="text-sm text-gray-300">主手</div>
+              </div>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-black/20 overflow-hidden">
+              <img src={assets.eqHelmet} alt="龍皇冠冕" class="w-full h-36 object-contain bg-gradient-to-b from-white/5 to-transparent" loading="lazy" />
+              <div class="p-4">
+                <div class="font-black text-white">龍皇冠冕</div>
+                <div class="text-sm text-gray-300">頭盔</div>
+              </div>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-black/20 overflow-hidden">
+              <img src={assets.eqAccessory} alt="龍玉瑞佩" class="w-full h-36 object-contain bg-gradient-to-b from-white/5 to-transparent" loading="lazy" />
+              <div class="p-4">
+                <div class="font-black text-white">龍玉瑞佩</div>
+                <div class="text-sm text-gray-300">飾品</div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="mt-10 text-xl font-black text-white">活動寶箱（4 種）</h3>
+          <div class="mt-4 grid gap-4 md:grid-cols-4">
+            {[{name:'初級春節寶箱',img:assets.chest1},{name:'中級春節寶箱',img:assets.chest2},{name:'高級春節寶箱',img:assets.chest3},{name:'龍王寶箱',img:assets.chest4}].map((c) => (
+              <div class="rounded-3xl border border-white/10 bg-black/20 overflow-hidden">
+                <img src={c.img} alt={c.name} class="w-full h-28 object-contain bg-gradient-to-b from-white/5 to-transparent" loading="lazy" />
+                <div class="p-4">
+                  <div class="font-black text-white text-sm">{c.name}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-6 rounded-3xl border border-hero-gold/30 bg-hero-gold/5 p-5">
+            <div class="font-black text-white">龍王寶箱亮點</div>
+            <p class="mt-2 text-gray-200">大量紅包、龍年晶石，並有機率獲得活動裝備「龍玉瑞佩」。</p>
+          </div>
+        </section>
+
+        <!-- Shop -->
+        <section class="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8">
+          <h2 class="text-2xl font-black text-white">活動商店兌換（重點品項）</h2>
+          <p class="mt-2 text-gray-300">使用 <span class="text-white font-black">紅包</span> / <span class="text-white font-black">龍年晶石</span> 兌換（含總限購/週限購）。</p>
+
+          <div class="mt-6 grid gap-4 lg:grid-cols-2">
+            <div class="rounded-3xl border border-white/10 bg-black/20 p-5">
+              <div class="font-black text-white">紅包兌換</div>
+              <ul class="mt-3 list-disc pl-6 space-y-2 text-gray-200">
+                <li>精煉魂魄</li>
+                <li>基礎血量結晶石(綁定)</li>
+                <li>中階血量結晶石(綁定)</li>
+                <li>轉蛋卷(綁定)</li>
+                <li>掃蕩卷</li>
+                <li>更名卷</li>
+                <li>強化精煉轉移卷</li>
+              </ul>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-black/20 p-5">
+              <div class="font-black text-white">龍年晶石兌換</div>
+              <ul class="mt-3 list-disc pl-6 space-y-2 text-gray-200">
+                <li>傳說之源</li>
+                <li>洗煉石（含週限購）</li>
+                <li>龍王寶箱（含週限購）</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Lazy pack -->
+        <section class="rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-6 md:p-8">
+          <h2 class="text-2xl font-black text-white">每日建議行程</h2>
+          <div class="mt-5 grid gap-4 md:grid-cols-3">
+            <div class="rounded-3xl border border-white/10 bg-black/20 p-5">
+              <div class="font-black text-white">每天必做</div>
+              <ul class="mt-3 list-disc pl-6 space-y-2 text-gray-200">
+                <li>去祈福樹澆灌拿獎勵（每天都有）</li>
+                <li>刷活動副本拿紅包 / 龍年晶石</li>
+              </ul>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-black/20 p-5">
+              <div class="font-black text-white">想拿稀有造型</div>
+              <ul class="mt-3 list-disc pl-6 space-y-2 text-gray-200">
+                <li>澆灌累積到第 7 天</li>
+                <li>龍威戰神 / 鳳舞新春 擇一</li>
+              </ul>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-black/20 p-5">
+              <div class="font-black text-white">想刷龍王寶箱</div>
+              <ul class="mt-3 list-disc pl-6 space-y-2 text-gray-200">
+                <li>打高階「天庭瑞雲」</li>
+                <li>遇到至尊龍王有機率掉落</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <!-- Overview (moved to bottom) -->
+        <section class="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8">
+          <h2 class="text-2xl font-black text-white">活動玩法總覽</h2>
+          <div class="mt-5 grid gap-4 md:grid-cols-5">
+            <div class="rounded-2xl border border-white/10 bg-black/20 p-4">
+              <div class="text-hero-gold font-black">1</div>
+              <div class="mt-1 font-black text-white">挑戰活動副本</div>
+              <div class="mt-2 text-sm text-gray-300">限時地區，依難度開放。</div>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-black/20 p-4">
+              <div class="text-hero-gold font-black">2</div>
+              <div class="mt-1 font-black text-white">掉落活動素材</div>
+              <div class="mt-2 text-sm text-gray-300">紅包 / 龍年晶石。</div>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-black/20 p-4">
+              <div class="text-hero-gold font-black">3</div>
+              <div class="mt-1 font-black text-white">兌換活動商店</div>
+              <div class="mt-2 text-sm text-gray-300">資源、卷軸、寶箱。</div>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-black/20 p-4">
+              <div class="text-hero-gold font-black">4</div>
+              <div class="mt-1 font-black text-white">開寶箱/拿裝備</div>
+              <div class="mt-2 text-sm text-gray-300">限定寶箱與裝備。</div>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-black/20 p-4">
+              <div class="text-hero-gold font-black">5</div>
+              <div class="mt-1 font-black text-white">祈福樹每日互動</div>
+              <div class="mt-2 text-sm text-gray-300">每天澆灌、領里程碑。</div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <p class="mt-10 text-xs text-gray-400 text-center">內容可能會有異動，最終結果依照遊戲內實際資料為主。</p>
+
+      <nav class="mt-6 flex items-center justify-between text-sm">
+        <a class="text-hero-gold hover:text-white font-bold" href="/announcements">← 回到公告列表</a>
+        <a class="text-hero-gold hover:text-white font-bold" href="/beginner-guide">新手入門 →</a>
+      </nav>
+    </article>
+  </main>
+
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>
