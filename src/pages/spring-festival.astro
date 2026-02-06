@@ -97,67 +97,85 @@ const assets = {
           並加入全新互動玩法「祈福樹」：每天澆灌拿獎勵、累積里程碑還能領稀有造型。
         </p>
 
-        <div class="mt-6 grid gap-4 md:grid-cols-2 items-stretch">
-          <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5">
-            <img src={assets.cover} alt="春節慶典 活動封面" class="w-full h-56 md:h-full object-cover opacity-90" loading="eager" />
-            <div class="absolute inset-0 bg-gradient-to-t from-hero-dark/90 via-hero-dark/40 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-5">
-              <div class="text-white font-black text-xl">春節慶典</div>
-              <div class="text-gray-200/80 text-sm mt-1">限時活動副本・活動素材・祈福樹里程碑</div>
-            </div>
-          </div>
+        <section class="mt-6 relative overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+          <!-- Background cover -->
+          <img
+            src={assets.cover}
+            alt="春節慶典 活動封面"
+            class="absolute inset-0 w-full h-full object-cover opacity-90"
+            loading="eager"
+          />
+          <div class="absolute inset-0 bg-gradient-to-r from-hero-dark/30 via-hero-dark/65 to-hero-dark/90"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-hero-dark/85 via-transparent to-transparent"></div>
 
-          <div class="rounded-3xl border border-white/10 bg-white/5 p-6 flex flex-col justify-between">
-            <div>
-              <div class="text-xs uppercase tracking-[0.25em] text-gray-300 font-black">活動時間</div>
-              <p class="mt-2 text-gray-200 leading-relaxed">
-                後台會依設定自動更新開始/結束時間。
-                <br />當狀態顯示「進行中」時，表示活動正在開放。
-              </p>
-
-              <div class="mt-5 grid grid-cols-2 gap-3">
-                <div class="rounded-2xl border border-white/10 bg-black/20 p-4 overflow-hidden">
-                  <div class="text-xs text-gray-400 font-bold">活動素材</div>
-
-                  <div class="mt-3 flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                      <img src={assets.redEnvelope} alt="紅包" class="w-7 h-7 object-contain" loading="lazy" />
-                    </div>
-                    <div class="min-w-0">
-                      <div class="font-black text-white whitespace-nowrap">紅包</div>
-                      <div class="text-xs text-gray-400">主要兌換用</div>
-                    </div>
-                  </div>
-
-                  <div class="mt-3 flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                      <img src={assets.crystal} alt="龍年晶石" class="w-7 h-7 object-contain" loading="lazy" />
-                    </div>
-                    <div class="min-w-0">
-                      <div class="font-black text-white whitespace-nowrap">龍年晶石</div>
-                      <div class="text-xs text-gray-400">重點兌換 / 進階用</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="rounded-2xl border border-white/10 bg-black/20 p-4">
-                  <div class="text-xs text-gray-400 font-bold">快速開始</div>
-                  <div class="mt-3 grid gap-2">
-                    <a href="https://lin.ee/3JlUhak" target="_blank" rel="noopener noreferrer"
-                       class="w-full text-center px-4 py-2 rounded-xl bg-[#06C755] hover:bg-[#05b34c] text-white font-black">
-                      立即加入官方帳號
-                    </a>
-                    <a href="/announcements" class="w-full text-center px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold text-white font-bold">
-                      回到公告列表
-                    </a>
-                  </div>
-                </div>
+          <!-- Foreground content -->
+          <div class="relative z-10 p-6 md:p-8">
+            <div class="flex items-end justify-between gap-4">
+              <div>
+                <div class="text-white font-black text-2xl">春節慶典</div>
+                <div class="text-gray-200/90 text-sm mt-1">限時活動副本・活動素材・祈福樹里程碑</div>
               </div>
             </div>
 
-            <p class="mt-5 text-xs text-gray-400">本公告以重點資訊為主，詳細規則與數值以遊戲內顯示為準。</p>
+            <div class="mt-6 grid gap-4 lg:grid-cols-3 items-start">
+              <!-- Activity time -->
+              <div class="rounded-3xl border border-white/10 bg-black/35 backdrop-blur-sm p-5">
+                <div class="text-xs uppercase tracking-[0.25em] text-gray-200 font-black">活動時間</div>
+                <p class="mt-2 text-gray-200 leading-relaxed">
+                  後台會依設定自動更新開始/結束時間。
+                  <br />當狀態顯示「進行中」時，表示活動正在開放。
+                </p>
+                <p class="mt-4 text-xs text-gray-300/90">詳細規則與數值以遊戲內顯示為準。</p>
+              </div>
+
+              <!-- Materials -->
+              <div class="rounded-3xl border border-white/10 bg-black/35 backdrop-blur-sm p-5">
+                <div class="text-xs uppercase tracking-[0.25em] text-gray-200 font-black">活動素材</div>
+
+                <div class="mt-4 flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                    <img src={assets.redEnvelope} alt="紅包" class="w-7 h-7 object-contain" loading="lazy" />
+                  </div>
+                  <div class="min-w-0">
+                    <div class="font-black text-white whitespace-nowrap">紅包</div>
+                    <div class="text-xs text-gray-200/80">主要兌換用</div>
+                  </div>
+                </div>
+
+                <div class="mt-3 flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                    <img src={assets.crystal} alt="龍年晶石" class="w-7 h-7 object-contain" loading="lazy" />
+                  </div>
+                  <div class="min-w-0">
+                    <div class="font-black text-white whitespace-nowrap">龍年晶石</div>
+                    <div class="text-xs text-gray-200/80">重點兌換 / 進階用</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick start -->
+              <div class="rounded-3xl border border-white/10 bg-black/35 backdrop-blur-sm p-5">
+                <div class="text-xs uppercase tracking-[0.25em] text-gray-200 font-black">快速開始</div>
+                <div class="mt-4 grid gap-2">
+                  <a
+                    href="https://lin.ee/3JlUhak"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-full text-center px-4 py-3 rounded-xl bg-[#06C755] hover:bg-[#05b34c] text-white font-black"
+                  >
+                    立即加入官方帳號
+                  </a>
+                  <a
+                    href="/announcements"
+                    class="w-full text-center px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold text-white font-bold"
+                  >
+                    回到公告列表
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
       </header>
 
       <!-- How it works -->
