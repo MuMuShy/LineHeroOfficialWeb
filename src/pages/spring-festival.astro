@@ -87,7 +87,7 @@ const assets = {
       <header class="mb-10">
         <div class="flex flex-wrap items-center gap-3 mb-5">
           <span class="px-3 py-1 rounded-full text-xs font-black border bg-hero-gold/10 border-hero-gold/30 text-hero-gold">活動公告</span>
-          <span class="px-3 py-1 rounded-full text-xs font-black border bg-blue-500/15 border-blue-500/30 text-blue-200">即將開始</span>
+          <!-- 狀態文字不做時間判斷，避免過期；以活動開始日/遊戲內狀態為準 -->
           <time class="text-gray-400 text-sm">{published}</time>
         </div>
 

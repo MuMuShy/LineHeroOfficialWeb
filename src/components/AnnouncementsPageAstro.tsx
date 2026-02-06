@@ -33,9 +33,6 @@ export const AnnouncementsPageAstro: React.FC = () => (
           <span className="px-3 py-1 rounded-full text-xs font-bold border bg-hero-gold/10 border-hero-gold/30 text-hero-gold">
             活動公告
           </span>
-          <span className="px-3 py-1 rounded-full text-xs font-bold border bg-blue-500/20 border-blue-500/40 text-blue-200">
-            即將開始
-          </span>
           <time className="text-gray-400 text-sm">2026-02-09</time>
         </div>
         <h2 className="text-xl font-bold text-white mb-3">春節慶典｜活動公告</h2>
