@@ -11,7 +11,7 @@ const Features: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <header className="text-center mb-16 md:mb-28 relative">
           <span className="text-hero-neon font-mono text-sm tracking-[0.35em] uppercase opacity-70 mb-2 block">System Features</span>
-          <h2 className="font-display text-4xl md:text-6xl font-black text-white mb-6 tracking-wide drop-shadow-lg">
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-wide drop-shadow-lg">
             遊戲<span className="text-transparent bg-clip-text bg-gradient-to-r from-hero-gold to-yellow-600">特色</span>
           </h2>
           <div className="h-1 w-24 md:w-32 bg-gradient-to-r from-transparent via-hero-neon to-transparent mx-auto relative">
@@ -32,7 +32,7 @@ const Features: React.FC = () => {
                 <div className="p-4 bg-hero-green/10 rounded-2xl border border-hero-green/30 shadow-[0_0_20px_rgba(6,199,85,0.2)]">
                   <span className="text-3xl md:text-4xl">⚔️</span>
                 </div>
-                <h3 className="text-3xl md:text-5xl font-bold text-white font-display">
+                <h3 className="text-3xl md:text-5xl font-black text-white">
                   視覺戰鬥
                 </h3>
               </div>
@@ -114,7 +114,7 @@ const Features: React.FC = () => {
                 <div className="p-4 bg-hero-gold/10 rounded-2xl border border-hero-gold/30 shadow-[0_0_20px_rgba(255,215,0,0.2)]">
                   <span className="text-3xl md:text-4xl">⚒️</span>
                 </div>
-                <h3 className="text-3xl md:text-5xl font-bold text-white font-display">
+                <h3 className="text-3xl md:text-5xl font-black text-white">
                   裝備養成
                 </h3>
               </div>
@@ -159,7 +159,7 @@ const Features: React.FC = () => {
                 <div className="p-4 bg-blue-500/10 rounded-2xl border border-blue-500/30 shadow-[0_0_20px_rgba(59,130,246,0.2)]">
                   <span className="text-3xl md:text-4xl">🖥️</span>
                 </div>
-                <h3 className="text-3xl md:text-5xl font-bold text-white font-display">
+                <h3 className="text-3xl md:text-5xl font-black text-white">
                   Web 網頁版
                 </h3>
               </div>
@@ -251,7 +251,7 @@ const Features: React.FC = () => {
                 <div className="p-4 bg-amber-500/10 rounded-2xl border border-amber-500/30 shadow-[0_0_20px_rgba(245,158,11,0.2)]">
                   <span className="text-3xl md:text-4xl">🍺</span>
                 </div>
-                <h3 className="text-3xl md:text-5xl font-bold text-white font-display">
+                <h3 className="text-3xl md:text-5xl font-black text-white">
                   冒險者酒館
                 </h3>
               </div>
@@ -278,7 +278,7 @@ const Features: React.FC = () => {
               <div className="absolute inset-0 bg-amber-600/20 blur-3xl rounded-full group-hover:bg-amber-600/30 transition-all duration-500"></div>
               <div className="relative z-10 bg-gradient-to-br from-[#2a1b0a] to-black rounded-2xl p-10 border border-amber-900/50 shadow-2xl flex flex-col items-center justify-center min-h-[300px] text-center group-hover:border-amber-500/50 transition-colors">
                 <div className="text-7xl mb-6 transform group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_15px_rgba(245,158,11,0.5)]">🍺</div>
-                <h4 className="font-display text-3xl font-bold text-amber-400 mb-2">The Tavern</h4>
+                <h4 className="text-3xl font-black text-amber-400 mb-2">The Tavern</h4>
                 <p className="text-amber-200/60 font-mono text-sm tracking-wider">EST. 2024</p>
                 <div className="mt-8 pt-6 border-t border-amber-900/50 w-full">
                   <p className="text-sm text-gray-500 font-mono">tarven.linehero.tw</p>
@@ -298,7 +298,7 @@ const Features: React.FC = () => {
               🔒
             </div>
 
-            <h3 className="text-2xl md:text-4xl font-bold text-white mb-4 font-display">
+            <h3 className="text-2xl md:text-4xl font-black text-white mb-4">
               安全承諾
             </h3>
 
