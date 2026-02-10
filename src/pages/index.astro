@@ -11,8 +11,8 @@ import { getFAQSchema } from '../components/FAQPage';
 import '../styles/global.css';
 
 const seoProps = {
-  title: "免下載 RPG｜LINE Hero 無盡冒險（LINE RPG・網頁 RPG・世界Boss）",
-  description: "免下載、免安裝，打開 LINE 就能玩的 RPG。支援 Web 模式（網頁 RPG）在大螢幕管理與探索；大世界世界 Boss、陣營對抗、自動戰鬥與裝備養成一次體驗。",
+  title: "免下載 RPG｜LINE Hero 無盡冒險（LINE RPG・網頁 RPG・世界 Boss・自動戰鬥）",
+  description: "免下載、免安裝，打開 LINE 就能玩的 RPG。支援 Web 模式（網頁 RPG）在大螢幕管理與探索，世界 Boss、陣營對抗、自動戰鬥與裝備養成一次體驗，適合上班族與碎片時間遊玩。",
   keywords: "免下載RPG, 免下載 RPG, LINE RPG, LINE遊戲, 網頁RPG, 網頁 RPG, 網頁遊戲, 自動戰鬥RPG, 世界Boss遊戲, 放置冒險遊戲",
   // 首頁保留 FAQ 結構化資料（rich result 可能性）
   schema: getFAQSchema(),
@@ -23,10 +23,10 @@ const seoProps = {
 <BaseLayout {...seoProps}>
   <NavbarAstro client:load />
   <main>
-    <Hero client:load />
-    <Features client:load />
-    <Characters client:load />
-    <Gallery client:load />
+    <Hero client:idle />
+    <Features client:visible />
+    <Characters client:visible />
+    <Gallery client:visible />
 
     <!-- Call to Action Section -->
     <section class="py-24 bg-gradient-to-t from-hero-dark to-gray-900 relative overflow-hidden border-t border-white/10 section-divider">
