@@ -24,6 +24,26 @@ const Gallery: React.FC = () => {
       id: 4,
       url: "/images/screenshots/linehero-screenshot-4.jpg",
       title: "戰鬥結算與技能紀錄"
+    },
+    {
+      id: 5,
+      url: "/images/screenshots/linehero-screenshot-5.jpg",
+      title: "鐵匠鋪詞綴重鑄"
+    },
+    {
+      id: 6,
+      url: "/images/screenshots/linehero-screenshot-6.jpg",
+      title: "PVP 對戰"
+    },
+    {
+      id: 7,
+      url: "/images/screenshots/linehero-screenshot-7.jpg",
+      title: "副本 Boss 掉落"
+    },
+    {
+      id: 8,
+      url: "/images/screenshots/linehero-screenshot-8.jpg",
+      title: "圖鑑與怪物資訊"
     }
   ];
 

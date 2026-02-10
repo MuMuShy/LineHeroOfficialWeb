@@ -87,6 +87,10 @@ export const FeatureHubPageAstro: React.FC = () => (
           { src: '/images/screenshots/linehero-screenshot-1.jpg', title: '仙鶴騎士對戰' },
           { src: '/images/screenshots/linehero-screenshot-3.jpg', title: '天龍戰士對戰' },
           { src: '/images/screenshots/linehero-screenshot-4.jpg', title: '戰鬥結算與技能紀錄' },
+          { src: '/images/screenshots/linehero-screenshot-5.jpg', title: '鐵匠鋪詞綴重鑄' },
+          { src: '/images/screenshots/linehero-screenshot-6.jpg', title: 'PVP 對戰' },
+          { src: '/images/screenshots/linehero-screenshot-7.jpg', title: '副本 Boss 掉落' },
+          { src: '/images/screenshots/linehero-screenshot-8.jpg', title: '圖鑑與怪物資訊' },
         ].map((shot) => (
           <figure key={shot.src} className="glass-panel rounded-2xl border border-white/10 overflow-hidden">
             <div className="relative aspect-[9/19]">
