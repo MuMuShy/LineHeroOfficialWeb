@@ -6,8 +6,22 @@ const Hero: React.FC = () => {
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-dark pt-20 pb-12 lg:pt-0">
       {/* Dynamic Background */}
       <div className="absolute inset-0 z-0">
-        {/* Clean gradient background to keep text readable */}
-        <div className="absolute inset-0 bg-gradient-to-b from-hero-dark via-hero-dark/95 to-hero-dark"></div>
+        {/* Hero key visual (responsive) */}
+        <img
+          src="/images/hero/linehero-hero-desktop.jpg"
+          alt="LineHero 無盡冒險主視覺"
+          className="absolute inset-0 hidden md:block w-full h-full object-cover"
+          loading="eager"
+          fetchPriority="high"
+        />
+        <img
+          src="/images/hero/linehero-hero-mobile.jpg"
+          alt="LineHero 無盡冒險主視覺"
+          className="absolute inset-0 block md:hidden w-full h-full object-cover"
+          loading="eager"
+          fetchPriority="high"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-hero-dark/80 via-hero-dark/75 to-hero-dark"></div>
 
         {/* Subtle ambient lights */}
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,rgba(6,199,85,0.10),transparent_55%)]"></div>
@@ -113,26 +127,104 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column: Key Visual (clean hero layout) */}
-        <div className="flex-1 w-full max-w-md lg:max-w-none relative">
-          <div className="absolute inset-0 -z-10 bg-hero-gold/10 blur-[120px] rounded-full"></div>
-          <div className="relative mx-auto w-full max-w-[520px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-            <img
-              src="/images/hero/linehero-hero-desktop.jpg"
-              alt="LineHero 無盡冒險主視覺"
-              className="hidden md:block w-full h-full object-cover"
-              loading="eager"
-              fetchPriority="high"
-            />
-            <img
-              src="/images/hero/linehero-hero-mobile.jpg"
-              alt="LineHero 無盡冒險主視覺"
-              className="block md:hidden w-full h-full object-cover"
-              loading="eager"
-              fetchPriority="high"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+        {/* Right Column: 3D Phone Mockup */}
+        <div className="flex-1 w-full max-w-md lg:max-w-none relative perspective-1000">
+          <div className="absolute inset-0 -z-10 bg-hero-neon-green/10 blur-[120px] rounded-full"></div>
+          <div className="relative mx-auto w-[300px] h-[600px] bg-black rounded-[40px] border-[8px] border-gray-800 shadow-2xl transform rotate-y-12 rotate-x-6 hover:rotate-y-0 hover:rotate-x-0 transition-transform duration-700 ease-out animate-float">
+            {/* Phone Notch */}
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-gray-800 rounded-b-xl z-20"></div>
+
+            {/* Screen */}
+            <div className="absolute inset-0 rounded-[32px] overflow-hidden bg-gray-900 flex flex-col">
+              {/* LIFF Header */}
+              <div className="h-12 bg-[#1a1b23] flex items-center px-4 justify-between border-b border-gray-800 z-10">
+                <span className="text-white font-bold text-xs">LineHero</span>
+                <div className="flex gap-1">
+                  <div className="w-1.5 h-1.5 rounded-full bg-gray-600"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-gray-600"></div>
+                </div>
+              </div>
+
+              {/* Game UI Content - Simulated Battle */}
+              <div className="flex-1 p-4 relative overflow-hidden flex flex-col">
+                {/* Background Image */}
+                <div className="absolute inset-0 opacity-50">
+                  <img src="https://mumu.tw/linehero/images/tower/endless_tower_bg_landscape.png" className="w-full h-full object-cover" alt="bg" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent"></div>
+                </div>
+
+                {/* Boss Monster */}
+                <div className="relative mt-8 mx-auto w-32 h-32 animate-pulse-slow">
+                  <div className="absolute inset-0 bg-red-500/20 blur-xl rounded-full"></div>
+                  <img src="https://mumu.tw/linehero/images/regions/boss/boss_girl2_small.png" alt="Boss" className="relative z-10 w-full h-full object-contain drop-shadow-lg filter brightness-110" />
+                  {/* Health Bar */}
+                  <div className="absolute -top-4 left-0 w-full h-2 bg-gray-700 rounded-full overflow-hidden border border-gray-600">
+                    <div className="w-[70%] h-full bg-gradient-to-r from-red-600 to-red-400"></div>
+                  </div>
+                  <div className="absolute -top-9 left-1/2 -translate-x-1/2 text-red-400 font-black text-sm whitespace-nowrap text-shadow-sm">LV.99 災厄女皇</div>
+                </div>
+
+                {/* Damage Numbers Effect */}
+                <div className="absolute top-1/3 left-1/2 text-2xl font-black text-yellow-400 animate-bounce font-mono drop-shadow-md">
+                  -9999!
+                </div>
+
+                {/* Player Status */}
+                <div className="mt-auto relative z-10">
+                  <div className="bg-gray-800/80 backdrop-blur border border-gray-700 rounded-lg p-3 mb-3 flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full border-2 border-white/20 overflow-hidden">
+                      <img src="https://mumu.tw/linehero/images/hero_avatar/character_warrior2.png" alt="Avatar" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex justify-between text-xs text-gray-300 mb-1">
+                        <span>狂戰士亞倫</span>
+                        <span className="text-yellow-400">HP 3200/5000</span>
+                      </div>
+                      <div className="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                        <div className="w-[64%] h-full bg-gradient-to-r from-green-500 to-emerald-400"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Skills Grid */}
+                  <div className="grid grid-cols-3 gap-2">
+                    <button className="bg-gray-800 border border-gray-600 rounded-lg p-2 flex flex-col items-center gap-1 active:scale-95 transition-transform">
+                      <div className="w-8 h-8 rounded overflow-hidden">
+                        <img src="https://mumu.tw/linehero/images/skills/RPG%20Swordsman%20skill%20icons/PNG/16.png" alt="Skill 1" className="w-full h-full object-cover" />
+                      </div>
+                      <span className="text-[10px] text-gray-300">強力斬擊</span>
+                    </button>
+                    <button className="bg-gray-800 border border-hero-gold/50 rounded-lg p-2 flex flex-col items-center gap-1 active:scale-95 transition-transform shadow-[0_0_10px_rgba(255,215,0,0.2)]">
+                      <div className="w-8 h-8 rounded overflow-hidden">
+                        <img src="https://mumu.tw/linehero/images/skills/RPG%20Berserker%20skill%20icons/PNG/33.png" alt="Skill 2" className="w-full h-full object-cover" />
+                      </div>
+                      <span className="text-[10px] text-hero-gold font-bold">致命一擊</span>
+                    </button>
+                    <button className="bg-gray-800 border border-gray-600 rounded-lg p-2 flex flex-col items-center gap-1 active:scale-95 transition-transform">
+                      <div className="w-8 h-8 rounded overflow-hidden">
+                        <img src="https://mumu.tw/linehero/images/skills/RPG%20Berserker%20skill%20icons/PNG/49.png" alt="Skill 3" className="w-full h-full object-cover" />
+                      </div>
+                      <span className="text-[10px] text-gray-300">鋼鐵意志</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Chat Input Area Mockup */}
+              <div className="h-12 bg-[#1a1b23] border-t border-gray-800 flex items-center px-3 gap-2">
+                <div className="w-6 h-6 text-gray-500">+</div>
+                <div className="flex-1 h-8 bg-gray-800 rounded px-2 flex items-center text-xs text-gray-500">輸入指令...</div>
+                <div className="w-6 h-6 text-blue-500">➤</div>
+              </div>
+            </div>
+
+            {/* Reflection/Shine on Glass */}
+            <div className="absolute inset-0 rounded-[40px] pointer-events-none bg-gradient-to-tr from-white/10 to-transparent opacity-50 z-30"></div>
           </div>
+
+          {/* Floating Elements behind phone */}
+          <div className="absolute top-1/4 -right-12 w-20 h-20 bg-hero-neon-green/20 rounded-xl rotate-12 blur-md animate-float-fast z-0 hidden lg:block"></div>
+          <div className="absolute bottom-1/4 -left-12 w-16 h-16 bg-hero-gold/20 rounded-full blur-md animate-float z-0 hidden lg:block"></div>
         </div>
       </div>
     </div>
