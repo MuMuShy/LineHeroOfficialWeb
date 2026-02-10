@@ -71,8 +71,8 @@ const Gallery: React.FC = () => {
           {screenshots.map((shot) => (
             <div key={shot.id} className="group perspective-1000">
               <div className="relative mx-auto w-full max-w-[240px] aspect-[9/19] bg-black rounded-[32px] border-[6px] border-gray-800 shadow-xl transform transition-all duration-500 group-hover:rotate-y-6 group-hover:scale-105 group-hover:shadow-[0_0_40px_rgba(255,215,0,0.18)]">
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 h-4 bg-gray-800 rounded-b-xl z-20"></div>
-                <div className="absolute inset-0 rounded-[26px] overflow-hidden bg-gray-900">
+                {/* Screen (inset to keep bezel visible) */}
+                <div className="absolute inset-[8px] rounded-[24px] overflow-hidden bg-gray-900">
                   <img src={shot.url} alt={shot.title} className="w-full h-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-4 left-0 w-full text-center transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10 px-3">
@@ -80,6 +80,9 @@ const Gallery: React.FC = () => {
                     <h3 className="text-white font-bold text-sm drop-shadow-md">{shot.title}</h3>
                   </div>
                 </div>
+                {/* Notch overlay */}
+                <div className="absolute top-[6px] left-1/2 transform -translate-x-1/2 w-20 h-4 bg-gray-800 rounded-b-xl z-30"></div>
+                {/* Glass Reflection */}
                 <div className="absolute inset-0 rounded-[32px] pointer-events-none bg-gradient-to-tr from-white/10 to-transparent opacity-40 z-30"></div>
               </div>
             </div>
