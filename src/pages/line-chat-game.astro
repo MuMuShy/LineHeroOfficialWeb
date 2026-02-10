@@ -5,8 +5,8 @@ import FooterAstro from '../components/FooterAstro';
 import ScrollToTop from '../components/ScrollToTop';
 import '../styles/global.css';
 
-const title = '上班偷玩的遊戲推薦｜LINE RPG 免下載';
-const description = '上班偷玩的遊戲怎麼選？這篇整理適合上班族的免下載遊戲，推薦可在 LINE 聊天室直接玩的 LineHero 無盡冒險。';
+const title = 'LINE 聊天室遊戲介紹｜不用下載也能玩的 RPG';
+const description = 'LINE 聊天室遊戲是什麼？本篇介紹可在 LINE 直接玩的遊戲類型、優點與適合族群，並分享 LineHero 無盡冒險的玩法特色。';
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -14,26 +14,26 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: '上班偷玩遊戲該注意什麼？',
+      name: 'LINE 聊天室遊戲是什麼？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '重點是低調、免下載、能用碎片時間快速進入，並且不需要長時間盯畫面。'
+        text: 'LINE 聊天室遊戲是指在 LINE 聊天視窗中就能進行操作的遊戲，不用下載 App。'
       }
     },
     {
       '@type': 'Question',
-      name: '有適合上班玩的 RPG 嗎？',
+      name: 'LINE 聊天室遊戲適合哪些人？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'LineHero 無盡冒險可在 LINE 聊天室直接操作，自動戰鬥 + 掉寶通知很適合上班族。'
+        text: '適合想利用碎片時間玩遊戲、或不能下載 App 的上班族與學生。'
       }
     },
     {
       '@type': 'Question',
-      name: '為什麼選 LINE 遊戲？',
+      name: '有推薦的 LINE 聊天室 RPG 嗎？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'LINE 遊戲看起來像在回訊息，不需要下載 App，也不佔手機容量。'
+        text: 'LineHero 無盡冒險提供聊天視窗戰鬥、掉寶通知與 Web 模式管理，是目前內容完整的 LINE 聊天室 RPG。'
       }
     }
   ]
@@ -42,8 +42,8 @@ const faqSchema = {
 const seoProps = {
   title,
   description,
-  keywords: '上班偷玩遊戲,上班玩遊戲推薦,LINE遊戲,line遊戲,免下載遊戲,聊天視窗RPG,上班族遊戲',
-  url: 'https://linehero.tw/office-games',
+  keywords: 'LINE聊天室遊戲,LINE聊天遊戲,LINE遊戲,line遊戲,聊天視窗RPG,免下載RPG,網頁RPG',
+  url: 'https://linehero.tw/line-chat-game',
   type: 'article',
   schema: faqSchema
 };
@@ -57,46 +57,44 @@ const seoProps = {
       <header class="mb-10">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
           <span class="w-2 h-2 rounded-full bg-hero-gold"></span>
-          <span class="text-xs font-bold tracking-[0.2em] text-gray-200 uppercase">上班偷玩遊戲</span>
+          <span class="text-xs font-bold tracking-[0.2em] text-gray-200 uppercase">LINE 聊天室遊戲</span>
         </div>
-        <h1 class="mt-6 text-3xl md:text-5xl font-black text-white leading-tight">上班偷玩的遊戲推薦（LINE RPG 免下載）</h1>
+        <h1 class="mt-6 text-3xl md:text-5xl font-black text-white leading-tight">LINE 聊天室遊戲介紹（免下載 RPG）</h1>
         <p class="mt-4 text-gray-300 leading-relaxed max-w-3xl">
-          想找一款「上班偷玩」也不尷尬的遊戲？
-          重點是<strong class="text-white">免下載、快速進入、低調操作</strong>。
-          以下整理上班族適合的遊戲條件，並推薦一款可在 LINE 聊天室直接玩的 RPG。
+          LINE 聊天室遊戲最大的優勢是「打開聊天視窗就能玩」。
+          不用下載 App、不佔空間，適合碎片時間或上班空檔。這裡整理玩法特色與推薦方向。
         </p>
         <div class="mt-6 flex flex-col sm:flex-row gap-3">
           <a href="https://lin.ee/3JlUhak" target="_blank" rel="noopener noreferrer"
              class="px-6 py-3 rounded-xl bg-[#06C755] hover:bg-[#05b34c] text-white font-black shadow-lg shadow-green-900/20">
             立即加入官方帳號
           </a>
-          <a href="/line-chat-game" class="px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold text-white font-bold">
-            LINE 聊天室遊戲介紹
+          <a href="/game-intro-line" class="px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold text-white font-bold">
+            LINE 版玩法介紹
           </a>
         </div>
       </header>
 
       <section class="space-y-10">
         <section class="space-y-4">
-          <h2 class="text-2xl font-black text-white">上班偷玩遊戲的 4 個條件</h2>
+          <h2 class="text-2xl font-black text-white">LINE 聊天室遊戲的 3 個優勢</h2>
           <ul class="list-disc pl-6 space-y-2 text-gray-200">
-            <li><strong class="text-white">免下載：</strong>不用安裝 App，避免被發現。</li>
-            <li><strong class="text-white">像在聊天：</strong>操作看起來像回訊息。</li>
-            <li><strong class="text-white">碎片時間：</strong>5–10 分鐘即可完成主要操作。</li>
-            <li><strong class="text-white">自動戰鬥：</strong>不用長時間盯畫面。</li>
+            <li><strong class="text-white">免下載：</strong>直接在 LINE 裡開玩。</li>
+            <li><strong class="text-white">低調上班可玩：</strong>看起來像在回訊息。</li>
+            <li><strong class="text-white">即時通知：</strong>掉寶、事件、Boss 提醒不錯過。</li>
           </ul>
         </section>
 
         <section class="space-y-4">
-          <h2 class="text-2xl font-black text-white">推薦：LineHero 無盡冒險</h2>
+          <h2 class="text-2xl font-black text-white">推薦玩法：LineHero 無盡冒險</h2>
           <div class="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-3">
             <p class="text-gray-300 leading-relaxed">
-              LineHero 無盡冒險是一款 LINE 遊戲，聊天視窗即可操作，
-              自動戰鬥 + 掉寶通知讓你不用一直盯著手機，非常適合上班族的碎片時間。
+              在 LINE 聊天室遊戲中，LineHero 無盡冒險提供完整 RPG 養成：
+              聊天視窗戰鬥 + Web 模式管理，並具備世界 Boss、副本、陣營與裝備成長。
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-gray-300">
-              <div class="bg-black/40 border border-white/10 rounded-xl px-4 py-3">LINE 聊天室即玩</div>
-              <div class="bg-black/40 border border-white/10 rounded-xl px-4 py-3">自動戰鬥與掉寶</div>
+              <div class="bg-black/40 border border-white/10 rounded-xl px-4 py-3">聊天視窗戰鬥</div>
+              <div class="bg-black/40 border border-white/10 rounded-xl px-4 py-3">世界 Boss & 副本</div>
               <div class="bg-black/40 border border-white/10 rounded-xl px-4 py-3">Web 模式管理</div>
             </div>
           </div>
@@ -105,9 +103,9 @@ const seoProps = {
         <section class="space-y-4">
           <h2 class="text-2xl font-black text-white">適合哪些人？</h2>
           <ul class="list-disc pl-6 space-y-2 text-gray-200">
-            <li>上班族、學生或通勤族。</li>
-            <li>不方便下載大型遊戲的人。</li>
-            <li>喜歡 RPG 成長與掉寶，但時間有限的人。</li>
+            <li>想找「line 遊戲」但不想下載 App 的玩家。</li>
+            <li>上班族或學生，想用碎片時間推進進度。</li>
+            <li>喜歡聊天視窗互動、又想要 RPG 成長的人。</li>
           </ul>
         </section>
 
