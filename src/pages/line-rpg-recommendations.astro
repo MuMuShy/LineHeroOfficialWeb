@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const title = '2026 LINE RPG 遊戲推薦｜免下載直接玩（LineHero）';
+const description = '想找 LINE RPG 遊戲推薦？這篇整理「免下載、聊天視窗就能玩」的挑選重點，並介紹目前內容最完整的 LINE RPG：LineHero 無盡冒險。';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '什麼是 LINE RPG？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'LINE RPG 指的是以 LINE 作為遊玩入口的 RPG，通常不必下載 App，在聊天視窗即可操作角色、戰鬥與養成。'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'LINE RPG 推薦怎麼選？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '建議看三點：是否免下載、戰鬥是否有視覺介面、以及是否能用 Web 模式管理裝備與排行。'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'LineHero 為什麼值得推薦？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'LineHero 無盡冒險結合聊天視窗與 Web 模式，提供完整養成、世界 Boss、副本與社交系統，是目前內容最完整的 LINE RPG 之一。'
+      }
+    }
+  ]
+};
+
+const seoProps = {
+  title,
+  description,
+  keywords: 'LINE RPG,LINE遊戲,LINE RPG 推薦,line遊戲,聊天視窗RPG,免下載RPG,網頁RPG,上班玩遊戲',
+  url: 'https://linehero.tw/line-rpg-recommendations',
+  type: 'article',
+  schema: faqSchema
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:load />
+
+  <main class="bg-hero-dark min-h-screen pt-28 pb-16 px-4 md:px-8 text-gray-100">
+    <article class="max-w-4xl mx-auto">
+      <header class="mb-10">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
+          <span class="w-2 h-2 rounded-full bg-hero-gold"></span>
+          <span class="text-xs font-bold tracking-[0.2em] text-gray-200 uppercase">LINE RPG 推薦</span>
+        </div>
+        <h1 class="mt-6 text-3xl md:text-5xl font-black text-white leading-tight">2026 LINE RPG 遊戲推薦（免下載、聊天視窗即可玩）</h1>
+        <p class="mt-4 text-gray-300 leading-relaxed max-w-3xl">
+          想找「LINE RPG / line 遊戲」的玩家，其實最在意的不是華麗特效，而是<strong class="text-white">不用下載、打開 LINE 就能玩</strong>。
+          以下整理 LINE RPG 推薦的挑選重點，並分享目前內容最完整的一款：LineHero 無盡冒險。
+        </p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="https://lin.ee/3JlUhak" target="_blank" rel="noopener noreferrer"
+             class="px-6 py-3 rounded-xl bg-[#06C755] hover:bg-[#05b34c] text-white font-black shadow-lg shadow-green-900/20">
+            立即加入官方帳號
+          </a>
+          <a href="/line-rpg" class="px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold text-white font-bold">
+            LINE RPG 玩法介紹
+          </a>
+        </div>
+      </header>
+
+      <section class="space-y-10">
+        <section class="space-y-4">
+          <h2 class="text-2xl font-black text-white">LINE RPG 推薦選擇 3 大重點</h2>
+          <ul class="list-disc pl-6 space-y-2 text-gray-200">
+            <li><strong class="text-white">免下載 / 免安裝：</strong>直接在 LINE 聊天視窗進入遊戲。</li>
+            <li><strong class="text-white">有視覺戰鬥：</strong>不只是純文字，最好有介面化戰報與按鈕操作。</li>
+            <li><strong class="text-white">有 Web 模式：</strong>能在電腦上管理裝備、排行與副本更佳。</li>
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-black text-white">為什麼推薦 LineHero 無盡冒險</h2>
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-3">
+            <p class="text-gray-300 leading-relaxed">
+              在 LINE RPG 類型中，LineHero 無盡冒險屬於內容最完整的一款：
+              既有聊天視窗即玩，也有 Web 模式進階管理，並具備世界 Boss、裝備養成、副本與社交系統。
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-gray-300">
+              <div class="bg-black/40 border border-white/10 rounded-xl px-4 py-3">免下載 / 免安裝</div>
+              <div class="bg-black/40 border border-white/10 rounded-xl px-4 py-3">聊天視窗戰鬥</div>
+              <div class="bg-black/40 border border-white/10 rounded-xl px-4 py-3">Web 模式管理</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-black text-white">適合誰？</h2>
+          <ul class="list-disc pl-6 space-y-2 text-gray-200">
+            <li>想找上班空檔也能玩的 LINE RPG 玩家。</li>
+            <li>偏好自動戰鬥、掉寶通知與養成系統的人。</li>
+            <li>想在手機與電腦之間切換、不中斷進度的人。</li>
+          </ul>
+        </section>
+
+        <section class="border-t border-white/10 pt-8 space-y-4">
+          <h2 class="text-2xl font-black text-white">開始方法</h2>
+          <p class="text-gray-300">在 LINE 搜尋 <strong class="text-white">@linehero</strong>，或點擊下方連結加入好友即可開始。</p>
+          <a class="inline-flex text-hero-gold font-bold" href="https://lin.ee/3JlUhak" target="_blank" rel="noreferrer">https://lin.ee/3JlUhak →</a>
+        </section>
+      </section>
+    </article>
+  </main>
+
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>

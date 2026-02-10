@@ -7,42 +7,42 @@ const Gallery: React.FC = () => {
   const screenshots = [
     {
       id: 1,
-      url: "/images/screenshots/linehero-screenshot-1.jpg",
+      url: "/images/screenshots/linehero-screenshot-1.webp",
       title: "仙鶴騎士對戰"
     },
     {
       id: 2,
-      url: "/images/screenshots/linehero-screenshot-2.jpg",
+      url: "/images/screenshots/linehero-screenshot-2.webp",
       title: "傳奇冒險者養成"
     },
     {
       id: 3,
-      url: "/images/screenshots/linehero-screenshot-3.jpg",
+      url: "/images/screenshots/linehero-screenshot-3.webp",
       title: "天龍戰士對戰"
     },
     {
       id: 4,
-      url: "/images/screenshots/linehero-screenshot-4.jpg",
+      url: "/images/screenshots/linehero-screenshot-4.webp",
       title: "戰鬥結算與技能紀錄"
     },
     {
       id: 5,
-      url: "/images/screenshots/linehero-screenshot-5.jpg",
+      url: "/images/screenshots/linehero-screenshot-5.webp",
       title: "鐵匠鋪詞綴重鑄"
     },
     {
       id: 6,
-      url: "/images/screenshots/linehero-screenshot-6.jpg",
+      url: "/images/screenshots/linehero-screenshot-6.webp",
       title: "PVP 對戰"
     },
     {
       id: 7,
-      url: "/images/screenshots/linehero-screenshot-7.jpg",
+      url: "/images/screenshots/linehero-screenshot-7.webp",
       title: "副本 Boss 掉落"
     },
     {
       id: 8,
-      url: "/images/screenshots/linehero-screenshot-8.jpg",
+      url: "/images/screenshots/linehero-screenshot-8.webp",
       title: "圖鑑與怪物資訊"
     }
   ];
