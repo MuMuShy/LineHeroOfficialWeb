@@ -7,33 +7,23 @@ const Gallery: React.FC = () => {
   const screenshots = [
     {
       id: 1,
-      url: "https://mumu.tw/linehero/official_web/game_view/game_view_battle.jpg",
-      title: "Flex 戰鬥介面"
+      url: "/images/screenshots/linehero-screenshot-1.jpg",
+      title: "仙鶴騎士對戰"
     },
     {
       id: 2,
-      url: "https://mumu.tw/linehero/official_web/game_view/game_view_trade.jpg",
-      title: "自由交易"
+      url: "/images/screenshots/linehero-screenshot-2.jpg",
+      title: "傳奇冒險者養成"
     },
     {
       id: 3,
-      url: "https://mumu.tw/linehero/official_web/game_view/game_view_bag.jpg",
-      title: "背包與道具"
+      url: "/images/screenshots/linehero-screenshot-3.jpg",
+      title: "天龍戰士對戰"
     },
     {
       id: 4,
-      url: "https://mumu.tw/linehero/official_web/game_view/game_view_skill.jpg", // 佔位圖
-      title: "技能系統"
-    },
-    {
-      id: 5,
-      url: "https://mumu.tw/linehero/official_web/game_view/game_view_enhance.jpg", // 佔位圖
-      title: "裝備進階"
-    },
-    {
-      id: 6,
-      url: "https://mumu.tw/linehero/official_web/game_view/game_view_pet.jpg", // 佔位圖
-      title: "夥伴系統"
+      url: "/images/screenshots/linehero-screenshot-4.jpg",
+      title: "戰鬥結算與技能紀錄"
     }
   ];
 
@@ -52,7 +42,7 @@ const Gallery: React.FC = () => {
           </h2>
           <div className="h-1 w-16 md:w-24 bg-gradient-to-r from-transparent via-hero-gold to-transparent mx-auto mb-6"></div>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            精緻的 LINE Flex 介面與 Web 管理後台，帶給您最流暢的冒險體驗。
+            真實遊戲截圖：角色養成、戰鬥結算與技能施放，直接在 LINE 聊天室暢玩。
           </p>
         </div>
 

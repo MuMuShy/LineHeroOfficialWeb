@@ -75,6 +75,28 @@ export const FeatureHubPageAstro: React.FC = () => (
         </div>
       ))}
     </div>
+
+    <section className="mt-12 md:mt-16">
+      <div className="text-center mb-8">
+        <h2 className="text-2xl md:text-3xl font-black text-white mb-3">實機截圖</h2>
+        <p className="text-gray-400 text-sm md:text-base">角色養成、戰鬥結算與技能施放畫面一覽。</p>
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        {[
+          { src: '/images/screenshots/linehero-screenshot-2.jpg', title: '傳奇冒險者養成' },
+          { src: '/images/screenshots/linehero-screenshot-1.jpg', title: '仙鶴騎士對戰' },
+          { src: '/images/screenshots/linehero-screenshot-3.jpg', title: '天龍戰士對戰' },
+          { src: '/images/screenshots/linehero-screenshot-4.jpg', title: '戰鬥結算與技能紀錄' },
+        ].map((shot) => (
+          <figure key={shot.src} className="glass-panel rounded-2xl border border-white/10 overflow-hidden">
+            <div className="relative aspect-[9/19]">
+              <img src={shot.src} alt={shot.title} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+            </div>
+            <figcaption className="px-4 py-3 text-xs md:text-sm text-gray-300">{shot.title}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
   </PageLayout>
 );
 
