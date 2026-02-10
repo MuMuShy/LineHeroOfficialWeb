@@ -9,7 +9,7 @@ const Features: React.FC = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-hero-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <header className="text-center mb-16 md:mb-28 relative">
+        <header className="text-center mb-16 md:mb-24 relative">
           <span className="text-hero-neon font-mono text-sm tracking-[0.35em] uppercase opacity-70 mb-2 block">System Features</span>
           <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-wide drop-shadow-lg">
             遊戲<span className="text-transparent bg-clip-text bg-gradient-to-r from-hero-gold to-yellow-600">特色</span>
@@ -23,6 +23,25 @@ const Features: React.FC = () => {
             結合 <span className="text-white font-bold">LIFF 視覺技術</span>，既有經典文字冒險的深度敘事，更有精美介面觸手可及。
           </p>
         </header>
+
+        {/* Banner key visual */}
+        <div className="mb-14 md:mb-20">
+          <div className="relative w-full overflow-hidden rounded-3xl border border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.6)]">
+            <img
+              src="/images/hero/linehero-hero-desktop.jpg"
+              alt="LineHero 無盡冒險形象圖"
+              className="hidden md:block w-full h-full object-cover"
+              loading="lazy"
+            />
+            <img
+              src="/images/hero/linehero-hero-mobile.jpg"
+              alt="LineHero 無盡冒險形象圖"
+              className="block md:hidden w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+          </div>
+        </div>
 
         <div className="space-y-24 md:space-y-40">
           {/* Feature 1: Combat (Image Right) */}
