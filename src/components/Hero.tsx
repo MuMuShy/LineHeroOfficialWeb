@@ -6,22 +6,7 @@ const Hero: React.FC = () => {
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-dark pt-20 pb-12 lg:pt-0">
       {/* Dynamic Background */}
       <div className="absolute inset-0 z-0">
-        {/* Hero key visual (responsive) */}
-        <img
-          src="/images/hero/linehero-hero-desktop.jpg"
-          alt="LineHero 無盡冒險主視覺"
-          className="absolute inset-0 hidden md:block w-full h-full object-cover"
-          loading="eager"
-          fetchPriority="high"
-        />
-        <img
-          src="/images/hero/linehero-hero-mobile.jpg"
-          alt="LineHero 無盡冒險主視覺"
-          className="absolute inset-0 block md:hidden w-full h-full object-cover"
-          loading="eager"
-          fetchPriority="high"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-hero-dark/80 via-hero-dark/75 to-hero-dark"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-hero-dark via-hero-dark/95 to-hero-dark"></div>
 
         {/* Subtle ambient lights */}
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,rgba(6,199,85,0.10),transparent_55%)]"></div>
