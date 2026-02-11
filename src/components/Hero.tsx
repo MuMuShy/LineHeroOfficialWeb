@@ -175,19 +175,19 @@ const Hero: React.FC = () => {
                   <div className="grid grid-cols-3 gap-2">
                     <button className="bg-gray-800 border border-gray-600 rounded-lg p-2 flex flex-col items-center gap-1 active:scale-95 transition-transform">
                       <div className="w-8 h-8 rounded overflow-hidden">
-                        <img src="https://image.linehero.tw/images/skills/RPG%20Swordsman%20skill%20icons/PNG/skill-16-w64.webp" alt="Skill 1" className="w-full h-full object-cover" />
+                        <img src="https://image.linehero.tw/images/skills/swordsman/skill-16-w64.webp" alt="Skill 1" className="w-full h-full object-cover" />
                       </div>
                       <span className="text-[10px] text-gray-300">強力斬擊</span>
                     </button>
                     <button className="bg-gray-800 border border-hero-gold/50 rounded-lg p-2 flex flex-col items-center gap-1 active:scale-95 transition-transform shadow-[0_0_10px_rgba(255,215,0,0.2)]">
                       <div className="w-8 h-8 rounded overflow-hidden">
-                        <img src="https://image.linehero.tw/images/skills/RPG%20Berserker%20skill%20icons/PNG/skill-33-w64.webp" alt="Skill 2" className="w-full h-full object-cover" />
+                        <img src="https://image.linehero.tw/images/skills/berserker/skill-33-w64.webp" alt="Skill 2" className="w-full h-full object-cover" />
                       </div>
                       <span className="text-[10px] text-hero-gold font-bold">致命一擊</span>
                     </button>
                     <button className="bg-gray-800 border border-gray-600 rounded-lg p-2 flex flex-col items-center gap-1 active:scale-95 transition-transform">
                       <div className="w-8 h-8 rounded overflow-hidden">
-                        <img src="https://image.linehero.tw/images/skills/RPG%20Berserker%20skill%20icons/PNG/skill-49-w64.webp" alt="Skill 3" className="w-full h-full object-cover" />
+                        <img src="https://image.linehero.tw/images/skills/berserker/skill-49-w64.webp" alt="Skill 3" className="w-full h-full object-cover" />
                       </div>
                       <span className="text-[10px] text-gray-300">鋼鐵意志</span>
                     </button>

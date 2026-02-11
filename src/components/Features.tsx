@@ -86,9 +86,9 @@ const Features: React.FC = () => {
                     </div>
                     <div className="grid grid-cols-3 gap-2">
                       {[
-                        'https://image.linehero.tw/images/skills/RPG%20Swordsman%20skill%20icons/PNG/skill-16-w64.webp',
-                        'https://image.linehero.tw/images/skills/RPG%20Berserker%20skill%20icons/PNG/skill-33-w64.webp',
-                        'https://image.linehero.tw/images/skills/RPG%20Berserker%20skill%20icons/PNG/skill-49-w64.webp',
+                        'https://image.linehero.tw/images/skills/swordsman/skill-16-w64.webp',
+                        'https://image.linehero.tw/images/skills/berserker/skill-33-w64.webp',
+                        'https://image.linehero.tw/images/skills/berserker/skill-49-w64.webp',
                       ].map((icon, idx) => (
                         <div key={icon} className="bg-black/50 border border-white/10 rounded-xl p-3 text-center">
                           <img src={icon} alt={`Skill ${idx + 1}`} className="w-10 h-10 mx-auto" />
