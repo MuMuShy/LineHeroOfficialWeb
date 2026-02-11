@@ -13,35 +13,35 @@ const TEAM_MEMBERS = [
     role: '隊長',
     className: '戰士',
     power: '38,500',
-    avatar: 'https://mumu.tw/linehero/images/hero_avatar/character_warrior2.png',
+    avatar: 'https://image.linehero.tw/images/hero_avatar/character_warrior2.png',
   },
   {
     name: '露希亞',
     role: '隊員',
     className: '法師',
     power: '31,900',
-    avatar: 'https://mumu.tw/linehero/images/hero_avatar/character_magic_female.png',
+    avatar: 'https://image.linehero.tw/images/hero_avatar/character_magic_female.png',
   },
   {
     name: '黎影',
     role: '隊員',
     className: '盜賊',
     power: '27,450',
-    avatar: 'https://mumu.tw/linehero/images/hero_avatar/character_rog_female2.png',
+    avatar: 'https://image.linehero.tw/images/hero_avatar/character_rog_female2.png',
   },
   {
     name: '聖輝',
     role: '隊員',
     className: '牧師',
     power: '30,120',
-    avatar: 'https://mumu.tw/linehero/images/hero_avatar/character_holy.png',
+    avatar: 'https://image.linehero.tw/images/hero_avatar/character_holy.png',
   },
   {
     name: '艾琳',
     role: '隊員',
     className: '法師',
     power: '30,570',
-    avatar: 'https://mumu.tw/linehero/images/hero_avatar/character_magic_female.png',
+    avatar: 'https://image.linehero.tw/images/hero_avatar/character_magic_female.png',
   },
 ];
 
@@ -49,19 +49,19 @@ const DUNGEON_CARDS = [
   {
     title: '冥幽境 · 區域 Boss',
     status: 'Boss 即將現身',
-    image: 'https://mumu.tw/linehero/images/regions/boss/56c78172-b6bf-4dc3-83f7-8f561f9bc748.png',
+    image: 'https://image.linehero.tw/images/regions/boss/56c78172-b6bf-4dc3-83f7-8f561f9bc748.png',
     reward: '圖騰碎片 / 精煉魂魄',
   },
   {
     title: '四象域 · 區域 Boss',
     status: '入口開放中',
-    image: 'https://mumu.tw/linehero/images/regions/boss/56c78172-b6bf-4dc3-83f7-8f561f9bc748.png',
+    image: 'https://image.linehero.tw/images/regions/boss/56c78172-b6bf-4dc3-83f7-8f561f9bc748.png',
     reward: '圖騰碎片 / 副本代幣',
   },
   {
     title: '週期副本 · 星塵礦窟',
     status: '可進入',
-    image: 'https://mumu.tw/linehero/images/items/region_boss/four_symbols_core.png',
+    image: 'https://image.linehero.tw/images/items/region_boss/four_symbols_core.png',
     reward: '星塵 / 強化材料',
   },
 ];
@@ -70,17 +70,17 @@ const SHOP_ITEMS = [
   {
     name: '精煉魂魄',
     cost: '60',
-    icon: 'https://mumu.tw/linehero/images/items/materials/soul_icon.png',
+    icon: 'https://image.linehero.tw/images/items/materials/soul_icon.png',
   },
   {
     name: '副本轉移券',
     cost: '120',
-    icon: 'https://mumu.tw/linehero/images/items/usage/dungeon_token.png',
+    icon: 'https://image.linehero.tw/images/items/usage/dungeon_token.png',
   },
   {
     name: '星塵包',
     cost: '90',
-    icon: 'https://mumu.tw/linehero/images/items/region_boss/shadow_abyss_core.png',
+    icon: 'https://image.linehero.tw/images/items/region_boss/shadow_abyss_core.png',
   },
 ];
 
@@ -181,7 +181,7 @@ const RaidTeamFeaturePage: React.FC = () => (
             <div className="flex items-center gap-4">
               <div className="w-16 h-16 rounded-xl bg-black/60 border border-white/10 flex items-center justify-center">
                 <img
-                  src="https://mumu.tw/linehero/images/npc/boss/rodras/rodras.png"
+                  src="https://image.linehero.tw/images/npc/boss/rodras/rodras.png"
                   alt="Boss"
                   className="w-12 h-12 object-contain"
                 />
@@ -224,7 +224,7 @@ const RaidTeamFeaturePage: React.FC = () => (
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-bold text-white">副本商店</h2>
             <div className="flex items-center gap-2 text-xs text-hero-gold">
-              <img src="https://mumu.tw/linehero/images/items/usage/dungeon_token.png" alt="代幣" className="w-4 h-4" />
+              <img src="https://image.linehero.tw/images/items/usage/dungeon_token.png" alt="代幣" className="w-4 h-4" />
               1,250
             </div>
           </div>

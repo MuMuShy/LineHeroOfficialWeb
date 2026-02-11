@@ -11,19 +11,19 @@ const BOSS_LIST = [
     name: '冥幽境守護者',
     status: '混亂值 80% 觸發',
     hp: '3,450,000',
-    image: 'https://mumu.tw/linehero/images/npc/boss/rodras/rodras.png',
+    image: 'https://image.linehero.tw/images/npc/boss/rodras/rodras.png',
   },
   {
     name: '四象域守衛',
     status: '入口開放中',
     hp: '2,980,000',
-    image: 'https://mumu.tw/linehero/images/npc/boss/rodras/rodras.png',
+    image: 'https://image.linehero.tw/images/npc/boss/rodras/rodras.png',
   },
   {
     name: '暗影深淵裂隙',
     status: '冷卻 01:15',
     hp: '4,100,000',
-    image: 'https://mumu.tw/linehero/images/npc/boss/rodras/rodras.png',
+    image: 'https://image.linehero.tw/images/npc/boss/rodras/rodras.png',
   },
 ];
 
@@ -31,17 +31,17 @@ const TOTEM_TILES = [
   {
     name: '冥幽境圖騰',
     bonus: '+12% 全屬性',
-    image: 'https://mumu.tw/linehero/images/items/region_boss/nether_realm_core.png',
+    image: 'https://image.linehero.tw/images/items/region_boss/nether_realm_core.png',
   },
   {
     name: '四象域圖騰',
     bonus: '+9% 攻擊 / 防禦',
-    image: 'https://mumu.tw/linehero/images/items/region_boss/four_symbols_core.png',
+    image: 'https://image.linehero.tw/images/items/region_boss/four_symbols_core.png',
   },
   {
     name: '暗影深淵圖騰',
     bonus: '+8% 血量 / 抗性',
-    image: 'https://mumu.tw/linehero/images/items/region_boss/shadow_abyss_core.png',
+    image: 'https://image.linehero.tw/images/items/region_boss/shadow_abyss_core.png',
   },
 ];
 
@@ -49,17 +49,17 @@ const REWARD_ITEMS = [
   {
     name: '圖騰碎片',
     qty: 'x12',
-    icon: 'https://mumu.tw/linehero/images/items/region_boss/four_symbols_core.png',
+    icon: 'https://image.linehero.tw/images/items/region_boss/four_symbols_core.png',
   },
   {
     name: '精煉魂魄',
     qty: 'x90',
-    icon: 'https://mumu.tw/linehero/images/items/materials/soul_icon.png',
+    icon: 'https://image.linehero.tw/images/items/materials/soul_icon.png',
   },
   {
     name: '副本代幣',
     qty: 'x55',
-    icon: 'https://mumu.tw/linehero/images/items/usage/dungeon_token.png',
+    icon: 'https://image.linehero.tw/images/items/usage/dungeon_token.png',
   },
 ];
 
@@ -121,7 +121,7 @@ const RegionBossFeaturePage: React.FC = () => (
           <div className="bg-black/50 border border-white/5 rounded-xl p-4 space-y-3">
             <div className="flex items-center gap-3">
               <img
-                src="https://mumu.tw/linehero/images/hero_avatar/character_warrior2.png"
+                src="https://image.linehero.tw/images/hero_avatar/character_warrior2.png"
                 alt="隊長"
                 className="w-10 h-10 rounded-lg object-cover"
               />

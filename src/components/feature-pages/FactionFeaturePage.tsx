@@ -4,13 +4,13 @@ const FACTIONS = [
   {
     name: '聖光教堂',
     tag: '秩序',
-    image: 'https://mumu.tw/linehero/images/factions/faction_holy_church.png',
+    image: 'https://image.linehero.tw/images/factions/faction_holy_church.png',
     tone: 'border-blue-500/40 bg-blue-500/10 text-blue-300',
   },
   {
     name: '暗影議會',
     tag: '自由',
-    image: 'https://mumu.tw/linehero/images/factions/faction_shadow_council.png',
+    image: 'https://image.linehero.tw/images/factions/faction_shadow_council.png',
     tone: 'border-red-500/40 bg-red-500/10 text-red-300',
   },
 ];
@@ -37,17 +37,17 @@ const FACTION_SHOP = [
   {
     name: '陣營代幣箱',
     price: '90',
-    image: 'https://mumu.tw/linehero/images/factions/faction_token_rpg.png',
+    image: 'https://image.linehero.tw/images/factions/faction_token_rpg.png',
   },
   {
     name: '支援補給包',
     price: '120',
-    image: 'https://mumu.tw/linehero/images/items/usage/dungeon_token.png',
+    image: 'https://image.linehero.tw/images/items/usage/dungeon_token.png',
   },
   {
     name: '傳說裝備箱',
     price: '240',
-    image: 'https://mumu.tw/linehero/images/items/default.png',
+    image: 'https://image.linehero.tw/images/items/default.png',
   },
 ];
 
@@ -111,7 +111,7 @@ const FactionFeaturePage: React.FC = () => (
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-bold text-white">陣營代幣</h2>
             <div className="flex items-center gap-2 text-xs text-hero-gold">
-              <img src="https://mumu.tw/linehero/images/factions/faction_token_rpg.png" alt="代幣" className="w-5 h-5" />
+              <img src="https://image.linehero.tw/images/factions/faction_token_rpg.png" alt="代幣" className="w-5 h-5" />
               2,480
             </div>
           </div>
