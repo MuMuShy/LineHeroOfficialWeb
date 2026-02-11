@@ -11,19 +11,19 @@ const BOSS_LIST = [
     name: '冥幽境守護者',
     status: '混亂值 80% 觸發',
     hp: '3,450,000',
-    image: 'https://image.linehero.tw/images/npc/boss/rodras/rodras.png',
+    image: 'https://image.linehero.tw/images/npc/boss/rodras/rodras-w96.webp',
   },
   {
     name: '四象域守衛',
     status: '入口開放中',
     hp: '2,980,000',
-    image: 'https://image.linehero.tw/images/npc/boss/rodras/rodras.png',
+    image: 'https://image.linehero.tw/images/npc/boss/rodras/rodras-w96.webp',
   },
   {
     name: '暗影深淵裂隙',
     status: '冷卻 01:15',
     hp: '4,100,000',
-    image: 'https://image.linehero.tw/images/npc/boss/rodras/rodras.png',
+    image: 'https://image.linehero.tw/images/npc/boss/rodras/rodras-w96.webp',
   },
 ];
 
@@ -121,7 +121,7 @@ const RegionBossFeaturePage: React.FC = () => (
           <div className="bg-black/50 border border-white/5 rounded-xl p-4 space-y-3">
             <div className="flex items-center gap-3">
               <img
-                src="https://image.linehero.tw/images/hero_avatar/character_warrior2.png"
+                src="https://image.linehero.tw/images/hero_avatar/character_warrior2-w64.webp"
                 alt="隊長"
                 className="w-10 h-10 rounded-lg object-cover"
               />

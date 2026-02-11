@@ -4,7 +4,7 @@ const SOCIAL_POSTS = [
   {
     name: '夜行者',
     message: '今晚 9 點挑戰冥幽境 Boss，缺一名牧師。',
-    avatar: 'https://image.linehero.tw/images/hero_avatar/character_warrior2.png',
+    avatar: 'https://image.linehero.tw/images/hero_avatar/character_warrior2-w64.webp',
     time: '2 分鐘前',
   },
   {
@@ -16,7 +16,7 @@ const SOCIAL_POSTS = [
   {
     name: '黎影',
     message: '徵求副本代幣兌換情報，互相交流～',
-    avatar: 'https://image.linehero.tw/images/hero_avatar/character_rog_female2.png',
+    avatar: 'https://image.linehero.tw/images/hero_avatar/character_rog_female2-w400.webp',
     time: '35 分鐘前',
   },
 ];
