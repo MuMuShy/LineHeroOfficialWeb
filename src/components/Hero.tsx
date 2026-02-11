@@ -134,14 +134,14 @@ const Hero: React.FC = () => {
               <div className="flex-1 p-4 relative overflow-hidden flex flex-col">
                 {/* Background Image */}
                 <div className="absolute inset-0 opacity-50">
-                  <img src="https://mumu.tw/linehero/images/tower/endless_tower_bg_landscape.png" className="w-full h-full object-cover" alt="bg" />
+                  <img src="https://image.linehero.tw/images/tower/endless_tower_bg_landscape.png" className="w-full h-full object-cover" alt="bg" />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent"></div>
                 </div>
 
                 {/* Boss Monster */}
                 <div className="relative mt-8 mx-auto w-32 h-32 animate-pulse-slow">
                   <div className="absolute inset-0 bg-red-500/20 blur-xl rounded-full"></div>
-                  <img src="https://mumu.tw/linehero/images/regions/boss/boss_girl2_small.png" alt="Boss" className="relative z-10 w-full h-full object-contain drop-shadow-lg filter brightness-110" />
+                  <img src="https://image.linehero.tw/images/regions/boss/boss_girl2_small.png" alt="Boss" className="relative z-10 w-full h-full object-contain drop-shadow-lg filter brightness-110" />
                   {/* Health Bar */}
                   <div className="absolute -top-4 left-0 w-full h-2 bg-gray-700 rounded-full overflow-hidden border border-gray-600">
                     <div className="w-[70%] h-full bg-gradient-to-r from-red-600 to-red-400"></div>
@@ -158,7 +158,7 @@ const Hero: React.FC = () => {
                 <div className="mt-auto relative z-10">
                   <div className="bg-gray-800/80 backdrop-blur border border-gray-700 rounded-lg p-3 mb-3 flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full border-2 border-white/20 overflow-hidden">
-                      <img src="https://mumu.tw/linehero/images/hero_avatar/character_warrior2.png" alt="Avatar" className="w-full h-full object-cover" />
+                      <img src="https://image.linehero.tw/images/hero_avatar/character_warrior2.png" alt="Avatar" className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1">
                       <div className="flex justify-between text-xs text-gray-300 mb-1">
@@ -175,19 +175,19 @@ const Hero: React.FC = () => {
                   <div className="grid grid-cols-3 gap-2">
                     <button className="bg-gray-800 border border-gray-600 rounded-lg p-2 flex flex-col items-center gap-1 active:scale-95 transition-transform">
                       <div className="w-8 h-8 rounded overflow-hidden">
-                        <img src="https://mumu.tw/linehero/images/skills/RPG%20Swordsman%20skill%20icons/PNG/16.png" alt="Skill 1" className="w-full h-full object-cover" />
+                        <img src="https://image.linehero.tw/images/skills/RPG%20Swordsman%20skill%20icons/PNG/16.png" alt="Skill 1" className="w-full h-full object-cover" />
                       </div>
                       <span className="text-[10px] text-gray-300">強力斬擊</span>
                     </button>
                     <button className="bg-gray-800 border border-hero-gold/50 rounded-lg p-2 flex flex-col items-center gap-1 active:scale-95 transition-transform shadow-[0_0_10px_rgba(255,215,0,0.2)]">
                       <div className="w-8 h-8 rounded overflow-hidden">
-                        <img src="https://mumu.tw/linehero/images/skills/RPG%20Berserker%20skill%20icons/PNG/33.png" alt="Skill 2" className="w-full h-full object-cover" />
+                        <img src="https://image.linehero.tw/images/skills/RPG%20Berserker%20skill%20icons/PNG/33.png" alt="Skill 2" className="w-full h-full object-cover" />
                       </div>
                       <span className="text-[10px] text-hero-gold font-bold">致命一擊</span>
                     </button>
                     <button className="bg-gray-800 border border-gray-600 rounded-lg p-2 flex flex-col items-center gap-1 active:scale-95 transition-transform">
                       <div className="w-8 h-8 rounded overflow-hidden">
-                        <img src="https://mumu.tw/linehero/images/skills/RPG%20Berserker%20skill%20icons/PNG/49.png" alt="Skill 3" className="w-full h-full object-cover" />
+                        <img src="https://image.linehero.tw/images/skills/RPG%20Berserker%20skill%20icons/PNG/49.png" alt="Skill 3" className="w-full h-full object-cover" />
                       </div>
                       <span className="text-[10px] text-gray-300">鋼鐵意志</span>
                     </button>

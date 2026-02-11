@@ -68,7 +68,7 @@ const Features: React.FC = () => {
                     <div className="flex items-center gap-4">
                       <div className="w-16 h-16 rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center">
                         <img
-                          src="https://mumu.tw/linehero/images/npc/boss/rodras/rodras.png"
+                          src="https://image.linehero.tw/images/npc/boss/rodras/rodras.png"
                           alt="Boss"
                           className="w-12 h-12 object-contain"
                         />
@@ -86,9 +86,9 @@ const Features: React.FC = () => {
                     </div>
                     <div className="grid grid-cols-3 gap-2">
                       {[
-                        'https://mumu.tw/linehero/images/skills/RPG%20Swordsman%20skill%20icons/PNG/16.png',
-                        'https://mumu.tw/linehero/images/skills/RPG%20Berserker%20skill%20icons/PNG/33.png',
-                        'https://mumu.tw/linehero/images/skills/RPG%20Berserker%20skill%20icons/PNG/49.png',
+                        'https://image.linehero.tw/images/skills/RPG%20Swordsman%20skill%20icons/PNG/16.png',
+                        'https://image.linehero.tw/images/skills/RPG%20Berserker%20skill%20icons/PNG/33.png',
+                        'https://image.linehero.tw/images/skills/RPG%20Berserker%20skill%20icons/PNG/49.png',
                       ].map((icon, idx) => (
                         <div key={icon} className="bg-black/50 border border-white/10 rounded-xl p-3 text-center">
                           <img src={icon} alt={`Skill ${idx + 1}`} className="w-10 h-10 mx-auto" />
@@ -139,12 +139,12 @@ const Features: React.FC = () => {
               <div className="absolute inset-0 bg-hero-gold/10 blur-3xl rounded-full group-hover:bg-hero-gold/20 transition-all duration-500"></div>
               <div className="relative z-10 flex gap-4 justify-center items-center">
                 <img
-                  src="https://mumu.tw/linehero/official_web/messageImage_1763667502560.jpg"
+                  src="https://image.linehero.tw/official_web/messageImage_1763667502560.jpg"
                   alt="裝備強化"
                   className="w-1/2 rounded-xl border border-white/10 shadow-2xl transform -translate-y-4 group-hover:-translate-y-6 transition-transform duration-500"
                 />
                 <img
-                  src="https://mumu.tw/linehero/official_web/beg.jpg"
+                  src="https://image.linehero.tw/official_web/beg.jpg"
                   alt="背包管理"
                   className="w-1/2 rounded-xl border border-white/10 shadow-2xl transform translate-y-4 group-hover:translate-y-6 transition-transform duration-500"
                 />
@@ -183,7 +183,7 @@ const Features: React.FC = () => {
                   <div className="flex-1 bg-black/50 rounded text-[10px] text-gray-500 px-3 py-1 text-center font-mono">linehero.tw/dashboard</div>
                 </div>
                 <img
-                  src="https://mumu.tw/linehero/official_web/web_view.jpg"
+                  src="https://image.linehero.tw/official_web/web_view.jpg"
                   alt="Web 儀表板示意"
                   className="w-full rounded border border-gray-700 opacity-90 group-hover:opacity-100 transition-opacity"
                 />
@@ -228,7 +228,7 @@ const Features: React.FC = () => {
               <div className="absolute inset-0 bg-purple-500/10 blur-2xl md:blur-3xl rounded-full group-hover:bg-purple-500/20 transition-all duration-500"></div>
               <div className="relative z-10 rounded-xl md:rounded-2xl overflow-hidden border-2 border-purple-500/30 shadow-2xl">
                 <img
-                  src="https://mumu.tw/linehero/images/tower/endless_tower_bg_landscape.png"
+                  src="https://image.linehero.tw/images/tower/endless_tower_bg_landscape.png"
                   alt="無盡之塔背景"
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />

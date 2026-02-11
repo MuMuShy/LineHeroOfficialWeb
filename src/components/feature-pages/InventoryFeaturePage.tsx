@@ -7,19 +7,19 @@ const EQUIPMENT_ITEMS = [
     name: '勇士鐵盔',
     tag: '史詩',
     power: '+980',
-    image: 'https://mumu.tw/linehero/images/items/equipments/helmets/41.png',
+    image: 'https://image.linehero.tw/images/items/equipments/helmets/41.png',
   },
   {
     name: '寶珠項鍊',
     tag: '稀有',
     power: '+420',
-    image: 'https://mumu.tw/linehero/images/items/equipments/jewerly/29.png',
+    image: 'https://image.linehero.tw/images/items/equipments/jewerly/29.png',
   },
   {
     name: '力量戒指',
     tag: '史詩',
     power: '+860',
-    image: 'https://mumu.tw/linehero/images/items/equipments/jewerly/1.png',
+    image: 'https://image.linehero.tw/images/items/equipments/jewerly/1.png',
   },
 ];
 
@@ -27,17 +27,17 @@ const MATERIAL_ITEMS = [
   {
     name: '高階力量結晶石',
     qty: 'x320',
-    image: 'https://mumu.tw/linehero/images/items/materials/str_max.png',
+    image: 'https://image.linehero.tw/images/items/materials/str_max.png',
   },
   {
     name: '高階幸運結晶石',
     qty: 'x8,400',
-    image: 'https://mumu.tw/linehero/images/items/materials/luk_max.png',
+    image: 'https://image.linehero.tw/images/items/materials/luk_max.png',
   },
   {
     name: '屬性重配卷',
     qty: 'x45',
-    image: 'https://mumu.tw/linehero/images/items/scrolls/3.png',
+    image: 'https://image.linehero.tw/images/items/scrolls/3.png',
   },
 ];
 

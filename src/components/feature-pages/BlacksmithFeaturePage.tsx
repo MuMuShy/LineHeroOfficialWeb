@@ -7,19 +7,19 @@ const EQUIPMENT_LIST = [
     name: '盜賊下身',
     level: '+8',
     type: '下身',
-    image: 'https://mumu.tw/linehero/images/items/equipments/pants/20.png',
+    image: 'https://image.linehero.tw/images/items/equipments/pants/20.png',
   },
   {
     name: '牧師褲',
     level: '+6',
     type: '下身',
-    image: 'https://mumu.tw/linehero/images/items/equipments/pants/22.png',
+    image: 'https://image.linehero.tw/images/items/equipments/pants/22.png',
   },
   {
     name: '寶珠項鍊',
     level: '+5',
     type: '飾品',
-    image: 'https://mumu.tw/linehero/images/items/equipments/jewerly/29.png',
+    image: 'https://image.linehero.tw/images/items/equipments/jewerly/29.png',
   },
 ];
 
@@ -27,17 +27,17 @@ const MATERIALS = [
   {
     name: '高階信仰結晶石',
     qty: '320',
-    image: 'https://mumu.tw/linehero/images/items/materials/faith_max.png',
+    image: 'https://image.linehero.tw/images/items/materials/faith_max.png',
   },
   {
     name: '高階智慧結晶石',
     qty: '48',
-    image: 'https://mumu.tw/linehero/images/items/materials/int_max.png',
+    image: 'https://image.linehero.tw/images/items/materials/int_max.png',
   },
   {
     name: '基礎力量結晶石',
     qty: '12',
-    image: 'https://mumu.tw/linehero/images/items/materials/runes/s1.jpg',
+    image: 'https://image.linehero.tw/images/items/materials/runes/s1.jpg',
   },
 ];
 
