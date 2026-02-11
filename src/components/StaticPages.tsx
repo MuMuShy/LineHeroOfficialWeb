@@ -51,12 +51,12 @@ const WEB_LIFF_SCREENS = [
   {
     title: '無盡之塔',
     description: '長期進度與高層挑戰。',
-    image: 'https://image.linehero.tw/images/tower/endless_tower_bg_landscape.png',
+    image: 'https://image.linehero.tw/images/tower/endless_tower_bg_landscape-w320.webp',
   },
   {
     title: '裝備管理',
     description: '配裝與外觀整合介面。',
-    image: 'https://image.linehero.tw/images/regions/power_require/2_2/0006.png',
+    image: 'https://image.linehero.tw/images/regions/power_require/2_2/power_require_0006-w400.webp',
   },
   {
     title: '掉落展示',
@@ -66,7 +66,7 @@ const WEB_LIFF_SCREENS = [
   {
     title: '世界 Boss',
     description: '大型 Boss 討伐畫面。',
-    image: 'https://image.linehero.tw/images/regions/boss/boss_girl2_small.png',
+    image: 'https://image.linehero.tw/images/regions/boss/boss_girl2_small-w256.webp',
   },
 ];
 
@@ -388,7 +388,7 @@ const V2_HIGHLIGHTS = [
   {
     title: '討伐小隊',
     description: '5 人小隊協作出戰，四大職業技能完整支援。',
-    icon: 'https://image.linehero.tw/images/hero_avatar/character_warrior2.png',
+    icon: 'https://image.linehero.tw/images/hero_avatar/character_warrior2-w64.webp',
   },
   {
     title: '區域圖騰',

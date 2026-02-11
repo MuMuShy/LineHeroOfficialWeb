@@ -13,7 +13,7 @@ const TEAM_MEMBERS = [
     role: '隊長',
     className: '戰士',
     power: '38,500',
-    avatar: 'https://image.linehero.tw/images/hero_avatar/character_warrior2.png',
+    avatar: 'https://image.linehero.tw/images/hero_avatar/character_warrior2-w64.webp',
   },
   {
     name: '露希亞',
@@ -27,7 +27,7 @@ const TEAM_MEMBERS = [
     role: '隊員',
     className: '盜賊',
     power: '27,450',
-    avatar: 'https://image.linehero.tw/images/hero_avatar/character_rog_female2.png',
+    avatar: 'https://image.linehero.tw/images/hero_avatar/character_rog_female2-w400.webp',
   },
   {
     name: '聖輝',
@@ -181,7 +181,7 @@ const RaidTeamFeaturePage: React.FC = () => (
             <div className="flex items-center gap-4">
               <div className="w-16 h-16 rounded-xl bg-black/60 border border-white/10 flex items-center justify-center">
                 <img
-                  src="https://image.linehero.tw/images/npc/boss/rodras/rodras.png"
+                  src="https://image.linehero.tw/images/npc/boss/rodras/rodras-w96.webp"
                   alt="Boss"
                   className="w-12 h-12 object-contain"
                 />
