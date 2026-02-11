@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Main Title - 視覺用 div 保持樣式，語意已在 sr-only h1 */}
-          <div className="text-5xl sm:text-6xl lg:text-8xl font-black text-white leading-tight mb-6 tracking-tight" role="presentation" aria-hidden="true">
+          <div className="text-5xl sm:text-6xl lg:text-8xl font-black text-white leading-tight mb-6 tracking-tight min-h-[180px] sm:min-h-[220px] lg:min-h-[260px]" role="presentation" aria-hidden="true">
             <span className="block font-en-display text-transparent bg-clip-text bg-gradient-to-r from-white via-hero-gold-glow to-hero-gold animate-shine bg-[length:200%_auto]">
               LineHero
             </span>
