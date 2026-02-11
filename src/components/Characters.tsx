@@ -7,7 +7,7 @@ const characters: Character[] = [
     name: 'Lin (傳奇冒險者)',
     role: '盜賊 Lv.350',
     description: '敏捷極高的暗夜行者，擅長使用「致命毒刃」與「生命汲取」。在陰影中給予敵人爆擊傷害。',
-    imageUrl: 'https://mumu.tw/linehero/images/hero_avatar/character_rog_female2.png',
+    imageUrl: 'https://image.linehero.tw/images/hero_avatar/character_rog_female2.png',
     affinity: 'Speed'
   },
   {
@@ -15,7 +15,7 @@ const characters: Character[] = [
     name: '焚獄君王',
     role: '稀有怪物',
     description: '親密度 0/1000。來自地獄深淵的強大存在，全身燃燒著永不熄滅的烈火。只有最強的公會才能討伐祂。',
-    imageUrl: 'https://mumu.tw/linehero/images/regions/power_require/2_2/0006.png',
+    imageUrl: 'https://image.linehero.tw/images/regions/power_require/2_2/0006.png',
     affinity: 'Magic'
   },
   {
@@ -23,7 +23,7 @@ const characters: Character[] = [
     name: '路亞娜',
     role: '探索怪物',
     description: '迷失在森林深處的精靈少女，似乎在守護著某種不為人知的古代秘密。',
-    imageUrl: 'https://mumu.tw/linehero/images/regions/heal/monster_plus_0023.png',
+    imageUrl: 'https://image.linehero.tw/images/regions/heal/monster_plus_0023.png',
     affinity: 'Tech'
   },
   {
@@ -31,7 +31,7 @@ const characters: Character[] = [
     name: '災厄女皇-黛菲',
     role: '世界 Boss',
     description: '掌管生與死的災厄之女。她的出現預示著世界的毀滅與重生，是所有勇者夢魘般的對手。',
-    imageUrl: 'https://mumu.tw/linehero/images/regions/boss/boss_girl2_small.png',
+    imageUrl: 'https://image.linehero.tw/images/regions/boss/boss_girl2_small.png',
     affinity: 'Tech'
   },
 ];

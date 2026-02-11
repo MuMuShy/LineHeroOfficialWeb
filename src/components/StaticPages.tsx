@@ -41,32 +41,32 @@ const WEB_LIFF_SCREENS = [
   {
     title: '戰鬥總覽',
     description: 'Boss 與隊伍狀態一覽。',
-    image: 'https://mumu.tw/linehero/images/regions/boss/shadow_abyss_boss.png',
+    image: 'https://image.linehero.tw/images/regions/boss/shadow_abyss_boss.png',
   },
   {
     title: '副本入口',
     description: '副本清單與掉落資訊。',
-    image: 'https://mumu.tw/linehero/images/regions/boss/four_symbols_domain_boss.png',
+    image: 'https://image.linehero.tw/images/regions/boss/four_symbols_domain_boss.png',
   },
   {
     title: '無盡之塔',
     description: '長期進度與高層挑戰。',
-    image: 'https://mumu.tw/linehero/images/tower/endless_tower_bg_landscape.png',
+    image: 'https://image.linehero.tw/images/tower/endless_tower_bg_landscape.png',
   },
   {
     title: '裝備管理',
     description: '配裝與外觀整合介面。',
-    image: 'https://mumu.tw/linehero/images/regions/power_require/2_2/0006.png',
+    image: 'https://image.linehero.tw/images/regions/power_require/2_2/0006.png',
   },
   {
     title: '掉落展示',
     description: '稀有裝備圖鑑預覽。',
-    image: 'https://mumu.tw/linehero/images/items/equipments/boss_weapon_shadow_abyss.png',
+    image: 'https://image.linehero.tw/images/items/equipments/boss_weapon_shadow_abyss.png',
   },
   {
     title: '世界 Boss',
     description: '大型 Boss 討伐畫面。',
-    image: 'https://mumu.tw/linehero/images/regions/boss/boss_girl2_small.png',
+    image: 'https://image.linehero.tw/images/regions/boss/boss_girl2_small.png',
   },
 ];
 
@@ -95,7 +95,7 @@ export const GameIntroLinePage: React.FC = () => (
       </div>
       <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/40">
         <img
-          src="https://mumu.tw/linehero/images/hero_avatar/character_magic_female.png"
+          src="https://image.linehero.tw/images/hero_avatar/character_magic_female.png"
           alt="LINE Hero"
           className="w-full h-full object-cover opacity-80"
         />
@@ -179,7 +179,7 @@ export const GameIntroWebPage: React.FC = () => (
       </div>
       <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/40">
         <img
-          src="https://mumu.tw/linehero/images/regions/boss/four_symbols_domain_boss.png"
+          src="https://image.linehero.tw/images/regions/boss/four_symbols_domain_boss.png"
           alt="Web UI"
           className="w-full h-full object-cover opacity-80"
         />
@@ -383,42 +383,42 @@ const V2_HIGHLIGHTS = [
   {
     title: '區域 Boss',
     description: '區域探索累積觸發，討伐三大區域Boss獲取圖騰碎片與稀有武器。',
-    icon: 'https://mumu.tw/linehero/images/regions/boss/four_symbols_domain_boss.png',
+    icon: 'https://image.linehero.tw/images/regions/boss/four_symbols_domain_boss.png',
   },
   {
     title: '討伐小隊',
     description: '5 人小隊協作出戰，四大職業技能完整支援。',
-    icon: 'https://mumu.tw/linehero/images/hero_avatar/character_warrior2.png',
+    icon: 'https://image.linehero.tw/images/hero_avatar/character_warrior2.png',
   },
   {
     title: '區域圖騰',
     description: '永久屬性加成系統，透過區域圖騰碎片進行解鎖升級。',
-    icon: 'https://mumu.tw/linehero/images/items/region_boss/four_symbols_core.png',
+    icon: 'https://image.linehero.tw/images/items/region_boss/four_symbols_core.png',
   },
   {
     title: '副本系統',
     description: '星力副本/潛能副本/精煉魂魄副本 更多副本即將來襲。',
-    icon: 'https://mumu.tw/linehero/images/items/usage/dungeon_token.png',
+    icon: 'https://image.linehero.tw/images/items/usage/dungeon_token.png',
   },
   {
     title: '星力強化',
     description: '單件最高 +10 星，全身最高 70 星，戰力大躍進。',
-    icon: 'https://mumu.tw/linehero/images/items/materials/star_stellar_core.png',
+    icon: 'https://image.linehero.tw/images/items/materials/star_stellar_core.png',
   },
   {
     title: '詞綴系統',
     description: '多類型詞綴與鎖定重鑄，打造專屬神裝。',
-    icon: 'https://mumu.tw/linehero/images/items/materials/affix_potential_crystal.png',
+    icon: 'https://image.linehero.tw/images/items/materials/affix_potential_crystal.png',
   },
   {
     title: '裝備製作',
     description: '優化裝備掉落系統 整理背包更方便。',
-    icon: 'https://mumu.tw/linehero/images/arts/equip_advance.png',
+    icon: 'https://image.linehero.tw/images/arts/equip_advance.png',
   },
   {
     title: '轉移系統',
     description: '新增 星力轉移憑證/潛能轉移憑證 可搭配強化精煉轉移卷使用。',
-    icon: 'https://mumu.tw/linehero/images/scrolls/11.png',
+    icon: 'https://image.linehero.tw/images/scrolls/11.png',
   },
 ];
 
@@ -633,7 +633,7 @@ export const V2UpdatePage: React.FC = () => (
       </div>
       <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/40">
         <img
-          src="https://mumu.tw/linehero/images/regions/boss/shadow_abyss_boss.png"
+          src="https://image.linehero.tw/images/regions/boss/shadow_abyss_boss.png"
           alt="LineHero v2.0"
           className="w-full h-full object-cover opacity-80"
         />
@@ -674,7 +674,7 @@ export const V2UpdatePage: React.FC = () => (
           <p className="text-sm text-gray-400 mt-2">戰鬥累積混沌值，區域混亂值MAX後觸發區域 Boss。</p>
         </div>
         <img
-          src="https://mumu.tw/linehero/images/items/equipments/boss_weapon_shadow_abyss.png"
+          src="https://image.linehero.tw/images/items/equipments/boss_weapon_shadow_abyss.png"
           alt="區域 Boss"
           className="w-14 h-14 object-contain"
         />
@@ -776,7 +776,7 @@ export const V2UpdatePage: React.FC = () => (
           <p className="text-sm text-gray-400 mt-2">每個區域都有專屬圖騰，升級後獲得永久屬性加成。</p>
         </div>
         <img
-          src="https://mumu.tw/linehero/images/items/region_boss/nether_realm_core.png"
+          src="https://image.linehero.tw/images/items/region_boss/nether_realm_core.png"
           alt="圖騰"
           className="w-12 h-12 object-contain"
         />
@@ -821,7 +821,7 @@ export const V2UpdatePage: React.FC = () => (
           <p className="text-sm text-gray-400 mt-2">每週副本、無盡之塔、活動副本一次收錄。</p>
         </div>
         <img
-          src="https://mumu.tw/linehero/images/items/usage/dungeon_token.png"
+          src="https://image.linehero.tw/images/items/usage/dungeon_token.png"
           alt="副本代幣"
           className="w-12 h-12 object-contain"
         />
@@ -897,7 +897,7 @@ export const V2UpdatePage: React.FC = () => (
           <p className="text-sm text-gray-400 mt-2">裝備星力強化可提升攻擊與血量加成，屬於長期養成核心。</p>
         </div>
         <img
-          src="https://mumu.tw/linehero/images/items/region_boss/shadow_abyss_core.png"
+          src="https://image.linehero.tw/images/items/region_boss/shadow_abyss_core.png"
           alt="星力"
           className="w-12 h-12 object-contain"
         />
@@ -907,7 +907,7 @@ export const V2UpdatePage: React.FC = () => (
           <div className="text-white font-bold">強化消耗</div>
           <div className="flex items-center gap-3">
             <img
-              src="https://mumu.tw/linehero/images/items/materials/star_stardust.png"
+              src="https://image.linehero.tw/images/items/materials/star_stardust.png"
               alt="星塵"
               className="w-10 h-10 object-contain"
             />
@@ -918,7 +918,7 @@ export const V2UpdatePage: React.FC = () => (
           </div>
           <div className="flex items-center gap-3">
             <img
-              src="https://mumu.tw/linehero/images/gifts/treasures/coin_small.png"
+              src="https://image.linehero.tw/images/gifts/treasures/coin_small.png"
               alt="金幣"
               className="w-10 h-10 object-contain"
             />
@@ -957,7 +957,7 @@ export const V2UpdatePage: React.FC = () => (
           <p className="text-sm text-gray-400 mt-2">裝備品質越高，詞綴欄位越多。</p>
         </div>
         <img
-          src="https://mumu.tw/linehero/images/items/materials/soul_icon.png"
+          src="https://image.linehero.tw/images/items/materials/soul_icon.png"
           alt="詞綴"
           className="w-12 h-12 object-contain"
         />
@@ -1066,7 +1066,7 @@ export const V2UpdatePage: React.FC = () => (
         <div className="flex items-center justify-between">
           <h3 className="text-lg font-bold text-white">製作機率</h3>
           <img
-            src="https://mumu.tw/linehero/images/items/molds/mold_5.png"
+            src="https://image.linehero.tw/images/items/molds/mold_5.png"
             alt="模具"
             className="w-10 h-10 object-contain"
           />
@@ -1100,7 +1100,7 @@ export const V2UpdatePage: React.FC = () => (
           <p className="text-sm text-gray-400 mt-2">星力與潛能可透過轉移券完整移轉。</p>
         </div>
         <img
-          src="https://mumu.tw/linehero/images/scrolls/11.png"
+          src="https://image.linehero.tw/images/scrolls/11.png"
           alt="轉移券"
           className="w-12 h-12 object-contain"
         />

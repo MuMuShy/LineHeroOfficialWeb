@@ -11,7 +11,7 @@ type RankingResponse = {
   last_updated?: number;
 };
 
-const DEFAULT_AVATAR = 'https://mumu.tw/linehero/images/hero_avatar/default.png';
+const DEFAULT_AVATAR = 'https://image.linehero.tw/images/hero_avatar/default.png';
 
 const getName = (entry: RankEntry, fallback: string) =>
   (entry.name ||
@@ -43,7 +43,7 @@ const getEquipImage = (equip?: Record<string, unknown>) =>
   (equip?.image_url ||
     equip?.image ||
     equip?.icon ||
-    'https://mumu.tw/linehero/images/items/default.png') as string;
+    'https://image.linehero.tw/images/items/default.png') as string;
 
 const getEnhanceLevel = (equip?: Record<string, unknown>) =>
   Number(equip?.enhancement_level || equip?.enhance_level || 0);

@@ -4,19 +4,19 @@ const SOCIAL_POSTS = [
   {
     name: '夜行者',
     message: '今晚 9 點挑戰冥幽境 Boss，缺一名牧師。',
-    avatar: 'https://mumu.tw/linehero/images/hero_avatar/character_warrior2.png',
+    avatar: 'https://image.linehero.tw/images/hero_avatar/character_warrior2.png',
     time: '2 分鐘前',
   },
   {
     name: '露希亞',
     message: '剛刷到傳說武器，來找我組隊一起衝星力！',
-    avatar: 'https://mumu.tw/linehero/images/hero_avatar/character_magic_female.png',
+    avatar: 'https://image.linehero.tw/images/hero_avatar/character_magic_female.png',
     time: '12 分鐘前',
   },
   {
     name: '黎影',
     message: '徵求副本代幣兌換情報，互相交流～',
-    avatar: 'https://mumu.tw/linehero/images/hero_avatar/character_rog_female2.png',
+    avatar: 'https://image.linehero.tw/images/hero_avatar/character_rog_female2.png',
     time: '35 分鐘前',
   },
 ];
