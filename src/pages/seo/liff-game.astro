@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NavbarAstro from '../../components/NavbarAstro';
+import FooterAstro from '../../components/FooterAstro';
+import ScrollToTop from '../../components/ScrollToTop';
+import '../../styles/global.css';
+
+const seoProps = {
+  title: "什麼是 LIFF 遊戲？LINE RPG 的關鍵技術",
+  description: "LIFF 遊戲是什麼？解析 LINE RPG 的視覺介面與互動體驗。",
+  keywords: "LIFF遊戲,LINE RPG,聊天視窗RPG",
+  type: "article",
+  url: "https://linehero.tw/seo/liff-game"
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:idle />
+  <main class="bg-hero-dark min-h-screen pt-28 pb-16 px-4 md:px-8 text-gray-100">
+    <article class="max-w-4xl mx-auto">
+      <header class="mb-10">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
+          <span class="w-2 h-2 rounded-full bg-hero-gold"></span>
+          <span class="text-xs font-bold tracking-[0.2em] text-gray-200 uppercase">LINE RPG 指南</span>
+        </div>
+        <h1 class="mt-6 text-3xl md:text-5xl font-black text-white leading-tight">什麼是 LIFF 遊戲？LINE RPG 的關鍵技術</h1>
+        <p class="mt-4 text-gray-300 leading-relaxed max-w-3xl">LIFF 遊戲是什麼？解析 LINE RPG 的視覺介面與互動體驗。</p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="https://lin.ee/3JlUhak" target="_blank" rel="noopener noreferrer"
+             class="px-6 py-3 rounded-xl bg-[#06C755] hover:bg-[#05b34c] text-white font-black shadow-lg shadow-green-900/20">
+            立即加入官方帳號
+          </a>
+          <a href="/line-rpg" class="px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold text-white font-bold">
+            LINE RPG 玩法介紹
+          </a>
+        </div>
+      </header>
+
+      <section class="space-y-10">
+        <section class="space-y-4">
+          <h2 class="text-2xl font-black text-white">快速重點</h2>
+          <ul class="list-disc pl-6 space-y-2 text-gray-200">
+            <li>免下載、免安裝，LINE 聊天室即可玩。</li>
+            <li>適合碎片時間、上班族或通勤族。</li>
+            <li>可搭配 Web 模式進行更完整管理。</li>
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-black text-white">適合哪些人？</h2>
+          <p class="text-gray-300">想找 LINE RPG / 免下載 RPG 的玩家、多數都在意進入速度與低負擔。這類型特別適合：</p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-200">
+            <li>不想安裝大型 App 的玩家。</li>
+            <li>上班或通勤只想快速推進進度的人。</li>
+            <li>喜歡掉寶與養成，但時間有限的人。</li>
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-black text-white">推薦玩法</h2>
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-3">
+            <p class="text-gray-300 leading-relaxed">
+              在這類型中，LineHero 無盡冒險算是目前內容最完整的一款：
+              聊天視窗即玩 + Web 模式管理，並具備世界 Boss、副本與裝備養成。
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-gray-300">
+              <div class="bg-black/40 border border-white/10 rounded-xl px-4 py-3">LINE 聊天室即玩</div>
+              <div class="bg-black/40 border border-white/10 rounded-xl px-4 py-3">世界 Boss / 副本</div>
+              <div class="bg-black/40 border border-white/10 rounded-xl px-4 py-3">Web 模式管理</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="border-t border-white/10 pt-8 space-y-4">
+          <h2 class="text-2xl font-black text-white">下一步</h2>
+          <div class="grid gap-2 sm:grid-cols-3">
+            <a class="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold rounded-xl px-4 py-3 font-bold text-sm text-white" href="/no-download-rpg">免下載 RPG 介紹</a>
+            <a class="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold rounded-xl px-4 py-3 font-bold text-sm text-white" href="/line-chat-game">LINE 聊天室遊戲</a>
+            <a class="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold rounded-xl px-4 py-3 font-bold text-sm text-white" href="/office-games">上班族玩法</a>
+          </div>
+        </section>
+      </section>
+    </article>
+  </main>
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>
