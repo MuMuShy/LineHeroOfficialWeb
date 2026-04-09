@@ -61,6 +61,28 @@ const orgSchema = {
     "https://discord.gg/76gSTeqtBw"
   ]
 };
+
+// WebSite Schema — 啟用 Google sitelinks search box
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "LINE Hero 無盡冒險",
+  "alternateName": ["LineHero", "免下載 LINE RPG"],
+  "url": "https://linehero.tw",
+  "inLanguage": "zh-TW",
+  "publisher": {
+    "@type": "Organization",
+    "name": "LINE Hero Team"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://wiki.linehero.tw/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+};
 ---
 
 <!DOCTYPE html>
@@ -143,6 +165,7 @@ const orgSchema = {
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(gameSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
     {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
 
     <!-- LINE Tag Base Code -->

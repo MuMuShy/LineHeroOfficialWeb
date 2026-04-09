@@ -1,5 +1,6 @@
 import React from 'react';
 import { trackCtaClick } from '../services/analytics';
+import SectionHeader from './SectionHeader';
 
 const screenshots = [
   { id: 1, url: '/images/screenshots/linehero-screenshot-1.webp', title: '仙鶴騎士對戰', tag: 'BATTLE' },
@@ -12,7 +13,17 @@ const screenshots = [
   { id: 8, url: '/images/screenshots/linehero-screenshot-8.webp', title: '圖鑑與怪物資訊', tag: 'INDEX' },
 ];
 
-const tiltPattern = ['-rotate-1', 'rotate-1', 'rotate-0', '-rotate-2', 'rotate-2', 'rotate-0', '-rotate-1', 'rotate-1'];
+// 僅 hover 時微傾，靜態保持水平以保留截圖辨識度
+const hoverTiltPattern = [
+  'hover:-rotate-1',
+  'hover:rotate-1',
+  'hover:rotate-0',
+  'hover:-rotate-1',
+  'hover:rotate-1',
+  'hover:rotate-0',
+  'hover:-rotate-1',
+  'hover:rotate-1',
+];
 
 const Gallery: React.FC = () => {
   return (
@@ -32,55 +43,44 @@ const Gallery: React.FC = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <header className="mb-14 md:mb-20">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="h-[2px] w-12 bg-hero-neon-green" />
-            <span className="font-en-display text-xs tracking-[0.4em] text-hero-neon-green">IN-GAME SCREENS / 遊戲畫面</span>
-          </div>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <h2 className="font-jp-display text-5xl md:text-7xl font-black text-white leading-none">
-              遊戲<span className="text-hero-gold">畫面</span>
-            </h2>
-            <p className="text-gray-400 max-w-md text-base md:text-lg">
-              真實遊戲截圖：角色養成、戰鬥結算與技能施放，直接在 LINE 聊天室暢玩。
-            </p>
-          </div>
-        </header>
+        <SectionHeader
+          eyebrow="In-Game Screens / 遊戲畫面"
+          title={<>遊戲<span className="text-hero-gold">畫面</span></>}
+          description="真實遊戲截圖：角色養成、戰鬥結算與技能施放，直接在 LINE 聊天室暢玩。"
+        />
 
-        {/* Asymmetric screenshot grid */}
+        {/* Screenshot grid — 靜態水平，hover 才傾斜 */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {screenshots.map((shot, idx) => (
-            <figure key={shot.id} className={`group relative ${tiltPattern[idx]} hover:rotate-0 transition-transform duration-500`}>
-              {/* Neon slash frame */}
-              <div className="absolute -inset-[3px] clip-slash-soft bg-gradient-to-br from-hero-gold/60 via-hero-neon-green/50 to-hero-sakura/60 opacity-70 group-hover:opacity-100 transition-opacity" />
+            <figure key={shot.id} className={`group relative ${hoverTiltPattern[idx]} transition-transform duration-500`}>
+              <div className="absolute -inset-[2px] clip-slash-soft bg-gradient-to-br from-hero-gold/50 to-hero-neon-green/40 opacity-60 group-hover:opacity-100 transition-opacity" />
               <div className="absolute -inset-[1px] clip-slash-soft bg-hero-dark" />
 
               <div className="relative clip-slash-soft overflow-hidden aspect-[9/16] bg-black">
-                <img src={shot.url} alt={shot.title} loading="lazy" className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" />
-                {/* Scanlines */}
-                <div className="absolute inset-0 scanlines opacity-40 pointer-events-none" />
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                <img
+                  src={shot.url}
+                  alt={`LINE Hero 遊戲截圖 - ${shot.title}`}
+                  loading="lazy"
+                  className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-[1.05]"
+                />
+                {/* 柔和底部漸層，保留截圖辨識度 */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
 
-                {/* Top corner tag */}
-                <div className="absolute top-3 left-3 clip-slash-tag bg-hero-gold text-black font-en-display text-[9px] px-2.5 py-1 tracking-[0.2em] font-bold">
+                <div className="absolute top-3 left-3 clip-slash-tag bg-hero-gold text-black font-en-wide text-[9px] px-2.5 py-1">
                   NO.{String(shot.id).padStart(2, '0')}
                 </div>
-                <div className="absolute top-3 right-3 clip-slash-tag bg-black/70 border border-white/20 text-hero-neon-green font-en-display text-[9px] px-2.5 py-1 tracking-[0.2em]">
+                <div className="absolute top-3 right-3 clip-slash-tag bg-black/70 border border-white/20 text-hero-neon-green font-en-wide text-[9px] px-2.5 py-1">
                   {shot.tag}
                 </div>
 
-                {/* Bottom title */}
                 <figcaption className="absolute bottom-0 left-0 right-0 p-4">
-                  <div className="font-en-display text-[10px] tracking-[0.3em] text-hero-gold/80">LINE UI</div>
+                  <div className="font-en-wide text-[9px] text-hero-gold/80">LINE UI</div>
                   <div className="text-white font-bold text-sm mt-1 drop-shadow-lg">{shot.title}</div>
                 </figcaption>
               </div>
 
-              {/* Corner brackets */}
-              <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-hero-gold" />
-              <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-hero-neon-green" />
+              <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-hero-gold" aria-hidden="true" />
+              <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-hero-neon-green" aria-hidden="true" />
             </figure>
           ))}
         </div>
@@ -91,7 +91,7 @@ const Gallery: React.FC = () => {
             href="https://lin.ee/3JlUhak"
             target="_blank"
             rel="noreferrer"
-            className="group clip-arrow-r bg-white/5 border border-white/20 hover:border-hero-gold hover:bg-white/10 text-white px-8 py-4 flex items-center gap-3 transition-all"
+            className="group bg-white/5 border border-white/20 hover:border-hero-gold hover:bg-white/10 text-white px-8 py-4 flex items-center gap-3 transition-all rounded-sm focus-visible:ring-2 focus-visible:ring-hero-gold"
             onClick={() => trackCtaClick('查看更多遊戲截圖', 'gallery', 'https://lin.ee/3JlUhak')}
           >
             <span className="font-en-display tracking-widest text-lg">SEE MORE</span>
