@@ -1,144 +1,203 @@
 import React, { useState } from 'react';
-import { Character } from '../types';
+import type { Character } from '../types';
 
-const characters: Character[] = [
+const characters: (Character & { kanji: string; stats: { str: number; int: number; luk: number } })[] = [
   {
     id: '1',
-    name: 'Lin (傳奇冒險者)',
-    role: '盜賊 Lv.350',
-    description: '敏捷極高的暗夜行者，擅長使用「致命毒刃」與「生命汲取」。在陰影中給予敵人爆擊傷害。',
-    imageUrl: 'https://image.linehero.tw/images/hero_avatar/character_rog_female2-w400.webp',
-    affinity: 'Speed'
+    name: '至尊龍王',
+    role: '傳說 Boss',
+    description: '凌駕於天地之上的遠古龍族霸主，鱗甲閃耀萬古金芒。祂的一次振翅足以撕裂山河，是每一位勇者夢寐以求的挑戰。',
+    imageUrl: 'https://image.linehero.tw/images/event/spring/supreme_dragon_lord.webp',
+    affinity: 'Magic',
+    kanji: '龍',
+    stats: { str: 6200, int: 4800, luk: 1500 },
   },
   {
     id: '2',
-    name: '焚獄君王',
-    role: '稀有怪物',
-    description: '親密度 0/1000。來自地獄深淵的強大存在，全身燃燒著永不熄滅的烈火。只有最強的公會才能討伐祂。',
-    imageUrl: 'https://image.linehero.tw/images/regions/power_require/2_2/power_require_0006-w400.webp',
-    affinity: 'Magic'
+    name: '虛空君王 · 阿薩隆',
+    role: '世界 Boss',
+    description: '來自虛空裂隙的黑暗君主，掌握吞噬光芒的禁忌之力。凡是與他對視的勇者，皆會墜入無盡的絕望深淵。',
+    imageUrl: 'https://image.linehero.tw/images/boss_mov/dark/BOSS_idle.png',
+    affinity: 'Tech',
+    kanji: '虛',
+    stats: { str: 5800, int: 6100, luk: 900 },
   },
   {
     id: '3',
-    name: '路亞娜',
-    role: '探索怪物',
-    description: '迷失在森林深處的精靈少女，似乎在守護著某種不為人知的古代秘密。',
-    imageUrl: 'https://image.linehero.tw/images/regions/heal/monster_plus_0023-w400.webp',
-    affinity: 'Tech'
-  },
-  {
-    id: '4',
-    name: '災厄女皇-黛菲',
-    role: '世界 Boss',
-    description: '掌管生與死的災厄之女。她的出現預示著世界的毀滅與重生，是所有勇者夢魘般的對手。',
-    imageUrl: 'https://image.linehero.tw/images/regions/boss/boss_girl2_small-w256.webp',
-    affinity: 'Tech'
+    name: '風暴巨人',
+    role: '區域 Boss',
+    description: '雷霆與狂風的化身，身軀高聳如山，每一次踏步都伴隨電光與轟鳴。只有最堅韌的戰士才能在風暴中屹立不搖。',
+    imageUrl: 'https://image.linehero.tw/images/regions/power_require/3_3/thunder_storm_giant.png',
+    affinity: 'Speed',
+    kanji: '雷',
+    stats: { str: 5400, int: 2200, luk: 1100 },
   },
 ];
 
 const Characters: React.FC = () => {
-  const [activeChar, setActiveChar] = useState<Character>(characters[0]);
+  const [activeChar, setActiveChar] = useState(characters[0]);
 
   return (
-    <section id="heroes" className="py-16 md:py-24 bg-hero-dark relative overflow-hidden border-t border-white/5 pb-32 md:pb-40 section-divider">
-      {/* Background Glow */}
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-hero-gold/5 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute -top-32 right-0 w-[500px] h-[500px] bg-hero-neon/10 rounded-full blur-[140px] pointer-events-none"></div>
+    <section id="heroes" className="relative py-24 md:py-36 bg-hero-dark overflow-hidden section-divider">
+      {/* BG */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 right-0 w-[60%] h-full halftone-green opacity-25" />
+        <div className="absolute top-20 left-0 w-full h-24 diagonal-stripes opacity-25" />
+        <div className="absolute top-1/3 left-0 w-[600px] h-[600px] bg-hero-gold/10 blur-[140px] rounded-full" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-hero-sakura/10 blur-[140px] rounded-full" />
+      </div>
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col md:flex-row gap-12 items-center">
-          
-          {/* Left: Text Info */}
-          <div className="flex-1 space-y-6 md:space-y-8 w-full">
-            <h2 className="font-display text-4xl md:text-6xl font-bold text-white tracking-wide">
-              傳說 <br />
-              <span className="text-hero-gold">英雄與魔物</span>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <header className="mb-14 md:mb-20">
+          <div className="flex items-center gap-4 mb-5">
+            <div className="h-px w-12 bg-hero-gold" />
+            <span className="font-en-wide text-[10px] text-hero-gold">Legendary Bosses</span>
+          </div>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <h2 className="font-serif-cn text-5xl md:text-7xl text-white leading-none">
+              傳說<span className="text-hero-gold">魔物</span>
             </h2>
-            
-            <div className="bg-hero-panel/60 p-6 rounded-2xl border border-white/10 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.35)]">
-              <div className="flex items-center gap-4 mb-4">
-                 <span className="px-3 py-1 bg-hero-gold/20 text-hero-gold text-xs font-bold uppercase tracking-widest border border-hero-gold/30 rounded">
-                    {activeChar.role}
-                 </span>
+            <p className="text-gray-400 text-base md:text-lg max-w-md">
+              踏入深淵、直面威脅大陸的世界級 Boss。點擊下方縮圖切換查看。
+            </p>
+          </div>
+        </header>
+
+        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-16 items-center">
+          {/* Left: Character stage */}
+          <div className="relative">
+            {/* Giant kanji backdrop */}
+            <div
+              aria-hidden
+              className="absolute inset-0 flex items-center justify-center font-kanji-deco text-white/[0.07] select-none pointer-events-none"
+              style={{ fontSize: 'clamp(18rem, 36vw, 36rem)', lineHeight: 0.8 }}
+            >
+              {activeChar.kanji}
+            </div>
+
+            {/* Glow */}
+            <div className="absolute inset-10 bg-hero-gold/10 blur-[120px] rounded-full" />
+
+            {/* Character frame */}
+            <div className="relative mx-auto max-w-md">
+              {/* Corner tags */}
+              <div className="absolute -top-3 -left-3 z-30 clip-slash-tag bg-hero-gold text-black font-en-display text-[10px] px-3 py-1 tracking-widest">
+                NO.{activeChar.id.padStart(3, '0')}
               </div>
-              
-              <h3 className="font-display text-2xl md:text-4xl font-bold text-white mb-4">
+              <div className="absolute -top-3 right-2 z-30 clip-slash-tag bg-hero-sakura text-white font-en-display text-[10px] px-3 py-1 tracking-widest">
+                {activeChar.affinity.toUpperCase()}
+              </div>
+
+              {/* Neon outer frame */}
+              <div className="absolute -inset-3 clip-hex bg-gradient-to-br from-hero-gold/70 via-hero-sakura/40 to-hero-neon-green/60" />
+              <div className="absolute -inset-[6px] clip-hex bg-hero-dark" />
+
+              {/* Image */}
+              <div className="relative clip-hex bg-gradient-to-b from-gray-900 to-black aspect-[3/4] overflow-hidden">
+                <img
+                  src={activeChar.imageUrl}
+                  alt={activeChar.name}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 scanlines opacity-50" />
+                {/* Bottom name banner */}
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <div className="font-en-display text-xs tracking-[0.3em] text-hero-gold">{activeChar.role.toUpperCase()}</div>
+                  <div className="font-jp-display text-2xl md:text-3xl font-black text-white mt-1">{activeChar.name}</div>
+                </div>
+              </div>
+
+              {/* Floating stat chip */}
+              <div className="hidden md:block absolute -right-10 top-1/3 clip-slash-tag bg-black/80 border border-hero-gold/60 px-4 py-3 text-xs">
+                <div className="font-en-display tracking-widest text-hero-gold">POWER</div>
+                <div className="font-en-display text-2xl text-white">{(activeChar.stats.str + activeChar.stats.int + activeChar.stats.luk).toLocaleString()}</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Info panel */}
+          <div className="relative">
+            <div className="clip-slash-soft glass-panel border border-white/10 p-6 md:p-8 shadow-[0_30px_60px_rgba(0,0,0,0.4)]">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="clip-slash-tag bg-hero-gold/20 text-hero-gold text-[11px] font-black px-3 py-1 tracking-widest border border-hero-gold/40">
+                  {activeChar.role}
+                </span>
+                <span className="font-en-display text-xs tracking-[0.3em] text-white/40">PROFILE /0{activeChar.id}</span>
+              </div>
+
+              <h3 className="font-jp-display text-3xl md:text-5xl font-black text-white leading-tight">
                 {activeChar.name}
               </h3>
-              
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed border-l-4 border-hero-green pl-4 md:pl-6">
+
+              <div className="my-5 h-[2px] w-16 bg-gradient-to-r from-hero-gold to-transparent" />
+
+              <p className="text-gray-300 text-base md:text-lg leading-relaxed border-l-[3px] border-hero-gold/60 pl-5">
                 {activeChar.description}
               </p>
 
-              <div className="mt-6 flex gap-4 text-sm font-mono text-gray-400">
-                <div>STR <span className="text-white">1,717</span></div>
-                <div>INT <span className="text-white">1,283</span></div>
-                <div>LUK <span className="text-white">3,987</span></div>
+              {/* Stats */}
+              <div className="mt-6 grid grid-cols-3 gap-3 font-en-display">
+                {[
+                  { k: 'STR', v: activeChar.stats.str, color: 'text-hero-sakura' },
+                  { k: 'INT', v: activeChar.stats.int, color: 'text-hero-neon-green' },
+                  { k: 'LUK', v: activeChar.stats.luk, color: 'text-hero-gold' },
+                ].map((s) => (
+                  <div key={s.k} className="clip-slash-tag bg-black/40 border border-white/10 px-4 py-3">
+                    <div className={`text-[10px] tracking-[0.3em] ${s.color}`}>{s.k}</div>
+                    <div className="text-xl text-white">{s.v.toLocaleString()}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* HP Bar */}
+              <div className="mt-5">
+                <div className="flex justify-between text-[11px] font-en-display tracking-widest text-gray-400 mb-1">
+                  <span>HP</span>
+                  <span>2400 / 2400</span>
+                </div>
+                <div className="h-2 bg-black/60 rounded-full overflow-hidden border border-white/10">
+                  <div className="h-full w-[82%] bg-gradient-to-r from-hero-sakura via-red-500 to-hero-crimson" />
+                </div>
               </div>
             </div>
 
-            {/* Selector - Optimized for mobile scrolling without clipping */}
-            <div className="flex flex-wrap justify-center gap-4 pt-2 pb-4 mx-0 px-0">
-              {characters.map((char) => (
-                <button
-                  key={char.id}
-                  onClick={() => setActiveChar(char)}
-                  className={`
-                    flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border-2 transition-all transform 
-                    ${activeChar.id === char.id 
-                      ? 'border-hero-gold shadow-[0_0_20px_rgba(255,215,0,0.6)] scale-110 ring-2 ring-hero-gold/50' 
-                      : 'border-gray-700 opacity-60 hover:opacity-100 hover:border-hero-green/40'}
-                  `}
-                >
-                  <img src={char.imageUrl} alt={char.name} className="w-full h-full object-cover" />
-                </button>
-              ))}
+            {/* Selector strip */}
+            <div className="relative z-20 mt-6">
+              <div className="font-en-wide text-[10px] text-white/40 mb-3">Select Boss</div>
+              <div className="flex gap-3">
+                {characters.map((char) => {
+                  const active = activeChar.id === char.id;
+                  return (
+                    <button
+                      key={char.id}
+                      type="button"
+                      onClick={() => setActiveChar(char)}
+                      className={`relative flex-shrink-0 w-20 h-24 rounded-md overflow-hidden border transition-all duration-300 cursor-pointer ${
+                        active
+                          ? 'border-hero-gold ring-2 ring-hero-gold/60 scale-[1.05]'
+                          : 'border-white/15 opacity-60 hover:opacity-100 hover:border-white/40'
+                      }`}
+                    >
+                      <img src={char.imageUrl} alt={char.name} className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none" />
+                      <div className={`absolute bottom-1 left-0 right-0 text-center font-en-wide text-[9px] pointer-events-none ${active ? 'text-hero-gold' : 'text-white/70'}`}>
+                        NO.{char.id.padStart(2, '0')}
+                      </div>
+                      {active && (
+                        <div className="absolute top-1 right-1 w-2 h-2 rounded-full bg-hero-gold animate-pulse pointer-events-none" />
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-
-          {/* Right: Image Card */}
-          <div className="flex-1 relative h-[500px] md:h-[600px] w-full flex items-center justify-center perspective-1000 mt-8 md:mt-0">
-            {/* Card Container */}
-            <div className="relative w-full max-w-[300px] md:max-w-[320px] h-[450px] md:h-[500px] bg-gray-900 rounded-2xl overflow-hidden border-[3px] border-gray-700 shadow-2xl transform transition-all hover:rotate-y-12 mx-auto">
-                {/* Card Top - Image */}
-                <div className="h-[60%] relative overflow-hidden">
-                   <img 
-                    src={activeChar.imageUrl} 
-                    alt={activeChar.name} 
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                  />
-                  <div className="absolute bottom-0 w-full h-1/3 bg-gradient-to-t from-gray-900 to-transparent"></div>
-                </div>
-                
-                {/* Card Bottom - Stats */}
-                <div className="h-[40%] bg-gray-900 p-4 flex flex-col justify-between">
-                   <div>
-                     <h4 className="text-hero-gold font-display text-xl font-bold mb-1">{activeChar.name}</h4>
-                     <div className="text-xs text-gray-400 mb-2">UID:1 • {activeChar.role}</div>
-                     <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden mb-2">
-                       <div className="bg-red-500 h-full w-[80%]"></div>
-                     </div>
-                     <div className="flex justify-between text-xs text-gray-500 font-mono">
-                        <span>HP: 2400/2400</span>
-                        <span>EXP: 159702378</span>
-                     </div>
-                   </div>
-                   
-                   <div className="flex gap-2 mt-2">
-                      <button className="flex-1 bg-hero-green text-white py-2 rounded font-bold text-sm hover:bg-green-400 transition-colors">前往冒險</button>
-                      <button className="flex-1 bg-red-600 text-white py-2 rounded font-bold text-sm hover:bg-red-500 transition-colors">探險隊</button>
-                   </div>
-                </div>
-            </div>
-            
-            {/* Back glow */}
-            <div className="absolute inset-0 bg-hero-gold/10 blur-[100px] -z-10"></div>
           </div>
         </div>
       </div>
-      
-      {/* Bottom Gradient Overlay for seamless transition to Gallery */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-hero-dark z-20 pointer-events-none"></div>
+
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-hero-dark z-20 pointer-events-none" />
     </section>
   );
 };

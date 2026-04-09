@@ -36,18 +36,18 @@ const NavbarAstro: React.FC = () => {
   return (
     <nav
       style={{ paddingTop: 'env(safe-area-inset-top)' }}
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#111216]/95 backdrop-blur-md border-b border-white/10 py-2 md:py-3 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' : 'bg-gradient-to-b from-black/80 to-transparent py-4 md:py-6'
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#0a0b10]/95 backdrop-blur-md border-b border-white/10 py-4 md:py-5 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' : 'bg-gradient-to-b from-black/70 via-black/30 to-transparent py-6 md:py-10'
         }`}
     >
       <div className={`absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent transition-opacity duration-300 ${isScrolled ? 'opacity-100' : 'opacity-0'}`}></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <a href="/" className="flex-shrink-0 flex items-center cursor-pointer group gap-3">
+          <a href="/" className="flex-shrink-0 flex items-center cursor-pointer group">
             <img
-              src="https://image.linehero.tw/official_web/favi/web-app-manifest-64.webp"
-              alt="LineHero Logo"
-              className="h-10 md:h-14 w-auto object-contain transition-transform hover:scale-105 drop-shadow-[0_0_5px_rgba(255,215,0,0.3)]"
+              src="https://image.linehero.tw/official_web/linehero_logo_v3.png"
+              alt="LineHero"
+              className="h-12 md:h-16 w-auto object-contain transition-transform group-hover:scale-105"
             />
           </a>
 

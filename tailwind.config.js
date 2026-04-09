@@ -5,11 +5,13 @@ export default {
     './App.tsx',
     './components/**/*.{ts,tsx}',
     './services/**/*.{ts,tsx}',
+    './src/**/*.{astro,ts,tsx,html,mdx}',
   ],
   theme: {
     extend: {
       fontFamily: {
         sans: [
+          '"Zen Kaku Gothic New"',
           '"Noto Sans TC"',
           'ui-sans-serif',
           'system-ui',
@@ -21,12 +23,14 @@ export default {
           'Arial',
           'sans-serif',
         ],
-        display: ['"Cinzel"', 'serif'],
+        display: ['"Zen Kaku Gothic New"', '"Noto Sans TC"', 'sans-serif'],
+        en: ['"Bebas Neue"', '"Oswald"', 'sans-serif'],
+        kanji: ['"Shippori Mincho B1"', '"Shippori Mincho"', 'serif'],
       },
       colors: {
         hero: {
-          dark: '#111216',
-          panel: '#1a1b23',
+          dark: '#0a0b10',
+          panel: '#14151c',
           gold: '#FFD700',
           'gold-glow': '#ffec8b',
           green: '#06C755',
@@ -35,9 +39,10 @@ export default {
           secondary: '#4f46e5',
           'neon-purple': '#b026ff',
           'neon-cyan': '#00f3ff',
-          neon: '#00f3ff',   // Cyberpunk Cyan
-          magic: '#bc13fe',  // Magic Purple
-          crimson: '#ff003c',// Aggressive Red
+          neon: '#00f3ff',
+          magic: '#bc13fe',
+          crimson: '#ff003c',
+          sakura: '#ff5a7a',
         },
       },
       backgroundImage: {
@@ -55,6 +60,11 @@ export default {
         'glow-pulse': 'glow-pulse 3s ease-in-out infinite',
         'matrix-slide': 'matrix-slide 20s linear infinite',
         'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+        'marquee': 'marquee 30s linear infinite',
+        'marquee-slow': 'marquee 60s linear infinite',
+        'tilt-in': 'tilt-in 0.9s cubic-bezier(.2,.9,.3,1) both',
+        'slide-in-l': 'slide-in-l 0.9s cubic-bezier(.2,.9,.3,1) both',
+        'slide-in-r': 'slide-in-r 0.9s cubic-bezier(.2,.9,.3,1) both',
       },
       keyframes: {
         float: {
@@ -85,6 +95,22 @@ export default {
         'fade-in-up': {
           '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        'tilt-in': {
+          '0%': { opacity: '0', transform: 'translateY(30px) rotate(-2deg)' },
+          '100%': { opacity: '1', transform: 'translateY(0) rotate(0)' },
+        },
+        'slide-in-l': {
+          '0%': { opacity: '0', transform: 'translateX(-40px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        'slide-in-r': {
+          '0%': { opacity: '0', transform: 'translateX(40px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
         },
       },
     },
