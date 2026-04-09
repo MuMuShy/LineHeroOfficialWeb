@@ -242,8 +242,8 @@ const Features: React.FC = () => {
                 {/* Giant index number */}
                 <div
                   aria-hidden
-                  className={`absolute ${reverse ? 'right-0 md:-right-4' : 'left-0 md:-left-4'} -top-8 md:-top-14 font-en-display italic leading-none select-none pointer-events-none text-hero-gold/15`}
-                  style={{ fontSize: 'clamp(8rem, 16vw, 16rem)' }}
+                  className={`absolute ${reverse ? 'right-0 md:-right-4' : 'left-0 md:-left-4'} -top-6 md:-top-14 font-en-display italic leading-none select-none pointer-events-none text-hero-gold/15`}
+                  style={{ fontSize: 'clamp(5rem, 16vw, 16rem)' }}
                 >
                   {f.index}
                 </div>

@@ -13,6 +13,10 @@ const Hero: React.FC = () => {
           src={BG_IMG}
           alt=""
           aria-hidden="true"
+          width={1920}
+          height={1080}
+          fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover object-[70%_center] md:object-center"
         />
         {/* Mobile: full darken overlay */}
@@ -64,11 +68,6 @@ const Hero: React.FC = () => {
       {/* ===================== MAIN CONTENT ===================== */}
       <div className="relative z-[5] w-full max-w-7xl mx-auto px-6 md:px-20 pt-36 md:pt-0 pb-36 md:pb-0">
         <div className="max-w-[640px] text-center md:text-left">
-          {/* SEO H1 */}
-          <h1 className="sr-only">
-            免下載 RPG｜LINE Hero 無盡冒險（LINE RPG・網頁 RPG）｜大世界世界 Boss × 陣營對抗 × 自動戰鬥
-          </h1>
-
           {/* Small lead */}
           <div className="flex items-center gap-4 mb-8 md:mb-10 justify-center md:justify-start">
             <div className="h-px w-10 md:w-12 bg-hero-gold" />
@@ -85,13 +84,14 @@ const Hero: React.FC = () => {
             Line Hero —
           </div>
 
-          {/* Chinese main title — 乾淨無陰影 */}
-          <h2
-            className="font-serif-cn text-white leading-[1.02] whitespace-nowrap"
+          {/* Main H1 — 視覺可見的語意標題 */}
+          <h1
+            className="font-serif-cn text-white leading-[1.02]"
             style={{ fontSize: 'clamp(2.5rem, 7vw, 5.75rem)' }}
           >
-            無盡<span className="text-hero-gold">冒險</span>
-          </h2>
+            <span className="md:whitespace-nowrap">無盡<span className="text-hero-gold">冒險</span></span>
+            <span className="sr-only"> — 免下載 LINE RPG</span>
+          </h1>
 
           {/* Divider with ornament */}
           <div className="mt-6 md:mt-7 flex items-center gap-3 justify-center md:justify-start">
@@ -151,8 +151,8 @@ const Hero: React.FC = () => {
             </div>
             <div className="hidden md:block h-10 w-px bg-white/10" />
             <div className="hidden md:block">
-              <div className="font-en-wide text-[9px] text-white/40 mb-0.5">PLAYERS</div>
-              <div className="font-serif-cn text-white text-sm">1,204 ONLINE</div>
+              <div className="font-en-wide text-[9px] text-white/40 mb-0.5">PRICE</div>
+              <div className="font-serif-cn text-white text-sm">FREE TO PLAY</div>
             </div>
           </div>
 
