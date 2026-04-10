@@ -1,7 +1,7 @@
 import React from 'react';
 import { trackCtaClick } from '../services/analytics';
 
-const BG_IMG = 'https://image.linehero.tw/official_web/linehero_landing_v3.png';
+const BG_IMG = 'https://image.linehero.tw/official_web/linehero_landing_v3.webp';
 
 const Hero: React.FC = () => {
   return (

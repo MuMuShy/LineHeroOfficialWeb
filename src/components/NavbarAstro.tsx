@@ -45,7 +45,7 @@ const NavbarAstro: React.FC = () => {
           {/* Logo */}
           <a href="/" className="flex-shrink-0 flex items-center cursor-pointer group">
             <img
-              src="https://image.linehero.tw/official_web/linehero_logo_v3.png"
+              src="https://image.linehero.tw/official_web/linehero_logo_v3.webp"
               alt="LineHero"
               className="h-12 md:h-16 w-auto object-contain transition-transform group-hover:scale-105"
             />
