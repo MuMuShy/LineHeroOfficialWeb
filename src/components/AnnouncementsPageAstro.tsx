@@ -28,6 +28,32 @@ export const AnnouncementsPageAstro: React.FC = () => (
     accent="Announcements"
   >
     <section className="space-y-6">
+      {/* 無盡之塔 Beta */}
+      <article className="bg-hero-panel/60 border border-purple-500/50 rounded-2xl p-6 shadow-xl ring-1 ring-purple-500/20">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="px-3 py-1 rounded-full text-xs font-bold border bg-purple-500/20 border-purple-500/40 text-purple-300">
+            新功能
+          </span>
+          <span className="px-3 py-1 rounded-full text-xs font-bold bg-hero-gold/10 border border-hero-gold/30 text-hero-gold">
+            Beta
+          </span>
+          <time className="text-gray-400 text-sm">2026-04-10</time>
+        </div>
+        <h2 className="text-xl font-bold text-white mb-3">無盡之塔 — Beta 開放</h2>
+        <p className="text-gray-300 text-sm leading-relaxed mb-4">
+          全新 Roguelike 挑戰模式：從零收集祝福、裝備、技能，層層推進打造最強 Build。6 種流派、26 種祝福、8 大誓約、每週挑戰塔排行。死亡即重來，精髓永久累積。
+        </p>
+        <a
+          href="/announcements-endless-tower-beta"
+          className="inline-flex items-center gap-2 text-hero-gold font-bold text-sm hover:text-white transition-colors"
+        >
+          查看完整公告
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </article>
+
       <article className="bg-hero-panel/60 border border-hero-gold/40 rounded-2xl p-6 shadow-xl">
         <div className="flex items-center gap-3 mb-4">
           <span className="px-3 py-1 rounded-full text-xs font-bold border bg-hero-gold/10 border-hero-gold/30 text-hero-gold">

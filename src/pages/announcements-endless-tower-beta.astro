@@ -1,0 +1,363 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const published = '2026-04-10';
+const title = '無盡之塔 — Beta 開放｜全新 Roguelike 挑戰模式';
+const description = '挑戰永無止境的深淵，打造屬於你的最強 Build。無盡之塔是全新的 Roguelike 挑戰模式，從零開始收集祝福、裝備、技能，層層推進直到力竭倒下。';
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  datePublished: published,
+  dateModified: published,
+  author: { '@type': 'Organization', name: 'LINE Hero Team', url: 'https://linehero.tw' },
+  publisher: { '@type': 'Organization', name: 'LINE Hero 無盡冒險', url: 'https://linehero.tw' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://linehero.tw/announcements-endless-tower-beta' },
+  image: 'https://image.linehero.tw/official_web/ogimage.png',
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  url="https://linehero.tw/announcements-endless-tower-beta"
+  schema={articleSchema}
+>
+  <NavbarAstro client:load />
+  <main class="bg-hero-dark min-h-screen pt-28 pb-20 px-4 md:px-8 text-gray-100 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-0 left-0 w-full h-[50vh] bg-gradient-to-b from-hero-gold/5 to-transparent"></div>
+    </div>
+
+    <article class="max-w-4xl mx-auto relative z-10">
+      <!-- Header -->
+      <header class="mb-12">
+        <a href="/announcements" class="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-hero-gold transition-colors mb-6">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+          返回公告列表
+        </a>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-bold border bg-purple-500/20 border-purple-500/40 text-purple-300">新功能</span>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-hero-gold/10 border border-hero-gold/30 text-hero-gold">Beta</span>
+          <time class="text-gray-400 text-sm">{published}</time>
+        </div>
+        <h1 class="font-serif-cn text-4xl md:text-5xl text-white leading-tight mb-4">無盡之塔 — Beta 開放</h1>
+        <p class="text-xl md:text-2xl text-hero-gold font-bold">挑戰永無止境的深淵，打造屬於你的最強 Build。</p>
+      </header>
+
+      <!-- Content -->
+      <div class="prose-dark space-y-10">
+        <!-- Intro -->
+        <section>
+          <p class="text-gray-300 text-base md:text-lg leading-relaxed">
+            無盡之塔是全新的 Roguelike 挑戰模式。每次進塔都是一場獨立的冒險 — 從零開始收集祝福、裝備、技能，層層推進直到力竭倒下。
+            死亡即重來，但你學到的經驗和累積的精髓將讓你越來越強。
+          </p>
+        </section>
+
+        <!-- 核心玩法 -->
+        <section>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="h-px w-12 bg-hero-gold"></div>
+            <h2 class="font-serif-cn text-2xl md:text-3xl text-white">核心玩法</h2>
+          </div>
+
+          <div class="space-y-8">
+            <div>
+              <h3 class="text-lg font-bold text-white mb-2">回合制戰鬥</h3>
+              <p class="text-gray-300 text-sm leading-relaxed">
+                每一層都是一場戰鬥。怒氣累積滿 100 可發動究極一擊，造成 3.5 倍必爆傷害。連擊越快、擊殺越迅速，獎勵越豐厚。
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-bold text-white mb-3">路徑選擇</h3>
+              <p class="text-gray-300 text-sm leading-relaxed mb-4">每隔數層出現分岔路，你必須從 2~3 條路徑中抉擇：</p>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {[
+                  { icon: '⚔️', name: '戰鬥', desc: '正面交鋒' },
+                  { icon: '✨', name: '祝福', desc: '獲得被動增益' },
+                  { icon: '📜', name: '技能卷軸', desc: '學習主動技能' },
+                  { icon: '🔨', name: '鍛造台', desc: '強化裝備與技能' },
+                  { icon: '🧙', name: '神秘商人', desc: '購買稀有物品' },
+                  { icon: '🗿', name: '遠古祭壇', desc: '獻祭換取力量' },
+                  { icon: '🔥', name: '營火', desc: '回復或整理' },
+                  { icon: '💎', name: '寶藏', desc: '開箱碰運氣' },
+                  { icon: '👹', name: '精英戰', desc: '高風險高回報' },
+                ].map((p) => (
+                  <div class="bg-white/[0.03] border border-white/10 p-3 rounded-sm">
+                    <div class="text-lg mb-1">{p.icon}</div>
+                    <div class="text-white text-sm font-bold">{p.name}</div>
+                    <div class="text-gray-400 text-xs mt-0.5">{p.desc}</div>
+                  </div>
+                ))}
+              </div>
+              <p class="text-gray-400 text-xs mt-3">每條路都有隨機的故事包裝，同一種路徑每次進入的體驗都不同。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 六大成長維度 -->
+        <section>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="h-px w-12 bg-hero-gold"></div>
+            <h2 class="font-serif-cn text-2xl md:text-3xl text-white">六大成長維度</h2>
+          </div>
+          <p class="text-gray-300 text-sm mb-6">一場 Run 中你有 6 個維度可以組合出獨特的 Build：</p>
+
+          <!-- 1. 流派 -->
+          <div class="mb-8">
+            <h3 class="text-lg font-bold text-white mb-3">1. 流派（6 種）</h3>
+            <p class="text-gray-300 text-sm mb-4">進塔時選擇起始方向，決定你的初始祝福與裝備。</p>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-white/10">
+                    <th class="text-left py-2 px-3 text-hero-gold font-bold">流派</th>
+                    <th class="text-left py-2 px-3 text-hero-gold font-bold">定位</th>
+                    <th class="text-left py-2 px-3 text-hero-gold font-bold">解鎖條件</th>
+                  </tr>
+                </thead>
+                <tbody class="text-gray-300">
+                  {[
+                    ['穩健', '均衡入門', '無'],
+                    ['攻擊', '暴力輸出', '戰力 10 萬'],
+                    ['防禦', '鐵壁生存', '戰力 10 萬'],
+                    ['瘋狂', '高風險高回報', '戰力 30 萬'],
+                    ['速通', '先手快攻', '戰力 30 萬'],
+                    ['混沌', '全隨機', '戰力 50 萬'],
+                  ].map((r) => (
+                    <tr class="border-b border-white/5 hover:bg-white/[0.02]">
+                      <td class="py-2 px-3 text-white font-bold">{r[0]}</td>
+                      <td class="py-2 px-3">{r[1]}</td>
+                      <td class="py-2 px-3">{r[2]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 2. 祝福 -->
+          <div class="mb-8">
+            <h3 class="text-lg font-bold text-white mb-3">2. 祝福（26 種）</h3>
+            <p class="text-gray-300 text-sm mb-4">被動增益效果，從路徑事件中獲得。包含<span class="text-hero-gold font-bold">雙面刃祝福</span> — 強大但有代價：</p>
+            <div class="grid sm:grid-cols-2 gap-3">
+              {[
+                { icon: '💎', name: '玻璃大砲', effect: '傷害 +80%，但生命減半' },
+                { icon: '🔥', name: '暴走', effect: '攻擊 +60%，防禦 -30%' },
+                { icon: '🩸', name: '嗜血契約', effect: '吸血 15%，但每回合失去 2% HP' },
+                { icon: '🎰', name: '賭徒之骰', effect: '暴擊傷害 x2，暴擊率鎖定 25%' },
+                { icon: '🌹', name: '荊棘之體', effect: '反傷 30%，受傷增加 15%' },
+                { icon: '👹', name: '狂亂之魂', effect: '怒氣 x2，受傷增加 20%' },
+              ].map((b) => (
+                <div class="flex items-start gap-3 bg-white/[0.03] border border-white/10 p-3 rounded-sm">
+                  <span class="text-xl flex-shrink-0">{b.icon}</span>
+                  <div>
+                    <div class="text-white text-sm font-bold">{b.name}</div>
+                    <div class="text-gray-400 text-xs mt-0.5">{b.effect}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p class="text-gray-400 text-xs mt-3">集齊特定組合還會觸發隱藏的祝福彩蛋，獲得額外加成。</p>
+          </div>
+
+          <!-- 3-5 簡要 -->
+          <div class="grid sm:grid-cols-3 gap-4 mb-8">
+            <div class="bg-white/[0.03] border border-white/10 p-5 rounded-sm">
+              <h3 class="text-white font-bold mb-2">3. 裝備</h3>
+              <p class="text-gray-400 text-sm">12 種 x 3 槽位（武器 / 護甲 / 聖物）。Boss 擊殺必掉，可在鍛造台升級至 Lv.10。</p>
+            </div>
+            <div class="bg-white/[0.03] border border-white/10 p-5 rounded-sm">
+              <h3 class="text-white font-bold mb-2">4. 技能</h3>
+              <p class="text-gray-400 text-sm">最多 4 個。從技能卷軸事件中學習，不限職業。可在鍛造台精煉提升效果。</p>
+            </div>
+            <div class="bg-white/[0.03] border border-white/10 p-5 rounded-sm">
+              <h3 class="text-white font-bold mb-2">5. 局內等級</h3>
+              <p class="text-gray-400 text-sm">Lv.1 ~ 15。升級自動提升攻擊、防禦、HP、暴擊率和暴擊傷害。</p>
+            </div>
+          </div>
+
+          <!-- 6. 誓約 -->
+          <div class="mb-8">
+            <h3 class="text-lg font-bold text-white mb-3">6. 誓約（8 種，最多 5 個）</h3>
+            <p class="text-gray-300 text-sm mb-4">高手自選難度。每個誓約增加挑戰但提升獎勵倍率，最高可達約 3.45 倍。</p>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-white/10">
+                    <th class="text-left py-2 px-3 text-hero-gold font-bold">誓約</th>
+                    <th class="text-left py-2 px-3 text-hero-gold font-bold">效果</th>
+                    <th class="text-left py-2 px-3 text-hero-gold font-bold">倍率</th>
+                  </tr>
+                </thead>
+                <tbody class="text-gray-300">
+                  {[
+                    ['🚫 無祝福', '禁用所有祝福', 'x2.0'],
+                    ['👊 無裝備', '禁用所有裝備', 'x1.5'],
+                    ['💔 半血', 'HP 永遠 -50%', 'x1.3'],
+                    ['🩸 禁補', '禁止所有治療', 'x1.4'],
+                    ['⚠️ 脆弱', '受傷 +30%', 'x1.25'],
+                    ['👹 巨人', '敵人 HP+50% ATK+30%', 'x1.35'],
+                    ['🛡️ 鐵甲', '敵人防禦 +100%', 'x1.2'],
+                    ['⛔ 無究極', '究極一擊無法使用', 'x1.15'],
+                  ].map((r) => (
+                    <tr class="border-b border-white/5 hover:bg-white/[0.02]">
+                      <td class="py-2 px-3 text-white font-bold whitespace-nowrap">{r[0]}</td>
+                      <td class="py-2 px-3">{r[1]}</td>
+                      <td class="py-2 px-3 text-hero-gold font-bold">{r[2]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 精英怪 -->
+        <section>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="h-px w-12 bg-hero-gold"></div>
+            <h2 class="font-serif-cn text-2xl md:text-3xl text-white">精英怪</h2>
+          </div>
+          <p class="text-gray-300 text-sm mb-4">路徑中可能遭遇四種精英敵人，每種都有獨特的戰鬥機制：</p>
+          <div class="grid sm:grid-cols-2 gap-3">
+            {[
+              { icon: '🪞', name: '鏡像', desc: '複製你的攻防，對抗你自己的分身' },
+              { icon: '⏳', name: '時間獵手', desc: '每回合攻擊遞增 20%，必須速殺' },
+              { icon: '🦊', name: '竊魂者', desc: '每次攻擊偷取你 5% 攻擊力' },
+              { icon: '🧬', name: '再生者', desc: '每回合回復 8% HP，但防禦為 0' },
+            ].map((e) => (
+              <div class="flex items-start gap-3 bg-white/[0.03] border border-white/10 p-4 rounded-sm">
+                <span class="text-2xl flex-shrink-0">{e.icon}</span>
+                <div>
+                  <div class="text-white font-bold">{e.name}</div>
+                  <div class="text-gray-400 text-sm mt-0.5">{e.desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p class="text-gray-400 text-xs mt-3">擊敗精英保證獲得史詩級祝福。</p>
+        </section>
+
+        <!-- 精髓強化 -->
+        <section>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="h-px w-12 bg-hero-gold"></div>
+            <h2 class="font-serif-cn text-2xl md:text-3xl text-white">精髓強化（Meta 養成）</h2>
+          </div>
+          <p class="text-gray-300 text-sm mb-4">每次 Run 累積的「塔之精髓」可用於永久強化，跨 Run 生效：</p>
+          <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+            {[
+              { icon: '➕', name: '祝福擴容', desc: '增加可攜帶祝福數量' },
+              { icon: '❤️', name: '源血加持', desc: '提升起始 HP' },
+              { icon: '💰', name: '初始寶庫', desc: '進塔自帶金幣' },
+              { icon: '👼', name: '永恆契約', desc: '額外復活機會' },
+              { icon: '🌀', name: '命運共鳴', desc: '路徑選擇更頻繁' },
+              { icon: '🤝', name: '討價還價', desc: '商人打折' },
+              { icon: '✨', name: '天命加持', desc: '進塔額外獲得起始祝福' },
+              { icon: '🎴', name: '稀有偏移', desc: '提升祝福稀有度' },
+              { icon: '⚡', name: '戰力融合', desc: '緩解戰力壓縮' },
+            ].map((m) => (
+              <div class="bg-white/[0.03] border border-white/10 p-3 rounded-sm flex items-start gap-2">
+                <span class="text-lg flex-shrink-0">{m.icon}</span>
+                <div>
+                  <div class="text-white text-sm font-bold">{m.name}</div>
+                  <div class="text-gray-400 text-xs mt-0.5">{m.desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- 每週挑戰塔 -->
+        <section>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="h-px w-12 bg-hero-gold"></div>
+            <h2 class="font-serif-cn text-2xl md:text-3xl text-white">每週挑戰塔</h2>
+          </div>
+          <p class="text-gray-300 text-sm mb-4">每週一輪替的主題挑戰，同一套規則下與所有玩家競爭排行。六種主題，每種徹底改變戰鬥節奏：</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-white/10">
+                  <th class="text-left py-2 px-3 text-hero-gold font-bold">主題</th>
+                  <th class="text-left py-2 px-3 text-hero-gold font-bold">規則</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-300">
+                {[
+                  ['🩸 血月狂宴', '禁止治療、每回合灼燒 3%，但吸血 25%。殺戮是唯一的續命手段。'],
+                  ['⚡ 雷神試煉', '暴擊率 +30%、暴擊傷害 +80%，敵人攻擊 +40%。一擊必殺或被秒。'],
+                  ['🔥 灼燒煉獄', '每回合灼燒 5% HP，攻擊 +30%，速殺獎勵 x3。跟死神賽跑。'],
+                  ['🏰 鐵壁要塞', '敵人防禦 x3，攻擊 +50%，每層護盾 25%。鋼鐵碰撞。'],
+                  ['👹 狂暴競技場', '攻擊 +60%、防禦 -50%、怒氣 x2。暴力與瘋狂的盛宴。'],
+                  ['👻 幽影領域', '敵人 HP x2、攻擊 -30%、每層護盾 20%。漫長的消耗戰。'],
+                ].map((r) => (
+                  <tr class="border-b border-white/5 hover:bg-white/[0.02]">
+                    <td class="py-2 px-3 text-white font-bold whitespace-nowrap">{r[0]}</td>
+                    <td class="py-2 px-3">{r[1]}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 排行榜 & 自動戰鬥 -->
+        <section class="grid sm:grid-cols-2 gap-6">
+          <div class="bg-white/[0.03] border border-white/10 p-6 rounded-sm">
+            <h3 class="text-lg font-bold text-white mb-3">排行榜</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              無盡之塔和每週挑戰塔各有獨立排行榜。攜帶誓約挑戰可獲得額外排行加分。層數仍是核心指標，誓約是有意義的加分。
+            </p>
+          </div>
+          <div class="bg-white/[0.03] border border-white/10 p-6 rounded-sm">
+            <h3 class="text-lg font-bold text-white mb-3">自動戰鬥</h3>
+            <ul class="text-gray-400 text-sm space-y-2">
+              <li><span class="text-white font-bold">▶ 自動戰鬥</span> — 自動普攻、施放技能、釋放究極一擊</li>
+              <li><span class="text-white font-bold">FA 完全自動</span> — 加上自動處理路徑選擇、祝福拾取、裝備替換、事件決策</li>
+            </ul>
+            <p class="text-gray-400 text-xs mt-3">適合掛機刷層，也可隨時切回手動操控關鍵決策。</p>
+          </div>
+        </section>
+
+        <!-- Beta 說明 -->
+        <section class="bg-hero-gold/5 border border-hero-gold/30 p-6 rounded-sm">
+          <h3 class="text-lg font-bold text-hero-gold mb-3">Beta 說明</h3>
+          <p class="text-gray-300 text-sm leading-relaxed mb-4">本版本為公開測試，以下內容持續開發中：</p>
+          <ul class="text-gray-300 text-sm space-y-1.5 list-disc pl-5">
+            <li>更多祝福、裝備、事件內容擴充</li>
+            <li>Run 成就與稱號系統</li>
+            <li>精髓兌換商店</li>
+            <li>每日種子挑戰（固定隨機，公平競爭）</li>
+          </ul>
+          <p class="text-gray-400 text-xs mt-4">遊戲數據可能隨平衡調整而變動。如遇到問題歡迎回報。</p>
+        </section>
+
+        <!-- 進入方式 -->
+        <section class="text-center py-8">
+          <p class="text-gray-300 text-lg mb-6">從遊戲主頁的「<span class="text-hero-gold font-bold">無盡之塔</span>」入口進入</p>
+          <a
+            href="https://game.linehero.tw/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-3 bg-hero-gold hover:bg-hero-gold-glow text-black font-bold text-lg px-10 py-4 rounded-sm transition-transform hover:-translate-y-0.5 shadow-[0_15px_30px_rgba(255,215,0,0.3)]"
+          >
+            立即挑戰無盡之塔
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+          </a>
+        </section>
+      </div>
+    </article>
+  </main>
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>

@@ -110,15 +110,15 @@ const Hero: React.FC = () => {
           {/* CTA row */}
           <div className="mt-10 md:mt-12 flex flex-col sm:flex-row items-center sm:items-center gap-6 sm:gap-10 justify-center md:justify-start">
             <a
-              href="https://lin.ee/3JlUhak"
+              href="https://game.linehero.tw/"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackCtaClick('立即開始', 'hero', 'https://lin.ee/3JlUhak')}
+              onClick={() => trackCtaClick('立即開始', 'hero', 'https://game.linehero.tw/')}
               className="group relative inline-flex items-center"
             >
               <span className="absolute -inset-[6px] border border-hero-gold/25 group-hover:border-hero-gold/60 transition-colors" />
               <span className="relative bg-hero-gold text-black font-serif-cn text-sm tracking-[0.35em] px-10 py-4 flex items-center gap-4 group-hover:bg-hero-gold-glow transition-colors">
-                立即開玩
+                立即遊玩
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>

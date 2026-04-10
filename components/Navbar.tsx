@@ -129,10 +129,10 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onSectionNavigate }) => {
               target="_blank"
               rel="noreferrer"
               className="bg-hero-green hover:bg-[#05b64d] text-white px-6 py-2.5 rounded clip-path-polygon shadow-[0_0_15px_rgba(6,199,85,0.4)] transition-all font-bold text-sm transform hover:scale-105 flex items-center gap-2 group relative overflow-hidden"
-              onClick={() => trackCtaClick('立即開玩', 'navbar', 'https://lin.ee/WQwrOvC')}
+              onClick={() => trackCtaClick('立即遊玩', 'navbar', 'https://lin.ee/WQwrOvC')}
             >
               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></div>
-              <span>立即開玩</span>
+              <span>立即遊玩</span>
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
               </svg>
