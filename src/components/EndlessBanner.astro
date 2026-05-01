@@ -1,0 +1,157 @@
+---
+/**
+ * EndlessBanner.astro
+ * 全站置頂銜接 banner：將 LINE Hero 玩家導流到團隊新作《無盡冒險 Online》網頁 MMORPG。
+ *
+ * 設計原則：
+ * - 固定置頂、單列、極簡：金色細邊 + 暗底，跟 LINE Hero 主視覺相容
+ * - 不放關閉鈕：玩家關掉後就不會再回來，這個階段以最大曝光為主
+ * - GA event：點擊時送 outbound 事件方便追蹤倒流量
+ * - 對應的 Navbar 偏移由 src/styles/global.css 處理
+ */
+const target = "https://endless.tw/?utm_source=linehero&utm_medium=banner&utm_campaign=endless_launch";
+---
+
+<a
+  class="endless-banner"
+  href={target}
+  rel="noopener"
+  aria-label="前往團隊新作 無盡冒險 Online 網頁 MMORPG"
+  data-endless-banner
+>
+  <span class="endless-banner__pill">NEW</span>
+  <span class="endless-banner__text">
+    <strong>無盡冒險 Online</strong>
+    <span class="endless-banner__sep">·</span>
+    <span class="endless-banner__sub">同團隊新作・網頁 MMORPG・第一輪封測即將開放</span>
+  </span>
+  <span class="endless-banner__cta">立即前往<span aria-hidden="true">&nbsp;→</span></span>
+</a>
+
+<script is:inline>
+  document.querySelectorAll('[data-endless-banner]').forEach((el) => {
+    el.addEventListener('click', () => {
+      try {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'endless_banner_click', {
+            event_category: 'outbound',
+            event_label: 'linehero -> endless.tw',
+          });
+        }
+      } catch (e) {}
+    });
+  });
+</script>
+
+<style>
+  .endless-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    height: var(--endless-banner-h, 40px);
+    padding: 0 0.85rem;
+    background:
+      linear-gradient(90deg, rgba(255, 215, 122, 0.06) 0%, rgba(255, 215, 122, 0) 50%, rgba(255, 215, 122, 0.06) 100%),
+      linear-gradient(180deg, #0e1116 0%, #14181f 100%);
+    border-bottom: 1px solid rgba(228, 187, 106, 0.4);
+    color: #fbe7b6;
+    font-size: 0.86rem;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    line-height: 1;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+    transition: background 200ms ease, color 200ms ease;
+  }
+
+  .endless-banner:hover {
+    background:
+      linear-gradient(90deg, rgba(255, 215, 122, 0.12) 0%, rgba(255, 215, 122, 0.04) 50%, rgba(255, 215, 122, 0.12) 100%),
+      linear-gradient(180deg, #11161e 0%, #181d26 100%);
+    color: #fff3d2;
+  }
+
+  .endless-banner__pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.35rem;
+    padding: 0 0.55rem;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #ffd572 0%, #df9632 100%);
+    color: #2a1604;
+    font-size: 0.66rem;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    flex-shrink: 0;
+  }
+
+  .endless-banner__text {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .endless-banner__text strong {
+    color: #ffe9a8;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+  }
+
+  .endless-banner__sep {
+    color: rgba(229, 187, 106, 0.5);
+  }
+
+  .endless-banner__sub {
+    color: rgba(252, 233, 184, 0.78);
+    font-weight: 500;
+  }
+
+  .endless-banner__cta {
+    flex-shrink: 0;
+    color: #ffe9a8;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    border-bottom: 1px solid transparent;
+    transition: border-color 200ms ease;
+  }
+
+  .endless-banner:hover .endless-banner__cta {
+    border-bottom-color: rgba(255, 215, 122, 0.6);
+  }
+
+  @media (max-width: 760px) {
+    .endless-banner {
+      height: var(--endless-banner-h-sm, 36px);
+      gap: 0.5rem;
+      padding: 0 0.55rem;
+      font-size: 0.74rem;
+      letter-spacing: 0.02em;
+    }
+    .endless-banner__pill {
+      height: 1.2rem;
+      padding: 0 0.45rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+    }
+    .endless-banner__sub {
+      display: none;
+    }
+    .endless-banner__sep {
+      display: none;
+    }
+    .endless-banner__cta {
+      letter-spacing: 0.04em;
+    }
+  }
+</style>

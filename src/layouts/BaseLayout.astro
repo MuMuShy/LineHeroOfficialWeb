@@ -1,4 +1,6 @@
 ---
+import EndlessBanner from '../components/EndlessBanner.astro';
+
 interface Props {
   title?: string;
   description?: string;
@@ -213,6 +215,7 @@ const websiteSchema = {
           src="https://tr.line.me/tag.gif?c_t=lap&t_id=53146326-89d4-4c1d-aad3-b65d9f0238a4&e=pv&noscript=1" />
     </noscript>
 
+    <EndlessBanner />
     <slot />
   </body>
 </html>

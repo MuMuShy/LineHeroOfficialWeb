@@ -9,6 +9,28 @@ html, body {
   overflow-x: hidden;
 }
 
+/* =========================================================================
+   Endless Online cross-promo banner
+   ------------------------------------------------------------------------
+   全站置頂 banner 將舊站玩家導流到 endless.tw。
+   - --endless-banner-h 由 EndlessBanner.astro 使用
+   - 把 fixed top-0 的 Navbar 整體往下推 banner 高度，避免互相覆蓋
+   ========================================================================= */
+:root {
+  --endless-banner-h: 40px;
+  --endless-banner-h-sm: 36px;
+}
+
+nav.fixed.top-0 {
+  top: var(--endless-banner-h, 40px) !important;
+}
+
+@media (max-width: 760px) {
+  nav.fixed.top-0 {
+    top: var(--endless-banner-h-sm, 36px) !important;
+  }
+}
+
 @supports (overflow: clip) {
   html, body { overflow-x: clip; }
 }

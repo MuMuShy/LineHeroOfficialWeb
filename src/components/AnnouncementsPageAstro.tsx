@@ -28,6 +28,32 @@ export const AnnouncementsPageAstro: React.FC = () => (
     accent="Announcements"
   >
     <section className="space-y-6">
+      {/* 轉型公告 — 邁向 Web RPG */}
+      <article className="bg-hero-panel/60 border border-red-500/50 rounded-2xl p-6 shadow-xl ring-1 ring-red-500/20">
+        <div className="flex flex-wrap items-center gap-3 mb-4">
+          <span className="px-3 py-1 rounded-full text-xs font-bold border bg-red-500/20 border-red-500/40 text-red-300">
+            重要
+          </span>
+          <span className="px-3 py-1 rounded-full text-xs font-bold border bg-purple-500/20 border-purple-500/40 text-purple-300">
+            轉型公告
+          </span>
+          <time className="text-gray-400 text-sm">2026-05-01</time>
+        </div>
+        <h2 className="text-xl font-bold text-white mb-3">《LineHero 無盡冒險》轉型公告：邁向新版 Web RPG</h2>
+        <p className="text-gray-300 text-sm leading-relaxed mb-4">
+          因應 LINE 平台政策調整與遊戲體驗的限制，《LineHero 無盡冒險》將全面轉型為新版 Web RPG（暫定：《無盡冒險 Online》）。LINE 版本持續營運至 2026 年底，玩家角色資料、資源與會員權益將完整轉移至新版本。
+        </p>
+        <a
+          href="/announcements-transition-to-web-rpg"
+          className="inline-flex items-center gap-2 text-hero-gold font-bold text-sm hover:text-white transition-colors"
+        >
+          查看完整公告
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </article>
+
       {/* 無盡之塔 Beta */}
       <article className="bg-hero-panel/60 border border-purple-500/50 rounded-2xl p-6 shadow-xl ring-1 ring-purple-500/20">
         <div className="flex items-center gap-3 mb-4">

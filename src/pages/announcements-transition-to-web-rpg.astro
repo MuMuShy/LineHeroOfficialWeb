@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavbarAstro from '../components/NavbarAstro';
+import FooterAstro from '../components/FooterAstro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
+
+const published = '2026-05-01';
+const title = '《LineHero 無盡冒險》轉型公告：邁向新版 Web RPG';
+const description = '因應 LINE 平台政策調整與遊戲體驗的限制，《LineHero 無盡冒險》將全面轉型為新版 Web RPG（暫定：《無盡冒險 Online》）。LINE 版本將持續營運至 2026 年底，玩家角色資料、資源與會員權益將完整轉移至新版本。';
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  datePublished: published,
+  dateModified: published,
+  author: {
+    '@type': 'Organization',
+    name: 'LINE Hero Team',
+    url: 'https://linehero.tw'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'LINE Hero 無盡冒險',
+    url: 'https://linehero.tw'
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://linehero.tw/announcements-transition-to-web-rpg'
+  }
+};
+
+const seoProps = {
+  title,
+  description,
+  type: 'article',
+  url: 'https://linehero.tw/announcements-transition-to-web-rpg',
+  schema: articleSchema
+};
+---
+
+<BaseLayout {...seoProps}>
+  <NavbarAstro client:load />
+
+  <main class="bg-hero-dark min-h-screen pt-28 pb-16 px-4 md:px-8 text-gray-100">
+    <article class="max-w-3xl mx-auto">
+      <header class="mb-10">
+        <div class="flex flex-wrap items-center gap-3 mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-bold border bg-red-500/20 border-red-500/40 text-red-300">重要</span>
+          <span class="px-3 py-1 rounded-full text-xs font-bold border bg-purple-500/20 border-purple-500/40 text-purple-300">轉型公告</span>
+          <time class="text-gray-400 text-sm">{published}</time>
+        </div>
+        <h1 class="text-3xl md:text-4xl font-black text-white leading-tight">{title}</h1>
+        <p class="mt-4 text-gray-300 leading-relaxed">{description}</p>
+      </header>
+
+      <section class="space-y-10">
+        <p class="text-gray-200 leading-relaxed">
+          各位冒險者，感謝大家長期以來對《LineHero 無盡冒險》的支持。團隊近期完成了下一階段的整體規劃，並決定針對遊戲方向做出重要調整。在此向所有玩家正式公告。
+        </p>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-black text-white">一、轉型方向</h2>
+          <p class="text-gray-200 leading-relaxed">
+            因應近期 LINE 平台政策變動，以及目前平台在遊戲體驗上的若干限制，為了讓《無盡冒險》能擁有更完整的發展空間與更長期的運作可能性，本作將全面轉型為 <strong class="text-hero-gold">Web RPG 新版本</strong>（暫定名稱：《無盡冒險 Online》）。
+          </p>
+          <p class="text-gray-200 leading-relaxed">
+            未來所有主要更新與內容開發將集中於新版本，逐步脫離 LINE 平台限制，建構一個更完整、可持續成長的世界。
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-black text-white">二、LINE 版本營運說明</h2>
+          <ul class="list-disc pl-6 space-y-2 text-gray-200">
+            <li>《LineHero 無盡冒險》LINE 版本將持續營運至 <strong class="text-white">2026 年 12 月 31 日</strong></li>
+            <li>在此期間，玩家仍可正常登入並進行所有現有遊玩內容</li>
+            <li>不再進行大型內容更新，但會持續維護伺服器穩定與必要修正</li>
+            <li>為保障玩家權益，<strong class="text-white">儲值入口將自即日起逐步關閉</strong>，實際關閉時程將另行公告</li>
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-black text-white">三、玩家資料與權益轉移</h2>
+          <p class="text-gray-200 leading-relaxed">
+            LINE 版本玩家在新版 Web RPG 中將獲得完整的銜接安排：
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-200">
+            <li>角色資料、部分遊戲資源、會員權益將可轉移至新版本</li>
+            <li>所有轉移與補償方案，將以「<strong class="text-white">不讓玩家既有投入價值受損</strong>」為原則進行規劃</li>
+            <li>早期參與者將獲得專屬福利與紀念獎勵（包含限定寵物、紀念道具等）</li>
+            <li>詳細轉移規則、補償細節與時程，將於新版本接近上線時另行正式公告</li>
+          </ul>
+          <p class="text-gray-300 leading-relaxed">
+            您在《LineHero》累積的角色與投入，會延續到新世界繼續陪伴您。
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-black text-white">四、新版 Web RPG 重點</h2>
+          <p class="text-gray-200 leading-relaxed">新版本將帶來：</p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-200">
+            <li>更完整的 RPG 成長與戰鬥系統</li>
+            <li>更流暢的操作與畫面表現</li>
+            <li>更自由的探索路線與玩法設計</li>
+            <li>跨裝置遊玩，瀏覽器打開即可進入，無需下載安裝</li>
+          </ul>
+          <p class="text-gray-200 leading-relaxed">
+            新版本目前正進入第一輪封閉測試（CBT）準備階段，後續將開放搶先體驗報名，邀請各位玩家一同見證新世界誕生。
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-black text-white">五、致玩家的話</h2>
+          <p class="text-gray-200 leading-relaxed">
+            我們明白，許多玩家是因為 LINE 平台輕鬆即玩的方式而加入這個世界。這段時間以來各位的支持與回饋，是團隊持續前進的最大動力。
+          </p>
+          <p class="text-gray-200 leading-relaxed">
+            正因如此，團隊希望這款遊戲不只是停留在現有形態，而是能變得更完整、更有深度，並走得更長遠。這次的轉型，並非旅程的結束，而是《無盡冒險》新階段的起點。
+          </p>
+          <p class="text-gray-200 leading-relaxed">
+            未來將持續分享開發進度、測試招募資訊與版本內容。請持續關注本站「最新公告」與官方社群。
+          </p>
+          <p class="text-gray-200 leading-relaxed">
+            《無盡冒險》的旅程會繼續，期待在新世界與您再次相遇。
+          </p>
+          <p class="text-gray-400 text-sm pt-2">— 營運團隊</p>
+        </section>
+
+        <div class="border-t border-white/10 pt-8 space-y-4">
+          <h3 class="text-xl font-black text-white">前往《無盡冒險 Online》</h3>
+          <p class="text-gray-300">新作官方網站正式上線，第一輪封測即將開放報名。</p>
+          <div class="grid gap-2 sm:grid-cols-2">
+            <a
+              class="inline-flex items-center justify-center gap-2 bg-hero-gold/15 hover:bg-hero-gold/25 border border-hero-gold/50 hover:border-hero-gold rounded-xl px-5 py-3 font-bold text-sm text-hero-gold hover:text-white transition-all"
+              href="https://endless.tw/?utm_source=linehero&utm_medium=announcement&utm_campaign=transition"
+              rel="noopener"
+            >
+              前往無盡冒險 Online 官網 →
+            </a>
+            <a
+              class="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hero-gold rounded-xl px-5 py-3 font-bold text-sm text-white"
+              href="/announcements"
+            >
+              回到公告列表
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <nav class="mt-10 flex items-center justify-between text-sm">
+        <a class="text-hero-gold hover:text-white" href="/announcements">← 回到公告列表</a>
+        <a class="text-hero-gold hover:text-white" href="https://endless.tw/?utm_source=linehero&utm_medium=announcement_footer&utm_campaign=transition" rel="noopener">前往無盡冒險 Online →</a>
+      </nav>
+    </article>
+  </main>
+
+  <FooterAstro client:load />
+  <ScrollToTop client:load />
+</BaseLayout>

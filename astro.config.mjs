@@ -20,7 +20,7 @@ export default defineConfig({
       external: ['node:buffer']
     },
     server: {
-      allowedHosts: ['wsl.linehero.dev', '.linehero.dev', 'localhost']
+      allowedHosts: ['wsl.linehero.dev', '.linehero.dev', 'localhost', 'host.docker.internal']
     }
   }
 });
